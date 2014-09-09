@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TTSProj2</string><string name="header">Header Goes Here!</string><string name="aList">ActionList</string><string name="empty"/><string name="footer">Footer Goes Here</string><string name="emergencyText">Emergency</string>
+    <string name="selectText">Select the DISABILITY need</string>
+
+</resources>

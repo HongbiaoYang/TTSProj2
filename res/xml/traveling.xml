@@ -1,0 +1,104 @@
+<xml>
+    <General>
+        <Item>
+            <Title>Destination</Title>
+            <Text>My Destination</Text>
+            <Image>picture1</Image>
+            <Item>
+                <Title>I am going to job</Title>
+                <Text>I am going to job</Text>
+                <Image>picture3</Image>
+            </Item>
+        </Item>
+        <Item>
+            <Title>Another passenger</Title>
+            <Text>Another passenger</Text>
+            <Image>picture4</Image>
+            <Item>
+                <Title>Don't play your seat belt</Title>
+                <Text>Don't play your seat belt</Text>
+                <Image>picture4</Image>
+            </Item>
+            <Item>
+                <Title>piss off</Title>
+                <Text>You are screwing the wrong people</Text>
+                <Image>picture4</Image>
+            </Item>
+        </Item>
+        <Item>
+            <Title>Feeling</Title>
+            <Text>Feeling</Text>
+            <Image>picture5</Image>
+            <Item>
+                <Title>sick</Title>
+                <Text>I feel sick today, Please watch out for me </Text>
+                <Image>picture5</Image>
+            </Item>
+            <Item>
+                <Title>mauseated</Title>
+                <Text>I feel nauseated</Text>
+                <Image>picture5</Image>
+            </Item>
+
+            <Item>
+                <Title>scared</Title>
+                <Text>I feel scared </Text>
+                <Image>picture5</Image>
+            </Item>
+
+            <Item>
+                <Title>uncomfortable</Title>
+                <Text>I feel uncomfortable</Text>
+                <Image>picture5</Image>
+            </Item>
+            <Item>
+                <Title>bathroom</Title>
+                <Text>I need to go to bathroom </Text>
+                <Image>picture5</Image>
+            </Item>
+        </Item>
+    </General>
+    <Trip>
+        <Item>
+            <Title>Fare</Title>
+            <Text>Fare</Text>
+            <Image>picture15</Image>
+        </Item>
+        <Item>
+            <Title>Wrong bus</Title>
+            <Text>Wrong bus</Text>
+            <Image>picture16</Image>
+        </Item>
+    </Trip>
+    <Safety>
+        <Item>
+            <Title>wheel chair</Title>
+            <Text>wheel chair</Text>
+            <Image>picture15</Image>
+        </Item>
+        <Item>
+            <Title>seat belt</Title>
+            <Text>seat belt</Text>
+            <Image>picture16</Image>
+        </Item>
+    </Safety>
+    <Comfort>
+        <Item>
+            <Title>seat</Title>
+            <Text>seat</Text>
+            <Image>picture15</Image>
+        </Item>
+        <Item>
+            <Title>stand</Title>
+            <Text>stand</Text>
+            <Image>picture16</Image>
+        </Item>
+    </Comfort>
+    <Emergency>
+        <Item>
+            <Title>help</Title>
+            <Text>help</Text>
+            <Image>picture15</Image>
+        </Item>
+    </Emergency>
+</xml>

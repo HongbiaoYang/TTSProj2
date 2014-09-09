@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<item name="Left" type="id"/>
+    <item name="Right" type="id"/>
+    <item name="Ok" type="id"/>
+    <item name="footer" type="id"/>
+    <item name="emergency" type="id"/><item name="emText" type="id"/><item name="select" type="id"/><item name="boarding" type="id"/><item name="traveling" type="id"/><item name="Hemergency" type="id"/><item name="Htraveling" type="id"/><item name="Hboarding" type="id"/><item name="HgeneralInfo" type="id"/><item name="Hsafety" type="id"/><item name="Hcomfort" type="id"/><item name="emergency_bottom" type="id"/><item name="emergency_foot" type="id"/><item name="foot_banner" type="id"/><item name="head_banner" type="id"/><item name="header1" type="id"/><item name="header2" type="id"/></resources>

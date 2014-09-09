@@ -1,0 +1,105 @@
+<xml>
+<General>
+	<Item> 
+		<Title>Identification</Title>
+		<Text>Identification</Text>
+		<Image>picture1</Image>
+		<Item>
+			<Title>What is you name ?</Title>
+			<Text>What is you name ?</Text>
+			<Image>picture2</Image>
+		</Item>
+		<Item>
+			<Title>Hello, How are you ?</Title>
+			<Text>Hello, How are you ?</Text>
+			<Image>picture3</Image>
+		</Item>
+	</Item>
+	<Item> 
+		<Title>ToTheDriver</Title>
+		<Text>To The Driver</Text>
+		<Image>picture4</Image>
+	</Item>
+	<Item> 
+		<Title>Feeling</Title>
+		<Text>Feeling</Text>
+		<Image>picture5</Image>
+		<Item> 
+			<Title>sick</Title>
+			<Text>I feel sick today, Please watch out for me </Text>
+			<Image>picture5</Image>
+		</Item>
+		<Item> 
+			<Title>dizzy</Title>
+			<Text>I feel dizzy,  Please watch out for me </Text>
+			<Image>picture5</Image>
+		</Item>
+
+		<Item> 
+			<Title>mauseated</Title>
+			<Text>I feel nauseated</Text>
+			<Image>picture5</Image>
+		</Item>
+
+		<Item> 
+			<Title>scared</Title>
+			<Text>I feel scared </Text>
+			<Image>picture5</Image>
+		</Item>
+
+		<Item> 
+			<Title>uncomfortable</Title>
+			<Text>I feel uncomfortable</Text>
+			<Image>picture5</Image>
+		</Item>
+		<Item> 
+			<Title>bathroom</Title>
+			<Text>I need to go to bathroom </Text>
+			<Image>picture5</Image>
+		</Item>
+	</Item>
+</General>
+<Trip>
+	<Item> 
+		<Title>Fare</Title>
+		<Text>Fare</Text>
+		<Image>picture15</Image>
+	</Item>
+	<Item> 
+		<Title>Wrong bus</Title>
+		<Text>Wrong bus</Text>
+		<Image>picture16</Image>
+	</Item>
+</Trip>
+<Safety>
+	<Item> 
+		<Title>wheel chair</Title>
+		<Text>wheel chair</Text>
+		<Image>picture15</Image>
+	</Item>
+	<Item> 
+		<Title>seat belt</Title>
+		<Text>seat belt</Text>
+		<Image>picture16</Image>
+	</Item>
+</Safety>
+<Comfort>
+	<Item> 
+		<Title>seat</Title>
+		<Text>seat</Text>
+		<Image>picture15</Image>
+	</Item>
+	<Item> 
+		<Title>stand</Title>
+		<Text>stand</Text>
+		<Image>picture16</Image>
+	</Item>
+</Comfort>
+<Emergency>
+	<Item> 
+		<Title>help</Title>
+		<Text>help</Text>
+		<Image>picture15</Image>
+	</Item>
+</Emergency>
+</xml>
