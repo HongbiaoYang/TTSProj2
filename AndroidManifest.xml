@@ -4,9 +4,9 @@
           android:versionCode="1"
           android:versionName="1.0">
     <uses-sdk android:minSdkVersion="1"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
 
-    <application >
+    <application
+            android:icon="@drawable/icon_name" android:label="Bus Helper">
         <activity android:name=".Vision"
                          android:label="@string/app_name"
                          android:screenOrientation="reversePortrait"
@@ -40,6 +40,7 @@
             </intent-filter>
 
          </activity>
+        <activity android:name=".emergencyActivity"/>
 
     </application>
 </manifest>

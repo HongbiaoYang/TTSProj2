@@ -45,13 +45,20 @@ public class Main extends Activity implements OnInitListener {
 
         if (MyProperties.getInstance().traveling == null) {
             MyProperties.getInstance().traveling = new DisableType();
-            loadXMLResourceParser(MyProperties.getInstance().traveling, R.xml.traveling);
+            loadXMLResourceParser(MyProperties.getInstance().traveling, R.xml.travelling);
         }
 
         if (MyProperties.getInstance().gettingoff == null) {
             MyProperties.getInstance().gettingoff = new DisableType();
             loadXMLResourceParser(MyProperties.getInstance().gettingoff, R.xml.gettingoff);
         }
+
+        if (MyProperties.getInstance().emergency == null) {
+            MyProperties.getInstance().emergency = new DisableType();
+            loadXMLResourceParser(MyProperties.getInstance().emergency, R.xml.emergency);
+        }
+
+
 
         aging = (Button)findViewById(R.id.aging);
         hearing = (Button)findViewById(R.id.hearing);
@@ -80,6 +87,7 @@ public class Main extends Activity implements OnInitListener {
                 } else if (i == 2) {
                     i = 0;
                     speakOut("Vision");
+                    MyProperties.getInstance().titleStack.push("Vision");
                     Intent intent = new Intent();
                     intent.setClass(Main.this, Vision.class);
                     startActivity(intent);
@@ -107,6 +115,7 @@ public class Main extends Activity implements OnInitListener {
                 } else if (i == 2) {
                     i = 0;
                     speakOut("hearing");
+                    MyProperties.getInstance().titleStack.push("Hearing");
                     Intent intent = new Intent();
                     intent.setClass(Main.this, HearingActivity.class);
                     startActivity(intent);
@@ -135,7 +144,7 @@ public class Main extends Activity implements OnInitListener {
                     speakOut("emergency");
                     Intent intent = new Intent();
                     intent.putExtra("Type", "emergency");
-                    intent.setClass(Main.this, gInfoActivity.class);
+                    intent.setClass(Main.this, emergencyActivity.class);
                     startActivity(intent);
                     // close current activity to avoid multiple activities existing
                     Main.this.finish();

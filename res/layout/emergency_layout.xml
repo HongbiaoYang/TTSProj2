@@ -6,8 +6,12 @@
 
     <include layout="@layout/head_banner" />
 
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0dp"
-                  android:layout_weight="0.02" android:layout_gravity="center_horizontal" android:background="#000000"
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="0.02"
+                  android:layout_gravity="center_horizontal"
+                  android:background="#000000"
                   android:id="@+id/linearLayout"/>
 
     <include layout="@layout/title_banner" />
@@ -17,7 +21,7 @@
                   android:layout_height="0dp"
                   android:layout_weight="0.02"
                   android:background="#000000"
-                  />
+            />
 
     <RelativeLayout
             android:orientation="horizontal"
@@ -40,7 +44,7 @@
                   android:background="#ff000000"
                   android:id="@+id/linearLayout"/>
 
-   <include layout="@layout/foot_banner" />
+    <include layout="@layout/foot_blank" />
 
 </LinearLayout>
 

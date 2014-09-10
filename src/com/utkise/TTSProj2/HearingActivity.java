@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import org.w3c.dom.Text;
 
 import java.util.Locale;
 
@@ -18,8 +20,9 @@ import java.util.Locale;
  */
 public class HearingActivity extends Activity implements OnInitListener {
     private TextToSpeech tts;
-    private Button boarding, gettingoff, traveling;
-    private ImageView goBack, emergency;
+    private Button boarding, gettingoff, traveling, emergency;
+    private ImageView goBack;
+    private TextView title;
     private int i;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -31,11 +34,38 @@ public class HearingActivity extends Activity implements OnInitListener {
         boarding = (Button)findViewById(R.id.Hboarding);
         gettingoff = (Button)findViewById(R.id.Hseating);
         traveling = (Button)findViewById(R.id.Htraveling);
-        emergency = (ImageView)findViewById(R.id.footer2);
+        emergency = (Button)findViewById(R.id.Hemergency);
         goBack = (ImageView)findViewById(R.id.header1);
+        title = (TextView)findViewById(R.id.select);
 
-        gettingoff.setOnClickListener(new doubleTapListenner("seating"));
-        emergency.setOnClickListener(new doubleTapListenner("emergency"));
+        title.setText(MyProperties.getInstance().getTitle());
+
+        emergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                i++;
+                Handler handler = new Handler();
+                Runnable run = new Runnable() {
+                    @Override
+                    public void run() {
+                        i = 0;
+                    }
+                };
+
+                if (i == 1) {
+                    handler.postDelayed(run, 250);
+                } else if (i == 2) {
+                    i = 0;
+                    speakOut("emergency");
+                    Intent intent = new Intent();
+                    intent.putExtra("Type", "emergency");
+                    intent.setClass(HearingActivity.this, emergencyActivity.class);
+                    startActivity(intent);
+                    // close current activity to avoid multiple activities existing
+                    HearingActivity.this.finish();
+                }
+            }
+        });
 
         boarding.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +84,8 @@ public class HearingActivity extends Activity implements OnInitListener {
                 } else if (i == 2) {
                     i = 0;
                     speakOut("boarding");
+                    MyProperties.getInstance().titleStack.push("Boarding");
+
                     Intent intent = new Intent();
                     MyProperties.getInstance().currentType = MyProperties.getInstance().boarding;
                     intent.setClass(HearingActivity.this, boardingActivity.class);
@@ -82,6 +114,8 @@ public class HearingActivity extends Activity implements OnInitListener {
                 } else if (i == 2) {
                     i = 0;
                     speakOut("traveling");
+                    MyProperties.getInstance().titleStack.push("Travelling");
+
                     Intent intent = new Intent();
                     intent.setClass(HearingActivity.this, boardingActivity.class);
                     MyProperties.getInstance().currentType = MyProperties.getInstance().traveling;
@@ -110,6 +144,8 @@ public class HearingActivity extends Activity implements OnInitListener {
                 } else if (i == 2) {
                     i = 0;
                     speakOut("getting off");
+                    MyProperties.getInstance().titleStack.push("Getting Off");
+
                     Intent intent = new Intent();
                     intent.setClass(HearingActivity.this, boardingActivity.class);
                     MyProperties.getInstance().currentType = MyProperties.getInstance().gettingoff;
@@ -121,9 +157,41 @@ public class HearingActivity extends Activity implements OnInitListener {
             }
         });
 
+
+        emergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                i++;
+                Handler handler = new Handler();
+                Runnable run = new Runnable() {
+                    @Override
+                    public void run() {
+                        i = 0;
+                    }
+                };
+
+                if (i == 1) {
+                    handler.postDelayed(run, 250);
+                } else if (i == 2) {
+                    i = 0;
+                    speakOut("emergency");
+                    Intent intent = new Intent();
+                    intent.putExtra("Type", "emergency");
+                    intent.setClass(HearingActivity.this, emergencyActivity.class);
+                    startActivity(intent);
+                    // close current activity to avoid multiple activities existing
+                    HearingActivity.this.finish();
+                }
+
+            }
+        });
+
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                MyProperties.getInstance().titleStack.pop();
+
                 Intent intent = new Intent();
                 intent.setClass(HearingActivity.this, Main.class);
                 startActivity(intent);

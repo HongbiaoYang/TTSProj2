@@ -1,104 +1,107 @@
 <xml>
-    <General>
-        <Item>
-            <Title>Destination</Title>
-            <Text>My Destination</Text>
-            <Image>picture1</Image>
-            <Item>
-                <Title>I am going to job</Title>
-                <Text>I am going to job</Text>
-                <Image>picture3</Image>
-            </Item>
-        </Item>
-        <Item>
-            <Title>Another passenger</Title>
-            <Text>Another passenger</Text>
-            <Image>picture4</Image>
-            <Item>
-                <Title>Don't play your seat belt</Title>
-                <Text>Don't play your seat belt</Text>
-                <Image>picture4</Image>
-            </Item>
-            <Item>
-                <Title>piss off</Title>
-                <Text>You are screwing the wrong people</Text>
-                <Image>picture4</Image>
-            </Item>
-        </Item>
-        <Item>
-            <Title>Feeling</Title>
-            <Text>Feeling</Text>
-            <Image>picture5</Image>
-            <Item>
-                <Title>sick</Title>
-                <Text>I feel sick today, Please watch out for me </Text>
-                <Image>picture5</Image>
-            </Item>
-            <Item>
-                <Title>mauseated</Title>
-                <Text>I feel nauseated</Text>
-                <Image>picture5</Image>
-            </Item>
-
-            <Item>
-                <Title>scared</Title>
-                <Text>I feel scared </Text>
-                <Image>picture5</Image>
-            </Item>
-
-            <Item>
-                <Title>uncomfortable</Title>
-                <Text>I feel uncomfortable</Text>
-                <Image>picture5</Image>
-            </Item>
-            <Item>
-                <Title>bathroom</Title>
-                <Text>I need to go to bathroom </Text>
-                <Image>picture5</Image>
-            </Item>
-        </Item>
-    </General>
-    <Trip>
-        <Item>
-            <Title>Fare</Title>
-            <Text>Fare</Text>
-            <Image>picture15</Image>
-        </Item>
-        <Item>
-            <Title>Wrong bus</Title>
-            <Text>Wrong bus</Text>
-            <Image>picture16</Image>
-        </Item>
-    </Trip>
-    <Safety>
-        <Item>
-            <Title>wheel chair</Title>
-            <Text>wheel chair</Text>
-            <Image>picture15</Image>
-        </Item>
-        <Item>
-            <Title>seat belt</Title>
-            <Text>seat belt</Text>
-            <Image>picture16</Image>
-        </Item>
-    </Safety>
-    <Comfort>
-        <Item>
-            <Title>seat</Title>
-            <Text>seat</Text>
-            <Image>picture15</Image>
-        </Item>
-        <Item>
-            <Title>stand</Title>
-            <Text>stand</Text>
-            <Image>picture16</Image>
-        </Item>
-    </Comfort>
-    <Emergency>
-        <Item>
-            <Title>help</Title>
-            <Text>help</Text>
-            <Image>picture15</Image>
-        </Item>
-    </Emergency>
+<General>	
+	<Item>	
+		<Title>STOP Pull chord or Button</Title>
+		<Text>STOP Pull chord or Button</Text>
+		<Image>picture49</Image>
+		<Item> 
+			<Title>Where is the STOP Pull chord or Button? </Title>
+			<Text>Where is the STOP Pull chord or Button?</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>This STOP Pull chord or Button is not working. </Title>
+			<Text>This STOP Pull chord or Button is not working.</Text>
+			<Image>picture0</Image>
+		</Item> 
+   		<Item> 
+			<Title>This STOP Pull chord or Button is not working. </Title>
+			<Text>This STOP Pull chord or Button is not working.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>I cannot reach the STOP Pull chord or button, please help. </Title>
+			<Text>I cannot reach the STOP Pull chord or button, please help.</Text>
+			<Image>picture0</Image>
+		</Item>
+	</Item>
+</General>
+<Trip>	
+	<Item> 
+		<Title>Destination</Title>
+		<Text>Destination</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>Am I getting dropped off next?</Title>
+			<Text>Am I getting dropped off next?</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>Are we approaching the stop?</Title>
+			<Text>Are we approaching the stop?</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>How far are we from the stop?</Title>
+			<Text>How far are we from the stop?</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>This is not the stop I want to get down.</Title>
+			<Text>This is not the stop I want to get down.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>You missed my house, please turn around.</Title>
+			<Text>You missed my house, please turn around.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>I cannot recognize the road.</Title>
+			<Text>I cannot recognize the road.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>I got dropped in a wrong location. </Title>
+			<Text>I got dropped in a wrong location.</Text>
+			<Image>picture0</Image>
+		</Item>
+	</Item>
+</Trip>
+<Safety>
+	<Item>
+		<Title>Safety</Title>
+		<Text>Safety</Text>
+		<Image>picture0</Image>
+	</Item>
+</Safety>
+<Comfort>
+	<Item>
+		<Title>Comfort</Title>
+		<Text>Comfort</Text>
+		<Image>picture0</Image>
+	</Item>
+</Comfort>
+<Emergency>
+	<Item>
+		<Title>Emergency</Title>
+		<Text>Emergency</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>I need help</Title>
+			<Text>I need help</Text>
+			<Image>picture48</Image>
+		</Item>
+		<Item> 
+			<Title>Another passenger in the bus need help</Title>
+			<Text>Another passenger in the bus need help</Text>
+			<Image>picture52</Image>
+		</Item>
+		<Item> 
+			<Title>Please call 911</Title>
+			<Text>Please call 911</Text>
+			<Image>picture51</Image>
+		</Item>
+	</Item>
+</Emergency>
 </xml>

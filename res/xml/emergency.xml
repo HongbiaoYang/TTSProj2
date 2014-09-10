@@ -1,0 +1,24 @@
+<xml>
+<Emergency>
+	<Item>
+		<Title>Emergency</Title>
+		<Text>Emergency</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>I need help</Title>
+			<Text>I need help</Text>
+			<Image>picture48</Image>
+		</Item>
+		<Item> 
+			<Title>Another passenger in the bus need help</Title>
+			<Text>Another passenger in the bus need help</Text>
+			<Image>picture52</Image>
+		</Item>
+		<Item> 
+			<Title>Please call 911</Title>
+			<Text>Please call 911</Text>
+			<Image>picture51</Image>
+		</Item>
+	</Item>
+</Emergency>
+</xml>

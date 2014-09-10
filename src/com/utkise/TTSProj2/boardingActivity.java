@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Locale;
 
@@ -20,6 +21,7 @@ public class boardingActivity extends Activity implements OnInitListener {
     private TextToSpeech tts;
     private Button generalInfo, tripInfo, safety, comfort;
     private ImageView emergency, goback;
+    private TextView title;
     private int i;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,9 @@ public class boardingActivity extends Activity implements OnInitListener {
         comfort = (Button)findViewById(R.id.Hcomfort);
         emergency = (ImageView)findViewById(R.id.footer2);
         goback = (ImageView)findViewById(R.id.header1);
+        title = (TextView) findViewById(R.id.select);
+
+        title.setText(MyProperties.getInstance().getTitle());
 
         generalInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +57,8 @@ public class boardingActivity extends Activity implements OnInitListener {
                 } else if (i == 2) {
                     i = 0;
                     speakOut("general information");
+                    MyProperties.getInstance().titleStack.push("General Information");
+
                     Intent intent = new Intent();
                     intent.putExtra("Type", "general");
                     intent.setClass(boardingActivity.this, gInfoActivity.class);
@@ -79,6 +86,8 @@ public class boardingActivity extends Activity implements OnInitListener {
                 } else if (i == 2) {
                     i = 0;
                     speakOut("trip information");
+                    MyProperties.getInstance().titleStack.push("Trip Information");
+
                     Intent intent = new Intent();
                     intent.putExtra("Type", "trip");
                     intent.setClass(boardingActivity.this, gInfoActivity.class);
@@ -106,6 +115,8 @@ public class boardingActivity extends Activity implements OnInitListener {
                 } else if (i == 2) {
                     i = 0;
                     speakOut("safety");
+                    MyProperties.getInstance().titleStack.push("Safety");
+
                     Intent intent = new Intent();
                     intent.putExtra("Type", "safety");
                     intent.setClass(boardingActivity.this, gInfoActivity.class);
@@ -133,6 +144,8 @@ public class boardingActivity extends Activity implements OnInitListener {
                 } else if (i == 2) {
                     i = 0;
                     speakOut("comfort");
+                    MyProperties.getInstance().titleStack.push("Comfort");
+
                     Intent intent = new Intent();
                     intent.putExtra("Type", "comfort");
                     intent.setClass(boardingActivity.this, gInfoActivity.class);
@@ -162,7 +175,7 @@ public class boardingActivity extends Activity implements OnInitListener {
                     speakOut("emergency");
                     Intent intent = new Intent();
                     intent.putExtra("Type", "emergency");
-                    intent.setClass(boardingActivity.this, gInfoActivity.class);
+                    intent.setClass(boardingActivity.this, emergencyActivity.class);
                     startActivity(intent);
                     // close current activity to avoid multiple activities existing
                     boardingActivity.this.finish();
@@ -173,6 +186,9 @@ public class boardingActivity extends Activity implements OnInitListener {
         goback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                MyProperties.getInstance().titleStack.pop();
+
                 Intent intent = new Intent();
                 intent.setClass(boardingActivity.this, HearingActivity.class);
                 startActivity(intent);

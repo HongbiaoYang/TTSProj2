@@ -8,6 +8,9 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.w3c.dom.Text;
 
 import java.util.Locale;
 
@@ -15,6 +18,9 @@ public class Vision extends Activity implements OnInitListener{
     private Button left, right, ok;
     private QueryList queryList;
     private int count = 0;
+    private ImageView goBack;
+    private TextView title;
+
 
     /**
      * Called when the activity is first created.
@@ -27,11 +33,29 @@ public class Vision extends Activity implements OnInitListener{
         left  = (Button)findViewById(R.id.Left);
         right = (Button)findViewById(R.id.Right);
         ok    = (Button)findViewById(R.id.Ok);
+        goBack = (ImageView)findViewById(R.id.header1);
+        title  = (TextView)findViewById(R.id.select);
 
         queryList = new QueryList();
         queryList.AddItem(new QueryItem(1, "Boarding", "How can I board this bus", getResources().getDrawable(R.drawable.boarding)));
         queryList.AddItem(new QueryItem(2, "Travelling" , "I want Traveling", getResources().getDrawable(R.drawable.travelling)));
         queryList.AddItem(new QueryItem(3, "Getting off", "I want to get off", getResources().getDrawable(R.drawable.gettingoff)));
+
+
+        title.setText(MyProperties.getInstance().getTitle());
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MyProperties.getInstance().titleStack.pop();
+
+                Intent intent = new Intent();
+                intent.setClass(Vision.this, Main.class);
+                startActivity(intent);
+                // close current activity to avoid multiple activities existing
+                Vision.this.finish();
+            }
+        });
 
 
         // default

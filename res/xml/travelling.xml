@@ -1,0 +1,203 @@
+<xml>
+<General>	
+	<Item>	
+		<Title>Destination</Title>
+		<Text>Destination</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>I am going home.</Title>
+			<Text>I am going home. </Text>
+			<Image>picture44</Image>
+		</Item>	
+		<Item> 
+			<Title>I am going to job.</Title>
+			<Text>I am going to job. </Text>
+			<Image>picture42</Image>
+		</Item>	
+		<Item> 
+			<Title>I need to go to hospital</Title>
+			<Text>I need to go to hospital </Text>
+			<Image>picture43</Image>
+		</Item>	
+		<Item> 
+			<Title>I need to go to the Mall</Title>
+			<Text>I need to go to the Mall </Text>
+			<Image>picture46</Image>
+		</Item>	
+		<Item> 
+			<Title>I need to go to dialysis center </Title>
+			<Text>I need to go to dialysis center  </Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>I need to go to church </Title>
+			<Text>I need to go to church</Text>
+			<Image>picture47</Image>
+		</Item>	
+		<Item> 
+			<Title>I have a doctor's appointment </Title>
+			<Text>I have a doctor's appointment</Text>
+			<Image>picture45</Image>
+		</Item>	
+	</Item>
+	<Item>	
+		<Title>Another Passenger</Title>
+		<Text>Another Passenger</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>Can you get the driver for me ? </Title>
+			<Text>Can you get the driver for me ?</Text>
+			<Image>picture15</Image>
+		</Item>	
+		<Item> 
+			<Title>Could you please help me? </Title>
+			<Text>Could you please help me?</Text>
+			<Image>picture0</Image>
+		</Item>	
+		<Item> 
+			<Title>Please don't stand till the bus stops? </Title>
+			<Text>Please don't stand till the bus stops?</Text>
+			<Image>picture0</Image>
+		</Item>	
+		<Item> 
+			<Title>Don't unbuckle your seatbelt. </Title>
+			<Text>Don't unbuckle your seatbelt.</Text>
+			<Image>picture0</Image>
+		</Item>		
+	</Item>
+</General>
+<Trip>
+	<Item> 
+		<Title>Location</Title>
+		<Text>Location</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>What is this place? </Title>
+			<Text>what is this place?</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>How do I get there? </Title>
+			<Text>How do I get there?</Text>
+			<Image>picture0</Image>
+		</Item>
+	</Item>
+	<Item> 
+		<Title>Routes</Title>
+		<Text>Routes</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>Where is this place?</Title>
+			<Text>Where is this place?</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>How do I get there?</Title>
+			<Text>How do I get there?</Text>
+			<Image>picture0</Image>
+		</Item>
+	</Item>
+</Trip>
+<Safety>
+	<Item> 
+		<Title>Driver</Title>
+		<Text>Driver</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>Please do not use your cell phone while driving.</Title>
+			<Text>Please do not use your cell phone while driving.</Text>
+			<Image>picture57</Image>
+		</Item>
+		<Item> 
+			<Title>Please go slower.</Title>
+			<Text>Please go slower.</Text>
+			<Image>picture58</Image>
+		</Item>
+		<Item> 
+			<Title>Please do not smoke and come into the bus, I have health issues.</Title>
+			<Text>Please do not smoke and come into the bus, I have health issues.</Text>
+			<Image>picture60</Image>
+		</Item>		
+	</Item>
+</Safety>
+<Comfort>
+	<Item> 
+		<Title>To the Driver</Title>
+		<Text>seat</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>I am afraid of Dogs. Can you please tell the owner?  </Title>
+			<Text>I am afraid of Dogs. Can you please tell the owner?</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>I am allergic to scents.  </Title>
+			<Text>I am allergic to scents.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>Its hot in here, Please increase the AC.</Title>
+			<Text>Its hot in here, Please increase the AC.</Text>
+			<Image>picture1</Image>
+		</Item>
+		<Item> 
+			<Title>Its hot in here, please decrease the heater.</Title>
+			<Text>Its hot in here, please decrease the heater.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>Its hot in here, please turn off the heater.</Title>
+			<Text>Its hot in here, please turn off the heater.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>Its cold in here,please increase the heater.</Title>
+			<Text>Its cold in here,please increase the heater.</Text>
+			<Image>picture2</Image>
+		</Item>
+		
+		<Item> 
+			<Title>Its cold in here, please decrease the AC.</Title>
+			<Text>Its cold in here, please decrease the AC.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>Its cold in here,  please turn off the AC.</Title>
+			<Text>Its cold in here,  please turn off the AC.</Text>
+			<Image>picture3</Image>
+		</Item>
+		<Item> 
+			<Title>Please turn on music.</Title>
+			<Text>Please turn on the music.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>Please turn off music.</Title>
+			<Text>Please turn off the music.</Text>
+			<Image>picture0</Image>
+		</Item>
+	</Item>
+</Comfort>
+<Emergency>
+	<Item>
+		<Title>Emergency</Title>
+		<Text>Emergency</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>I need help</Title>
+			<Text>I need help</Text>
+			<Image>picture48</Image>
+		</Item>
+		<Item> 
+			<Title>Another passenger in the bus need help</Title>
+			<Text>Another passenger in the bus need help</Text>
+			<Image>picture52</Image>
+		</Item>
+		<Item> 
+			<Title>Please call 911</Title>
+			<Text>Please call 911</Text>
+			<Image>picture51</Image>
+		</Item>
+	</Item>
+</Emergency>
+</xml>

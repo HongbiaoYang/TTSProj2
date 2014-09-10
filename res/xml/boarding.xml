@@ -1,105 +1,333 @@
 <xml>
-<General>
+<General>	
 	<Item> 
-		<Title>Identification</Title>
-		<Text>Identification</Text>
-		<Image>picture1</Image>
+		<Title>ToTheDriver</Title>
+		<Text>To The Driver</Text>
+		<Image>picture0</Image>
 		<Item>
 			<Title>What is you name ?</Title>
 			<Text>What is you name ?</Text>
-			<Image>picture2</Image>
+			<Image>picture13</Image>
 		</Item>
 		<Item>
 			<Title>Hello, How are you ?</Title>
 			<Text>Hello, How are you ?</Text>
-			<Image>picture3</Image>
+			<Image>picture0</Image>
 		</Item>
-	</Item>
-	<Item> 
-		<Title>ToTheDriver</Title>
-		<Text>To The Driver</Text>
-		<Image>picture4</Image>
+		<Item>
+			<Title> I cannot understand you </Title>
+			<Text> I cannot understand you </Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item>
+			<Title> I do not speak english</Title>
+			<Text>I do not speak english</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item>
+			<Title> Does this bus go here?</Title>
+			<Text>Does this bus go here?</Text>
+			<Image>picture14</Image>
+		</Item>
 	</Item>
 	<Item> 
 		<Title>Feeling</Title>
 		<Text>Feeling</Text>
-		<Image>picture5</Image>
+		<Image>picture0</Image>
 		<Item> 
-			<Title>sick</Title>
+			<Title>I feel sick today, Please watch out for me</Title>
 			<Text>I feel sick today, Please watch out for me </Text>
-			<Image>picture5</Image>
+			<Image>picture22</Image>
 		</Item>
 		<Item> 
-			<Title>dizzy</Title>
+			<Title>I feel dizzy,  Please watch out for me</Title>
 			<Text>I feel dizzy,  Please watch out for me </Text>
-			<Image>picture5</Image>
+			<Image>picture23</Image>
 		</Item>
 
 		<Item> 
-			<Title>mauseated</Title>
+			<Title>I feel nauseated</Title>
 			<Text>I feel nauseated</Text>
-			<Image>picture5</Image>
+			<Image>picture24</Image>
 		</Item>
-
 		<Item> 
-			<Title>scared</Title>
+			<Title>I feel scared</Title>
 			<Text>I feel scared </Text>
-			<Image>picture5</Image>
+			<Image>picture25</Image>
 		</Item>
-
 		<Item> 
-			<Title>uncomfortable</Title>
+			<Title>I feel uncomfortable</Title>
 			<Text>I feel uncomfortable</Text>
-			<Image>picture5</Image>
+			<Image>picture26</Image>
 		</Item>
 		<Item> 
-			<Title>bathroom</Title>
+			<Title>I need to go to bathroom </Title>
 			<Text>I need to go to bathroom </Text>
-			<Image>picture5</Image>
+			<Image>picture54</Image>
 		</Item>
+	</Item>
+	<Item>	
+		<Title>Things</Title>
+		<Text>Things</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>Where do I keep the bags? </Title>
+			<Text>Where do I keep the bags? </Text>
+			<Image>picture30</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I keep the backpack? </Title>
+			<Text>Where do I keep the backpack? </Text>
+			<Image>picture30</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I keep the walker? </Title>
+			<Text>Where do I keep the walker? </Text>
+			<Image>picture61</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I keep the child stroller? </Title>
+			<Text>Where do I keep the child stroller? </Text>
+			<Image>picture29</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I keep the bike? </Title>
+			<Text>Where do I keep the bike ? </Text>
+			<Image>picture33</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I keep my groceries bags? </Title>
+			<Text>Where do I keep groceries bags? </Text>
+			<Image>picture28</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I hold my service animal? </Title>
+			<Text>Where do I hold my service animal? </Text>
+			<Image>picture27</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I keep my lunch box? </Title>
+			<Text>Where do I keep my lunch box? </Text>
+			<Image>picture63</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I keep the cart? </Title>
+			<Text>Where do I keep the cart? </Text>
+			<Image>picture62</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I keep the umbrella? </Title>
+			<Text>Where do I keep the umbrella? </Text>
+			<Image>picture34</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I throw the trash? </Title>
+			<Text>Where do I throw the trash? </Text>
+			<Image>picture31</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I keep my oxygen tank? </Title>
+			<Text>Where do I keep my oxygen tank? </Text>
+			<Image>picture32</Image>
+		</Item>	
+	</Item>
+	<Item>	
+		<Title>Asking Assistance</Title>
+		<Text>Asking Assistance</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>Can you lower the lift for me? </Title>
+			<Text>Can you lower the lift for me? </Text>
+			<Image>picture35</Image>
+		</Item>	
+		<Item> 
+			<Title>Can you hold my arm or hand to get on the steps? </Title>
+			<Text>Can you hold my arm or hand to get on the steps? </Text>
+			<Image>picture39</Image>
+		</Item>	
+		<Item> 
+			<Title>Will you put out the footstool for me? </Title>
+			<Text>Will you put out the footstool for me? </Text>
+			<Image>picture37</Image>
+		</Item>	
+		<Item> 
+			<Title>Will you remove the personal belongings from my wheelchair?</Title>
+			<Text>Will you remove the personal belongings from my wheelchair?</Text>
+			<Image>picture0</Image>
+		</Item>	
+		<Item> 
+			<Title>Can you transfer from my wheelchair to a seat?</Title>
+			<Text>Can you transfer from my wheelchair to a seat? </Text>
+			<Image>picture36</Image>
+		</Item>
+		<Item> 
+			<Title>Will you nudge me from behind for directional support while I am boarding bus?</Title>
+			<Text>Will you nudge me from behind for directional support while I am boarding bus? </Text>
+			<Image>picture38</Image>
+		</Item>
+		<Item> 
+			<Title>I don't require any assitance boarding the bus?</Title>
+			<Text>I don't require any assitance boarding the bus? </Text>
+			<Image>picture0</Image>
+		</Item>			
+	</Item>
+	<Item>	
+		<Title>Weather</Title>
+		<Text>Weather</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>Sunlight blinds me, can please cover the the window? </Title>
+			<Text>Sunlight blinds me, can please cover the the window? </Text>
+			<Image>picture0</Image>
+		</Item>	
+		<Item> 
+			<Title>There is a puddle in front of the bus, please help. </Title>
+			<Text>There is a puddle in front of the bus, please help. </Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>Stairs are slippery, please put a cloth on them. </Title>
+			<Text>Stairs are slippery, please put a cloth on them. </Text>
+			<Image>picture40</Image>
+		</Item>	
+		<Item> 
+			<Title>The seat is wet, I need to move. </Title>
+			<Text>The seat is wet, I need to move. </Text>
+			<Image>picture41</Image>
+		</Item>	
+		<Item> 
+			<Title>There are wetspots on the bus and somebody can slip. </Title>
+			<Text>There are wetspots on the bus and somebody can slip. </Text>
+			<Image>picture0</Image>
+		</Item>	
+		<Item> 
+			<Title>There is water dripping from the top of the bus.</Title>
+			<Text>There is water dripping from the top of the bus. </Text>
+			<Image>picture0</Image>
+		</Item>	
 	</Item>
 </General>
 <Trip>
 	<Item> 
 		<Title>Fare</Title>
 		<Text>Fare</Text>
-		<Image>picture15</Image>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>How do I purchase the ticket? </Title>
+			<Text>How do I purchase the ticket?</Text>
+			<Image>picture7</Image>
+		</Item>
+		<Item> 
+			<Title>How much is the fare? </Title>
+			<Text>How much is the fare?</Text>
+			<Image>picture10</Image>
+		</Item>
+		<Item> 
+			<Title>Where do I put the money? </Title>
+			<Text>Where do I put the money?</Text>
+			<Image>picture11</Image>
+		</Item>
+		<Item> 
+			<Title>This ticket system is not working. </Title>
+			<Text>This ticket system is not working.</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>Can you I use the change card again? </Title>
+			<Text>Can you I use the change card again?</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>I do not have change/money. </Title>
+			<Text>I do not have change/money.</Text>
+			<Image>picture0</Image>
+		</Item>
 	</Item>
 	<Item> 
 		<Title>Wrong bus</Title>
 		<Text>Wrong bus</Text>
-		<Image>picture16</Image>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>Where does this go? </Title>
+			<Text>Where does this go?</Text>
+			<Image>picture12</Image>
+		</Item>
+		<Item> 
+			<Title>Am I in a wrong bus? </Title>
+			<Text>Am I in a wrong bus ?</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>How do I go there? </Title>
+			<Text>AHow do I go there?</Text>
+			<Image>picture0</Image>
+		</Item>
 	</Item>
 </Trip>
 <Safety>
 	<Item> 
-		<Title>wheel chair</Title>
-		<Text>wheel chair</Text>
-		<Image>picture15</Image>
+		<Title>Wheelchair </Title>
+		<Text>Wheelchair </Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>The tie-down is not working</Title>
+			<Text>The tie-down is not working</Text>
+			<Image>picture0</Image>
+		</Item>
+		<Item> 
+			<Title>The tie-down is not fixed properly</Title>
+			<Text>The tie-down is not fixed properly</Text>
+			<Image>picture0</Image>
+		</Item>
 	</Item>
 	<Item> 
 		<Title>seat belt</Title>
 		<Text>seat belt</Text>
-		<Image>picture16</Image>
-	</Item>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>Can you buckle my seatbelt?</Title>
+			<Text>Can you buckle my seatbelt?</Text>
+			<Image>picture55</Image>
+		</Item>
+		<Item> 
+			<Title>The seatbelt is not working</Title>
+			<Text>The seatbelt is not working</Text>
+			<Image>picture56</Image>
+		</Item>
+	</Item>	
 </Safety>
 <Comfort>
 	<Item> 
-		<Title>seat</Title>
-		<Text>seat</Text>
-		<Image>picture15</Image>
-	</Item>
-	<Item> 
-		<Title>stand</Title>
-		<Text>stand</Text>
-		<Image>picture16</Image>
+		<Title>Seat</Title>
+		<Text>Seat</Text>
+		<Image>picture4</Image>
+		<Item> 
+			<Title>Please help me to change the seat. </Title>
+			<Text>Please help me to change the seat.</Text>
+			<Image>picture5</Image>
+		</Item>
 	</Item>
 </Comfort>
 <Emergency>
-	<Item> 
-		<Title>help</Title>
-		<Text>help</Text>
-		<Image>picture15</Image>
+	<Item>
+		<Title>Emergency</Title>
+		<Text>Emergency</Text>
+		<Image>picture0</Image>
+		<Item> 
+			<Title>I need help</Title>
+			<Text>I need help</Text>
+			<Image>picture48</Image>
+		</Item>
+		<Item> 
+			<Title>Another passenger in the bus need help</Title>
+			<Text>Another passenger in the bus need help</Text>
+			<Image>picture52</Image>
+		</Item>
+		<Item> 
+			<Title>Please call 911</Title>
+			<Text>Please call 911</Text>
+			<Image>picture51</Image>
+		</Item>
 	</Item>
 </Emergency>
 </xml>

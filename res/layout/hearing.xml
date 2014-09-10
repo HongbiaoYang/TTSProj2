@@ -13,19 +13,7 @@
                   android:layout_gravity="center_horizontal"
                   android:background="#000000"
                   android:id="@+id/linearLayout"/>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp" android:layout_weight="1" android:layout_gravity="center_horizontal"
-            android:background="#ffffff">
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:gravity="center"
-                android:text="@string/aList"
-                android:id="@id/select" android:textColor="#0d00ff"/>
-    </LinearLayout>
+   <include layout="@layout/title_banner"  />
 
     <LinearLayout
             android:orientation="horizontal"
@@ -62,7 +50,7 @@
                         android:id="@+id/Hseating"
                         android:layout_column="1"
                         android:layout_weight="1"
-                        android:background="@drawable/seating"
+                        android:background="@drawable/gettingoff"
                         android:layout_margin="1dp"/>
             </TableRow>
             <TableRow
@@ -93,6 +81,6 @@
                   android:layout_weight="0.02" android:layout_gravity="center_horizontal" android:background="#000000"
                   android:id="@+id/linearLayout2"/>
 
-    <include layout="@layout/foot_banner" />
+    <include layout="@layout/foot_blank" />
 </LinearLayout>
 
