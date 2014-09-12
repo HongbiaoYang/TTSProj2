@@ -1,33 +1,21 @@
 package com.utkise.TTSProj2;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.XmlResourceParser;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.*;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Stack;
 
 /**
  * Created by Bill on 8/28/14.
  */
-public class gInfoActivity extends Activity implements OnInitListener {
+public class activity_emergency extends Activity implements OnInitListener {
     private TextToSpeech tts;
     private int i;
     private ImageView lastLevelBtn;
@@ -45,29 +33,24 @@ public class gInfoActivity extends Activity implements OnInitListener {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ginfolayout);
+        setContentView(R.layout.layout_emergency);
         MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
         tts = MyProperties.getInstance().gtts;
         levelStack = new Stack<List<ItemStruct>>();
 
         lastLevelBtn = (ImageView) findViewById(R.id.header1);
-        emergency = (ImageView) findViewById(R.id.footer2);
-        title = (TextView) findViewById(R.id.select);
+        title = (TextView) findViewById(R.id.header2);
 
-        title.setText(MyProperties.getInstance().getTitle());
+        title.setText("Emergency");
 
         lastLevelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (levelStack.isEmpty()) {
-                    MyProperties.getInstance().titleStack.pop();
+                    MyProperties.getInstance().titleStack.clear();
 
-                    Intent intent = new Intent();
-                    intent.setClass(gInfoActivity.this, boardingActivity.class);
-                    startActivity(intent);
-                    // close current activity to avoid multiple activities existing
-                    gInfoActivity.this.finish();
+                    finish();
                 } else {
                     thisLevel = levelStack.pop();
                     updateList(thisLevel);
@@ -75,37 +58,10 @@ public class gInfoActivity extends Activity implements OnInitListener {
             }
         });
 
-        emergency.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                i++;
-                Handler handler = new Handler();
-                Runnable run = new Runnable() {
-                    @Override
-                    public void run() {
-                        i = 0;
-                    }
-                };
-
-                if (i == 1) {
-                    handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
-                    speakOut("emergency");
-                    Intent intent = new Intent();
-                    intent.putExtra("Type", "emergency");
-                    intent.setClass(gInfoActivity.this, emergencyActivity.class);
-                    startActivity(intent);
-                    // close current activity to avoid multiple activities existing
-                    gInfoActivity.this.finish();
-                }
-
-            }
-        });
 
         String type = getIntent().getStringExtra("Type");
 
-        thisLevel = MyProperties.getInstance().currentType.getInformation(type);
+        thisLevel = MyProperties.getInstance().emergency.getInformation(type);
 
         updateList(thisLevel);
     }
@@ -117,7 +73,7 @@ public class gInfoActivity extends Activity implements OnInitListener {
         imageId = lf.produceImageArray();
 
         adapter = new
-                CustomList(gInfoActivity.this, web, imageId);
+                CustomList(activity_emergency.this, web, imageId);
 
         list = (ListView)findViewById(R.id.list);
         list.setAdapter(adapter);
@@ -161,7 +117,7 @@ public class gInfoActivity extends Activity implements OnInitListener {
 
     @Override
     public void onBackPressed() {
-        moveTaskToBack(true);
+        finish();
     }
 
 

@@ -1,27 +1,27 @@
 <xml>
 <General>	
 	<Item>	
-		<Title>STOP Pull chord or Button</Title>
-		<Text>STOP Pull chord or Button</Text>
+		<Title>STOP pull chord or button</Title>
+		<Text>STOP pull chord or button</Text>
 		<Image>picture49</Image>
 		<Item> 
-			<Title>Where is the STOP Pull chord or Button? </Title>
-			<Text>Where is the STOP Pull chord or Button?</Text>
+			<Title>Where is the STOP pull chord or button? </Title>
+			<Text>Where is the STOP pull chord or button?</Text>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>This STOP Pull chord or Button is not working. </Title>
-			<Text>This STOP Pull chord or Button is not working.</Text>
+			<Title>This STOP pull chord or button is not working. </Title>
+			<Text>This STOP pull chord or button is not working.</Text>
 			<Image>picture0</Image>
 		</Item> 
    		<Item> 
-			<Title>This STOP Pull chord or Button is not working. </Title>
-			<Text>This STOP Pull chord or Button is not working.</Text>
+			<Title>This STOP pull chord or button is not working. </Title>
+			<Text>This STOP pull chord or button is not working.</Text>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>I cannot reach the STOP Pull chord or button, please help. </Title>
-			<Text>I cannot reach the STOP Pull chord or button, please help.</Text>
+			<Title>I cannot reach the STOP pull chord or button, please help. </Title>
+			<Text>I cannot reach the STOP pull chord or button, please help.</Text>
 			<Image>picture0</Image>
 		</Item>
 	</Item>
@@ -69,39 +69,7 @@
 	</Item>
 </Trip>
 <Safety>
-	<Item>
-		<Title>Safety</Title>
-		<Text>Safety</Text>
-		<Image>picture0</Image>
-	</Item>
 </Safety>
 <Comfort>
-	<Item>
-		<Title>Comfort</Title>
-		<Text>Comfort</Text>
-		<Image>picture0</Image>
-	</Item>
 </Comfort>
-<Emergency>
-	<Item>
-		<Title>Emergency</Title>
-		<Text>Emergency</Text>
-		<Image>picture0</Image>
-		<Item> 
-			<Title>I need help</Title>
-			<Text>I need help</Text>
-			<Image>picture48</Image>
-		</Item>
-		<Item> 
-			<Title>Another passenger in the bus need help</Title>
-			<Text>Another passenger in the bus need help</Text>
-			<Image>picture52</Image>
-		</Item>
-		<Item> 
-			<Title>Please call 911</Title>
-			<Text>Please call 911</Text>
-			<Image>picture51</Image>
-		</Item>
-	</Item>
-</Emergency>
 </xml>

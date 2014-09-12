@@ -15,7 +15,7 @@ public class MyProperties {
     public LANG Language;
     public TextToSpeech gtts;
     public Vibrator vb;
-    public DisableType boarding, traveling, gettingoff, emergency, currentType;
+    public DisableType boarding, traveling, gettingoff, emergency, response, currentType;
     public Stack<String> titleStack;
 
     public void speakout(String text) {
@@ -28,7 +28,7 @@ public class MyProperties {
         for (i = 0; i < titleStack.size(); i ++) {
             title += titleStack.get(i);
             if (i < titleStack.size() - 1) {
-                title += "->";
+                title += " > ";
             }
         }
 
@@ -41,6 +41,7 @@ public class MyProperties {
         traveling = null;
         gettingoff = null;
         emergency = null;
+        response = null;
         currentType = null;
         titleStack = new Stack<String>();
     }

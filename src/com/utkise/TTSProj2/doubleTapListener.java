@@ -7,13 +7,13 @@ import android.view.View;
 /**
  * Created by Bill on 9/3/14.
  */
-public class doubleTapListenner implements View.OnClickListener {
+public class doubleTapListener implements View.OnClickListener {
 
     private String word;
     private int count;
 
 
-    public doubleTapListenner(String word) {
+    public doubleTapListener(String word) {
         this.word = word;
         this.count = 0;
     }

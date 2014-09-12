@@ -1,0 +1,29 @@
+<xml>
+    <Response>
+        <Item>
+            <Title>I don't understand</Title>
+            <Text>I don't understand</Text>
+            <Image>picture0</Image>
+        </Item> 
+        <Item>
+            <Title>Thank you very much</Title>
+            <Text>Thank you very much</Text>
+            <Image>picture0</Image>
+        </Item>
+        <Item>
+            <Title>Goodbye </Title>
+            <Text>Goodbye</Text>
+            <Image>picture0</Image>
+        </Item>
+        <Item>
+            <Title>I am not sure </Title>
+            <Text>I am not sure</Text>
+            <Image>picture0</Image>
+        </Item>
+        <Item>
+            <Title>Could you repeat</Title>
+            <Text>Could you repeat</Text>
+            <Image>picture0</Image>
+            </Item>
+    </Response>
+</xml>

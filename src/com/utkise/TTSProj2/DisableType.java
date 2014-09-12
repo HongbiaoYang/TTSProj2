@@ -11,6 +11,7 @@ public class DisableType {
     private List<ItemStruct> safety;
     private List<ItemStruct> comfort;
     private List<ItemStruct> emergency;
+    private List<ItemStruct> response;
 
     public DisableType() {
         generalInfo = null;
@@ -18,6 +19,7 @@ public class DisableType {
         safety = null;
         comfort = null;
         emergency = null;
+        response = null;
     }
 
     public void setTripInfo(List<ItemStruct> tripInfo) {
@@ -51,7 +53,10 @@ public class DisableType {
             this.comfort = info;
         } else if (type.equalsIgnoreCase("emergency")) {
             this.emergency = info;
+        } else if (type.equalsIgnoreCase("response"))  {
+            this.response = info;
         }
+
     }
 
     public List<ItemStruct> getInformation(String type) {
@@ -65,6 +70,8 @@ public class DisableType {
             return comfort;
         } else if (type.equalsIgnoreCase("emergency")) {
             return emergency;
+        } else if (type.equalsIgnoreCase("response")){
+            return response;
         } else {
             return null;
         }

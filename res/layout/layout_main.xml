@@ -4,35 +4,12 @@
               android:layout_height="fill_parent"
               android:orientation="vertical">
 
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp" android:layout_weight="1" android:layout_gravity="center_horizontal"
-            android:background="#ffffff">
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/header"
-                android:id="@+id/textView"
-                android:gravity="center" android:textColor="#000000"/>
-    </LinearLayout>
+    <include layout="@layout/head_home"/>
+
     <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0dp"
                   android:layout_weight="0.02" android:layout_gravity="center_horizontal" android:background="#000000"
                   android:id="@+id/linearLayout"/>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp" android:layout_weight="1" android:layout_gravity="center_horizontal"
-            android:background="#ffffff">
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:gravity="center"
-                android:text="@string/selectText"
-                android:id="@id/select" android:textColor="#0d00ff"/>
-    </LinearLayout>
+
 
     <LinearLayout
             android:orientation="horizontal"
@@ -44,7 +21,7 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="0dp" android:layout_weight="5" android:background="#ffffff">
+            android:layout_height="0dp" android:layout_weight="5" android:background="#000000">
         <TableLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent" android:layout_weight="1">
@@ -56,14 +33,21 @@
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:text="@string/empty"
-                        android:id="@+id/aging" android:layout_column="0" android:layout_weight="1"
-                        android:background="@drawable/aging"/>
+                        android:id="@id/vision"
+                        android:layout_column="0"
+                        android:layout_weight="1"
+                        android:background="@drawable/vision"
+                        android:layout_marginLeft="50dp"/>
                 <Button
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:text="@string/empty"
-                        android:id="@+id/hearing" android:layout_column="1" android:layout_weight="1"
-                        android:background="@drawable/hearing"/>
+                        android:id="@+id/hearing"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:background="@drawable/hearing"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"/>
             </TableRow>
             <TableRow
                     android:layout_width="fill_parent"
@@ -73,13 +57,18 @@
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:text="@string/empty"
-                        android:id="@+id/speech" android:layout_column="0" android:layout_weight="1"
-                        android:background="@drawable/speech"/>
+                        android:id="@id/cognitive" android:layout_column="0" android:layout_weight="1"
+                        android:background="@drawable/cognitive"
+                        android:layout_marginLeft="50dp"/>
                 <Button
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:text="@string/empty"
-                        android:id="@+id/vision" android:layout_weight="1" android:background="@drawable/vision"/>
+                        android:id="@id/nonenglish"
+                        android:layout_weight="1"
+                        android:background="@drawable/nonenglishspeaking"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"/>
             </TableRow>
         </TableLayout>
     </LinearLayout>
@@ -87,8 +76,10 @@
                   android:layout_weight="0.02" android:layout_gravity="center_horizontal" android:background="#000000"
                   android:id="@+id/linearLayout2"/>
 
-    <include layout="@layout/foot_banner" />
-
+<com.utkise.TTSProj2.footer_view android:layout_width="fill_parent"
+                                 android:layout_height="0dp"
+                                 android:layout_weight="1.3">
+</com.utkise.TTSProj2.footer_view>
 
 
 </LinearLayout>

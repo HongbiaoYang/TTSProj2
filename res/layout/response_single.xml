@@ -18,8 +18,8 @@
                 android:layout_width="0dp"
                 android:layout_height="72dp"
                 android:layout_weight="8"
-                android:background="@drawable/btn_blue"
-                style="@style/ButtonText2"
+                android:background="@drawable/btn_yellow"
+                style="@style/ButtonText_Black_18"
                 android:gravity="center"
                 android:layout_gravity="center"
                 />

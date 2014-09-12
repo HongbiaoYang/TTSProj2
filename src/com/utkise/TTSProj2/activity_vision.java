@@ -10,11 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import org.w3c.dom.Text;
 
-import java.util.Locale;
-
-public class Vision extends Activity implements OnInitListener{
+public class activity_vision extends Activity implements OnInitListener{
     private Button left, right, ok;
     private QueryList queryList;
     private int count = 0;
@@ -22,19 +19,25 @@ public class Vision extends Activity implements OnInitListener{
     private TextView title;
 
 
+    @Override
+    public void onBackPressed() {
+        MyProperties.getInstance().titleStack.pop();
+        finish();
+    }
+
     /**
      * Called when the activity is first created.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.vision);
+        setContentView(R.layout.layout_vision);
 
         left  = (Button)findViewById(R.id.Left);
         right = (Button)findViewById(R.id.Right);
         ok    = (Button)findViewById(R.id.Ok);
         goBack = (ImageView)findViewById(R.id.header1);
-        title  = (TextView)findViewById(R.id.select);
+        title  = (TextView)findViewById(R.id.header2);
 
         queryList = new QueryList();
         queryList.AddItem(new QueryItem(1, "Boarding", "How can I board this bus", getResources().getDrawable(R.drawable.boarding)));
@@ -50,10 +53,8 @@ public class Vision extends Activity implements OnInitListener{
                 MyProperties.getInstance().titleStack.pop();
 
                 Intent intent = new Intent();
-                intent.setClass(Vision.this, Main.class);
+                intent.setClass(activity_vision.this, activity_main.class);
                 startActivity(intent);
-                // close current activity to avoid multiple activities existing
-                Vision.this.finish();
             }
         });
 
@@ -120,7 +121,7 @@ public class Vision extends Activity implements OnInitListener{
             }
         });
 
-        ok.setOnClickListener(new doubleTapListenner(queryList.getCurrent().getqText()));
+        ok.setOnClickListener(new doubleTapListener(queryList.getCurrent().getqText()));
 
     }
 

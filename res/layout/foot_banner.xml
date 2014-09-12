@@ -2,37 +2,43 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:id="@id/foot_banner"
-    android:layout_width="fill_parent"
-    android:layout_height="50dp"
-    android:layout_alignParentBottom="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentRight="true"
-    android:gravity="center_horizontal" android:background="#ffffff">
 
-    <TextView
+              android:layout_width="fill_parent"
+              android:layout_height="50dp"
+              android:layout_alignParentBottom="true"
+              android:layout_alignParentLeft="true"
+              android:layout_alignParentRight="true"
+              android:gravity="center_horizontal"
+              android:background="#000000">
+
+
+    <Button
             android:id="@+id/footer1"
             android:layout_width="0dp"
             android:layout_weight="4"
             android:layout_height="fill_parent"
-            android:layout_marginTop="2dp" android:text="@string/emergencyText" android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:text="@string/yes"
+            android:background="@drawable/btn_yellow"
+            style="@style/ButtonText_Black"/>
 
-    <ImageView
+    <Button
             android:id="@+id/footer2"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="4"
             android:layout_height="fill_parent"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="2dp" android:background="@drawable/emergency2"/>
+            android:background="@drawable/btn_yellow"
+            style="@style/ButtonText_Black"
+            android:text="@string/no"/>
 
-    <TextView
+    <Button
             android:id="@+id/footer3"
             android:layout_width="0dp"
-            android:layout_weight="5"
+            android:layout_weight="4"
             android:layout_height="fill_parent"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="2dp" android:text="@string/footer" android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:text="@string/more"
+            android:background="@drawable/btn_yellow"
+            style="@style/ButtonText_Black"/>
 
 </LinearLayout>

@@ -15,38 +15,38 @@
 			<Image>picture42</Image>
 		</Item>	
 		<Item> 
-			<Title>I need to go to hospital</Title>
-			<Text>I need to go to hospital </Text>
+			<Title>I need to go to hospital.</Title>
+			<Text>I need to go to hospital. </Text>
 			<Image>picture43</Image>
 		</Item>	
 		<Item> 
-			<Title>I need to go to the Mall</Title>
-			<Text>I need to go to the Mall </Text>
+			<Title>I need to go to the mall.</Title>
+			<Text>I need to go to the mall. </Text>
 			<Image>picture46</Image>
 		</Item>	
 		<Item> 
-			<Title>I need to go to dialysis center </Title>
-			<Text>I need to go to dialysis center  </Text>
+			<Title>I need to go to dialysis center. </Title>
+			<Text>I need to go to dialysis center.  </Text>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>I need to go to church </Title>
-			<Text>I need to go to church</Text>
+			<Title>I need to go to church. </Title>
+			<Text>I need to go to church.</Text>
 			<Image>picture47</Image>
 		</Item>	
 		<Item> 
-			<Title>I have a doctor's appointment </Title>
-			<Text>I have a doctor's appointment</Text>
+			<Title>I have a doctor's appointment. </Title>
+			<Text>I have a doctor's appointment.</Text>
 			<Image>picture45</Image>
 		</Item>	
 	</Item>
 	<Item>	
-		<Title>Another Passenger</Title>
-		<Text>Another Passenger</Text>
+		<Title> To another passenger.</Title>
+		<Text>To another passenger.</Text>
 		<Image>picture0</Image>
 		<Item> 
-			<Title>Can you get the driver for me ? </Title>
-			<Text>Can you get the driver for me ?</Text>
+			<Title>Can you get the driver for me? </Title>
+			<Text>Can you get the driver for me?</Text>
 			<Image>picture15</Image>
 		</Item>	
 		<Item> 
@@ -100,7 +100,7 @@
 </Trip>
 <Safety>
 	<Item> 
-		<Title>Driver</Title>
+		<Title>To the Driver</Title>
 		<Text>Driver</Text>
 		<Image>picture0</Image>
 		<Item> 
@@ -126,8 +126,8 @@
 		<Text>seat</Text>
 		<Image>picture0</Image>
 		<Item> 
-			<Title>I am afraid of Dogs. Can you please tell the owner?  </Title>
-			<Text>I am afraid of Dogs. Can you please tell the owner?</Text>
+			<Title>I am afraid of dogs. Can you please tell the owner?  </Title>
+			<Text>I am afraid of dogs. Can you please tell the owner?</Text>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
@@ -136,8 +136,8 @@
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>Its hot in here, Please increase the AC.</Title>
-			<Text>Its hot in here, Please increase the AC.</Text>
+			<Title>Its hot in here, please increase the AC.</Title>
+			<Text>Its hot in here, please increase the AC.</Text>
 			<Image>picture1</Image>
 		</Item>
 		<Item> 
@@ -178,26 +178,4 @@
 		</Item>
 	</Item>
 </Comfort>
-<Emergency>
-	<Item>
-		<Title>Emergency</Title>
-		<Text>Emergency</Text>
-		<Image>picture0</Image>
-		<Item> 
-			<Title>I need help</Title>
-			<Text>I need help</Text>
-			<Image>picture48</Image>
-		</Item>
-		<Item> 
-			<Title>Another passenger in the bus need help</Title>
-			<Text>Another passenger in the bus need help</Text>
-			<Image>picture52</Image>
-		</Item>
-		<Item> 
-			<Title>Please call 911</Title>
-			<Text>Please call 911</Text>
-			<Image>picture51</Image>
-		</Item>
-	</Item>
-</Emergency>
 </xml>

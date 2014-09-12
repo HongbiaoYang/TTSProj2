@@ -7,31 +7,31 @@
 
     <application
             android:icon="@drawable/icon_name" android:label="Bus Helper">
-        <activity android:name=".Vision"
+        <activity android:name=".activity_vision"
                          android:label="@string/app_name"
                          android:screenOrientation="reversePortrait"
                          android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
      </activity>
 
-        <activity android:name=".HearingActivity"
+        <activity android:name=".activity_hearing"
                   android:label="@string/app_name"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         </activity>
 
-        <activity android:name=".boardingActivity"
+        <activity android:name=".activity_boarding"
                                android:label="@string/app_name"
                                android:screenOrientation="landscape"
                                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
     </activity>
 
-        <activity android:name=".gInfoActivity"
+        <activity android:name=".activity_display"
                   android:label="@string/app_name"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         </activity>
 
-        <activity android:name=".Main"
+        <activity android:name=".activity_main"
          android:screenOrientation="landscape"
          android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <intent-filter>
@@ -40,7 +40,16 @@
             </intent-filter>
 
          </activity>
-        <activity android:name=".emergencyActivity"/>
+        <activity android:name=".activity_emergency"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+
+        <activity android:name=".activity_more"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name=".activity_response"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
 
     </application>
 </manifest>

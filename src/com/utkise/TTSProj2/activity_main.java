@@ -1,40 +1,36 @@
 package com.utkise.TTSProj2;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.XmlResourceParser;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by Bill on 8/28/14.
  */
-public class Main extends Activity implements OnInitListener {
+public class activity_main extends Activity implements OnInitListener {
     private TextToSpeech tts;
-    private Button aging, hearing, speech, vision;
+    private Button vision, hearing, cognitive, nonenglish;
     private ImageView emergency;
     private int i;
+    private int backTimer = 0;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.layout_main);
         MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
         tts = MyProperties.getInstance().gtts;
 
@@ -59,15 +55,24 @@ public class Main extends Activity implements OnInitListener {
         }
 
 
+        if (MyProperties.getInstance().response == null) {
+            MyProperties.getInstance().response = new DisableType();
+            loadXMLResourceParser(MyProperties.getInstance().response, R.xml.response);
+        }
 
-        aging = (Button)findViewById(R.id.aging);
-        hearing = (Button)findViewById(R.id.hearing);
-        speech = (Button)findViewById(R.id.speech);
+
+
+
         vision = (Button)findViewById(R.id.vision);
-        emergency = (ImageView)findViewById(R.id.footer2);
 
-        aging.setOnClickListener(new doubleTapListenner("aging"));
-        speech.setOnClickListener(new doubleTapListenner("speech"));
+        hearing = (Button)findViewById(R.id.hearing);
+        cognitive = (Button)findViewById(R.id.cognitive);
+        nonenglish = (Button)findViewById(R.id.nonenglish);
+
+        emergency = (ImageView)findViewById(R.id.head_home3);
+
+        cognitive.setOnClickListener(new doubleTapListener("Cognitive"));
+        nonenglish.setOnClickListener(new doubleTapListener("Non English Speaking"));
 
         // click vision button
         vision.setOnClickListener(new View.OnClickListener() {
@@ -86,18 +91,16 @@ public class Main extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (i == 2) {
                     i = 0;
-                    speakOut("Vision");
+                    speakOut("vision");
                     MyProperties.getInstance().titleStack.push("Vision");
                     Intent intent = new Intent();
-                    intent.setClass(Main.this, Vision.class);
+                    intent.setClass(activity_main.this, activity_vision.class);
                     startActivity(intent);
-                    // close current activity to avoid multiple activities existing
-                    Main.this.finish();
                 }
             }
         });
 
-        // click hearing button
+        // click layout_hearing button
         hearing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,10 +120,8 @@ public class Main extends Activity implements OnInitListener {
                     speakOut("hearing");
                     MyProperties.getInstance().titleStack.push("Hearing");
                     Intent intent = new Intent();
-                    intent.setClass(Main.this, HearingActivity.class);
+                    intent.setClass(activity_main.this, activity_hearing.class);
                     startActivity(intent);
-                    // close current activity to avoid multiple activities existing
-                    Main.this.finish();
                 }
             }
         });
@@ -144,10 +145,8 @@ public class Main extends Activity implements OnInitListener {
                     speakOut("emergency");
                     Intent intent = new Intent();
                     intent.putExtra("Type", "emergency");
-                    intent.setClass(Main.this, emergencyActivity.class);
+                    intent.setClass(activity_main.this, activity_emergency.class);
                     startActivity(intent);
-                    // close current activity to avoid multiple activities existing
-                    Main.this.finish();
                 }
             }
         });
@@ -159,13 +158,25 @@ public class Main extends Activity implements OnInitListener {
         tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
+    @Override
+    public void onBackPressed() {
+        int curTime = Calendar.getInstance().get(Calendar.SECOND);
+
+        if (curTime - backTimer < 3) {
+            super.onBackPressed();
+        } else {
+            Toast.makeText(getApplicationContext(), "Click again to quit this app", 3).show();
+            backTimer = curTime;
+        }
+
+    }
 
     @Override
     public void onInit(int status) {
         if (status == TextToSpeech.SUCCESS) {
             LANG lan = MyProperties.getInstance().Language;
             doInit(lan);
-            speakOut("Main Menu");
+            speakOut("main Menu");
         } else {
             Log.e("TTS", "Initilization Failed!");
         }
@@ -249,7 +260,7 @@ public class Main extends Activity implements OnInitListener {
                             }
                         } else if (name.equalsIgnoreCase("general") || name.equalsIgnoreCase("trip") ||
                                     name.equalsIgnoreCase("safety") || name.equalsIgnoreCase("comfort") ||
-                                    name.equalsIgnoreCase("emergency")) {
+                                    name.equalsIgnoreCase("emergency") || name.equalsIgnoreCase("response")) {
                             boarding.setInformation(name, root);
                             root = new ArrayList<ItemStruct>();
                             currentLevel = root;
@@ -268,7 +279,5 @@ public class Main extends Activity implements OnInitListener {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        Log.i("gInfoActivity","localroot="+root.toString());
-
     }
 }
