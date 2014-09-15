@@ -34,6 +34,19 @@ public class activity_boarding extends Activity implements OnInitListener {
         goback = (ImageView)findViewById(R.id.header1);
         title = (TextView) findViewById(R.id.header2);
 
+        if (MyProperties.getInstance().Language == LANG.SPANISH) {
+            generalInfo.setBackgroundResource(R.drawable.generalinfo_s);
+            tripInfo.setBackgroundResource(R.drawable.tripinfo_s);
+            safety.setBackgroundResource(R.drawable.safety_s);
+            comfort.setBackgroundResource(R.drawable.comfort_s);
+        } else {
+            generalInfo.setBackgroundResource(R.drawable.generalinfo);
+            tripInfo.setBackgroundResource(R.drawable.tripinfo);
+            safety.setBackgroundResource(R.drawable.safety);
+            comfort.setBackgroundResource(R.drawable.comfort);
+        }
+
+
         title.setText(MyProperties.getInstance().getTitle());
 
         generalInfo.setOnClickListener(new View.OnClickListener() {
@@ -161,6 +174,7 @@ public class activity_boarding extends Activity implements OnInitListener {
 
     @Override
     public void onBackPressed() {
+        MyProperties.getInstance().titleStack.pop();
         finish();
     }
 

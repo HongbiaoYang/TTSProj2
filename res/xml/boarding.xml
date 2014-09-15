@@ -3,206 +3,290 @@
 	<Item> 
 		<Title>To the Driver</Title>
 		<Text>To The Driver</Text>
-		<Image>picture0</Image>
+        <Titulo>Al conductor</Titulo>
+        <Texto>Al conductor</Texto>
+        <Image>picture0</Image>
 		<Item>
 			<Title>What is you name ?</Title>
 			<Text>What is you name ?</Text>
-			<Image>picture13</Image>
+            <Titulo>¿Cuál es su nombre?</Titulo>
+            <Texto>¿Cuál es su nombre?</Texto>
+            <Image>picture13</Image>
 		</Item>
 		<Item>
 			<Title>Hello, How are you ?</Title>
 			<Text>Hello, How are you ?</Text>
+			<Titulo>¡Hola! ¿Cómo está?</Titulo>
+            <Texto>¡Hola! ¿Cómo está?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item>
 			<Title> I cannot understand you </Title>
 			<Text> I cannot understand you </Text>
+			<Titulo>No le entiendo</Titulo>
+            <Texto>No le entiendo</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item>
 			<Title> I do not speak english</Title>
 			<Text>I do not speak english</Text>
+			<Titulo>No hablo inglés</Titulo>
+            <Texto>No hablo inglés</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item>
 			<Title> Does this bus go here?</Title>
 			<Text>Does this bus go here?</Text>
+			<Titulo>¿El transporte va a esta dirección? </Titulo>
+            <Texto>¿El transporte va a esta dirección?</Texto>
 			<Image>picture14</Image>
 		</Item>
 	</Item>
 	<Item> 
 		<Title>Feeling</Title>
 		<Text>Feeling</Text>
+		<Titulo>Sentimientos </Titulo>
+        <Texto>Sentimientos</Texto>
 		<Image>picture0</Image>
 		<Item> 
 			<Title>I feel sick today, Please watch out for me.</Title>
 			<Text>I feel sick today, Please watch out for me </Text>
+			<Titulo>Me siento enfermo hoy, por favor cuídeme </Titulo>
+            <Texto>Me siento enfermo hoy, por favor cuídeme</Texto>
 			<Image>picture22</Image>
 		</Item>
 		<Item> 
 			<Title>I feel dizzy,  Please watch out for me.</Title>
 			<Text>I feel dizzy,  Please watch out for me </Text>
+			<Titulo>Me siento mareado, por favor cuídeme </Titulo>
+            <Texto>Me siento mareado, por favor cuídeme</Texto>
 			<Image>picture23</Image>
 		</Item>
 
 		<Item> 
 			<Title>I feel nauseated.</Title>
 			<Text>I feel nauseated.</Text>
+			<Titulo>Me siento con náusea </Titulo>
+            <Texto>Me siento con náusea</Texto>
 			<Image>picture24</Image>
 		</Item>
 		<Item> 
 			<Title>I feel scared.</Title>
 			<Text>I feel scared. </Text>
+			<Titulo>Me siento con miedo </Titulo>
+            <Texto>Me siento con miedo</Texto>
 			<Image>picture25</Image>
 		</Item>
 		<Item> 
 			<Title>I feel uncomfortable.</Title>
 			<Text>I feel uncomfortable.</Text>
+			<Titulo>Me siento incómodo </Titulo>
+            <Texto>Me siento incómodo</Texto>
 			<Image>picture26</Image>
 		</Item>
 		<Item> 
 			<Title>I need to go to bathroom. </Title>
 			<Text>I need to go to bathroom. </Text>
+			<Titulo>Necesito ir al baño</Titulo>
+            <Texto>Necesito ir al baño</Texto>
 			<Image>picture54</Image>
 		</Item>
 	</Item>
 	<Item>	
 		<Title>Things</Title>
 		<Text>Things</Text>
+		<Titulo>Cosas</Titulo>
+        <Texto>Cosas</Texto>
+
 		<Image>picture0</Image>
 		<Item> 
 			<Title>Where do I keep the bags? </Title>
 			<Text>Where do I keep the bags? </Text>
+			<Titulo>¿Dónde puedo guardar Bolsas?</Titulo>
+			<Texto>¿Dónde puedo guardar Bolsas?</Texto>
 			<Image>picture30</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I keep the backpack? </Title>
 			<Text>Where do I keep the backpack? </Text>
+			<Titulo>¿Dónde puedo guardar Mochila?</Titulo>
+			<Texto>¿Dónde puedo guardar Mochila?</Texto>
 			<Image>picture30</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I keep the walker? </Title>
 			<Text>Where do I keep the walker? </Text>
+			<Titulo>¿Dónde puedo guardar Bastón? </Titulo>
+			<Texto>¿Dónde puedo guardar Bastón?</Texto>
 			<Image>picture61</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I keep the child stroller? </Title>
 			<Text>Where do I keep the child stroller? </Text>
+			<Titulo>¿Dónde puedo guardar Carriola? </Titulo>
+			<Texto>¿Dónde puedo guardar Carriola?</Texto>
 			<Image>picture29</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I keep the bike? </Title>
 			<Text>Where do I keep the bike ? </Text>
+			<Titulo>¿Dónde puedo guardar Bicicleta? </Titulo>
+			<Texto>¿Dónde puedo guardar Bicicleta?</Texto>
 			<Image>picture33</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I keep my groceries bags? </Title>
 			<Text>Where do I keep groceries bags? </Text>
+			<Titulo>¿Dónde puedo guardar Mandado? </Titulo>
+			<Texto>¿Dónde puedo guardar Mandado?</Texto>
 			<Image>picture28</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I hold my service animal? </Title>
 			<Text>Where do I hold my service animal? </Text>
+			<Titulo>¿Dónde puedo guardar Animal? </Titulo>
+			<Texto>¿Dónde puedo guardar Animal?</Texto>
 			<Image>picture27</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I keep my lunch box? </Title>
 			<Text>Where do I keep my lunch box? </Text>
+			<Titulo>¿Dónde puedo guardar Lonchera?</Titulo>
+			<Texto>¿Dónde puedo guardar Lonchera?</Texto>
 			<Image>picture63</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I keep the cart? </Title>
 			<Text>Where do I keep the cart? </Text>
+			<Titulo>¿Dónde puedo guardar Carrito ó andadera?</Titulo>
+			<Texto>¿Dónde puedo guardar Carrito ó andadera?</Texto>
 			<Image>picture62</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I keep the umbrella? </Title>
 			<Text>Where do I keep the umbrella? </Text>
+			<Titulo>¿Dónde puedo guardar Paraguas?</Titulo>
+			<Texto>¿Dónde puedo guardar Paraguas?</Texto>
 			<Image>picture34</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I throw the trash? </Title>
 			<Text>Where do I throw the trash? </Text>
+			<Titulo>¿Dónde puedo guardar Basura?</Titulo>
+			<Texto>¿Dónde puedo guardar Basura?</Texto>
 			<Image>picture31</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I keep my oxygen tank? </Title>
 			<Text>Where do I keep my oxygen tank? </Text>
+			<Titulo>¿Dónde puedo guardar Tanque de oxígeno?</Titulo>
+			<Texto>¿Dónde puedo guardar Tanque de oxígeno?</Texto>
 			<Image>picture32</Image>
 		</Item>	
 	</Item>
 	<Item>	
 		<Title>Asking Assistance</Title>
 		<Text>Asking Assistance</Text>
+		<Titulo>Pidiendo ayuda</Titulo>
+		<Texto>Pidiendo ayuda</Texto>
 		<Image>picture0</Image>
 		<Item> 
 			<Title>Can you lower the lift for me? </Title>
 			<Text>Can you lower the lift for me? </Text>
+			<Titulo>¿Puede bajar el elevador por mí?</Titulo>
+			<Texto>¿Puede bajar el elevador por mí?</Texto>	
 			<Image>picture35</Image>
 		</Item>	
 		<Item> 
 			<Title>Can you hold my arm or hand to get on the steps? </Title>
 			<Text>Can you hold my arm or hand to get on the steps? </Text>
+			<Titulo>¿Me puede tomar del brazo o de la mano para subir el escalón?</Titulo>
+			<Texto>¿Me puede tomar del brazo o de la mano para subir el escalón?</Texto>	
 			<Image>picture39</Image>
 		</Item>	
 		<Item> 
 			<Title>Will you put out the footstool for me? </Title>
 			<Text>Will you put out the footstool for me? </Text>
+			<Titulo>¿Me podría poner el banquito por favor?</Titulo>
+			<Texto>¿Me podría poner el banquito por favor?</Texto>	
 			<Image>picture37</Image>
 		</Item>	
 		<Item> 
 			<Title>Will you remove the personal belongings from my wheelchair?</Title>
 			<Text>Will you remove the personal belongings from my wheelchair?</Text>
+			<Titulo>¿Me puede ayudar a mover mis pertenencias de la silla de ruedas?</Titulo>
+			<Texto>¿Me puede ayudar a mover mis pertenencias de la silla de ruedas?</Texto>	
 			<Image>picture0</Image>
 		</Item>	
 		<Item> 
 			<Title>Can you transfer from my wheelchair to a seat?</Title>
 			<Text>Can you transfer from my wheelchair to a seat? </Text>
+			<Titulo>¿Me puede ayudar a moverme de la silla de ruedas al asiento?</Titulo>
+			<Texto>¿Me puede ayudar a moverme de la silla de ruedas al asiento?</Texto>	
+			
 			<Image>picture36</Image>
 		</Item>
 		<Item> 
 			<Title>Will you nudge me from behind for directional support while I am boarding bus?</Title>
 			<Text>Will you nudge me from behind for directional support while I am boarding bus? </Text>
+			<Titulo>¿Me puede sostener por detrás para poder subir al transporte?</Titulo>
+			<Texto>¿Me puede sostener por detrás para poder subir al transporte?</Texto>	
 			<Image>picture38</Image>
 		</Item>
 		<Item> 
 			<Title>I don't require any assitance while boarding the bus?</Title>
 			<Text>I don't require any assitance while boarding the bus? </Text>
+			<Titulo>No necesito ayuda para subir al transporte.</Titulo>
+			<Texto>No necesito ayuda para subir al transporte.</Texto>
 			<Image>picture0</Image>
 		</Item>			
 	</Item>
 	<Item>	
 		<Title>Weather</Title>
 		<Text>Weather</Text>
+		<Titulo>Clima</Titulo>
+		<Texto>Clima</Texto>
 		<Image>picture0</Image>
 		<Item> 
 			<Title>Sunlight blinds me, can  you please cover the the window? </Title>
 			<Text>Sunlight blinds me, can you please cover the the window? </Text>
+			<Titulo>El sol me encandila, ¿podría cubrir las ventanas?</Titulo>
+			<Texto>El sol me encandila, ¿podría cubrir las ventanas?</Texto>
 			<Image>picture0</Image>
 		</Item>	
 		<Item> 
 			<Title>There is a puddle in front of the bus, please help me. </Title>
 			<Text>There is a puddle in front of the bus, please help me. </Text>
+			<Titulo>Hay un charco enfrente del transporte, ¿podría ayudarme?</Titulo>
+			<Texto>Hay un charco enfrente del transporte, ¿podría ayudarme?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>These stairs are slippery, please put some cloth on them. </Title>
 			<Text>These stairs are slippery, please put some cloth on them. </Text>
+			<Titulo>Los escalones están resbalosos, ¿podría poner un trapo encima?</Titulo>
+			<Texto>Los escalones están resbalosos, ¿podría poner un trapo encima?</Texto>
 			<Image>picture40</Image>
 		</Item>	
 		<Item> 
 			<Title>This seat is wet, I need to move. </Title>
 			<Text>This seat is wet, I need to move. </Text>
+			<Titulo>El asiento está mojado, necesito moverme</Titulo>
+			<Texto>El asiento está mojado, necesito moverme</Texto>
 			<Image>picture41</Image>
 		</Item>	
 		<Item> 
 			<Title>There are wetspots on the bus and somebody can slip. </Title>
 			<Text>There are wetspots on the bus and somebody can slip. </Text>
+			<Titulo>Hay agua en el piso y alguien podría resbalarse</Titulo>
+			<Texto>Hay agua en el piso y alguien podría resbalarse</Texto>
 			<Image>picture0</Image>
 		</Item>	
 		<Item> 
 			<Title>There is water dripping from the top of the bus.</Title>
 			<Text>There is water dripping from the top of the bus. </Text>
+			<Titulo>Hay agua goteando del techo del transporte</Titulo>
+			<Texto>Hay agua goteando del techo del transporte</Texto>
 			<Image>picture0</Image>
 		</Item>	
 	</Item>
@@ -211,55 +295,78 @@
 	<Item> 
 		<Title>Fare</Title>
 		<Text>Fare</Text>
+		<Titulo>Boleto</Titulo>
+		<Texto>Boleto</Texto>
 		<Image>picture0</Image>
 		<Item> 
 			<Title>How do I purchase the ticket? </Title>
 			<Text>How do I purchase the ticket?</Text>
+			<Titulo>¿Cómo compro el boleto?</Titulo>
+			<Texto>¿Cómo compro el boleto?</Texto>
 			<Image>picture7</Image>
 		</Item>
 		<Item> 
 			<Title>How much is the fare? </Title>
 			<Text>How much is the fare?</Text>
+			<Titulo>¿¿Cuánto es el costo?</Titulo>
+			<Texto>¿Cuánto es el costo?</Texto>
 			<Image>picture10</Image>
 		</Item>
 		<Item> 
 			<Title>Where do I put the money? </Title>
 			<Text>Where do I put the money?</Text>
+			<Titulo>¿Dónde pongo el dinero?</Titulo>
+			<Texto>¿Dónde pongo el dinero?</Texto>
 			<Image>picture11</Image>
 		</Item>
 		<Item> 
 			<Title>This ticket system is not working. </Title>
 			<Text>This ticket system is not working.</Text>
+			<Titulo>El sistema no está funcionando</Titulo>
+			<Texto>El sistema no está funcionando</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>Can you I use the change card again? </Title>
 			<Text>Can you I use the change card again?</Text>
+			<Titulo>¿Puedo usar la tarjeta de cambio nuevamente? </Titulo>
+			<Texto>¿Puedo usar la tarjeta de cambio nuevamente?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>I do not have change/money. </Title>
-			<Text>I do not have change/money.</Text>
+			<Title>I do not have change or money. </Title>
+			<Text>I do not have change or money.</Text>
+			<Titulo>No tengo cambio o dinero</Titulo>
+			<Texto>No tengo cambio o dinero</Texto>
 			<Image>picture0</Image>
 		</Item>
 	</Item>
 	<Item> 
 		<Title>Wrong bus</Title>
 		<Text>Wrong bus</Text>
+		<Titulo>Transporte incorrecto</Titulo>
+		<Texto>Transporte incorrecto</Texto>
 		<Image>picture0</Image>
 		<Item> 
 			<Title>Where does this bus go? </Title>
 			<Text>Where does this bus go?</Text>
+			<Titulo>¿Hacia dónde va este transporte?</Titulo>
+			<Texto>¿Hacia dónde va este transporte?</Texto>
 			<Image>picture12</Image>
 		</Item>
 		<Item> 
 			<Title>Am I in a wrong bus? </Title>
 			<Text>Am I in a wrong bus ?</Text>
+			<Titulo>Estoy en el transporte incorrecto</Titulo>
+			<Texto>Estoy en el transporte incorrecto</Texto>
+
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>How do I go there? </Title>
 			<Text>How do I go there?</Text>
+			<Titulo>¿Cómo llego ahí?</Titulo>
+			<Texto>¿Cómo llego ahí?</Texto>
 			<Image>picture0</Image>
 		</Item>
 	</Item>
@@ -268,30 +375,42 @@
 	<Item> 
 		<Title>Wheelchair </Title>
 		<Text>Wheelchair </Text>
+		<Titulo>Silla de ruedas</Titulo>
+		<Texto>Silla de ruedas</Texto>
 		<Image>picture0</Image>
 		<Item> 
 			<Title>The tie-down is not working.</Title>
 			<Text>The tie-down is not working.</Text>
+			<Titulo>El ajuste no está funcionando</Titulo>
+			<Texto>El ajuste no está funcionando</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>The tie-down is not fixed properly.</Title>
 			<Text>The tie-down is not fixed properly.</Text>
+			<Titulo>El ajuste no está colocado correctamente</Titulo>
+			<Texto>El ajuste no está colocado correctamente</Texto>
 			<Image>picture0</Image>
 		</Item>
 	</Item>
 	<Item> 
 		<Title>Seatbelt</Title>
 		<Text>Seabelt</Text>
+		<Titulo>Cinturón de seguridad</Titulo>
+		<Texto>Cinturón de seguridad</Texto>
 		<Image>picture0</Image>
 		<Item> 
 			<Title>Can you buckle my seatbelt?</Title>
 			<Text>Can you buckle my seatbelt?</Text>
+			<Titulo>¿Me puede abrochar el cinturón?</Titulo>
+			<Texto>¿Me puede abrochar el cinturón?</Texto>
 			<Image>picture55</Image>
 		</Item>
 		<Item> 
 			<Title>The seatbelt is not working.</Title>
 			<Text>The seatbelt is not working.</Text>
+			<Titulo>El cinturón no está funcionando</Titulo>
+			<Texto>El cinturón no está funcionando</Texto>
 			<Image>picture56</Image>
 		</Item>
 	</Item>	
@@ -300,10 +419,14 @@
 	<Item> 
 		<Title>Seat</Title>
 		<Text>Seat</Text>
+		<Titulo>Asiento</Titulo>
+		<Texto>Asiento</Texto>
 		<Image>picture4</Image>
 		<Item> 
 			<Title>Please help me to change the seat. </Title>
 			<Text>Please help me to change the seat.</Text>
+			<Titulo>Por favor ayúdeme a cambiar de asiento</Titulo>
+			<Texto>Por favor ayúdeme a cambiar de asiento</Texto>
 			<Image>picture5</Image>
 		</Item>
 	</Item>

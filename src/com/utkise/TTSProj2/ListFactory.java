@@ -20,7 +20,7 @@ public class ListFactory {
 
         ArrayList<String> titleList = new ArrayList<String>();
         for (i = 0; i < this.root.size(); i++) {
-            titleList.add(root.get(i).title);
+            titleList.add(root.get(i).getTitle(MyProperties.getInstance().Language));
         }
         return titleList.toArray(new String[0]);
     }
@@ -31,7 +31,7 @@ public class ListFactory {
         ArrayList<String> textList = new ArrayList<String>();
 
         for (i = 0; i < this.root.size(); i++) {
-            textList.add(root.get(i).text);
+            textList.add(root.get(i).getText(MyProperties.getInstance().Language));
         }
 
         return textList.toArray(new String[0]);
@@ -42,7 +42,7 @@ public class ListFactory {
 
         ArrayList<Integer> imageList = new ArrayList<Integer>();
         for (i = 0; i < this.root.size(); i++) {
-            imageList.add(root.get(i).imageID);
+            imageList.add(root.get(i).getImageID());
         }
 
         return imageList.toArray(new Integer[0]);

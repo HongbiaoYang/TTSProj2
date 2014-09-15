@@ -2,8 +2,10 @@ package com.utkise.TTSProj2;
 
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Stack;
 
 /**
@@ -53,5 +55,24 @@ public class MyProperties {
         return ourInstance;
     }
 
+
+
+    public void doInit(LANG lan) {
+        int result = TextToSpeech.ERROR;
+
+        Language = lan;
+        if (lan == LANG.ENGLISH) {
+            result = gtts.setLanguage(Locale.US);
+        } else if (lan==LANG.SPANISH) {
+            Locale locSpanish = new Locale("spa", "ESP");
+            result = gtts.setLanguage(locSpanish);
+        }
+
+        if (result == TextToSpeech.LANG_MISSING_DATA
+                || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+            Log.e("TTS", "This Language is not supported");
+        }
+
+    }
 
 }

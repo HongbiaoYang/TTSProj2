@@ -3,16 +3,22 @@
 		<Item>
 			<Title>I need help.</Title>
 			<Text>I need help.</Text>
+			<Titulo>Necesito ayuda</Titulo>
+			<Texto>Necesito ayuda</Texto>
 			<Image>picture48</Image>
 		</Item>
 		<Item> 
 			<Title>Another passenger in the bus need help.</Title>
 			<Text>Another passenger in the bus need help.</Text>
+			<Titulo>Un pasajero necesita ayuda</Titulo>
+			<Texto>Un pasajero necesita ayuda</Texto>
 			<Image>picture52</Image>
 		</Item>
 		<Item> 
 			<Title>Please call 911.</Title>
 			<Text>Please call 911.</Text>
+			<Titulo>Por favor llame al 911</Titulo>
+			<Texto>Por favor llame al 911</Texto>
 			<Image>picture51</Image>
 		</Item>
 </Emergency>

@@ -9,7 +9,9 @@ public class QueryItem {
     private int qID;
     private String qTitle;
     private String qText;
+
     private Drawable qImg;
+
 
     public QueryItem(int id, String title, String text, Drawable img) {
         this.qID = id;

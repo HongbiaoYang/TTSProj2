@@ -3,26 +3,36 @@
         <Item>
             <Title>I don't understand</Title>
             <Text>I don't understand</Text>
+			<Titulo>No entiendo</Titulo>
+			<Texto>No entiendo</Texto>
             <Image>picture0</Image>
         </Item> 
         <Item>
             <Title>Thank you very much</Title>
             <Text>Thank you very much</Text>
+			<Titulo>Muchas gracias</Titulo>
+			<Texto>Muchas gracias</Texto>
             <Image>picture0</Image>
         </Item>
         <Item>
             <Title>Goodbye </Title>
             <Text>Goodbye</Text>
+			<Titulo>Adi�s</Titulo>
+			<Texto>Adi�s</Texto>
             <Image>picture0</Image>
         </Item>
         <Item>
             <Title>I am not sure </Title>
             <Text>I am not sure</Text>
+			<Titulo>No estoy seguro</Titulo>
+			<Texto>No estoy seguro</Texto>
             <Image>picture0</Image>
         </Item>
         <Item>
             <Title>Could you repeat</Title>
             <Text>Could you repeat</Text>
+			<Titulo>Podr�a repetir</Titulo>
+			<Texto>Podr�a repetir</Texto>
             <Image>picture0</Image>
             </Item>
     </Response>

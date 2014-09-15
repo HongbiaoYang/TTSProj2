@@ -84,7 +84,7 @@ public class activity_response extends Activity {
                     i = 0;
 
                     ItemStruct item = thisLevel.get(position);
-                    MyProperties.getInstance().speakout(item.text);
+                    MyProperties.getInstance().speakout(item.getText(MyProperties.getInstance().Language));
                 }
 
             }

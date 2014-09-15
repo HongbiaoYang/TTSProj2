@@ -72,8 +72,35 @@ public class activity_main extends Activity implements OnInitListener {
         emergency = (ImageView)findViewById(R.id.head_home3);
 
         cognitive.setOnClickListener(new doubleTapListener("Cognitive"));
-        nonenglish.setOnClickListener(new doubleTapListener("Non English Speaking"));
 
+
+        nonenglish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                i++;
+                Handler handler = new Handler();
+                Runnable run = new Runnable() {
+                    @Override
+                    public void run() {
+                        i = 0;
+                    }
+                };
+
+                if (i == 1) {
+                    handler.postDelayed(run, 250);
+                } else if (i == 2) {
+                    i = 0;
+                    speakOut("non english speaking");
+
+                    MyProperties.getInstance().titleStack.push("espanol");
+                    MyProperties.getInstance().doInit(LANG.SPANISH);
+
+                    Intent intent = new Intent();
+                    intent.setClass(activity_main.this, activity_hearing.class);
+                    startActivity(intent);
+                }
+            }
+        });
         // click vision button
         vision.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,30 +202,12 @@ public class activity_main extends Activity implements OnInitListener {
     public void onInit(int status) {
         if (status == TextToSpeech.SUCCESS) {
             LANG lan = MyProperties.getInstance().Language;
-            doInit(lan);
+            MyProperties.getInstance().doInit(lan);
             speakOut("main Menu");
         } else {
             Log.e("TTS", "Initilization Failed!");
         }
     }
-
-    private void doInit(LANG lan) {
-        int result = TextToSpeech.ERROR;
-
-        if (lan == LANG.ENGLISH) {
-            result = tts.setLanguage(Locale.US);
-        } else if (lan==LANG.SPANISH) {
-            Locale locSpanish = new Locale("spa", "ESP");
-            result = tts.setLanguage(locSpanish);
-        }
-
-        if (result == TextToSpeech.LANG_MISSING_DATA
-                || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-            Log.e("TTS", "This Language is not supported");
-        }
-
-    }
-
 
     private void loadXMLResourceParser(DisableType boarding, int xmlFile) {
         List<ItemStruct> root = null;
@@ -229,22 +238,26 @@ public class activity_main extends Activity implements OnInitListener {
                             if (currentItem != null) {
                                 itemStack.push(currentItem);
 
-                                if (currentItem.child == null) {
-                                    currentItem.child = new ArrayList<ItemStruct>();
+                                if (currentItem.getChild() == null) {
+                                    currentItem.setChild(new ArrayList<ItemStruct>());
                                 }
-                                currentLevel = currentItem.child;
+                                currentLevel = currentItem.getChild();
                             }
                             currentItem = new ItemStruct();
                             currentLevel.add(currentItem);
 
                         } else if (currentItem != null) {
                             if (name.equalsIgnoreCase("title")) {
-                                currentItem.title = xrp.nextText();
+                                currentItem.setTitle(LANG.ENGLISH, xrp.nextText());
                             } else if (name.equalsIgnoreCase("Text")) {
-                                currentItem.text = xrp.nextText();
+                                currentItem.setText(LANG.ENGLISH, xrp.nextText());
+                            } else if (name.equalsIgnoreCase("Texto")) {
+                                currentItem.setText(LANG.SPANISH, xrp.nextText());
+                            } else if (name.equalsIgnoreCase("Titulo")) {
+                                currentItem.setTitle(LANG.SPANISH, xrp.nextText());
                             } else if (name.equalsIgnoreCase("image")) {
                                 int resID = getResources().getIdentifier(xrp.nextText(), "drawable", getPackageName());
-                                currentItem.imageID = resID;
+                                currentItem.setImageID(resID);
                             }
                         }
                         break;

@@ -5,5 +5,6 @@ package com.utkise.TTSProj2;
  */
 public enum LANG {
     ENGLISH,
-    SPANISH
+    SPANISH,
+    SIZE
 }

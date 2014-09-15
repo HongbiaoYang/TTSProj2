@@ -26,6 +26,7 @@ public class activity_display extends Activity implements OnInitListener {
     ListView list;
     String[] web;
     Integer[] imageId;
+    LANG lan;
 
 
     private List<ItemStruct> thisLevel;
@@ -38,6 +39,9 @@ public class activity_display extends Activity implements OnInitListener {
         tts = MyProperties.getInstance().gtts;
         levelStack = new Stack<List<ItemStruct>>();
 
+        // the setting language
+        lan = MyProperties.getInstance().Language;
+
         lastLevelBtn = (ImageView) findViewById(R.id.header1);
         title = (TextView) findViewById(R.id.header2);
 
@@ -49,7 +53,6 @@ public class activity_display extends Activity implements OnInitListener {
 
                 if (levelStack.isEmpty()) {
                     MyProperties.getInstance().titleStack.pop();
-
                     finish();
                 } else {
                     thisLevel = levelStack.pop();
@@ -94,12 +97,12 @@ public class activity_display extends Activity implements OnInitListener {
                     i = 0;
 
                     ItemStruct item = thisLevel.get(position);
-                    if (item.child == null) {
-                        speakOut(item.text);
+                    if (item.getChild() == null) {
+                        speakOut(item.getText(lan));
                     } else {
-                        speakOut(item.text);
+                        speakOut(item.getText(lan));
                         levelStack.push(thisLevel);
-                        thisLevel = item.child;
+                        thisLevel = item.getChild();
                         updateList(thisLevel);
                     }
                 }
@@ -116,6 +119,7 @@ public class activity_display extends Activity implements OnInitListener {
 
     @Override
     public void onBackPressed() {
+        MyProperties.getInstance().titleStack.pop();
         finish();
     }
 
