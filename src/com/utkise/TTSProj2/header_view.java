@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 /**
@@ -23,6 +24,7 @@ public class header_view extends LinearLayout {
         inflater.inflate(R.layout.head_banner, this, true);
 
         this.findViewById(R.id.header3).setOnClickListener(new homeOnClickListener());
+
     }
 
     private class homeOnClickListener implements OnClickListener {
@@ -34,15 +36,16 @@ public class header_view extends LinearLayout {
             Runnable run = new Runnable() {
                 @Override
                 public void run() {
-                    count = 0;
+                    count = CONSTANT.START;
                 }
             };
 
-            if (count == 1) {
+            if (count == CONSTANT.MIDDLE) {
                 handler.postDelayed(run, 250);
-            } else if (count == 2) {
-                count = 0;
+            } else if (count == CONSTANT.END) {
+                count = CONSTANT.START;
 
+                MyProperties.getInstance().doInit(LANG.ENGLISH);
                 MyProperties.getInstance().titleStack.clear();
                 Intent intent = new Intent(getContext(), activity_main.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

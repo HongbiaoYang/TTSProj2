@@ -73,13 +73,14 @@ public class activity_vision extends Activity implements OnInitListener{
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        count = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (count == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (count == 2) {
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     if (queryList.currentPos() == 0) {
                      MyProperties.getInstance().speakout("The Beginning");
                     } else {
@@ -101,13 +102,14 @@ public class activity_vision extends Activity implements OnInitListener{
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        count = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (count == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (count == 2) {
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
 
                     if (queryList.currentPos() >= queryList.getSize() - 1) {
                         MyProperties.getInstance().speakout("The end");

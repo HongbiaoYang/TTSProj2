@@ -18,7 +18,7 @@ import android.widget.RelativeLayout;
 public class footer_view extends LinearLayout {
 
     private LayoutInflater inflater;
-    private int count = 0;
+    private int count = CONSTANT.START;
 
     public footer_view(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -26,9 +26,33 @@ public class footer_view extends LinearLayout {
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.foot_banner, this, true);
 
-        this.findViewById(R.id.footer1).setOnClickListener(new doubleTapListener("yes"));
-        this.findViewById(R.id.footer2).setOnClickListener(new doubleTapListener("No"));
-        this.findViewById(R.id.footer3).setOnClickListener(new moreOnclickListener());
+        String yes = "Yes";
+        String no = "No";
+        String more = "More";
+
+        if (MyProperties.getInstance().Language == LANG.SPANISH) {
+            yes = "sí";
+            no = "no";
+            more = "más";
+        }
+
+        Button Yes, No, More;
+
+        Yes = (Button) this.findViewById(R.id.footer1);
+        No = (Button) this.findViewById(R.id.footer2);
+        More = (Button) this.findViewById(R.id.footer3);
+
+
+        //set text
+        Yes.setText(yes);
+        No.setText(no);
+        More.setText(more);
+
+        // set listener
+        Yes.setOnClickListener(new doubleTapListener(yes));
+        No.setOnClickListener(new doubleTapListener(no));
+        More.setOnClickListener(new moreOnclickListener());
+
     }
 
     private class moreOnclickListener implements OnClickListener {
@@ -40,14 +64,14 @@ public class footer_view extends LinearLayout {
             Runnable run = new Runnable() {
                 @Override
                 public void run() {
-                    count = 0;
+                    count = CONSTANT.START;
                 }
             };
 
-            if (count == 1) {
+            if (count == CONSTANT.MIDDLE) {
                 handler.postDelayed(run, 250);
-            } else if (count == 2) {
-                count = 0;
+            } else if (count == CONSTANT.END) {
+                count = CONSTANT.START;
 
                 Intent intent = new Intent(getContext(), activity_response.class);
                 getContext().startActivity(intent);

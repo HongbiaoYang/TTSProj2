@@ -17,7 +17,7 @@ import java.util.Stack;
  */
 public class activity_emergency extends Activity implements OnInitListener {
     private TextToSpeech tts;
-    private int i;
+    private int count = CONSTANT.START;
     private ImageView lastLevelBtn;
     private ImageView emergency;
     private TextView title;
@@ -79,19 +79,19 @@ public class activity_emergency extends Activity implements OnInitListener {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
 
                     ItemStruct item = thisLevel.get(position);
                     LANG lan = MyProperties.getInstance().Language;

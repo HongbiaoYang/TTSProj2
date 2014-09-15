@@ -25,7 +25,7 @@ public class activity_main extends Activity implements OnInitListener {
     private TextToSpeech tts;
     private Button vision, hearing, cognitive, nonenglish;
     private ImageView emergency;
-    private int i;
+    private int count = CONSTANT.START;
     private int backTimer = 0;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -77,19 +77,19 @@ public class activity_main extends Activity implements OnInitListener {
         nonenglish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("non english speaking");
 
                     MyProperties.getInstance().titleStack.push("espanol");
@@ -105,19 +105,19 @@ public class activity_main extends Activity implements OnInitListener {
         vision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("vision");
                     MyProperties.getInstance().titleStack.push("Vision");
                     Intent intent = new Intent();
@@ -131,19 +131,19 @@ public class activity_main extends Activity implements OnInitListener {
         hearing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("hearing");
                     MyProperties.getInstance().titleStack.push("Hearing");
                     Intent intent = new Intent();
@@ -156,19 +156,19 @@ public class activity_main extends Activity implements OnInitListener {
         emergency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("emergency");
                     Intent intent = new Intent();
                     intent.putExtra("Type", "emergency");

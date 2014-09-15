@@ -15,7 +15,7 @@ public class doubleTapListener implements View.OnClickListener {
 
     public doubleTapListener(String word) {
         this.word = word;
-        this.count = 0;
+        this.count = CONSTANT.START;
     }
 
     @Override
@@ -25,14 +25,14 @@ public class doubleTapListener implements View.OnClickListener {
         Runnable run = new Runnable() {
             @Override
             public void run() {
-                count = 0;
+                count = CONSTANT.START;
             }
         };
 
-        if (count == 1) {
+        if (count == CONSTANT.MIDDLE) {
             handler.postDelayed(run, 250);
-        } else if (count == 2) {
-            count = 0;
+        } else if (count == CONSTANT.END) {
+            count = CONSTANT.START;
             MyProperties.getInstance().speakout(word);
         }
 

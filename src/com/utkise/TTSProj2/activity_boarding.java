@@ -19,7 +19,7 @@ public class activity_boarding extends Activity implements OnInitListener {
     private Button generalInfo, tripInfo, safety, comfort;
     private ImageView  goback;
     private TextView title;
-    private int i;
+    private int count;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,19 +52,19 @@ public class activity_boarding extends Activity implements OnInitListener {
         generalInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("general information");
                     MyProperties.getInstance().titleStack.push("General Information");
 
@@ -79,19 +79,19 @@ public class activity_boarding extends Activity implements OnInitListener {
         tripInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("trip information");
                     MyProperties.getInstance().titleStack.push("Trip Information");
 
@@ -106,19 +106,19 @@ public class activity_boarding extends Activity implements OnInitListener {
         safety.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("safety");
                     MyProperties.getInstance().titleStack.push("Safety");
 
@@ -133,19 +133,19 @@ public class activity_boarding extends Activity implements OnInitListener {
         comfort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("comfort");
                     MyProperties.getInstance().titleStack.push("Comfort");
 

@@ -19,7 +19,7 @@ public class activity_hearing extends Activity implements OnInitListener {
     private Button boarding, gettingoff, traveling, emergency;
     private ImageView goBack;
     private TextView title;
-    private int i;
+    private int count = CONSTANT.START;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,19 +53,19 @@ public class activity_hearing extends Activity implements OnInitListener {
         emergency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("emergency");
                     Intent intent = new Intent();
                     intent.putExtra("Type", "emergency");
@@ -78,19 +78,19 @@ public class activity_hearing extends Activity implements OnInitListener {
         boarding.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("boarding");
                     MyProperties.getInstance().titleStack.push("Boarding");
 
@@ -106,19 +106,19 @@ public class activity_hearing extends Activity implements OnInitListener {
         traveling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("traveling");
                     MyProperties.getInstance().titleStack.push("Travelling");
 
@@ -134,19 +134,19 @@ public class activity_hearing extends Activity implements OnInitListener {
         gettingoff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+                count++;
                 Handler handler = new Handler();
                 Runnable run = new Runnable() {
                     @Override
                     public void run() {
-                        i = 0;
+                        count = CONSTANT.START;
                     }
                 };
 
-                if (i == 1) {
+                if (count == CONSTANT.MIDDLE) {
                     handler.postDelayed(run, 250);
-                } else if (i == 2) {
-                    i = 0;
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
                     speakOut("getting off");
                     MyProperties.getInstance().titleStack.push("Getting Off");
 
