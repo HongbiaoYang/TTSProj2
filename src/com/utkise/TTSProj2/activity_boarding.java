@@ -66,7 +66,8 @@ public class activity_boarding extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
                     speakOut("general information");
-                    MyProperties.getInstance().titleStack.push("General Information");
+                    String g_info = MyProperties.getInstance().getTitleName(TITLE.GENERAL_INFORMATION);
+                    MyProperties.getInstance().titleStack.push(g_info);
 
                     Intent intent = new Intent();
                     intent.putExtra("Type", "general");
@@ -92,8 +93,11 @@ public class activity_boarding extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("trip information");
-                    MyProperties.getInstance().titleStack.push("Trip Information");
+
+
+                    String t_info = MyProperties.getInstance().getTitleName(TITLE.TRIP_INFORMATION);
+                    speakOut(t_info);
+                    MyProperties.getInstance().titleStack.push(t_info);
 
                     Intent intent = new Intent();
                     intent.putExtra("Type", "trip");
@@ -120,7 +124,8 @@ public class activity_boarding extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
                     speakOut("safety");
-                    MyProperties.getInstance().titleStack.push("Safety");
+                    String safe_str = MyProperties.getInstance().getTitleName(TITLE.SAFETY);
+                    MyProperties.getInstance().titleStack.push(safe_str);
 
                     Intent intent = new Intent();
                     intent.putExtra("Type", "safety");
@@ -147,7 +152,8 @@ public class activity_boarding extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
                     speakOut("comfort");
-                    MyProperties.getInstance().titleStack.push("Comfort");
+                    String comfort_str = MyProperties.getInstance().getTitleName(TITLE.COMFORT);
+                    MyProperties.getInstance().titleStack.push(comfort_str);
 
                     Intent intent = new Intent();
                     intent.putExtra("Type", "comfort");

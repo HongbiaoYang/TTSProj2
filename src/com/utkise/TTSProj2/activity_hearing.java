@@ -66,7 +66,11 @@ public class activity_hearing extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("emergency");
+
+                    String emergency_str = MyProperties.getInstance().getTitleName(TITLE.EMERGENCY);
+                    speakOut(emergency_str);
+                    MyProperties.getInstance().titleStack.push(emergency_str);
+
                     Intent intent = new Intent();
                     intent.putExtra("Type", "emergency");
                     intent.setClass(activity_hearing.this, activity_emergency.class);
@@ -91,8 +95,11 @@ public class activity_hearing extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("boarding");
-                    MyProperties.getInstance().titleStack.push("Boarding");
+
+
+                    String board_str = MyProperties.getInstance().getTitleName(TITLE.BOARDING);
+                    speakOut(board_str);
+                    MyProperties.getInstance().titleStack.push(board_str);
 
                     Intent intent = new Intent();
                     MyProperties.getInstance().currentType = MyProperties.getInstance().boarding;
@@ -119,8 +126,10 @@ public class activity_hearing extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("traveling");
-                    MyProperties.getInstance().titleStack.push("Travelling");
+
+                    String travel_str = MyProperties.getInstance().getTitleName(TITLE.TRAVELLING);
+                    speakOut(travel_str);
+                    MyProperties.getInstance().titleStack.push(travel_str);
 
                     Intent intent = new Intent();
                     intent.setClass(activity_hearing.this, activity_boarding.class);
@@ -147,8 +156,11 @@ public class activity_hearing extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("getting off");
-                    MyProperties.getInstance().titleStack.push("Getting Off");
+
+
+                    String getoff_str = MyProperties.getInstance().getTitleName(TITLE.GETTING_OFF);
+                    speakOut(getoff_str);
+                    MyProperties.getInstance().titleStack.push(getoff_str);
 
                     Intent intent = new Intent();
                     intent.setClass(activity_hearing.this, activity_boarding.class);

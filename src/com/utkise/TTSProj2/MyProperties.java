@@ -4,6 +4,7 @@ import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Stack;
@@ -19,6 +20,7 @@ public class MyProperties {
     public Vibrator vb;
     public DisableType boarding, traveling, gettingoff, emergency, response, currentType;
     public Stack<String> titleStack;
+    public List<String[]> TITLES;
 
     public void speakout(String text) {
         gtts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
@@ -37,6 +39,10 @@ public class MyProperties {
         return title;
     }
 
+    public String getTitleName(TITLE index) {
+        return TITLES.get(index.ordinal())[Language.ordinal()];
+    }
+
     private MyProperties() {
         Language = LANG.ENGLISH;
         boarding = null;
@@ -46,6 +52,7 @@ public class MyProperties {
         response = null;
         currentType = null;
         titleStack = new Stack<String>();
+        initTITLES();
     }
 
     public static synchronized MyProperties getInstance(){
@@ -53,6 +60,29 @@ public class MyProperties {
             ourInstance = new MyProperties();
         }
         return ourInstance;
+    }
+
+    private void initTITLES() {
+        TITLES = new ArrayList<String[]>();
+
+        // vision, hearing, cognitive, non english
+        TITLES.add(new String[]{"vision","visión"});
+        TITLES.add(new String[]{"hearing","escuchar"});
+        TITLES.add(new String[]{"cognitive","cognitiva"});
+        TITLES.add(new String[]{"non english","no Inglés"});
+
+        // boarding, getting off, travelling, emergency
+        TITLES.add(new String[]{"boarding","embarque"});
+        TITLES.add(new String[]{"getting off","bajar"});
+        TITLES.add(new String[]{"travelling","viajar"});
+        TITLES.add(new String[]{"emergency","emergencia"});
+
+        // general information, trip information, safety, comfort
+        // información general , información de viaje , la seguridad , la comodidad
+        TITLES.add(new String[]{"general information","información general"});
+        TITLES.add(new String[]{"trip information","información de viaje"});
+        TITLES.add(new String[]{"safety","la seguridad"});
+        TITLES.add(new String[]{"comfort","la comodidad"});
     }
 
 

@@ -71,7 +71,7 @@ public class activity_main extends Activity implements OnInitListener {
 
         emergency = (ImageView)findViewById(R.id.head_home3);
 
-        cognitive.setOnClickListener(new doubleTapListener("Cognitive"));
+        cognitive.setOnClickListener(new doubleTapListener(MyProperties.getInstance().getTitleName(TITLE.COGNITIVE)));
 
 
         nonenglish.setOnClickListener(new View.OnClickListener() {
@@ -90,10 +90,13 @@ public class activity_main extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("non english speaking");
 
-                    MyProperties.getInstance().titleStack.push("espanol");
                     MyProperties.getInstance().doInit(LANG.SPANISH);
+
+                    String non_english_str = MyProperties.getInstance().getTitleName(TITLE.NON_ENGLISH);
+
+                    speakOut(non_english_str);
+                    MyProperties.getInstance().titleStack.push(non_english_str);
 
                     Intent intent = new Intent();
                     intent.setClass(activity_main.this, activity_hearing.class);
@@ -118,8 +121,11 @@ public class activity_main extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("vision");
-                    MyProperties.getInstance().titleStack.push("Vision");
+
+                    String vision_str = MyProperties.getInstance().getTitleName(TITLE.VISION);
+
+                    speakOut(vision_str);
+                    MyProperties.getInstance().titleStack.push(vision_str);
                     Intent intent = new Intent();
                     intent.setClass(activity_main.this, activity_vision.class);
                     startActivity(intent);
@@ -144,8 +150,11 @@ public class activity_main extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("hearing");
-                    MyProperties.getInstance().titleStack.push("Hearing");
+
+                    String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
+
+                    speakOut(hearing_str);
+                    MyProperties.getInstance().titleStack.push(hearing_str);
                     Intent intent = new Intent();
                     intent.setClass(activity_main.this, activity_hearing.class);
                     startActivity(intent);
@@ -169,7 +178,10 @@ public class activity_main extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("emergency");
+
+                    String emergency_str = MyProperties.getInstance().getTitleName(TITLE.EMERGENCY);
+
+                    speakOut(emergency_str);
                     Intent intent = new Intent();
                     intent.putExtra("Type", "emergency");
                     intent.setClass(activity_main.this, activity_emergency.class);

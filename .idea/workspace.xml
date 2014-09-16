@@ -67,6 +67,9 @@
       </layout>
     </layouts>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6c1c9c1f-e6f4-467e-ad1a-39b24d1c24b8" name="Default" comment="" />
     <ignored path="TTSProj2.iws" />
@@ -122,23 +125,7 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/MyProperties.java" line="60" class="com.utkise.TTSProj2.MyProperties" package="com.utkise.TTSProj2">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -148,19 +135,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="activity_response.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_response.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="38" selection-start="693" selection-end="693" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1694">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="activity_hearing.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_hearing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="38" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3388">
+            <state line="162" column="73" selection-start="6238" selection-end="6238" vertical-scroll-proportion="-6.769231" vertical-offset="2508" max-vertical-offset="3652">
               <folding />
             </state>
           </provider>
@@ -169,7 +147,7 @@
       <file leaf-file-name="activity_main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="39" selection-start="793" selection-end="833" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="5566">
+            <state line="156" column="47" selection-start="5700" selection-end="5777" vertical-scroll-proportion="-4.230769" vertical-offset="2464" max-vertical-offset="5830">
               <folding />
             </state>
           </provider>
@@ -178,16 +156,16 @@
       <file leaf-file-name="CONSTANT.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/CONSTANT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="37" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
+            <state line="2" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boarding.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="boarding.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/xml/boarding.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="38" selection-start="454" selection-end="454" vertical-scroll-proportion="0.22088353" vertical-offset="242" max-vertical-offset="9658">
+            <state line="16" column="38" selection-start="425" selection-end="463" vertical-scroll-proportion="0.0" vertical-offset="328" max-vertical-offset="9658">
               <folding />
             </state>
           </provider>
@@ -196,43 +174,52 @@
       <file leaf-file-name="activity_emergency.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_emergency.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="38" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="2172" max-vertical-offset="2530">
+            <state line="19" column="38" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="1945" max-vertical-offset="2530">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header_view.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/header_view.java">
+      <file leaf-file-name="activity_boarding.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_boarding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="39" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="1210">
+            <state line="97" column="83" selection-start="3770" selection-end="3770" vertical-scroll-proportion="0.4400978" vertical-offset="1426" max-vertical-offset="3366">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_vision.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_vision.java">
+      <file leaf-file-name="MyProperties.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/MyProperties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="43" selection-start="3951" selection-end="3951" vertical-scroll-proportion="0.0" vertical-offset="1562" max-vertical-offset="2706">
+            <state line="42" column="52" selection-start="1099" selection-end="1099" vertical-scroll-proportion="-8.115385" vertical-offset="559" max-vertical-offset="2332">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="doubleTapListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/doubleTapListener.java">
+      <file leaf-file-name="LANG.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/LANG.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="35" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="858">
+            <state line="8" column="8" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer_view.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/footer_view.java">
+      <file leaf-file-name="CustomList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/CustomList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="48" selection-start="1670" selection-end="2087" vertical-scroll-proportion="0.0" vertical-offset="1100" max-vertical-offset="1694">
+            <state line="44" column="60" selection-start="1222" selection-end="1233" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1210">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/ListFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="50" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.0" vertical-offset="603" max-vertical-offset="1188">
               <folding />
             </state>
           </provider>
@@ -248,7 +235,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/drawable-hdpi/btn_blue.xml" />
         <option value="$PROJECT_DIR$/res/drawable-hdpi/btn_red.xml" />
         <option value="$PROJECT_DIR$/res/drawable-hdpi/btn_purple.xml" />
         <option value="$PROJECT_DIR$/res/drawable-hdpi/btn_green.xml" />
@@ -271,7 +257,6 @@
         <option value="$PROJECT_DIR$/res/layout/layout_hearing.xml" />
         <option value="$PROJECT_DIR$/res/layout/layout_main.xml" />
         <option value="$PROJECT_DIR$/res/layout/layout_boarding.xml" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/head_home.xml" />
         <option value="$PROJECT_DIR$/res/layout/response_single.xml" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/ResponseList.java" />
@@ -281,24 +266,26 @@
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_nonenglish.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/LANG.java" />
-        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/MyProperties.java" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/ListFactory.java" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/ItemStruct.java" />
         <option value="$PROJECT_DIR$/res/xml/gettingoff.xml" />
         <option value="$PROJECT_DIR$/res/xml/response.xml" />
         <option value="$PROJECT_DIR$/res/xml/travelling.xml" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/footer_view.java" />
-        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_boarding.java" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_display.java" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_emergency.java" />
-        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_hearing.java" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_response.java" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_vision.java" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/doubleTapListener.java" />
         <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/header_view.java" />
-        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_main.java" />
-        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/CONSTANT.java" />
         <option value="$PROJECT_DIR$/res/xml/boarding.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/CONSTANT.java" />
+        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/TITLE.java" />
+        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/MyProperties.java" />
+        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_main.java" />
+        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_hearing.java" />
+        <option value="$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_boarding.java" />
       </list>
     </option>
   </component>
@@ -457,7 +444,7 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistory" value="ation&#10;hearing" />
+    <property name="SearchEverywhereHistory" value="or&#10;ation&#10;hearing" />
     <property name="options.lastSelected" value="preferences.sourceCode.XML" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -684,7 +671,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.325887" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25098553" sideWeight="0.7647059" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36662287" sideWeight="0.7647059" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298292" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -748,11 +735,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/btn_green.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="11" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-29.48" vertical-offset="55" max-vertical-offset="924" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/btn_blue.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="11" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-20.8" vertical-offset="272" max-vertical-offset="924" />
@@ -792,13 +774,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/style.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="57" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="57" selection-start="188" selection-end="188" vertical-scroll-proportion="-4.4" vertical-offset="0" max-vertical-offset="242">
@@ -816,13 +791,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="67" selection-start="118" selection-end="129" vertical-scroll-proportion="-0.8627451" vertical-offset="0" max-vertical-offset="2024">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/layout_emergency.xml">
@@ -865,13 +833,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/CustomList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="60" selection-start="1222" selection-end="1233" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1210">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/layout_display.xml">
@@ -985,23 +946,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/LANG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="8" selection-start="122" selection-end="122" vertical-scroll-proportion="0.302926" vertical-offset="0" max-vertical-offset="581">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_nonenglish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="16" selection-start="926" selection-end="926" vertical-scroll-proportion="0.0" vertical-offset="167" max-vertical-offset="880">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/ListFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="50" selection-start="1167" selection-end="1167" vertical-scroll-proportion="-10.153846" vertical-offset="660" max-vertical-offset="1188">
           <folding />
         </state>
       </provider>
@@ -1041,13 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/MyProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="61" selection-start="1577" selection-end="1577" vertical-scroll-proportion="0.0" vertical-offset="1102" max-vertical-offset="1694">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/response.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="24" selection-start="567" selection-end="567" vertical-scroll-proportion="0.44144145" vertical-offset="271" max-vertical-offset="968">
@@ -1072,30 +1012,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_boarding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="49" selection-start="5147" selection-end="5608" vertical-scroll-proportion="0.0" vertical-offset="2112" max-vertical-offset="3234">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_display.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="51" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0" vertical-offset="2002" max-vertical-offset="2508">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_emergency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="38" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="2172" max-vertical-offset="2530">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_hearing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="38" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3388">
           <folding />
         </state>
       </provider>
@@ -1135,23 +1054,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_emergency.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="39" selection-start="793" selection-end="833" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="5566">
+        <state line="19" column="38" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="2172" max-vertical-offset="2530">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/CONSTANT.java">
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/ListFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="37" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
+        <state line="44" column="50" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.0" vertical-offset="603" max-vertical-offset="1188">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/CustomList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="60" selection-start="1222" selection-end="1233" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="99" selection-start="726" selection-end="726" vertical-scroll-proportion="0.1923077" vertical-offset="0" max-vertical-offset="2024">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/style.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="57" selection-start="269" selection-end="269" vertical-scroll-proportion="0.18803419" vertical-offset="0" max-vertical-offset="585">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/boarding.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="38" selection-start="454" selection-end="454" vertical-scroll-proportion="0.22088353" vertical-offset="242" max-vertical-offset="9658">
+        <state line="16" column="38" selection-start="425" selection-end="463" vertical-scroll-proportion="0.0" vertical-offset="328" max-vertical-offset="9658">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/CONSTANT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/LANG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="8" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/TITLE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="43" selection-start="626" selection-end="626" vertical-scroll-proportion="0.6831276" vertical-offset="42" max-vertical-offset="550">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/MyProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="52" selection-start="1099" selection-end="1099" vertical-scroll-proportion="-8.115385" vertical-offset="559" max-vertical-offset="2332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="47" selection-start="5700" selection-end="5777" vertical-scroll-proportion="-4.230769" vertical-offset="2464" max-vertical-offset="5830">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_hearing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="162" column="73" selection-start="6238" selection-end="6238" vertical-scroll-proportion="-6.769231" vertical-offset="2508" max-vertical-offset="3652">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/utkise/TTSProj2/activity_boarding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="83" selection-start="3770" selection-end="3770" vertical-scroll-proportion="0.4400978" vertical-offset="1426" max-vertical-offset="3366">
           <folding />
         </state>
       </provider>

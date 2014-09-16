@@ -7,4 +7,7 @@ public class CONSTANT {
     public final static int START = 1;
     public final static int MIDDLE = 1;
     public final static int END = 2;
+
+
+
 }
