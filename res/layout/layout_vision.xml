@@ -27,7 +27,7 @@
                 android:layout_height="fill_parent"
                 android:text="@string/empty"
                 android:id="@id/Left" android:layout_gravity="center_vertical" android:layout_weight="1"
-                android:background="@drawable/left1"/>
+                android:background="@drawable/up"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="0dp"
@@ -38,7 +38,7 @@
         <Button
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:text="Boarding"
+                android:text="@string/empty"
                 android:id="@id/Ok"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="4"
@@ -58,12 +58,20 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:text="@string/empty"
-                android:id="@id/Right" android:layout_gravity="center_vertical" android:layout_weight="1"
-                android:background="@drawable/right"/>
+                android:id="@id/Right"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/down"/>
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0dp"
-                  android:layout_weight="0.02" android:layout_gravity="center_horizontal" android:background="#000000"
-                  android:id="@+id/linearLayout2"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.03"
+            android:background="#000000">
+    </LinearLayout>
+
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"

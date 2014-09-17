@@ -84,7 +84,7 @@ public class activity_response extends Activity {
                     count = CONSTANT.START;
 
                     ItemStruct item = thisLevel.get(position);
-                    MyProperties.getInstance().speakout(item.getText(MyProperties.getInstance().Language));
+                    MyProperties.getInstance().speakBoth(item);
                 }
 
             }

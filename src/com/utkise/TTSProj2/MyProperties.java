@@ -23,10 +23,43 @@ public class MyProperties {
     public List<String[]> TITLES;
 
     public void speakout(String text) {
-        gtts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+        gtts.speak(text, TextToSpeech.QUEUE_ADD, null);
     }
 
-    public String getTitle() {
+    // speakBoth language if not english
+    public void speakBoth(TITLE title) {
+
+        speakout(getTitleName(title));
+
+        if (Language != LANG.ENGLISH) {
+            gtts.playSilence(700, TextToSpeech.QUEUE_ADD, null);
+            speakout(getTitleName(title, LANG.ENGLISH));
+        }
+    }
+
+    // speakBoth language if not english
+    public void speakBoth(ItemStruct item) {
+
+        speakout(item.getText(Language));
+        if (Language != LANG.ENGLISH) {
+            gtts.playSilence(500, TextToSpeech.QUEUE_ADD, null);
+            speakout(item.getText(LANG.ENGLISH));
+        }
+
+    }
+
+    public void speakBoth(List<String> words) {
+
+        speakout(words.get(0));
+
+        speakout(words.get(1));
+    }
+
+    public void speakSilent(int ms) {
+        gtts.playSilence(ms, TextToSpeech.QUEUE_ADD, null);
+    }
+
+    public String getTitleStack() {
         int i;
         String title = "";
         for (i = 0; i < titleStack.size(); i ++) {
@@ -39,7 +72,15 @@ public class MyProperties {
         return title;
     }
 
+    public String getTitleName(TITLE index, LANG lan) {
+        return TITLES.get(index.ordinal())[lan.ordinal()];
+    }
+
     public String getTitleName(TITLE index) {
+        return getTitleName(index, Language);
+    }
+
+    public String getTitleEither(TITLE index) {
         return TITLES.get(index.ordinal())[Language.ordinal()];
     }
 
@@ -52,6 +93,7 @@ public class MyProperties {
         response = null;
         currentType = null;
         titleStack = new Stack<String>();
+
         initTITLES();
     }
 
@@ -65,11 +107,13 @@ public class MyProperties {
     private void initTITLES() {
         TITLES = new ArrayList<String[]>();
 
+        /* The sequence of adding the string matters */
+
         // vision, hearing, cognitive, non english
         TITLES.add(new String[]{"vision","visión"});
         TITLES.add(new String[]{"hearing","escuchar"});
         TITLES.add(new String[]{"cognitive","cognitiva"});
-        TITLES.add(new String[]{"non english","no Inglés"});
+        TITLES.add(new String[]{"english","español"});
 
         // boarding, getting off, travelling, emergency
         TITLES.add(new String[]{"boarding","embarque"});

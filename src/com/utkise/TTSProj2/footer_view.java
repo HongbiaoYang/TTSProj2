@@ -7,10 +7,14 @@ import android.os.Handler;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Bill on 9/11/14.
@@ -26,15 +30,19 @@ public class footer_view extends LinearLayout {
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.foot_banner, this, true);
 
-        String yes = "Yes";
-        String no = "No";
-        String more = "More";
+        List<String> yes, no, more;
 
-        if (MyProperties.getInstance().Language == LANG.SPANISH) {
-            yes = "sí";
-            no = "no";
-            more = "más";
-        }
+        yes = new ArrayList<String>();
+        yes.add("yes");
+        yes.add("sí");
+
+        no = new ArrayList<String>();
+        no.add("no");
+        no.add("no");
+
+        more = new ArrayList<String>();
+        more.add("more");
+        more.add("más");
 
         Button Yes, No, More;
 
@@ -44,9 +52,10 @@ public class footer_view extends LinearLayout {
 
 
         //set text
-        Yes.setText(yes);
-        No.setText(no);
-        More.setText(more);
+        int lan = MyProperties.getInstance().Language.ordinal();
+        Yes.setText(yes.get(lan));
+        No.setText(no.get(lan));
+        More.setText(more.get(lan));
 
         // set listener
         Yes.setOnClickListener(new doubleTapListener(yes));

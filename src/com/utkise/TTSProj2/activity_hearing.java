@@ -24,8 +24,8 @@ public class activity_hearing extends Activity implements OnInitListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_hearing);
+
         MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
-        tts = MyProperties.getInstance().gtts;
 
         boarding = (Button)findViewById(R.id.Hboarding);
         gettingoff = (Button)findViewById(R.id.Hgettingoff);
@@ -48,7 +48,7 @@ public class activity_hearing extends Activity implements OnInitListener {
 
         title = (TextView)findViewById(R.id.header2);
 
-        title.setText(MyProperties.getInstance().getTitle());
+        title.setText(MyProperties.getInstance().getTitleStack());
 
         emergency.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +67,8 @@ public class activity_hearing extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
-                    String emergency_str = MyProperties.getInstance().getTitleName(TITLE.EMERGENCY);
-                    speakOut(emergency_str);
+                    MyProperties.getInstance().speakBoth(TITLE.EMERGENCY);
+                    String emergency_str = MyProperties.getInstance().getTitleEither(TITLE.EMERGENCY);
                     MyProperties.getInstance().titleStack.push(emergency_str);
 
                     Intent intent = new Intent();
@@ -97,8 +97,8 @@ public class activity_hearing extends Activity implements OnInitListener {
                     count = CONSTANT.START;
 
 
-                    String board_str = MyProperties.getInstance().getTitleName(TITLE.BOARDING);
-                    speakOut(board_str);
+                    MyProperties.getInstance().speakBoth(TITLE.BOARDING);
+                    String board_str = MyProperties.getInstance().getTitleEither(TITLE.BOARDING);
                     MyProperties.getInstance().titleStack.push(board_str);
 
                     Intent intent = new Intent();
@@ -127,8 +127,8 @@ public class activity_hearing extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
+                    MyProperties.getInstance().speakBoth(TITLE.TRAVELLING);
                     String travel_str = MyProperties.getInstance().getTitleName(TITLE.TRAVELLING);
-                    speakOut(travel_str);
                     MyProperties.getInstance().titleStack.push(travel_str);
 
                     Intent intent = new Intent();
@@ -158,9 +158,11 @@ public class activity_hearing extends Activity implements OnInitListener {
                     count = CONSTANT.START;
 
 
+                    MyProperties.getInstance().speakBoth(TITLE.GETTING_OFF);
+
                     String getoff_str = MyProperties.getInstance().getTitleName(TITLE.GETTING_OFF);
-                    speakOut(getoff_str);
                     MyProperties.getInstance().titleStack.push(getoff_str);
+
 
                     Intent intent = new Intent();
                     intent.setClass(activity_hearing.this, activity_boarding.class);
@@ -186,11 +188,6 @@ public class activity_hearing extends Activity implements OnInitListener {
 
 
     }
-
-    private void speakOut(String text) {
-        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
-
 
     @Override
     public void onInit(int status) {

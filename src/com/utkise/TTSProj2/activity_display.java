@@ -1,8 +1,6 @@
 package com.utkise.TTSProj2;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -45,7 +43,7 @@ public class activity_display extends Activity implements OnInitListener {
         lastLevelBtn = (ImageView) findViewById(R.id.header1);
         title = (TextView) findViewById(R.id.header2);
 
-        title.setText(MyProperties.getInstance().getTitle());
+        title.setText(MyProperties.getInstance().getTitleStack());
 
         lastLevelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,9 +96,9 @@ public class activity_display extends Activity implements OnInitListener {
 
                     ItemStruct item = thisLevel.get(position);
                     if (item.getChild() == null) {
-                        speakOut(item.getText(lan));
+                        MyProperties.getInstance().speakBoth(item);
                     } else {
-                        speakOut(item.getText(lan));
+                        MyProperties.getInstance().speakBoth(item);
                         levelStack.push(thisLevel);
                         thisLevel = item.getChild();
                         updateList(thisLevel);
@@ -111,10 +109,6 @@ public class activity_display extends Activity implements OnInitListener {
         });
 
 
-    }
-
-    private void speakOut(String text) {
-        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     @Override

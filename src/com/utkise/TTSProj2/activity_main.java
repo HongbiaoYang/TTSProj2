@@ -32,7 +32,6 @@ public class activity_main extends Activity implements OnInitListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
         MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
-        tts = MyProperties.getInstance().gtts;
 
         if (MyProperties.getInstance().boarding == null) {
             MyProperties.getInstance().boarding = new DisableType();
@@ -93,9 +92,9 @@ public class activity_main extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().doInit(LANG.SPANISH);
 
-                    String non_english_str = MyProperties.getInstance().getTitleName(TITLE.NON_ENGLISH);
+                    String non_english_str = MyProperties.getInstance().getTitleEither(TITLE.NON_ENGLISH);
 
-                    speakOut(non_english_str);
+                    MyProperties.getInstance().speakBoth(TITLE.NON_ENGLISH);
                     MyProperties.getInstance().titleStack.push(non_english_str);
 
                     Intent intent = new Intent();
@@ -122,10 +121,10 @@ public class activity_main extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
+                    MyProperties.getInstance().speakBoth(TITLE.VISION);
                     String vision_str = MyProperties.getInstance().getTitleName(TITLE.VISION);
-
-                    speakOut(vision_str);
                     MyProperties.getInstance().titleStack.push(vision_str);
+
                     Intent intent = new Intent();
                     intent.setClass(activity_main.this, activity_vision.class);
                     startActivity(intent);
@@ -151,9 +150,10 @@ public class activity_main extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
-                    String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
 
-                    speakOut(hearing_str);
+                    MyProperties.getInstance().speakBoth(TITLE.HEARING);
+
+                    String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
                     MyProperties.getInstance().titleStack.push(hearing_str);
                     Intent intent = new Intent();
                     intent.setClass(activity_main.this, activity_hearing.class);
@@ -179,9 +179,11 @@ public class activity_main extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
-                    String emergency_str = MyProperties.getInstance().getTitleName(TITLE.EMERGENCY);
+                    MyProperties.getInstance().speakBoth(TITLE.EMERGENCY);
 
-                    speakOut(emergency_str);
+                    String emergency_str = MyProperties.getInstance().getTitleName(TITLE.EMERGENCY);
+                    MyProperties.getInstance().titleStack.push(emergency_str);
+
                     Intent intent = new Intent();
                     intent.putExtra("Type", "emergency");
                     intent.setClass(activity_main.this, activity_emergency.class);
@@ -191,10 +193,6 @@ public class activity_main extends Activity implements OnInitListener {
         });
 
 
-    }
-
-    private void speakOut(String text) {
-        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     @Override
@@ -215,7 +213,7 @@ public class activity_main extends Activity implements OnInitListener {
         if (status == TextToSpeech.SUCCESS) {
             LANG lan = MyProperties.getInstance().Language;
             MyProperties.getInstance().doInit(lan);
-            speakOut("main Menu");
+            MyProperties.getInstance().speakout("main Menu");
         } else {
             Log.e("TTS", "Initilization Failed!");
         }

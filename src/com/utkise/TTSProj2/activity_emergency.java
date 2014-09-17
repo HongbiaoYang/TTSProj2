@@ -34,8 +34,7 @@ public class activity_emergency extends Activity implements OnInitListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_emergency);
-        MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
-        tts = MyProperties.getInstance().gtts;
+
         levelStack = new Stack<List<ItemStruct>>();
 
         lastLevelBtn = (ImageView) findViewById(R.id.header1);
@@ -98,9 +97,9 @@ public class activity_emergency extends Activity implements OnInitListener {
 
                     if (item.getChild() == null) {
 
-                        speakOut(item.getText(lan));
+                        MyProperties.getInstance().speakBoth(item);
                     } else {
-                        speakOut(item.getText(lan));
+                        MyProperties.getInstance().speakBoth(item);
                         levelStack.push(thisLevel);
                         thisLevel = item.getChild();
                         updateList(thisLevel);
@@ -111,10 +110,6 @@ public class activity_emergency extends Activity implements OnInitListener {
         });
 
 
-    }
-
-    private void speakOut(String text) {
-        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     @Override

@@ -24,8 +24,6 @@ public class activity_boarding extends Activity implements OnInitListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_boarding);
-        MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
-        tts = MyProperties.getInstance().gtts;
 
         generalInfo = (Button)findViewById(R.id.HgeneralInfo);
         tripInfo = (Button)findViewById(R.id.Htripinfo);
@@ -47,7 +45,7 @@ public class activity_boarding extends Activity implements OnInitListener {
         }
 
 
-        title.setText(MyProperties.getInstance().getTitle());
+        title.setText(MyProperties.getInstance().getTitleStack());
 
         generalInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +63,9 @@ public class activity_boarding extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("general information");
+
+                    MyProperties.getInstance().speakBoth(TITLE.GENERAL_INFORMATION);
+
                     String g_info = MyProperties.getInstance().getTitleName(TITLE.GENERAL_INFORMATION);
                     MyProperties.getInstance().titleStack.push(g_info);
 
@@ -94,9 +94,9 @@ public class activity_boarding extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
+                    MyProperties.getInstance().speakBoth(TITLE.TRIP_INFORMATION);
 
                     String t_info = MyProperties.getInstance().getTitleName(TITLE.TRIP_INFORMATION);
-                    speakOut(t_info);
                     MyProperties.getInstance().titleStack.push(t_info);
 
                     Intent intent = new Intent();
@@ -123,7 +123,9 @@ public class activity_boarding extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("safety");
+
+
+                    MyProperties.getInstance().speakBoth(TITLE.SAFETY);
                     String safe_str = MyProperties.getInstance().getTitleName(TITLE.SAFETY);
                     MyProperties.getInstance().titleStack.push(safe_str);
 
@@ -151,7 +153,9 @@ public class activity_boarding extends Activity implements OnInitListener {
                     handler.postDelayed(run, 250);
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
-                    speakOut("comfort");
+
+                    MyProperties.getInstance().speakBoth(TITLE.COMFORT);
+
                     String comfort_str = MyProperties.getInstance().getTitleName(TITLE.COMFORT);
                     MyProperties.getInstance().titleStack.push(comfort_str);
 
@@ -172,11 +176,6 @@ public class activity_boarding extends Activity implements OnInitListener {
             }
         });
     }
-
-    private void speakOut(String text) {
-        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
-
 
     @Override
     public void onBackPressed() {
