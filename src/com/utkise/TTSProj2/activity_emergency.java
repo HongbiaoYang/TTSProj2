@@ -47,7 +47,7 @@ public class activity_emergency extends Activity implements OnInitListener {
             public void onClick(View v) {
 
                 if (levelStack.isEmpty()) {
-                    MyProperties.getInstance().titleStack.clear();
+                    MyProperties.getInstance().titleStack.pop();
                     finish();
                 } else {
                     thisLevel = levelStack.pop();

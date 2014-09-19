@@ -200,7 +200,7 @@ public class activity_main extends Activity implements OnInitListener {
         int curTime = Calendar.getInstance().get(Calendar.SECOND);
 
         if (curTime - backTimer < 3) {
-            super.onBackPressed();
+            finish();
         } else {
             Toast.makeText(getApplicationContext(), "Click again to quit this app", 3).show();
             backTimer = curTime;

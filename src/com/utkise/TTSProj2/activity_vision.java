@@ -188,12 +188,6 @@ public class activity_vision extends Activity implements OnInitListener{
 
     }
 
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
     @Override
     public void onInit(int status) {
 
