@@ -3,6 +3,7 @@ package com.utkise.TTSProj2;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,10 @@ public class MyProperties {
     public List<String[]> TITLES;
 
     public void speakout(String text) {
+        gtts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    public void speakAdd(String text) {
         gtts.speak(text, TextToSpeech.QUEUE_ADD, null);
     }
 
@@ -32,8 +37,8 @@ public class MyProperties {
         speakout(getTitleName(title));
 
         if (Language != LANG.ENGLISH) {
-            gtts.playSilence(700, TextToSpeech.QUEUE_ADD, null);
-            speakout(getTitleName(title, LANG.ENGLISH));
+            speakSilent(700);
+            speakAdd(getTitleName(title, LANG.ENGLISH));
         }
     }
 
@@ -42,8 +47,8 @@ public class MyProperties {
 
         speakout(item.getText(Language));
         if (Language != LANG.ENGLISH) {
-            gtts.playSilence(500, TextToSpeech.QUEUE_ADD, null);
-            speakout(item.getText(LANG.ENGLISH));
+            speakSilent(700);
+            speakAdd(item.getText(LANG.ENGLISH));
         }
 
     }

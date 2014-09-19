@@ -56,10 +56,8 @@ public class activity_vision extends Activity implements OnInitListener{
             public void onClick(View v) {
 
                 MyProperties.getInstance().titleStack.pop();
+                finish();
 
-                Intent intent = new Intent();
-                intent.setClass(activity_vision.this, activity_main.class);
-                startActivity(intent);
             }
         });
 
