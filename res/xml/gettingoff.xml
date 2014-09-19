@@ -1,31 +1,31 @@
-<xml>
+﻿<xml>
 <General>	
 	<Item>	
 		<Title>STOP pull chord or button</Title>
 		<Text>STOP pull chord or button</Text>
-		<Titulo>Cord�n bot�n para hacer la parada</Titulo>
-		<Texto>Cord�n bot�n para hacer la parada</Texto>
+		<Titulo>Cordón o botón para hacer la parada</Titulo>
+		<Texto>Cordón o botón para hacer la parada</Texto>
 		<Image>picture49</Image>
 		<Item> 
 			<Title>Where is the STOP pull chord or button? </Title>
 			<Text>Where is the STOP pull chord or button?</Text>
-			<Titulo>�D�nde se encuentra el cord�n-bot�n para hacer la parada?</Titulo>
-			<Texto>�D�nde se encuentra el cord�n-bot�n para hacer la parada?</Texto>
+			<Titulo>¿Dónde se encuentra el cordón o botón para hacer la parada?</Titulo>
+			<Texto>¿Dónde se encuentra el cordón o botón para hacer la parada?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>This STOP pull chord or button is not working. </Title>
 			<Text>This STOP pull chord or button is not working.</Text>
-			<Titulo>El cord�n-bot�n para hacer la parada no funciona.</Titulo>
-			<Texto>El cord�n-bot�n para hacer la parada no funciona.</Texto>
+			<Titulo>El cordón o botón para hacer la parada no funciona.</Titulo>
+			<Texto>El cordón o botón para hacer la parada no funciona.</Texto>
 			<Image>picture0</Image>
 		</Item> 
    		
 		<Item> 
 			<Title>I cannot reach the STOP pull chord or button, please help. </Title>
 			<Text>I cannot reach the STOP pull chord or button, please help.</Text>
-			<Titulo>No alcanzo el cord�n-bot�n para hacer la parada, �me podr�a ayudar?</Titulo>
-			<Texto>No alcanzo el cord�n-bot�n para hacer la parada, �me podr�a ayudar?</Texto>
+			<Titulo>No alcanzo el cordón-botón para hacer la parada, ¿me podría ayudar?</Titulo>
+			<Texto>No alcanzo el cordón-botón para hacer la parada, ¿me podría ayudar?</Texto>
 			<Image>picture0</Image>
 		</Item>
 	</Item>
@@ -40,22 +40,22 @@
 		<Item> 
 			<Title>Am I getting dropped off next?</Title>
 			<Text>Am I getting dropped off next?</Text>
-			<Titulo>�Sigo yo de bajarme del transporte?</Titulo>
-			<Texto>�Sigo yo de bajarme del transporte?</Texto>
+			<Titulo>¿Sigo yo de bajarme del transporte?</Titulo>
+			<Texto>¿Sigo yo de bajarme del transporte?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>Are we approaching the stop?</Title>
 			<Text>Are we approaching the stop?</Text>
-			<Titulo>�Estamos acerc�ndonos a la parada?</Titulo>
-			<Texto>�Estamos acerc�ndonos a la parada?</Texto>
+			<Titulo>¿Estamos acercándonos a la parada?</Titulo>
+			<Texto>¿Estamos acercándonos a la parada?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>How far are we from the stop?</Title>
 			<Text>How far are we from the stop?</Text>
-			<Titulo>�Qu� tan lejos estamos de la parada?</Titulo>
-			<Texto>�Qu� tan lejos estamos de la parada?</Texto>
+			<Titulo>¿Qué tan lejos estamos de la parada?</Titulo>
+			<Texto>¿Qué tan lejos estamos de la parada?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
@@ -68,8 +68,8 @@
 		<Item> 
 			<Title>You missed my house, please turn around.</Title>
 			<Text>You missed my house, please turn around.</Text>
-			<Titulo>Se pas� mi casa, por favor d� vuelta</Titulo>
-			<Texto>Se pas� mi casa, por favor d� vuelta</Texto>
+			<Titulo>Se pasó mi casa, por favor dé vuelta</Titulo>
+			<Texto>Se pasó mi casa, por favor dé vuelta</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
@@ -83,8 +83,8 @@
 		<Item> 
 			<Title>I got dropped in a wrong location. </Title>
 			<Text>I got dropped in a wrong location.</Text>
-			<Titulo>Me baj� en la ubicaci�n err�nea</Titulo>
-			<Texto>Me baj� en la ubicaci�n err�nea</Texto>
+			<Titulo>Me bajé en la ubicación errónea</Titulo>
+			<Texto>Me bajé en la ubicación errónea</Texto>
 			<Image>picture0</Image>
 		</Item>
 	</Item>

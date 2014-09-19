@@ -1,4 +1,4 @@
-<xml>
+﻿<xml>
 <General>	
 	<Item>	
 		<Title>Destination</Title>
@@ -38,8 +38,8 @@
 		<Item> 
 			<Title>I need to go to dialysis center. </Title>
 			<Text>I need to go to dialysis center.  </Text>
-			<Titulo>Necesito ir al centro de di�lisis</Titulo>
-			<Texto>Necesito ir al centro de di�lisis</Texto>
+			<Titulo>Necesito ir al centro de diálisis</Titulo>
+			<Texto>Necesito ir al centro de diálisis</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
@@ -58,28 +58,28 @@
 		</Item>	
 	</Item>
 	<Item>	
-		<Title> To another passenger.</Title>
-		<Text>To another passenger.</Text>
+		<Title> To Another Passenger.</Title>
+		<Text>To Another Passenger.</Text>
 		<Titulo>Otro pasajero</Titulo>
 		<Texto>Otro pasajero</Texto>
 		<Image>picture0</Image>
 		<Item> 
 			<Title>Can you get the driver for me? </Title>
 			<Text>Can you get the driver for me?</Text>
-			<Titulo>�Puede llamar al conductor por m�?</Titulo>
-			<Texto>�Puede llamar al conductor por m�?</Texto>
+			<Titulo>¿Puede llamar al conductor por mí?</Titulo>
+			<Texto>¿Puede llamar al conductor por mí?</Texto>
 			<Image>picture15</Image>
 		</Item>	
 		<Item> 
 			<Title>Could you please help me? </Title>
 			<Text>Could you please help me?</Text>
-			<Titulo>�Me podr�a ayudar por favor?</Titulo>
-			<Texto>�Me podr�a ayudar por favor?</Texto>
+			<Titulo>¿Me podría ayudar por favor?</Titulo>
+			<Texto>¿Me podría ayudar por favor?</Texto>
 			<Image>picture0</Image>
 		</Item>	
 		<Item> 
-			<Title>Please don't stand till the bus stops? </Title>
-			<Text>Please don't stand till the bus stops?</Text>
+			<Title>Please don't stand up till the bus stops? </Title>
+			<Text>Please don't stand up till the bus stops?</Text>
 			<Titulo>Por favor no se levante hasta que el transporte se detenga</Titulo>
 			<Texto>Por favor no se levante hasta que el transporte se detenga</Texto>
 			<Image>picture0</Image>
@@ -87,8 +87,8 @@
 		<Item> 
 			<Title>Don't unbuckle your seatbelt. </Title>
 			<Text>Don't unbuckle your seatbelt.</Text>
-			<Titulo>No se desabroche el cintur�n de seguridad</Titulo>
-			<Texto>No se desabroche el cintur�n de seguridad</Texto>
+			<Titulo>No se desabroche el cinturón de seguridad</Titulo>
+			<Texto>No se desabroche el cinturón de seguridad</Texto>
 			<Image>picture0</Image>
 		</Item>		
 	</Item>
@@ -97,21 +97,21 @@
 	<Item> 
 		<Title>Location</Title>
 		<Text>Location</Text>
-		<Titulo>Ubicaci�n</Titulo>
-		<Texto>Ubicaci�n</Texto>
+		<Titulo>Ubicación</Titulo>
+		<Texto>Ubicación</Texto>
 		<Image>picture0</Image>
 		<Item> 
 			<Title>What is this place? </Title>
 			<Text>what is this place?</Text>
-			<Titulo>�Cu�l es est� lugar?</Titulo>
-			<Texto>�Cu�l es est� lugar?</Texto>
+			<Titulo>¿Cuál es esté lugar?</Titulo>
+			<Texto>¿Cuál es esté lugar?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>Where are we? </Title>
 			<Text>Where are we? </Text>
-			<Titulo>�Cu�l es est� lugar?</Titulo>
-			<Texto>�Cu�l es est� lugar?</Texto>
+			<Titulo>¿Cuál es esté lugar?</Titulo>
+			<Texto>¿Cuál es esté lugar?</Texto>
 			<Image>picture0</Image>
 		</Item>
 	</Item>
@@ -124,15 +124,15 @@
 		<Item> 
 			<Title>Where is this place?</Title>
 			<Text>Where is this place?</Text>
-			<Titulo>�D�nde est� este lugar?</Titulo>
-			<Texto>�D�nde est� este lugar?</Texto>
+			<Titulo>¿Dónde está este lugar?</Titulo>
+			<Texto>¿Dónde está este lugar?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>How do I get there?</Title>
 			<Text>How do I get there?</Text>
-			<Titulo>�C�mo llego ah�?</Titulo>
-			<Texto>�C�mo llego ah�?</Texto>
+			<Titulo>¿Cómo llego ahí?</Titulo>
+			<Texto>¿Cómo llego ahí?</Texto>
 			<Image>picture0</Image>
 		</Item>
 	</Item>
@@ -147,8 +147,8 @@
 		<Item> 
 			<Title>Please do not use your cell phone while driving.</Title>
 			<Text>Please do not use your cell phone while driving.</Text>
-			<Titulo>Por favor no use su tel�fono celular mientras conduce</Titulo>
-			<Texto>Por favor no use su tel�fono celular mientras conduce</Texto>
+			<Titulo>Por favor no use su teléfono celular mientras conduce</Titulo>
+			<Texto>Por favor no use su teléfono celular mientras conduce</Texto>
 			<Image>picture57</Image>
 		</Item>
 		<Item> 
@@ -177,29 +177,29 @@
 		<Item> 
 			<Title>I am afraid of dogs. Can you please tell the owner?  </Title>
 			<Text>I am afraid of dogs. Can you please tell the owner?</Text>
-			<Titulo>Tengo miedo a los perros, le puede decir a su due due�o</Titulo>
-			<Texto>Tengo miedo a los perros, le puede decir a su due due�o</Texto>
+			<Titulo>Tengo miedo a los perros, le puede decir a su due dueño</Titulo>
+			<Texto>Tengo miedo a los perros, le puede decir a su due dueño</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>I am allergic to scents.  </Title>
 			<Text>I am allergic to scents.</Text>
-			<Titulo>Soy al�rgico a los aromas</Titulo>
-			<Texto>Soy al�rgico a los aromas</Texto>
+			<Titulo>Soy alérgico a los aromas</Titulo>
+			<Texto>Soy alérgico a los aromas</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>Its hot in here, please increase the AC.</Title>
 			<Text>Its hot in here, please increase the AC.</Text>
-			<Titulo>Hace calor, por favor s�bale al aire acondicionado</Titulo>
-			<Texto>Hace calor, por favor s�bale al aire acondicionado</Texto>
+			<Titulo>Hace calor, por favor súbale al aire acondicionado</Titulo>
+			<Texto>Hace calor, por favor súbale al aire acondicionado</Texto>
 			<Image>picture1</Image>
 		</Item>
 		<Item> 
 			<Title>Its hot in here, please decrease the heater.</Title>
 			<Text>Its hot in here, please decrease the heater.</Text>
-			<Titulo>Hace calor, por favor b�jele al calentador</Titulo>
-			<Texto>Hace calor, por favor b�jele al calentador</Texto>
+			<Titulo>Hace calor, por favor bájele al calentador</Titulo>
+			<Texto>Hace calor, por favor bájele al calentador</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
@@ -210,39 +210,39 @@
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>Its cold in here,please increase the heater.</Title>
-			<Text>Its cold in here,please increase the heater.</Text>
-			<Titulo>Hace fr�o, por favor s�bale al calentador</Titulo>
-			<Texto>Hace fr�o, por favor s�bale al calentador</Texto>
+			<Title>Its cold in here, please increase the heater.</Title>
+			<Text>Its cold in here, please increase the heater.</Text>
+			<Titulo>Hace frío, por favor súbale al calentador</Titulo>
+			<Texto>Hace frío, por favor súbale al calentador</Texto>
 			<Image>picture2</Image>
 		</Item>
 		
 		<Item> 
 			<Title>Its cold in here, please decrease the AC.</Title>
 			<Text>Its cold in here, please decrease the AC.</Text>
-			<Titulo>Hace fr�o, por favor b�jele al aire acondicionado</Titulo>
-			<Texto>Hace fr�o, por favor b�jele al aire acondicionado</Texto>
+			<Titulo>Hace frío, por favor bájele al aire acondicionado</Titulo>
+			<Texto>Hace frío, por favor bájele al aire acondicionado</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>Its cold in here,  please turn off the AC.</Title>
 			<Text>Its cold in here,  please turn off the AC.</Text>
-			<Titulo>Hace fr�o, por favor apage el aire acondicionado</Titulo>
-			<Texto>Hace fr�o, por favor apage el aire acondicionado</Texto>
+			<Titulo>Hace frío, por favor apage el aire acondicionado</Titulo>
+			<Texto>Hace frío, por favor apage el aire acondicionado</Texto>
 			<Image>picture3</Image>
 		</Item>
 		<Item> 
 			<Title>Please turn on music.</Title>
 			<Text>Please turn on the music.</Text>
-			<Titulo>Por favor prenda la m�sica</Titulo>
-			<Texto>Por favor prenda la m�sica</Texto>
+			<Titulo>Por favor prenda la música</Titulo>
+			<Texto>Por favor prenda la música</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>Please turn off music.</Title>
 			<Text>Please turn off the music.</Text>
-			<Titulo>Por favor apague la m�sica</Titulo>
-			<Texto>Por favor apague la m�sica</Texto>
+			<Titulo>Por favor apague la música</Titulo>
+			<Texto>Por favor apague la música</Texto>
 			<Image>picture0</Image>
 		</Item>
 	</Item>

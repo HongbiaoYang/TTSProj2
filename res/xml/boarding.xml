@@ -1,4 +1,4 @@
-<xml>
+﻿<xml>
 <General>	
 	<Item> 
 		<Title>To the Driver</Title>
@@ -14,7 +14,7 @@
             <Image>picture13</Image>
 		</Item>
 		<Item>
-			<Title>Hello, How are you?</Title>
+			<Title>Hello, How are you ?</Title>
 			<Text>Hello, How are you ?</Text>
 			<Titulo>¡Hola! ¿Cómo está?</Titulo>
             <Texto>¡Hola! ¿Cómo está?</Texto>
@@ -136,7 +136,7 @@
 		</Item>
 		<Item> 
 			<Title>Where do I keep my groceries bags? </Title>
-			<Text>Where do I keep groceries bags? </Text>
+			<Text>Where do I keep my groceries bags? </Text>
 			<Titulo>¿Dónde puedo guardar Mandado? </Titulo>
 			<Texto>¿Dónde puedo guardar Mandado?</Texto>
 			<Image>picture28</Image>
@@ -219,8 +219,8 @@
 			<Image>picture0</Image>
 		</Item>	
 		<Item> 
-			<Title>Can you transfer from my wheelchair to a seat?</Title>
-			<Text>Can you transfer from my wheelchair to a seat? </Text>
+			<Title>Can you transfer me from my wheelchair to a seat?</Title>
+			<Text>Can you transfer me from my wheelchair to a seat? </Text>
 			<Titulo>¿Me puede ayudar a moverme de la silla de ruedas al asiento?</Titulo>
 			<Texto>¿Me puede ayudar a moverme de la silla de ruedas al asiento?</Texto>	
 			
@@ -234,8 +234,8 @@
 			<Image>picture38</Image>
 		</Item>
 		<Item> 
-			<Title>I don't require any assitance while boarding the bus?</Title>
-			<Text>I don't require any assitance while boarding the bus? </Text>
+			<Title>I don't require any assistance while boarding the bus?</Title>
+			<Text>I don't require any assistance while boarding the bus? </Text>
 			<Titulo>No necesito ayuda para subir al transporte.</Titulo>
 			<Texto>No necesito ayuda para subir al transporte.</Texto>
 			<Image>picture0</Image>
@@ -248,8 +248,8 @@
 		<Texto>Clima</Texto>
 		<Image>picture0</Image>
 		<Item> 
-			<Title>Sunlight blinds me, can  you please cover the the window? </Title>
-			<Text>Sunlight blinds me, can you please cover the the window? </Text>
+			<Title>Sunlight blinds me, can  you please cover the window? </Title>
+			<Text>Sunlight blinds me, can you please cover the window? </Text>
 			<Titulo>El sol me encandila, ¿podría cubrir las ventanas?</Titulo>
 			<Texto>El sol me encandila, ¿podría cubrir las ventanas?</Texto>
 			<Image>picture0</Image>
@@ -327,8 +327,8 @@
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>Can you I use the change card again? </Title>
-			<Text>Can you I use the change card again?</Text>
+			<Title>Can I use the change card again? </Title>
+			<Text>Can I use the change card again?</Text>
 			<Titulo>¿Puedo usar la tarjeta de cambio nuevamente? </Titulo>
 			<Texto>¿Puedo usar la tarjeta de cambio nuevamente?</Texto>
 			<Image>picture0</Image>
