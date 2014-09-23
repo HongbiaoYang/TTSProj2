@@ -18,7 +18,7 @@
             android:layout_height="fill_parent"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="2dp"
-            android:background="@drawable/ut_logo"/>
+            android:background="@drawable/cac"/>
 
     <TextView
             android:id="@id/head_home2"
