@@ -36,20 +36,20 @@ public class MyProperties {
 
         speakout(getTitleName(title));
 
-        if (Language != LANG.ENGLISH) {
+       /* if (Language != LANG.ENGLISH) {
             speakSilent(700);
             speakAdd(getTitleName(title, LANG.ENGLISH));
-        }
+        }*/
     }
 
     // speakBoth language if not english
     public void speakBoth(ItemStruct item) {
 
         speakout(item.getText(Language));
-        if (Language != LANG.ENGLISH) {
+       /* if (Language != LANG.ENGLISH) {
             speakSilent(700);
             speakAdd(item.getText(LANG.ENGLISH));
-        }
+        }*/
 
     }
 
@@ -143,7 +143,7 @@ public class MyProperties {
         if (lan == LANG.ENGLISH) {
             result = gtts.setLanguage(Locale.US);
         } else if (lan==LANG.SPANISH) {
-            Locale locSpanish = new Locale("spa", "ESP");
+            Locale locSpanish = new Locale("spa", "MEX");
             result = gtts.setLanguage(locSpanish);
         }
 
