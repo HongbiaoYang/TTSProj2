@@ -11,7 +11,7 @@
 			<Text>Where is the STOP pull chord or button?</Text>
 			<Titulo>¿Dónde se encuentra el cordón o botón para hacer la parada?</Titulo>
 			<Texto>¿Dónde se encuentra el cordón o botón para hacer la parada?</Texto>
-			<Image>picture0</Image>
+			<Image>picture80</Image>
 		</Item>
 		<Item> 
 			<Title>This STOP pull chord or button is not working. </Title>
@@ -26,7 +26,7 @@
 			<Text>I cannot reach the STOP pull chord or button, please help.</Text>
 			<Titulo>No alcanzo el cordón-botón para hacer la parada, ¿me podría ayudar?</Titulo>
 			<Texto>No alcanzo el cordón-botón para hacer la parada, ¿me podría ayudar?</Texto>
-			<Image>picture0</Image>
+			<Image>picture81</Image>
 		</Item>
 	</Item>
 </General>

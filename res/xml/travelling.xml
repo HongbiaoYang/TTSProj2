@@ -126,7 +126,7 @@
 			<Text>Where is this place?</Text>
 			<Titulo>¿Dónde está este lugar?</Titulo>
 			<Texto>¿Dónde está este lugar?</Texto>
-			<Image>picture0</Image>
+			<Image>picture83</Image>
 		</Item>
 		<Item> 
 			<Title>How do I get there?</Title>
@@ -193,14 +193,14 @@
 			<Text>Its hot in here, please increase the AC.</Text>
 			<Titulo>Hace calor, por favor súbale al aire acondicionado</Titulo>
 			<Texto>Hace calor, por favor súbale al aire acondicionado</Texto>
-			<Image>picture1</Image>
+			<Image>picture1a</Image>
 		</Item>
 		<Item> 
 			<Title>Its hot in here, please decrease the heater.</Title>
 			<Text>Its hot in here, please decrease the heater.</Text>
 			<Titulo>Hace calor, por favor bájele al calentador</Titulo>
 			<Texto>Hace calor, por favor bájele al calentador</Texto>
-			<Image>picture0</Image>
+			<Image>picture1b</Image>
 		</Item>
 		<Item> 
 			<Title>Its hot in here, please turn off the heater.</Title>
@@ -214,7 +214,7 @@
 			<Text>Its cold in here, please increase the heater.</Text>
 			<Titulo>Hace frío, por favor súbale al calentador</Titulo>
 			<Texto>Hace frío, por favor súbale al calentador</Texto>
-			<Image>picture2</Image>
+			<Image>picture2a</Image>
 		</Item>
 		
 		<Item> 
@@ -222,7 +222,7 @@
 			<Text>Its cold in here, please decrease the AC.</Text>
 			<Titulo>Hace frío, por favor bájele al aire acondicionado</Titulo>
 			<Texto>Hace frío, por favor bájele al aire acondicionado</Texto>
-			<Image>picture0</Image>
+			<Image>picture2b</Image>
 		</Item>
 		<Item> 
 			<Title>Its cold in here,  please turn off the AC.</Title>
@@ -236,14 +236,14 @@
 			<Text>Please turn on the music.</Text>
 			<Titulo>Por favor prenda la música</Titulo>
 			<Texto>Por favor prenda la música</Texto>
-			<Image>picture0</Image>
+			<Image>picture3a</Image>
 		</Item>
 		<Item> 
 			<Title>Please turn off music.</Title>
 			<Text>Please turn off the music.</Text>
 			<Titulo>Por favor apague la música</Titulo>
 			<Texto>Por favor apague la música</Texto>
-			<Image>picture0</Image>
+			<Image>picture3b</Image>
 		</Item>
 	</Item>
 </Comfort>

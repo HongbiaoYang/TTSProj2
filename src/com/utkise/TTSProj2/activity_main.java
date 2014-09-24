@@ -31,7 +31,7 @@ public class activity_main extends Activity implements OnInitListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
-        MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
+        MyProperties.getInstance().gtts = new TextToSpeech(this, this);
 
         if (MyProperties.getInstance().boarding == null) {
             MyProperties.getInstance().boarding = new DisableType();
@@ -71,6 +71,7 @@ public class activity_main extends Activity implements OnInitListener {
         emergency = (ImageView)findViewById(R.id.head_home3);
 
         cognitive.setOnClickListener(new doubleTapListener(MyProperties.getInstance().getTitleName(TITLE.COGNITIVE)));
+        vision.setOnClickListener(new doubleTapListener(MyProperties.getInstance().getTitleName(TITLE.VISION)));
 
 
         nonenglish.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +105,7 @@ public class activity_main extends Activity implements OnInitListener {
             }
         });
         // click vision button
-        vision.setOnClickListener(new View.OnClickListener() {
+       /* vision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 count++;
@@ -130,7 +131,7 @@ public class activity_main extends Activity implements OnInitListener {
                     startActivity(intent);
                 }
             }
-        });
+        });*/
 
         // click layout_hearing button
         hearing.setOnClickListener(new View.OnClickListener() {
@@ -200,6 +201,7 @@ public class activity_main extends Activity implements OnInitListener {
         int curTime = Calendar.getInstance().get(Calendar.SECOND);
 
         if (curTime - backTimer < 3) {
+            MyProperties.getInstance().gtts.shutdown();
             finish();
         } else {
             Toast.makeText(getApplicationContext(), "Click again to quit this app", 3).show();
@@ -207,6 +209,7 @@ public class activity_main extends Activity implements OnInitListener {
         }
 
     }
+
 
     @Override
     public void onInit(int status) {

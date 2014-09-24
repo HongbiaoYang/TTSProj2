@@ -7,15 +7,15 @@
         <Texto>Al conductor</Texto>
         <Image>picture0</Image>
 		<Item>
-			<Title>What is you name ?</Title>
-			<Text>What is you name ?</Text>
+			<Title>What is your name ?</Title>
+			<Text>What is your name ?</Text>
             <Titulo>¿Cuál es su nombre?</Titulo>
             <Texto>¿Cuál es su nombre?</Texto>
             <Image>picture13</Image>
 		</Item>
 		<Item>
 			<Title>Hello, How are you ?</Title>
-			<Text>Hello, How are you ?</Text>
+			<Text>Hello, how are you ?</Text>
 			<Titulo>¡Hola! ¿Cómo está?</Titulo>
             <Texto>¡Hola! ¿Cómo está?</Texto>
 			<Image>picture0</Image>
@@ -29,7 +29,7 @@
 		</Item>
 		<Item>
 			<Title> I do not speak english</Title>
-			<Text>I do not speak english</Text>
+			<Text>I do not speak English</Text>
 			<Titulo>No hablo inglés</Titulo>
             <Texto>No hablo inglés</Texto>
 			<Image>picture0</Image>

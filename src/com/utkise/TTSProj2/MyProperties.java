@@ -143,7 +143,7 @@ public class MyProperties {
         if (lan == LANG.ENGLISH) {
             result = gtts.setLanguage(Locale.US);
         } else if (lan==LANG.SPANISH) {
-            Locale locSpanish = new Locale("spa", "MEX");
+            Locale locSpanish = new Locale("spa", "ESP");
             result = gtts.setLanguage(locSpanish);
         }
 
