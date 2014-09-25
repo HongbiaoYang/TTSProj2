@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
+import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +32,25 @@ public class activity_main extends Activity implements OnInitListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
-        MyProperties.getInstance().gtts = new TextToSpeech(this, this);
+        MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
+        MyProperties.getInstance().gtts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+            @Override
+            public void onStart(String utteranceId) {
+                Log.d("utterance", "started");
+
+            }
+
+            @Override
+            public void onDone(String utteranceId) {
+
+            }
+
+            @Override
+            public void onError(String utteranceId) {
+
+            }
+        });
+
 
         if (MyProperties.getInstance().boarding == null) {
             MyProperties.getInstance().boarding = new DisableType();
@@ -58,9 +77,6 @@ public class activity_main extends Activity implements OnInitListener {
             MyProperties.getInstance().response = new DisableType();
             loadXMLResourceParser(MyProperties.getInstance().response, R.xml.response);
         }
-
-
-
 
         vision = (Button)findViewById(R.id.vision);
 
@@ -92,6 +108,8 @@ public class activity_main extends Activity implements OnInitListener {
                     count = CONSTANT.START;
 
                     MyProperties.getInstance().doInit(LANG.SPANISH);
+
+                    storeVoiceFile();
 
                     String non_english_str = MyProperties.getInstance().getTitleEither(TITLE.NON_ENGLISH);
 
@@ -196,12 +214,31 @@ public class activity_main extends Activity implements OnInitListener {
 
     }
 
+    private void storeVoiceFile() {
+        HashMap<String, String> myHashRender = new HashMap();
+        String wakeUpText = "Are you up yet?";
+        String destFileName = "/sdcard/myAppCache/wakeUp.wav";
+        myHashRender.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, wakeUpText);
+        int res = MyProperties.getInstance().gtts.synthesizeToFile(wakeUpText, myHashRender, destFileName);
+
+        if (res == TextToSpeech.ERROR) {
+            Log.d("activity_main","save file failed");
+        } else {
+            Log.d("activity_main", "save success" + res);
+        }
+
+    }
+
+
     @Override
     public void onBackPressed() {
         int curTime = Calendar.getInstance().get(Calendar.SECOND);
 
+
         if (curTime - backTimer < 3) {
-            MyProperties.getInstance().gtts.shutdown();
+            TextToSpeech mTts = MyProperties.getInstance().gtts;
+            mTts.stop();
+            mTts.shutdown();
             finish();
         } else {
             Toast.makeText(getApplicationContext(), "Click again to quit this app", 3).show();
@@ -220,6 +257,22 @@ public class activity_main extends Activity implements OnInitListener {
         } else {
             Log.e("TTS", "Initilization Failed!");
         }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+
+
+        TextToSpeech mTts = MyProperties.getInstance().gtts;
+        //Close the Text to Speech Library
+        if( mTts!= null) {
+
+            mTts.stop();
+            mTts.shutdown();
+            Log.d("activity_main", "TTS Destroyed");
+        }
+        super.onDestroy();
     }
 
     private void loadXMLResourceParser(DisableType boarding, int xmlFile) {

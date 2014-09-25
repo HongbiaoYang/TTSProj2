@@ -25,7 +25,7 @@ public class activity_hearing extends Activity implements OnInitListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_hearing);
 
-        MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
+        // MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
 
         boarding = (Button)findViewById(R.id.Hboarding);
         gettingoff = (Button)findViewById(R.id.Hgettingoff);
