@@ -33,48 +33,32 @@ public class activity_main extends Activity implements OnInitListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
         MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
-        MyProperties.getInstance().gtts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
-            @Override
-            public void onStart(String utteranceId) {
-                Log.d("utterance", "started");
 
-            }
-
-            @Override
-            public void onDone(String utteranceId) {
-
-            }
-
-            @Override
-            public void onError(String utteranceId) {
-
-            }
-        });
 
 
         if (MyProperties.getInstance().boarding == null) {
-            MyProperties.getInstance().boarding = new DisableType();
+            MyProperties.getInstance().boarding = new DisableType("boarding", R.drawable.boarding);
             loadXMLResourceParser(MyProperties.getInstance().boarding, R.xml.boarding);
         }
 
         if (MyProperties.getInstance().traveling == null) {
-            MyProperties.getInstance().traveling = new DisableType();
+            MyProperties.getInstance().traveling = new DisableType("traveling", R.drawable.travelling);
             loadXMLResourceParser(MyProperties.getInstance().traveling, R.xml.travelling);
         }
 
         if (MyProperties.getInstance().gettingoff == null) {
-            MyProperties.getInstance().gettingoff = new DisableType();
+            MyProperties.getInstance().gettingoff = new DisableType("getting off", R.drawable.gettingoff);
             loadXMLResourceParser(MyProperties.getInstance().gettingoff, R.xml.gettingoff);
         }
 
         if (MyProperties.getInstance().emergency == null) {
-            MyProperties.getInstance().emergency = new DisableType();
+            MyProperties.getInstance().emergency = new DisableType("emergency", R.drawable.emergency);
             loadXMLResourceParser(MyProperties.getInstance().emergency, R.xml.emergency);
         }
 
 
         if (MyProperties.getInstance().response == null) {
-            MyProperties.getInstance().response = new DisableType();
+            MyProperties.getInstance().response = new DisableType("response", 0);
             loadXMLResourceParser(MyProperties.getInstance().response, R.xml.response);
         }
 
@@ -87,7 +71,7 @@ public class activity_main extends Activity implements OnInitListener {
         emergency = (ImageView)findViewById(R.id.head_home3);
 
         cognitive.setOnClickListener(new doubleTapListener(MyProperties.getInstance().getTitleName(TITLE.COGNITIVE)));
-        vision.setOnClickListener(new doubleTapListener(MyProperties.getInstance().getTitleName(TITLE.VISION)));
+        // vision.setOnClickListener(new multiTapListener("test"));
 
 
         nonenglish.setOnClickListener(new View.OnClickListener() {
@@ -109,8 +93,14 @@ public class activity_main extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().doInit(LANG.SPANISH);
 
-                    storeVoiceFile();
+                 /*   String filename = getApplicationContext().getFilesDir().getPath()+"/test.wav";
 
+                    storeVoiceFile("/storage/sdcard0/video/video.wav");
+                    storeVoiceFile(getApplicationContext().getFilesDir().getPath() + "newWavFile.wav");
+
+                    Log.d("activity_main", "path="+"/storage/sdcard0/video/video.wav");
+                    Log.d("activity_main", "path="+getApplicationContext().getFilesDir().getPath() + "newWavFile.wav");
+*/
                     String non_english_str = MyProperties.getInstance().getTitleEither(TITLE.NON_ENGLISH);
 
                     MyProperties.getInstance().speakBoth(TITLE.NON_ENGLISH);
@@ -123,7 +113,7 @@ public class activity_main extends Activity implements OnInitListener {
             }
         });
         // click vision button
-       /* vision.setOnClickListener(new View.OnClickListener() {
+        vision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 count++;
@@ -142,14 +132,14 @@ public class activity_main extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().speakBoth(TITLE.VISION);
                     String vision_str = MyProperties.getInstance().getTitleName(TITLE.VISION);
-                    MyProperties.getInstance().titleStack.push(vision_str);
+                    // MyProperties.getInstance().titleStack.push(vision_str);
 
                     Intent intent = new Intent();
                     intent.setClass(activity_main.this, activity_vision.class);
                     startActivity(intent);
                 }
             }
-        });*/
+        });
 
         // click layout_hearing button
         hearing.setOnClickListener(new View.OnClickListener() {
@@ -214,10 +204,11 @@ public class activity_main extends Activity implements OnInitListener {
 
     }
 
-    private void storeVoiceFile() {
+    private void storeVoiceFile(String destFileName) {
         HashMap<String, String> myHashRender = new HashMap();
         String wakeUpText = "Are you up yet?";
-        String destFileName = "/sdcard/myAppCache/wakeUp.wav";
+        // String destFileName = "/sdcard/myAppCache/wakeUp.wav";
+        // String destFileName = "/storage/extSdCard/myapp.wav";
         myHashRender.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, wakeUpText);
         int res = MyProperties.getInstance().gtts.synthesizeToFile(wakeUpText, myHashRender, destFileName);
 

@@ -13,13 +13,18 @@ public class DisableType {
     private List<ItemStruct> emergency;
     private List<ItemStruct> response;
 
-    public DisableType() {
+    private String tag;
+    private Integer image;
+
+    public DisableType(String name, Integer img) {
         generalInfo = null;
         tripInfo = null;
         safety = null;
         comfort = null;
         emergency = null;
-        response = null;
+        this.response = null;
+        this.tag = name;
+        this.image = img;
     }
 
     public void setTripInfo(List<ItemStruct> tripInfo) {
@@ -97,5 +102,13 @@ public class DisableType {
 
     public List<ItemStruct> getEmergency() {
         return emergency;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public Integer getImage() {
+        return image;
     }
 }

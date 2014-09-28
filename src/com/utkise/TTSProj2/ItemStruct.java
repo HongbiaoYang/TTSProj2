@@ -19,6 +19,14 @@ public class ItemStruct {
         child = null;
     }
 
+    public ItemStruct(Integer image, String content) {
+        this.imageID = image;
+        this.title = new HashMap<LANG, String>();
+        this.setTitle(LANG.ENGLISH, content);
+        this.text = new HashMap<LANG, String>();
+        this.setText(LANG.ENGLISH, content);
+    }
+
     public String getText(LANG lan) {
         return text.get(lan);
     }
@@ -49,5 +57,10 @@ public class ItemStruct {
 
     public List<ItemStruct> getChild() {
         return child;
+    }
+
+    // default text
+    public String getText() {
+        return getText(LANG.ENGLISH);
     }
 }
