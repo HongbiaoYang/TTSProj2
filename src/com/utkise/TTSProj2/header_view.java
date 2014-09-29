@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 /**
  * Created by Bill on 9/11/14.
@@ -45,9 +46,12 @@ public class header_view extends LinearLayout {
             } else if (count == CONSTANT.END) {
                 count = CONSTANT.START;
 
-                MyProperties.getInstance().doInit(LANG.ENGLISH);
+                // MyProperties.getInstance().doInit(LANG.ENGLISH);
+                String rootItem = MyProperties.getInstance().titleStack.firstElement();
                 MyProperties.getInstance().titleStack.clear();
-                Intent intent = new Intent(getContext(), activity_main.class);
+                MyProperties.getInstance().titleStack.push(rootItem);
+
+                Intent intent = new Intent(getContext(), activity_hearing.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 getContext().startActivity(intent);
             }
