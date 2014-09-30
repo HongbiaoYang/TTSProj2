@@ -23,6 +23,7 @@ public class activity_response extends Activity {
 
     @Override
     public void onBackPressed() {
+        MyProperties.getInstance().popStacks();
         finish();
     }
 
@@ -39,10 +40,13 @@ public class activity_response extends Activity {
         goback = (ImageView)findViewById(R.id.header1);
         title = (TextView)findViewById(R.id.header2);
 
-        title.setText("Responses");
+        title.setText(MyProperties.getInstance().titleStack.lastElement());
+        MyProperties.getInstance().playAnimation();
+
         goback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MyProperties.getInstance().popStacks();
                 finish();
             }
         });

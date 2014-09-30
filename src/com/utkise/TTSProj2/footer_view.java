@@ -3,15 +3,15 @@ package com.utkise.TTSProj2;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,6 +82,7 @@ public class footer_view extends LinearLayout {
             } else if (count == CONSTANT.END) {
                 count = CONSTANT.START;
 
+                MyProperties.getInstance().titleStack.push("Response");
                 Intent intent = new Intent(getContext(), activity_response.class);
                 getContext().startActivity(intent);
             }

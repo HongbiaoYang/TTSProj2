@@ -33,6 +33,8 @@ public class activity_hearing extends Activity implements OnInitListener {
         emergency = (Button)findViewById(R.id.Hemergency);
         goBack = (ImageView)findViewById(R.id.header1);
 
+
+
         if (MyProperties.getInstance().Language == LANG.SPANISH) {
             boarding.setBackgroundResource(R.drawable.boarding_s);
             gettingoff.setBackgroundResource(R.drawable.gettingoff_s);
@@ -49,6 +51,7 @@ public class activity_hearing extends Activity implements OnInitListener {
         title = (TextView)findViewById(R.id.header2);
 
         title.setText(MyProperties.getInstance().getTitleStack());
+        MyProperties.getInstance().playAnimation();
 
         emergency.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,7 +182,7 @@ public class activity_hearing extends Activity implements OnInitListener {
 
                 // change language back to english
                MyProperties.getInstance().doInit(LANG.ENGLISH);
-               MyProperties.getInstance().titleStack.pop();
+               MyProperties.getInstance().popStacks();
                finish();
 
             }
@@ -196,7 +199,7 @@ public class activity_hearing extends Activity implements OnInitListener {
     @Override
     public void onBackPressed() {
         MyProperties.getInstance().doInit(LANG.ENGLISH);
-        MyProperties.getInstance().titleStack.pop();
+        MyProperties.getInstance().popStacks();
         finish();
     }
 }

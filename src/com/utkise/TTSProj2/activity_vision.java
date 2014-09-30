@@ -1,6 +1,7 @@
 package com.utkise.TTSProj2;
 
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.FloatMath;
@@ -32,6 +33,7 @@ public class activity_vision extends Activity {
     @Override
     public void onBackPressed() {
         if (itemStack.isEmpty()) {
+            MyProperties.getInstance().popStacks();
             finish();
         } else  {
             detectUP();
@@ -54,6 +56,11 @@ public class activity_vision extends Activity {
         fillItemList(root, MyProperties.getInstance().boarding);
         fillItemList(root, MyProperties.getInstance().traveling);
         fillItemList(root, MyProperties.getInstance().gettingoff);
+
+        // first animation in vision
+        ImageView image = (ImageView) findViewById(R.id.frame_home);
+        image.setBackgroundResource(R.drawable.frame);
+        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
 
         // first display
         curIndex = 0;
@@ -174,8 +181,7 @@ public class activity_vision extends Activity {
                     mIsDown = 1;
                     mTouchCount ++;
 
-                    onHold = true;
-                    handler.postDelayed(runHold, 2000);
+                    onHold = false;
 
                     Log.i("gesture","holdtime="+onHold);
 
@@ -229,7 +235,8 @@ public class activity_vision extends Activity {
                     mIsDown -= 1;
                     break;
                 case MotionEvent.ACTION_POINTER_2_DOWN:
-                    onHold = false;
+                    onHold = true;
+                    handler.postDelayed(runHold, 2000);
                     Log.i("gesture","second touched detected");
                     mIsDown += 1;
                     oldDist = spacing(event);
@@ -248,6 +255,8 @@ public class activity_vision extends Activity {
 
     // perform action based on directions
     private void detectSwipe(DIRECTION dir) {
+        Log.i("activity_vision","in:detectSwipe="+dir
+        );
         switch (dir) {
             case LEFT:
                 detectLeft();
@@ -256,6 +265,7 @@ public class activity_vision extends Activity {
                 detectRight();
                 break;
             case UP:
+                Log.i("activity_vision","in:detectSwipe:Up case");
                 detectUP();
                 break;
             case DOWN:
@@ -264,6 +274,7 @@ public class activity_vision extends Activity {
             case EMPTY:
                 break;
             default:
+                Log.i("activity_vision","in:detectSwipe:default case"+dir);
                 break;
         }
 
@@ -282,8 +293,8 @@ public class activity_vision extends Activity {
         if (curItem.getChild() == null) {
             MyProperties.getInstance().speakout(curItem.getText());
         } else {
-            curLevel = curItem.getChild();
             itemStack.push(curLevel);
+            curLevel = curItem.getChild();
             curIndex = 0;
             curItem = curLevel.get(curIndex);
             displayCurrent(curItem);
@@ -303,6 +314,7 @@ public class activity_vision extends Activity {
             curItem = curLevel.get(curIndex);
             displayCurrent(curItem);
 
+            Log.i("activity_vision","swipe up detected");
             
             MyProperties.getInstance().speakout(curItem.getText());
         }

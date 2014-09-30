@@ -1,8 +1,11 @@
 package com.utkise.TTSProj2;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.widget.ImageView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -22,9 +25,21 @@ public class MyProperties {
     public DisableType boarding, traveling, gettingoff, emergency, response, currentType;
     public Stack<String> titleStack;
     public List<String[]> TITLES;
+    public Stack<AnimationDrawable> animStack;
 
     public void speakout(String text) {
         gtts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+        playAnimation();
+    }
+
+    public void playAnimation() {
+        AnimationDrawable anim = animStack.peek();
+
+        Log.i("footer_view","anim="+anim);
+        if (anim.isRunning()) {
+            anim.stop();
+        }
+        anim.start();
     }
 
     public void speakAdd(String text) {
@@ -98,6 +113,7 @@ public class MyProperties {
         response = null;
         currentType = null;
         titleStack = new Stack<String>();
+        animStack = new Stack<AnimationDrawable>();
 
         initTITLES();
     }
@@ -154,4 +170,8 @@ public class MyProperties {
 
     }
 
+    public void popStacks() {
+        titleStack.pop();
+        animStack.pop();
+    }
 }

@@ -2,11 +2,14 @@ package com.utkise.TTSProj2;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -23,6 +26,11 @@ public class header_view extends LinearLayout {
 
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.head_banner, this, true);
+
+        // create a new animation and push it into stack
+        ImageView image = (ImageView) findViewById(R.id.frame_image);
+        image.setBackgroundResource(R.drawable.frame);
+        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
 
         this.findViewById(R.id.header3).setOnClickListener(new homeOnClickListener());
 
@@ -50,6 +58,11 @@ public class header_view extends LinearLayout {
                 String rootItem = MyProperties.getInstance().titleStack.firstElement();
                 MyProperties.getInstance().titleStack.clear();
                 MyProperties.getInstance().titleStack.push(rootItem);
+
+                AnimationDrawable rootAnim = MyProperties.getInstance().animStack.firstElement();
+                MyProperties.getInstance().animStack.clear();
+                MyProperties.getInstance().animStack.push(rootAnim);
+
 
                 Intent intent = new Intent(getContext(), activity_hearing.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -46,6 +46,7 @@ public class activity_boarding extends Activity implements OnInitListener {
 
 
         title.setText(MyProperties.getInstance().getTitleStack());
+        MyProperties.getInstance().playAnimation();
 
         generalInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,7 +172,7 @@ public class activity_boarding extends Activity implements OnInitListener {
             @Override
             public void onClick(View v) {
 
-                MyProperties.getInstance().titleStack.pop();
+                MyProperties.getInstance().popStacks();
                 finish();
             }
         });
@@ -179,7 +180,7 @@ public class activity_boarding extends Activity implements OnInitListener {
 
     @Override
     public void onBackPressed() {
-        MyProperties.getInstance().titleStack.pop();
+        MyProperties.getInstance().popStacks();
         finish();
     }
 

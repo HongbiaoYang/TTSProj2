@@ -3,6 +3,7 @@ package com.utkise.TTSProj2;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.XmlResourceParser;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -34,7 +35,10 @@ public class activity_main extends Activity implements OnInitListener {
         setContentView(R.layout.layout_main);
         MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
 
-
+        // first animation in main
+        ImageView image = (ImageView) findViewById(R.id.frame_home);
+        image.setBackgroundResource(R.drawable.frame);
+        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
 
         if (MyProperties.getInstance().boarding == null) {
             MyProperties.getInstance().boarding = new DisableType("boarding", R.drawable.boarding);
@@ -132,7 +136,8 @@ public class activity_main extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().speakBoth(TITLE.VISION);
                     String vision_str = MyProperties.getInstance().getTitleName(TITLE.VISION);
-                    // MyProperties.getInstance().titleStack.push(vision_str);
+                    MyProperties.getInstance().titleStack.push(vision_str);
+
 
                     Intent intent = new Intent();
                     intent.setClass(activity_main.this, activity_vision.class);

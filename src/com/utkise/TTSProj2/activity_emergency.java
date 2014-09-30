@@ -41,13 +41,14 @@ public class activity_emergency extends Activity implements OnInitListener {
         title = (TextView) findViewById(R.id.header2);
 
         title.setText("Emergency");
+        MyProperties.getInstance().playAnimation();
 
         lastLevelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (levelStack.isEmpty()) {
-                    MyProperties.getInstance().titleStack.pop();
+                    MyProperties.getInstance().popStacks();
                     finish();
                 } else {
                     thisLevel = levelStack.pop();
@@ -114,7 +115,7 @@ public class activity_emergency extends Activity implements OnInitListener {
 
     @Override
     public void onBackPressed() {
-        MyProperties.getInstance().titleStack.pop();
+        MyProperties.getInstance().popStacks();
         finish();
     }
 

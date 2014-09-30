@@ -31,7 +31,7 @@ public class activity_vision extends Activity {
 
     @Override
     public void onBackPressed() {
-        MyProperties.getInstance().titleStack.pop();
+        MyProperties.getInstance().popStacks();
         finish();
     }
 
