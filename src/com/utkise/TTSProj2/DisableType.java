@@ -15,6 +15,7 @@ public class DisableType {
 
     private String tag;
     private Integer image;
+    private Integer customCount;
 
     public DisableType(String name, Integer img) {
         generalInfo = null;
@@ -25,6 +26,7 @@ public class DisableType {
         this.response = null;
         this.tag = name;
         this.image = img;
+        this.customCount = 1;
     }
 
     public void setTripInfo(List<ItemStruct> tripInfo) {
@@ -110,5 +112,17 @@ public class DisableType {
 
     public Integer getImage() {
         return image;
+    }
+
+    public Integer getCustomCount() {
+        return customCount;
+    }
+
+    public void setCustomCount(Integer customCount) {
+        this.customCount = customCount;
+    }
+
+    public void incrementCustomCount() {
+        this.customCount ++;
     }
 }

@@ -26,7 +26,7 @@ public class activity_vision extends Activity {
     private int mTouchCount = 0;
     private List<ItemStruct> root;
     private ItemStruct curItem;
-    private int curIndex;
+    private int curIndex, firstIndex;
     private List<ItemStruct> curLevel;
     private Stack<List<ItemStruct>> itemStack;
 
@@ -64,6 +64,7 @@ public class activity_vision extends Activity {
 
         // first display
         curIndex = 0;
+        firstIndex = 0;
         curItem = root.get(curIndex);
         curLevel = root;
         itemStack = new Stack<List<ItemStruct>>();
@@ -311,6 +312,8 @@ public class activity_vision extends Activity {
         } else {
             curLevel = itemStack.pop();
             curIndex = 0;
+            // when go to higher level, restore firstIndex to 0. In response page this firstIndex might be changed
+            firstIndex = 0;
             curItem = curLevel.get(curIndex);
             displayCurrent(curItem);
 
@@ -337,7 +340,7 @@ public class activity_vision extends Activity {
 
     // swipe left, last item
     private void detectLeft() {
-        if (curIndex <= 0) {
+        if (curIndex <= firstIndex) {
             MyProperties.getInstance().speakout(curItem.getText());
         }  else {
             curIndex--;
@@ -376,7 +379,22 @@ public class activity_vision extends Activity {
     // four click, go to  more
     private void detectFourClick() {
         MyProperties.getInstance().speakout("More");
+        displayResponsePage();
 
+    }
+
+    private void displayResponsePage() {
+        itemStack.push(curLevel);
+        curLevel = MyProperties.getInstance().response.getInformation("response");
+
+        // get the first item place, ignore the previous items added by the user
+        firstIndex = MyProperties.getInstance().response.getCustomCount();
+        curIndex = firstIndex;
+
+        curItem = curLevel.get(curIndex);
+        displayCurrent(curItem);
+
+        MyProperties.getInstance().speakout(curItem.getText());
     }
 
 

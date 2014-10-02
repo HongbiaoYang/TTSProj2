@@ -57,14 +57,20 @@ public class header_view extends LinearLayout {
                 // MyProperties.getInstance().doInit(LANG.ENGLISH);
                 String rootItem = MyProperties.getInstance().titleStack.firstElement();
                 MyProperties.getInstance().titleStack.clear();
-                MyProperties.getInstance().titleStack.push(rootItem);
 
+                // restore the root animation object
                 AnimationDrawable rootAnim = MyProperties.getInstance().animStack.firstElement();
                 MyProperties.getInstance().animStack.clear();
                 MyProperties.getInstance().animStack.push(rootAnim);
 
+                // go to the sub-root level (activity_hearing). If directly come from the root level, go back there
+                Intent intent;
+                if (rootItem.equalsIgnoreCase("Response")) {
+                    intent = new Intent(getContext(), activity_main.class);
+                } else {
+                    intent = new Intent(getContext(), activity_hearing.class);
+                }
 
-                Intent intent = new Intent(getContext(), activity_hearing.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 getContext().startActivity(intent);
             }

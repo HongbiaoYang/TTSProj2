@@ -49,7 +49,8 @@ public class MyProperties {
     // speakBoth language if not english
     public void speakBoth(TITLE title) {
 
-        speakout(getTitleName(title));
+        // speak only english. Change to Language if need to speak certain chosen language
+        speakout(getTitleName(title, LANG.ENGLISH));
 
        /* if (Language != LANG.ENGLISH) {
             speakSilent(700);
@@ -60,7 +61,8 @@ public class MyProperties {
     // speakBoth language if not english
     public void speakBoth(ItemStruct item) {
 
-        speakout(item.getText(Language));
+        // speak only english. Change to Language if need to speak certain chosen language
+        speakout(item.getText(LANG.ENGLISH));
        /* if (Language != LANG.ENGLISH) {
             speakSilent(700);
             speakAdd(item.getText(LANG.ENGLISH));
@@ -134,7 +136,7 @@ public class MyProperties {
         TITLES.add(new String[]{"vision","visión"});
         TITLES.add(new String[]{"hearing","escuchar"});
         TITLES.add(new String[]{"cognitive","cognitiva"});
-        TITLES.add(new String[]{"english","español"});
+        TITLES.add(new String[]{"Spanish","español"});
 
         // boarding, getting off, travelling, emergency
         TITLES.add(new String[]{"boarding","embarque"});
@@ -171,7 +173,7 @@ public class MyProperties {
     }
 
     public void popStacks() {
-        titleStack.pop();
-        animStack.pop();
+            titleStack.pop();
+            animStack.pop();
     }
 }

@@ -82,6 +82,7 @@ public class footer_view extends LinearLayout {
             } else if (count == CONSTANT.END) {
                 count = CONSTANT.START;
 
+                MyProperties.getInstance().speakout("More");
                 MyProperties.getInstance().titleStack.push("Response");
                 Intent intent = new Intent(getContext(), activity_response.class);
                 getContext().startActivity(intent);

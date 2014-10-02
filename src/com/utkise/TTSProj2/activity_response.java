@@ -1,14 +1,14 @@
 package com.utkise.TTSProj2;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputType;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.*;
 
 import java.util.List;
 import java.util.Stack;
@@ -88,13 +88,50 @@ public class activity_response extends Activity {
                     count = CONSTANT.START;
 
                     ItemStruct item = thisLevel.get(position);
-                    MyProperties.getInstance().speakBoth(item);
+
+                    if (item.getSpecialTag() == null) {
+                        MyProperties.getInstance().speakBoth(item);
+                    } else if (item.getSpecialTag().equalsIgnoreCase("input")) {
+                        createNewItem();
+                    }
                 }
 
             }
         });
 
 
+    }
+
+    // add new customzied item
+    private void createNewItem() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Input Your Text");
+
+        final EditText input =  new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT| InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE);
+        builder.setView(input);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                MyProperties.getInstance().speakout(input.getText().toString());
+                ItemStruct item = new ItemStruct(R.drawable.customize, input.getText().toString());
+                thisLevel.add(1, item);
+
+                MyProperties.getInstance().response.setInformation("response", thisLevel);
+                MyProperties.getInstance().response.incrementCustomCount();
+
+                updateList(thisLevel);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
     }
 
 }

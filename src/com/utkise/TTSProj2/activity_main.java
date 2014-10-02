@@ -95,7 +95,9 @@ public class activity_main extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
-                    MyProperties.getInstance().doInit(LANG.SPANISH);
+                    // MyProperties.getInstance().doInit(LANG.SPANISH);
+                    // only change the global language setting , not change the tts engine
+                    MyProperties.getInstance().Language = LANG.SPANISH;
 
                  /*   String filename = getApplicationContext().getFilesDir().getPath()+"/test.wav";
 
@@ -320,7 +322,10 @@ public class activity_main extends Activity implements OnInitListener {
                             } else if (name.equalsIgnoreCase("image")) {
                                 int resID = getResources().getIdentifier(xrp.nextText(), "drawable", getPackageName());
                                 currentItem.setImageID(resID);
+                            } else if (name.equalsIgnoreCase("Customize")) {
+                                currentItem.setSpecialTag(xrp.nextText());
                             }
+
                         }
                         break;
                     case XmlPullParser.END_TAG:

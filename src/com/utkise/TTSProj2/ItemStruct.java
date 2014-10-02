@@ -9,13 +9,24 @@ import java.util.List;
 public class ItemStruct {
     private HashMap<LANG, String> title;
     private HashMap<LANG, String> text;
+    private String SpecialTag;
 
     private Integer imageID;
     private List<ItemStruct> child;
 
+    public String getSpecialTag() {
+        return SpecialTag;
+    }
+
+    public void setSpecialTag(String specialTag) {
+        SpecialTag = specialTag;
+    }
+
     public ItemStruct () {
         title = new HashMap<LANG, String>();
         text = new HashMap<LANG, String>();
+        SpecialTag = null;
+
         child = null;
     }
 

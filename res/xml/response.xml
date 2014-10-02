@@ -1,6 +1,12 @@
 ﻿<xml>
     <Response>
         <Item>
+            <Title>Input Your Text...</Title>
+            <Text></Text>
+            <Customize>input</Customize>
+            <Image>picture0</Image>
+        </Item>
+        <Item>
             <Title>I don't understand</Title>
             <Text>I don't understand</Text>
 			<Titulo>No entiendo</Titulo>
