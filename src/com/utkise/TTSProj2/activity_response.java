@@ -2,8 +2,9 @@ package com.utkise.TTSProj2;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputType;
@@ -89,18 +90,65 @@ public class activity_response extends Activity {
 
                     ItemStruct item = thisLevel.get(position);
 
-                    if (item.getSpecialTag() == null) {
+                    // if tagged special tag
+                    if (item.getSpecialTag() ==  null) {
                         MyProperties.getInstance().speakBoth(item);
-                    } else if (item.getSpecialTag().equalsIgnoreCase("input")) {
+                    } else if (item.getSpecialTag().equalsIgnoreCase("input"))  {
                         createNewItem();
+                    } else if (item.getSpecialTag().equalsIgnoreCase("added")) {
+                        MyProperties.getInstance().speakBoth(item);
                     }
                 }
 
             }
         });
 
+        list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
+
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                ItemStruct item = thisLevel.get(position);
+
+                if (item.getSpecialTag() == null || item.getSpecialTag() != "added") {
+                    cannotDeleteWarning();
+                    return false;
+                } else {
+                    removeCustomItem(position);
+                    return false;
+                }
+            }
+
+        });
     }
+
+    // warn user that system item is not for delete
+    private void cannotDeleteWarning() {
+        new AlertDialog.Builder(this)
+                .setTitle("Delete Item")
+                .setMessage("Can not delete system item")
+                .setIcon(android.R.drawable.ic_delete)
+                .setPositiveButton(android.R.string.yes, null).show();
+    }
+
+    // delete user added item
+    private void removeCustomItem(final int position) {
+
+        new AlertDialog.Builder(this)
+                .setTitle("Delete Item")
+                .setMessage("Do you really want to delete this item?")
+                .setIcon(android.R.drawable.ic_delete)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        thisLevel.remove(position);
+                        MyProperties.getInstance().response.decreaseCustomCount();
+                        updateList(thisLevel);
+
+                    }})
+                .setNegativeButton(android.R.string.no, null).show();
+    }
+
 
     // add new customzied item
     private void createNewItem() {
@@ -114,8 +162,15 @@ public class activity_response extends Activity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                if (input.getText().toString().equalsIgnoreCase("debugVision")) {
+                    debugResetTutorial();
+                    return;
+                }
+
+
                 MyProperties.getInstance().speakout(input.getText().toString());
                 ItemStruct item = new ItemStruct(R.drawable.customize, input.getText().toString());
+                item.setSpecialTag("added");
                 thisLevel.add(1, item);
 
                 MyProperties.getInstance().response.setInformation("response", thisLevel);
@@ -132,6 +187,14 @@ public class activity_response extends Activity {
         });
 
         builder.show();
+    }
+
+    // debug - reset tutorial to false
+    private void debugResetTutorial() {
+        SharedPreferences pref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
+        pref.edit().putBoolean("tutorial", false).apply();
+        String debugText = "[Debug] tutorial: Off --> On";
+        Toast.makeText(getApplicationContext(), debugText, Toast.LENGTH_SHORT).show();
     }
 
 }

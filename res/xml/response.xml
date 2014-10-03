@@ -7,17 +7,17 @@
             <Image>picture0</Image>
         </Item>
         <Item>
+            <Title>Thank you very much</Title>
+            <Text>Thank you very much</Text>
+            <Titulo>Muchas gracias</Titulo>
+            <Texto>Muchas gracias</Texto>
+            <Image>picture0</Image>
+        </Item>
+        <Item>
             <Title>I don't understand</Title>
             <Text>I don't understand</Text>
 			<Titulo>No entiendo</Titulo>
 			<Texto>No entiendo</Texto>
-            <Image>picture0</Image>
-        </Item> 
-        <Item>
-            <Title>Thank you very much</Title>
-            <Text>Thank you very much</Text>
-			<Titulo>Muchas gracias</Titulo>
-			<Texto>Muchas gracias</Texto>
             <Image>picture0</Image>
         </Item>
         <Item>

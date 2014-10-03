@@ -1,6 +1,8 @@
 package com.utkise.TTSProj2;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,9 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class activity_vision extends Activity {
     private ImageView  ok;
@@ -29,6 +29,8 @@ public class activity_vision extends Activity {
     private int curIndex, firstIndex;
     private List<ItemStruct> curLevel;
     private Stack<List<ItemStruct>> itemStack;
+    private Tutorial tutorial;
+    private SharedPreferences pref;
 
     @Override
     public void onBackPressed() {
@@ -74,7 +76,18 @@ public class activity_vision extends Activity {
 
         screen.setOnTouchListener(new visionTouchListener());
         direction = DIRECTION.EMPTY;
+
+        pref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
+        boolean done = pref.getBoolean("tutorial", false);
+
+        if (done == false)  {
+            tutorial = new Tutorial();
+            tutorial.startTutorial();
+        } else {
+            tutorial = null;
+        }
     }
+
 
     private void fillItemList(List<ItemStruct> node, DisableType type) {
         ItemStruct level = new ItemStruct();
@@ -155,7 +168,11 @@ public class activity_vision extends Activity {
                     Log.i("activity_vision", "Run.onhold="+onHold);
                     if (onHold) {
                         onHold = false;
+
                         detectLongPress();
+                        if (tutorial != null && tutorial.checkNext(DIRECTION.HOLD_FINGER)) {
+                            pref.edit().putBoolean("tutorial", true).apply();
+                        }
                     }
                 }
             };
@@ -163,11 +180,23 @@ public class activity_vision extends Activity {
                 @Override
                 public void run() {
                     if (mTouchCount == 2) {
+
                         detectDoubleClick();
+                        if (tutorial!= null) {
+                            tutorial.checkNext(DIRECTION.DOUBLE_CLICK);
+                        }
                     } else if (mTouchCount == 3) {
+
                         detectTripleClick();
+                        if (tutorial!= null) {
+                            tutorial.checkNext(DIRECTION.TRIPLE_CLICK);
+                        }
                     } else if (mTouchCount == 4) {
+
                         detectFourClick();
+                        if (tutorial!= null) {
+                            tutorial.checkNext(DIRECTION.FOUR_CLICK);
+                        }
                     }
 
                     mTouchCount = 0;
@@ -256,8 +285,8 @@ public class activity_vision extends Activity {
 
     // perform action based on directions
     private void detectSwipe(DIRECTION dir) {
-        Log.i("activity_vision","in:detectSwipe="+dir
-        );
+        Log.i("activity_vision","in:detectSwipe="+dir);
+
         switch (dir) {
             case LEFT:
                 detectLeft();
@@ -277,6 +306,11 @@ public class activity_vision extends Activity {
             default:
                 Log.i("activity_vision","in:detectSwipe:default case"+dir);
                 break;
+        }
+
+
+        if (tutorial != null && dir != DIRECTION.EMPTY) {
+            tutorial.checkNext(dir);
         }
 
 

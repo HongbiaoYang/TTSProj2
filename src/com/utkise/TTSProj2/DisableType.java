@@ -125,4 +125,8 @@ public class DisableType {
     public void incrementCustomCount() {
         this.customCount ++;
     }
+
+    public void decreaseCustomCount() {
+        this.customCount--;
+    }
 }
