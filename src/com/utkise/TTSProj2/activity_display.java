@@ -50,13 +50,7 @@ public class activity_display extends Activity implements OnInitListener {
             @Override
             public void onClick(View v) {
 
-                if (levelStack.isEmpty()) {
-                    MyProperties.getInstance().popStacks();
-                    finish();
-                } else {
-                    thisLevel = levelStack.pop();
-                    updateList(thisLevel);
-                }
+               goUpOrBack();
             }
         });
 
@@ -65,6 +59,16 @@ public class activity_display extends Activity implements OnInitListener {
         thisLevel = MyProperties.getInstance().currentType.getInformation(type);
 
         updateList(thisLevel);
+    }
+
+    private void goUpOrBack() {
+        if (levelStack.isEmpty()) {
+            MyProperties.getInstance().popStacks();
+            finish();
+        } else {
+            thisLevel = levelStack.pop();
+            updateList(thisLevel);
+        }
     }
 
     private void updateList(List<ItemStruct> level) {
@@ -114,7 +118,7 @@ public class activity_display extends Activity implements OnInitListener {
 
     @Override
     public void onBackPressed() {
-        MyProperties.getInstance().popStacks();
+        goUpOrBack();
         finish();
     }
 

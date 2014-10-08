@@ -323,7 +323,10 @@ public class activity_main extends Activity implements OnInitListener {
                             } else if (name.equalsIgnoreCase("image")) {
                                 int resID = getResources().getIdentifier(xrp.nextText(), "drawable", getPackageName());
                                 currentItem.setImageID(resID);
-                            } else if (name.equalsIgnoreCase("Customize")) {
+                            } else if (name.equalsIgnoreCase("imageV")) {
+                                int resID = getResources().getIdentifier(xrp.nextText(), "drawable", getPackageName());
+                                currentItem.setVImageID(resID);
+                            }else if (name.equalsIgnoreCase("Customize")) {
                                 currentItem.setSpecialTag(xrp.nextText());
                             }
 

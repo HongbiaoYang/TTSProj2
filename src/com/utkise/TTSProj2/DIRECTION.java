@@ -5,12 +5,12 @@ package com.utkise.TTSProj2;
  */
 public enum DIRECTION {
     DOWN,
-    RIGHT,
     LEFT,
+    RIGHT,
     UP,
     DOUBLE_CLICK,
     TRIPLE_CLICK,
-    FOUR_CLICK,
-    HOLD_FINGER,
+    HOLD_FINGER2,
+    HOLD_FINGER3,
     EMPTY,
 }

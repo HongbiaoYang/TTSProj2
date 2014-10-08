@@ -6,6 +6,7 @@
         <Titulo>Al conductor</Titulo>
         <Texto>Al conductor</Texto>
         <Image>picture0</Image>
+        <ImageV>customize</ImageV>
 		<Item>
 			<Title>What is your name ?</Title>
 			<Text>What is your name ?</Text>

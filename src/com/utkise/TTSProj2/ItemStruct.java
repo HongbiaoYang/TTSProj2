@@ -13,6 +13,7 @@ public class ItemStruct {
 
     private Integer imageID;
     private List<ItemStruct> child;
+    private int VImageID;
 
     public String getSpecialTag() {
         return SpecialTag;
@@ -43,7 +44,12 @@ public class ItemStruct {
     }
 
     public String getTitle(LANG lan) {
-        return title.get(lan);
+        if (lan == LANG.SPANISH) {
+            String tmp = title.get(LANG.SPANISH) + "/"+title.get(LANG.ENGLISH);
+            return tmp;
+        } else {
+            return title.get(lan);
+        }
     }
 
     public void setText(LANG lan, String content) {
@@ -73,5 +79,13 @@ public class ItemStruct {
     // default text
     public String getText() {
         return getText(LANG.ENGLISH);
+    }
+
+    public void setVImageID(int VImageID) {
+        this.VImageID = VImageID;
+    }
+
+    public int getVImageID() {
+        return VImageID;
     }
 }

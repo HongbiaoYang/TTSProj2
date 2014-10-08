@@ -22,7 +22,7 @@ public class activity_vision extends Activity {
     private DIRECTION direction;
     private LinearLayout screen;
     private float oldDist;
-    private boolean onHold;
+    private int onHold, onThird;
     private int mTouchCount = 0;
     private List<ItemStruct> root;
     private ItemStruct curItem;
@@ -31,6 +31,7 @@ public class activity_vision extends Activity {
     private Stack<List<ItemStruct>> itemStack;
     private Tutorial tutorial;
     private SharedPreferences pref;
+
 
     @Override
     public void onBackPressed() {
@@ -166,14 +167,23 @@ public class activity_vision extends Activity {
                 @Override
                 public void run() {
                     Log.i("activity_vision", "Run.onhold="+onHold);
-                    if (onHold) {
-                        onHold = false;
+                    if (onHold == 2) {
+                        onHold = 0;
 
-                        detectLongPress();
-                        if (tutorial != null && tutorial.checkNext(DIRECTION.HOLD_FINGER)) {
+                        detectLongPress2();
+                        if (tutorial != null) {
+                            tutorial.checkNext(DIRECTION.HOLD_FINGER2);
+                        }
+                    } else if (onHold == 3) {
+                        onHold = 0;
+
+                        detectLongPress3();
+                        if (tutorial!= null && tutorial.checkNext(DIRECTION.HOLD_FINGER3)) {
                             pref.edit().putBoolean("tutorial", true).apply();
                         }
+
                     }
+
                 }
             };
             Runnable runTap = new Runnable() {
@@ -194,9 +204,7 @@ public class activity_vision extends Activity {
                     } else if (mTouchCount == 4) {
 
                         detectFourClick();
-                        if (tutorial!= null) {
-                            tutorial.checkNext(DIRECTION.FOUR_CLICK);
-                        }
+
                     }
 
                     mTouchCount = 0;
@@ -211,13 +219,13 @@ public class activity_vision extends Activity {
                     mIsDown = 1;
                     mTouchCount ++;
 
-                    onHold = false;
+                    onHold = 0;
 
                     Log.i("gesture","holdtime="+onHold);
 
                     // detect multiple tap
                     if (mTouchCount == 1) {
-                        handler.postDelayed(runTap, 600);
+                        handler.postDelayed(runTap, 1000);
                     }
 
                     break;
@@ -229,7 +237,7 @@ public class activity_vision extends Activity {
                         float dy = y - mPrevY;
 
                         if (dx > 10 || dy > 10) {
-                            onHold = false;
+                            onHold = 0;
                         }
 
                         captureSwipe(dx, dy);
@@ -250,7 +258,7 @@ public class activity_vision extends Activity {
                 case MotionEvent.ACTION_UP:
                     Log.i("gesture", "released");
                     Log.i("gesture", "direction="+direction);
-                    onHold = false;
+                    onHold = 0;
 
                     if (direction != DIRECTION.EMPTY) {
                         // MyProperties.getInstance().speakout(direction);
@@ -261,15 +269,28 @@ public class activity_vision extends Activity {
                     }
                     break;
                 case MotionEvent.ACTION_POINTER_UP:
-                    onHold = false;
+                    onHold = 0;
                     mIsDown -= 1;
                     break;
                 case MotionEvent.ACTION_POINTER_2_DOWN:
-                    onHold = true;
+                    onHold = 2;
                     handler.postDelayed(runHold, 2000);
                     Log.i("gesture","second touched detected");
                     mIsDown += 1;
                     oldDist = spacing(event);
+                    break;
+                case MotionEvent.ACTION_POINTER_2_UP:
+                    onHold = 0;
+                    mIsDown -=1;
+                    break;
+                case MotionEvent.ACTION_POINTER_3_DOWN:
+                    onHold = 3;
+                    mIsDown +=1;
+                    Log.i("gesture", "third finger detected");
+                    break;
+                case MotionEvent.ACTION_POINTER_3_UP:
+                    onHold = 0;
+                    mIsDown -=1;
                     break;
             }
 
@@ -281,6 +302,11 @@ public class activity_vision extends Activity {
         }
 
 
+    }
+
+    private void detectLongPress3() {
+        MyProperties.getInstance().speakout("more");
+        displayResponsePage();
     }
 
     // perform action based on directions
@@ -318,7 +344,11 @@ public class activity_vision extends Activity {
 
     private void displayCurrent(ItemStruct item) {
 
-        ok.setBackgroundResource(item.getImageID());
+        if (item.getVImageID() == 0) {
+            ok.setBackgroundResource(item.getImageID());
+        } else {
+            ok.setBackgroundResource(item.getVImageID());
+        }
         vText.setText(item.getText());
 
     }
@@ -361,33 +391,36 @@ public class activity_vision extends Activity {
 
     // swipe right, next item
     private void detectRight() {
-        if (curIndex >= curLevel.size() - 1) {
-            MyProperties.getInstance().speakout(curItem.getText());
-        }  else {
-            curIndex++;
-            curItem = curLevel.get(curIndex);
-            displayCurrent(curItem);
-            
-            MyProperties.getInstance().speakout(curItem.getText());
-        }
-    }
 
-    // swipe left, last item
-    private void detectLeft() {
         if (curIndex <= firstIndex) {
             MyProperties.getInstance().speakout(curItem.getText());
         }  else {
             curIndex--;
             curItem = curLevel.get(curIndex);
             displayCurrent(curItem);
-            
+
+            MyProperties.getInstance().speakout(curItem.getText());
+        }
+
+    }
+
+    // swipe left, last item
+    private void detectLeft() {
+
+        if (curIndex >= curLevel.size() - 1) {
+            MyProperties.getInstance().speakout(curItem.getText());
+        }  else {
+            curIndex++;
+            curItem = curLevel.get(curIndex);
+            displayCurrent(curItem);
+
             MyProperties.getInstance().speakout(curItem.getText());
         }
 
     }
 
     // long press the screen
-    private void detectLongPress() {
+    private void detectLongPress2() {
 
         curLevel = root;
         curIndex = 0;
@@ -412,8 +445,7 @@ public class activity_vision extends Activity {
 
     // four click, go to  more
     private void detectFourClick() {
-        MyProperties.getInstance().speakout("More");
-        displayResponsePage();
+        MyProperties.getInstance().speakout("four taps");
 
     }
 

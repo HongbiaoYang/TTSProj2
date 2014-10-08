@@ -56,10 +56,10 @@ public class Tutorial {
                         gestureTip = "please swipe up to go back to previous level";
                         break;
                     case LEFT:
-                        gestureTip = "please swipe left to access previous item";
+                        gestureTip = "please swipe left to access next item";
                         break;
                     case RIGHT:
-                        gestureTip = "please swipe right to access next item";
+                        gestureTip = "please swipe right to access previous item";
                         break;
                     case DOUBLE_CLICK:
                         gestureTip = "please double click to say yes";
@@ -67,13 +67,12 @@ public class Tutorial {
                     case TRIPLE_CLICK:
                         gestureTip = "please triple click to say no";
                         break;
-                    case FOUR_CLICK:
-                        gestureTip = "please click four times to enter response page";
-                        break;
-                    case HOLD_FINGER:
+                    case HOLD_FINGER2:
                         gestureTip = "please put two fingers and hold for a while to go back home";
                         break;
-
+                    case HOLD_FINGER3:
+                        gestureTip = "please put three fingers and hold for a while go to to response page";
+                        break;
                 }
                 gestureBoard.put(dir, gestureTip);
 
@@ -95,7 +94,7 @@ public class Tutorial {
             return false;
         } else if (checkBoard.get(now) == 0) {
             checkBoard.put(now, 1);
-            if (now == DIRECTION.HOLD_FINGER) {
+            if (now == DIRECTION.HOLD_FINGER3) {
                 MyProperties.getInstance().speakAdd("Congratulations! You have finished all training!");
                 complete = true;
                 return complete;

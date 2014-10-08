@@ -2,12 +2,14 @@ package com.utkise.TTSProj2;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputType;
+import android.text.Layout;
 import android.view.View;
 import android.widget.*;
 
@@ -159,14 +161,11 @@ public class activity_response extends Activity {
         input.setInputType(InputType.TYPE_CLASS_TEXT| InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE);
         builder.setView(input);
 
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+        builder.setPositiveButton("Speak", null);
+        builder.setNeutralButton("Save", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if (input.getText().toString().equalsIgnoreCase("debugVision")) {
-                    debugResetTutorial();
-                    return;
-                }
-
 
                 MyProperties.getInstance().speakout(input.getText().toString());
                 ItemStruct item = new ItemStruct(R.drawable.customize, input.getText().toString());
@@ -179,6 +178,7 @@ public class activity_response extends Activity {
                 updateList(thisLevel);
             }
         });
+
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -186,15 +186,80 @@ public class activity_response extends Activity {
             }
         });
 
-        builder.show();
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+        Button speak = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        speak.setOnClickListener(new NonCloseListener(dialog, input));
+
+        speak.setBackgroundResource(R.drawable.btn_yellow);
+        speak.setTextAppearance(this, R.style.ButtonText_Black_20);
+
+        Button save, cancel;
+        save = dialog.getButton(AlertDialog.BUTTON_NEUTRAL);
+        cancel = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+
+        // set appearance and background
+        save.setBackgroundResource(R.drawable.btn_yellow);
+        save.setTextAppearance(this, R.style.ButtonText_Black_20);
+
+        cancel.setBackgroundResource(R.drawable.btn_yellow);
+        cancel.setTextAppearance(this, R.style.ButtonText_Black_20);
+
+        LinearLayout layout = (LinearLayout) cancel.getParent();
+        layout.setBackgroundResource(R.color.Black);
+
+
+
+        // appearance of the title text
+        int textViewId = dialog.getContext().getResources().getIdentifier("android:id/alertTitle", null, null);
+        TextView tv = (TextView) dialog.findViewById(textViewId);
+        tv.setTextAppearance(this, R.style.ButtonText_yellow);
+
+        // appearance of the input text
+        input.setTextAppearance(this, R.style.ButtonText_Blue_20);
+
     }
 
     // debug - reset tutorial to false
-    private void debugResetTutorial() {
+    private boolean debugResetTutorial() {
         SharedPreferences pref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
-        pref.edit().putBoolean("tutorial", false).apply();
-        String debugText = "[Debug] tutorial: Off --> On";
+
+        // switch on or off
+        boolean currentValue = pref.getBoolean("tutorial", false);
+        currentValue = !currentValue;
+        pref.edit().putBoolean("tutorial", currentValue).apply();
+
+        // show the text. False means on, True means off
+        String debugText = "[Debug] tutorial:"+ (currentValue ? "On --> Off" : " Off --> On");
         Toast.makeText(getApplicationContext(), debugText, Toast.LENGTH_SHORT).show();
+
+        return currentValue;
     }
 
+    private class NonCloseListener implements View.OnClickListener {
+        private final Dialog dialog;
+        private final EditText input;
+
+        public NonCloseListener(Dialog dialog, EditText input) {
+            this.dialog = dialog;
+            this.input = input;
+        }
+
+        @Override
+        public void onClick(View v) {
+
+            // debug option
+            String text = input.getText().toString();
+            if (text.equalsIgnoreCase("debugVision")) {
+            boolean cValue = debugResetTutorial();
+                MyProperties.getInstance().speakout("Tutorial for vision page is switched " +(cValue ? "Off" :"On"));
+            } else {
+                MyProperties.getInstance().speakout(text);
+            }
+
+            // clear the previous content
+            input.setText("");
+
+        }
+    }
 }
