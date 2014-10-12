@@ -36,6 +36,7 @@ public class activity_vision extends Activity {
     @Override
     public void onBackPressed() {
         if (itemStack.isEmpty()) {
+            MyProperties.getInstance().shutup();
             MyProperties.getInstance().popStacks();
             finish();
         } else  {
@@ -431,7 +432,6 @@ public class activity_vision extends Activity {
         MyProperties.getInstance().speakout(curItem.getText());
 
     }
-
 
     // double click, say yes
     private void detectDoubleClick() {

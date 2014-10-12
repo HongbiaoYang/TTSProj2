@@ -55,6 +55,8 @@
         <activity android:name=".activity_nonenglish"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
-
+        <activity android:name=".activity_visionMain"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
     </application>
 </manifest>

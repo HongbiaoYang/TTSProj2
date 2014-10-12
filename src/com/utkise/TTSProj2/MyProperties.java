@@ -27,6 +27,14 @@ public class MyProperties {
     public List<String[]> TITLES;
     public Stack<AnimationDrawable> animStack;
 
+
+    // shut up
+    public void shutup() {
+        if (gtts.isSpeaking()) {
+            gtts.stop();
+        }
+    }
+
     public void speakout(String text) {
         gtts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
         playAnimation();

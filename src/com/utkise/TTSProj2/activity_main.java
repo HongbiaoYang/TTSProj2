@@ -137,13 +137,13 @@ public class activity_main extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
-                    MyProperties.getInstance().speakBoth(TITLE.VISION);
+                    // MyProperties.getInstance().speakBoth(TITLE.VISION);
+
                     String vision_str = MyProperties.getInstance().getTitleName(TITLE.VISION);
                     MyProperties.getInstance().titleStack.push(vision_str);
 
-
                     Intent intent = new Intent();
-                    intent.setClass(activity_main.this, activity_vision.class);
+                    intent.setClass(activity_main.this, activity_visionMain.class);
                     startActivity(intent);
                 }
             }

@@ -42,7 +42,8 @@
             android:layout_weight="1"
             android:layout_height="fill_parent"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="2dp" android:background="@drawable/home"/>
+            android:layout_marginTop="2dp"
+            android:background="@drawable/home"/>
 
 
 </LinearLayout>

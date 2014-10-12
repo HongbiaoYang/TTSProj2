@@ -2,8 +2,9 @@
 <resources>
     <string name="app_name">TTSProj2</string><string name="header">Project Eric</string><string name="aList">ActionList</string><string name="empty"/><string name="footer">Footer Goes Here</string><string name="emergencyText">Emergency</string>
     <string name="selectText">Select the DISABILITY need</string><string name="yes">Yes</string><string name="no">No</string><string name="more">More...</string><string name="goback">Go Back</string><string name="more1">Could you repeat</string><string name="more2">I am not sure</string><string name="more3">I don\'t understand</string><string name="more4">Thank you very much</string><string name="more5">I don\'t care</string>
-
-
+    <string name="welcomeTutorial">Welcome to Vision Tutorial</string>
+    <string name="startTutorial">Swipe Up to Start the Tutorial</string>
+    <string name="skipTutorial">Swipe Down to Skip the Tutorial</string>
 
 
 </resources>
