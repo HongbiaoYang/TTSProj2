@@ -173,7 +173,8 @@ public class activity_visionMain extends Activity {
         }
 
         private void detectUP() {
-            pref.edit().putBoolean("tutorial", true).apply();
+            // swipe up to start the tutorial
+            pref.edit().putBoolean("tutorial", false).apply();
             gotoVisionPage();
 
         }
@@ -183,8 +184,8 @@ public class activity_visionMain extends Activity {
         }
 
         private void detectDown() {
-
-            pref.edit().putBoolean("tutorial", false).apply();
+            // swipe down to skip the tutorial
+            pref.edit().putBoolean("tutorial", true).apply();
             gotoVisionPage();
 
         }
