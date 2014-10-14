@@ -41,5 +41,12 @@
 			<Texto>Podría repetir</Texto>
             <Image>picture0</Image>
             </Item>
+		 <Item>
+            <Title>Could you talk slower</Title>
+            <Text>Could you talk slower</Text>
+			<Titulo>Podría repetir</Titulo>
+			<Texto>Podría repetir</Texto>
+            <Image>picture0</Image>
+            </Item>	
     </Response>
 </xml>

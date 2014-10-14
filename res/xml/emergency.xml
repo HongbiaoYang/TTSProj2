@@ -21,5 +21,19 @@
 			<Texto>Por favor llame al 911</Texto>
 			<Image>picture51</Image>
 		</Item>
+		<Item> 
+			<Title>There is an immediate danger on the bus.</Title>
+			<Text>There is an immediate danger on the bus.</Text>
+			<Titulo>Por favor llame al 911</Titulo>
+			<Texto>Por favor llame al 911</Texto>
+			<Image>picture51</Image>
+		</Item>
+		<Item> 
+			<Title>There has been a personal accident on the bus.</Title>
+			<Text>There has been a personal accident on the bus.</Text>
+			<Titulo>Por favor llame al 911</Titulo>
+			<Texto>Por favor llame al 911</Texto>
+			<Image>picture51</Image>
+		</Item>
 </Emergency>
 </xml>

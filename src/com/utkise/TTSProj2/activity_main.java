@@ -75,9 +75,34 @@ public class activity_main extends Activity implements OnInitListener {
 
         emergency = (ImageView)findViewById(R.id.head_home3);
 
-        cognitive.setOnClickListener(new doubleTapListener(MyProperties.getInstance().getTitleName(TITLE.COGNITIVE)));
-        // vision.setOnClickListener(new multiTapListener("test"));
+        cognitive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count++;
+                Handler handler = new Handler();
+                Runnable run = new Runnable() {
+                    @Override
+                    public void run() {
+                        count = CONSTANT.START;
+                    }
+                };
 
+                if (count == CONSTANT.MIDDLE) {
+                    handler.postDelayed(run, 250);
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
+
+                    // MyProperties.getInstance().speakBoth(TITLE.VISION);
+
+                    String cognitive_str = MyProperties.getInstance().getTitleName(TITLE.COGNITIVE);
+                    MyProperties.getInstance().titleStack.push(cognitive_str);
+
+                    Intent intent = new Intent();
+                    intent.setClass(activity_main.this, activity_cognitive.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
         nonenglish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -211,6 +236,7 @@ public class activity_main extends Activity implements OnInitListener {
 
 
     }
+
 
     private void storeVoiceFile(String destFileName) {
         HashMap<String, String> myHashRender = new HashMap();

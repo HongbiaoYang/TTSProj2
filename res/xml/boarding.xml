@@ -15,8 +15,8 @@
             <Image>picture13</Image>
 		</Item>
 		<Item>
-			<Title>Hello, How are you ?</Title>
-			<Text>Hello, how are you ?</Text>
+			<Title>Hello, How are you?</Title>
+			<Text>Hello, How are you?</Text>
 			<Titulo>¡Hola! ¿Cómo está?</Titulo>
             <Texto>¡Hola! ¿Cómo está?</Texto>
 			<Image>picture0</Image>
@@ -29,7 +29,7 @@
 			<Image>picture0</Image>
 		</Item>
 		<Item>
-			<Title> I do not speak english</Title>
+			<Title> I do not speak English</Title>
 			<Text>I do not speak English</Text>
 			<Titulo>No hablo inglés</Titulo>
             <Texto>No hablo inglés</Texto>
@@ -59,6 +59,13 @@
 		<Item> 
 			<Title>I feel dizzy,  Please watch out for me.</Title>
 			<Text>I feel dizzy,  Please watch out for me </Text>
+			<Titulo>Me siento mareado, por favor cuídeme </Titulo>
+            <Texto>Me siento mareado, por favor cuídeme</Texto>
+			<Image>picture23</Image>
+		</Item>
+		<Item> 
+			<Title>I think I am going to have a seizure,  Please watch out for me.</Title>
+			<Text>I think I am going to have a seizure,  Please watch out for me. </Text>
 			<Titulo>Me siento mareado, por favor cuídeme </Titulo>
             <Texto>Me siento mareado, por favor cuídeme</Texto>
 			<Image>picture23</Image>
@@ -143,8 +150,8 @@
 			<Image>picture28</Image>
 		</Item>
 		<Item> 
-			<Title>Where do I hold my service animal? </Title>
-			<Text>Where do I hold my service animal? </Text>
+			<Title>Where do I place my service animal? </Title>
+			<Text>Where do I place my service animal? </Text>
 			<Titulo>¿Dónde puedo guardar Animal? </Titulo>
 			<Texto>¿Dónde puedo guardar Animal?</Texto>
 			<Image>picture27</Image>
@@ -199,8 +206,8 @@
 			<Image>picture35</Image>
 		</Item>	
 		<Item> 
-			<Title>Can you hold my arm or hand to get on the steps? </Title>
-			<Text>Can you hold my arm or hand to get on the steps? </Text>
+			<Title>Can you hold my arm or as I get on the steps? </Title>
+			<Text>Can you hold my arm or hand as I get on the steps? </Text>
 			<Titulo>¿Me puede tomar del brazo o de la mano para subir el escalón?</Titulo>
 			<Texto>¿Me puede tomar del brazo o de la mano para subir el escalón?</Texto>	
 			<Image>picture39</Image>
@@ -243,42 +250,35 @@
 		</Item>			
 	</Item>
 	<Item>	
-		<Title>Weather</Title>
-		<Text>Weather</Text>
+		<Title>Safety Hazards</Title>
+		<Text>Safety Hazards</Text>
 		<Titulo>Clima</Titulo>
 		<Texto>Clima</Texto>
 		<Image>picture0</Image>
 		<Item> 
-			<Title>Sunlight blinds me, can  you please cover the window? </Title>
-			<Text>Sunlight blinds me, can you please cover the window? </Text>
-			<Titulo>El sol me encandila, ¿podría cubrir las ventanas?</Titulo>
-			<Texto>El sol me encandila, ¿podría cubrir las ventanas?</Texto>
-			<Image>picture0</Image>
-		</Item>	
-		<Item> 
-			<Title>There is a puddle in front of the bus, please help me. </Title>
-			<Text>There is a puddle in front of the bus, please help me. </Text>
+			<Title>There is a puddle in front of the bus. </Title>
+			<Text>There is a puddle in front of the bus. </Text>
 			<Titulo>Hay un charco enfrente del transporte, ¿podría ayudarme?</Titulo>
 			<Texto>Hay un charco enfrente del transporte, ¿podría ayudarme?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>These stairs are slippery, please put some cloth on them. </Title>
-			<Text>These stairs are slippery, please put some cloth on them. </Text>
+			<Title>These stairs are slippery. </Title>
+			<Text>These stairs are slippery. </Text>
 			<Titulo>Los escalones están resbalosos, ¿podría poner un trapo encima?</Titulo>
 			<Texto>Los escalones están resbalosos, ¿podría poner un trapo encima?</Texto>
 			<Image>picture40</Image>
 		</Item>	
 		<Item> 
-			<Title>This seat is wet, I need to move. </Title>
-			<Text>This seat is wet, I need to move. </Text>
+			<Title>This seats is wet. </Title>
+			<Text>This seat is wet. </Text>
 			<Titulo>El asiento está mojado, necesito moverme</Titulo>
 			<Texto>El asiento está mojado, necesito moverme</Texto>
 			<Image>picture41</Image>
 		</Item>	
 		<Item> 
-			<Title>There are wetspots on the bus and somebody can slip. </Title>
-			<Text>There are wetspots on the bus and somebody can slip. </Text>
+			<Title>The bus floors are wet and slippery. </Title>
+			<Text>The bus floors are wet and slippery. </Text>
 			<Titulo>Hay agua en el piso y alguien podría resbalarse</Titulo>
 			<Texto>Hay agua en el piso y alguien podría resbalarse</Texto>
 			<Image>picture0</Image>
@@ -309,7 +309,7 @@
 		<Item> 
 			<Title>How much is the fare? </Title>
 			<Text>How much is the fare?</Text>
-			<Titulo>¿¿Cuánto es el costo?</Titulo>
+			<Titulo>¿Cuánto es el costo?</Titulo>
 			<Texto>¿Cuánto es el costo?</Texto>
 			<Image>picture10</Image>
 		</Item>
@@ -356,8 +356,8 @@
 			<Image>picture12</Image>
 		</Item>
 		<Item> 
-			<Title>Am I in a wrong bus? </Title>
-			<Text>Am I in a wrong bus ?</Text>
+			<Title>Am I on a wrong bus? </Title>
+			<Text>Am I on a wrong bus ?</Text>
 			<Titulo>Estoy en el transporte incorrecto</Titulo>
 			<Texto>Estoy en el transporte incorrecto</Texto>
 
@@ -380,15 +380,15 @@
 		<Texto>Silla de ruedas</Texto>
 		<Image>picture0</Image>
 		<Item> 
-			<Title>The tie-down is not working.</Title>
-			<Text>The tie-down is not working.</Text>
+			<Title>The tie-downs are not working.</Title>
+			<Text>The tie-downs are not working.</Text>
 			<Titulo>El ajuste no está funcionando</Titulo>
 			<Texto>El ajuste no está funcionando</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>The tie-down is not fixed properly.</Title>
-			<Text>The tie-down is not fixed properly.</Text>
+			<Title>The tie-downs are not secured properly.</Title>
+			<Text>The tie-downs are not secured properly.</Text>
 			<Titulo>El ajuste no está colocado correctamente</Titulo>
 			<Texto>El ajuste no está colocado correctamente</Texto>
 			<Image>picture0</Image>
@@ -424,8 +424,8 @@
 		<Texto>Asiento</Texto>
 		<Image>picture4</Image>
 		<Item> 
-			<Title>Please help me to change the seat. </Title>
-			<Text>Please help me to change the seat.</Text>
+			<Title>Please help me change the seats </Title>
+			<Text>Please help me change the seats</Text>
 			<Titulo>Por favor ayúdeme a cambiar de asiento</Titulo>
 			<Texto>Por favor ayúdeme a cambiar de asiento</Texto>
 			<Image>picture5</Image>

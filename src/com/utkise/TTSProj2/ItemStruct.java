@@ -88,4 +88,8 @@ public class ItemStruct {
     public int getVImageID() {
         return VImageID;
     }
+
+    public String getTitle() {
+        return getTitle(LANG.ENGLISH);
+    }
 }

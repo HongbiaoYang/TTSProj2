@@ -14,15 +14,15 @@
 			<Image>picture44</Image>
 		</Item>	
 		<Item> 
-			<Title>I am going to job.</Title>
-			<Text>I am going to job. </Text>
+			<Title>I am going to Work.</Title>
+			<Text>I am going to Work. </Text>
 			<Titulo>Voy al trabajo</Titulo>
 			<Texto>Voy al trabajo</Texto>
 			<Image>picture42</Image>
 		</Item>	
 		<Item> 
-			<Title>I need to go to hospital.</Title>
-			<Text>I need to go to hospital. </Text>
+			<Title>I need to go to the hospital.</Title>
+			<Text>I need to go to the hospital. </Text>
 			<Titulo>Necesito ir al hospital</Titulo>
 			<Texto>Necesito ir al hospital</Texto>
 			<Image>picture43</Image>
@@ -30,14 +30,14 @@
 		<Item> 
 			<Title>I need to go to the mall.</Title>
 			<Text>I need to go to the mall. </Text>
-			<Titulo>Neceisto ir al centro comercial</Titulo>
-			<Texto>Neceisto ir al centro comercial</Texto>
+			<Titulo>Necesito ir al centro comercial</Titulo>
+			<Texto>Necesito ir al centro comercial</Texto>
 			
 			<Image>picture46</Image>
 		</Item>	
 		<Item> 
-			<Title>I need to go to dialysis center. </Title>
-			<Text>I need to go to dialysis center.  </Text>
+			<Title>I need to go to the dialysis center. </Title>
+			<Text>I need to go to the dialysis center.  </Text>
 			<Titulo>Necesito ir al centro de diálisis</Titulo>
 			<Texto>Necesito ir al centro de diálisis</Texto>
 			<Image>picture0</Image>
@@ -103,15 +103,15 @@
 		<Item> 
 			<Title>What is this place? </Title>
 			<Text>what is this place?</Text>
-			<Titulo>¿Cuál es esté lugar?</Titulo>
-			<Texto>¿Cuál es esté lugar?</Texto>
+			<Titulo>¿Cuál es este lugar?</Titulo>
+			<Texto>¿Cuál es este lugar?</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
 			<Title>Where are we? </Title>
 			<Text>Where are we? </Text>
-			<Titulo>¿Cuál es esté lugar?</Titulo>
-			<Texto>¿Cuál es esté lugar?</Texto>
+			<Titulo>¿Dónde estamos?</Titulo>
+			<Texto>¿Dónde estamos?</Texto>
 			<Image>picture0</Image>
 		</Item>
 	</Item>
@@ -177,8 +177,8 @@
 		<Item> 
 			<Title>I am afraid of dogs. Can you please tell the owner?  </Title>
 			<Text>I am afraid of dogs. Can you please tell the owner?</Text>
-			<Titulo>Tengo miedo a los perros, le puede decir a su due dueño</Titulo>
-			<Texto>Tengo miedo a los perros, le puede decir a su due dueño</Texto>
+			<Titulo>Tengo miedo a los perros, le puede decir a su dueño.</Titulo>
+			<Texto>Tengo miedo a los perros, le puede decir a su dueño</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
@@ -196,50 +196,50 @@
 			<Image>picture1a</Image>
 		</Item>
 		<Item> 
-			<Title>Its hot in here, please decrease the heater.</Title>
-			<Text>Its hot in here, please decrease the heater.</Text>
+			<Title>It's hot in here, please decrease the heater.</Title>
+			<Text>It's hot in here, please decrease the heater.</Text>
 			<Titulo>Hace calor, por favor bájele al calentador</Titulo>
 			<Texto>Hace calor, por favor bájele al calentador</Texto>
 			<Image>picture1b</Image>
 		</Item>
 		<Item> 
-			<Title>Its hot in here, please turn off the heater.</Title>
-			<Text>Its hot in here, please turn off the heater.</Text>
+			<Title>It's hot in here, please turn off the heater.</Title>
+			<Text>It's hot in here, please turn off the heater.</Text>
 			<Titulo>Hace calor, por favor apage el calentador</Titulo>
 			<Texto>Hace calor, por favor apage el calentador</Texto>
 			<Image>picture0</Image>
 		</Item>
 		<Item> 
-			<Title>Its cold in here, please increase the heater.</Title>
-			<Text>Its cold in here, please increase the heater.</Text>
+			<Title>It's cold in here, please increase the heater.</Title>
+			<Text>It's cold in here, please increase the heater.</Text>
 			<Titulo>Hace frío, por favor súbale al calentador</Titulo>
 			<Texto>Hace frío, por favor súbale al calentador</Texto>
 			<Image>picture2a</Image>
 		</Item>
 		
 		<Item> 
-			<Title>Its cold in here, please decrease the AC.</Title>
-			<Text>Its cold in here, please decrease the AC.</Text>
+			<Title>It's cold in here, please decrease the Air Condition.</Title>
+			<Text>It's cold in here, please decrease the Air Condition.</Text>
 			<Titulo>Hace frío, por favor bájele al aire acondicionado</Titulo>
 			<Texto>Hace frío, por favor bájele al aire acondicionado</Texto>
 			<Image>picture2b</Image>
 		</Item>
 		<Item> 
-			<Title>Its cold in here,  please turn off the AC.</Title>
-			<Text>Its cold in here,  please turn off the AC.</Text>
+			<Title>It's cold in here,  please turn off the Air Condition.</Title>
+			<Text>It's cold in here,  please turn off the Air Condition.</Text>
 			<Titulo>Hace frío, por favor apage el aire acondicionado</Titulo>
 			<Texto>Hace frío, por favor apage el aire acondicionado</Texto>
 			<Image>picture3</Image>
 		</Item>
 		<Item> 
-			<Title>Please turn on music.</Title>
+			<Title>Please turn on the music.</Title>
 			<Text>Please turn on the music.</Text>
 			<Titulo>Por favor prenda la música</Titulo>
 			<Texto>Por favor prenda la música</Texto>
 			<Image>picture3a</Image>
 		</Item>
 		<Item> 
-			<Title>Please turn off music.</Title>
+			<Title>Please turn off the music.</Title>
 			<Text>Please turn off the music.</Text>
 			<Titulo>Por favor apague la música</Titulo>
 			<Texto>Por favor apague la música</Texto>

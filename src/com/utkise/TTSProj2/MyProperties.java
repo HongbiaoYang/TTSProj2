@@ -184,4 +184,13 @@ public class MyProperties {
             titleStack.pop();
             animStack.pop();
     }
+
+    // the disable type list
+    public DisableType[] DisableList() {
+        DisableType[] temp = {MyProperties.getInstance().boarding,
+                              MyProperties.getInstance().traveling,
+                              MyProperties.getInstance().gettingoff};
+
+        return temp;
+    }
 }

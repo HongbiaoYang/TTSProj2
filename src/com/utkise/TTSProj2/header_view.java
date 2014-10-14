@@ -67,6 +67,9 @@ public class header_view extends LinearLayout {
                 Intent intent;
                 if (rootItem.equalsIgnoreCase("Response")) {
                     intent = new Intent(getContext(), activity_main.class);
+                } else if (rootItem.equalsIgnoreCase("Cognitive")) {
+                    MyProperties.getInstance().titleStack.push(rootItem);
+                    intent = new Intent(getContext(), activity_cognitive.class);
                 } else {
                     MyProperties.getInstance().titleStack.push(rootItem);
                     intent = new Intent(getContext(), activity_hearing.class);

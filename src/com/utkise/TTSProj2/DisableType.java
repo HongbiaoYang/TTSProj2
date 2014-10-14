@@ -1,5 +1,6 @@
 package com.utkise.TTSProj2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -85,6 +86,15 @@ public class DisableType {
     }
 
 
+    public List<ItemStruct> getAllInfo() {
+        List<ItemStruct> newList = new ArrayList<ItemStruct>();
+        newList.addAll(getGeneralInfo());
+        newList.addAll(getTripInfo());
+        newList.addAll(getSafety());
+        newList.addAll(getComfort());
+
+        return newList;
+    }
 
     public List<ItemStruct> getGeneralInfo() {
         return generalInfo;
