@@ -2,6 +2,7 @@ package com.utkise.TTSProj2;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -146,7 +147,7 @@ public class activity_cognitive extends Activity {
         ok.setImageDrawable(null);         ok.setBackgroundResource(0);
         ok.setImageResource(curItem.getImageID());
         text.setText(curItem.getTitle());
-        MyProperties.getInstance().speakout(curItem.getText());
+        // MyProperties.getInstance().speakout(curItem.getText());
     }
 
 
@@ -203,7 +204,7 @@ public class activity_cognitive extends Activity {
             }
         });
 
-        builder.show();
+        changeLook(builder);
     }
 
     // speak current item content
@@ -226,7 +227,26 @@ public class activity_cognitive extends Activity {
             }
         });
 
-        builder.show();
+       changeLook(builder);
+    }
+
+    private void changeLook(AlertDialog.Builder builder) {
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        Button speak = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        Button cancel = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+
+        // set appearance and background
+        speak.setBackgroundResource(R.drawable.btn_yellow);
+        speak.setTextAppearance(this, R.style.ButtonText_Black_20);
+
+        cancel.setBackgroundResource(R.drawable.btn_yellow);
+        cancel.setTextAppearance(this, R.style.ButtonText_Black_20);
+
+        int textViewId = dialog.getContext().getResources().getIdentifier("android:id/alertTitle", null, null);
+        TextView tv = (TextView) dialog.findViewById(textViewId);
+        tv.setTextAppearance(this, R.style.ButtonText_yellow);
     }
 
     private void goBackOrUp(){
