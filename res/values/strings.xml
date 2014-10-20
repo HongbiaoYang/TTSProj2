@@ -5,6 +5,17 @@
     <string name="welcomeTutorial">Welcome to Vision Tutorial</string>
     <string name="startTutorial">Swipe Up to Start the Tutorial</string>
     <string name="skipTutorial">Swipe Down to Skip the Tutorial</string>
+    <string name="tapStartTutorial">Double Tap to Start the Tutorial</string>
+    <string name="tapSkipTutorial">Double Tap to Skip the Tutorial</string>
+
+    <string name="cogWel">Welcome To Tutorial</string>
+    <string name="cogInstruct">This tutorial will guide you to Navigate and Access the Content of this Application, At any point of tutorial use skip button at buttom to skip through the tutorial. Double Tap on "Start Button" to begin the tutorial</string>
+    <string name="noleftc">There are no more categories beyond  this point, please swipe right to access the previous category</string>
+    <string name="norightc">There are no more categories beyond  this point, please swipe left to access the next category</string>
+    <string name="noleftq">There are no more questions beyond  this point, please swipe right to access the previous questions</string>
+    <string name="norightq">There are no more questions beyond  this point, please swipe left to access the next questions</string>
+    <string name="nodown">There are no more questions beyond  this point, please swipe up to access questions</string>
+    <string name="noup">There are no more categories beyond  this point, please swipe down to access categories</string>
 
 
 </resources>

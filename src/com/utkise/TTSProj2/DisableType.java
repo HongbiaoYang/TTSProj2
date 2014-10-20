@@ -16,9 +16,10 @@ public class DisableType {
 
     private String tag;
     private Integer image;
+    private Integer imageV;
     private Integer customCount;
 
-    public DisableType(String name, Integer img) {
+    public DisableType(String name, Integer img, Integer imgV) {
         generalInfo = null;
         tripInfo = null;
         safety = null;
@@ -27,6 +28,7 @@ public class DisableType {
         this.response = null;
         this.tag = name;
         this.image = img;
+        this.imageV = imgV;
         this.customCount = 1;
     }
 
@@ -122,6 +124,14 @@ public class DisableType {
 
     public Integer getImage() {
         return image;
+    }
+
+    public Integer getImageV() {
+        return imageV;
+    }
+
+    public void setImageV(Integer imgV) {
+        this.imageV = imgV;
     }
 
     public Integer getCustomCount() {

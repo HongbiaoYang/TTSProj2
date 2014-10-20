@@ -5,6 +5,7 @@
             <Text></Text>
             <Customize>input</Customize>
             <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
             <Title>Thank you very much</Title>
@@ -12,6 +13,7 @@
             <Titulo>Muchas gracias</Titulo>
             <Texto>Muchas gracias</Texto>
             <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
             <Title>I don't understand</Title>
@@ -19,6 +21,7 @@
 			<Titulo>No entiendo</Titulo>
 			<Texto>No entiendo</Texto>
             <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
             <Title>Goodbye </Title>
@@ -26,6 +29,7 @@
 			<Titulo>Adiós</Titulo>
 			<Texto>Adiós</Texto>
             <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
             <Title>I am not sure </Title>
@@ -33,6 +37,7 @@
 			<Titulo>No estoy seguro</Titulo>
 			<Texto>No estoy seguro</Texto>
             <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
             <Title>Could you repeat</Title>
@@ -40,6 +45,7 @@
 			<Titulo>Podría repetir</Titulo>
 			<Texto>Podría repetir</Texto>
             <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
             </Item>
 		 <Item>
             <Title>Could you talk slower</Title>
@@ -47,6 +53,7 @@
 			<Titulo>Podría repetir</Titulo>
 			<Texto>Podría repetir</Texto>
             <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
             </Item>	
     </Response>
 </xml>

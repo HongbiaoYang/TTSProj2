@@ -62,10 +62,10 @@ public class Tutorial {
                         gestureTip = "please swipe right to access previous item";
                         break;
                     case DOUBLE_CLICK:
-                        gestureTip = "please double click to say yes";
+                        gestureTip = "please double tap to say yes";
                         break;
                     case TRIPLE_CLICK:
-                        gestureTip = "please triple click to say no";
+                        gestureTip = "please triple tap to say no";
                         break;
                     case HOLD_FINGER2:
                         gestureTip = "please put two fingers and hold for a while to go back home";

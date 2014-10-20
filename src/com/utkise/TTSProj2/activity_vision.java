@@ -57,6 +57,7 @@ public class activity_vision extends Activity {
         vText = (TextView)findViewById(R.id.visionText);
 
         root = new ArrayList<ItemStruct>();
+        fillEmergencyList(root, MyProperties.getInstance().emergency);
         fillItemList(root, MyProperties.getInstance().boarding);
         fillItemList(root, MyProperties.getInstance().traveling);
         fillItemList(root, MyProperties.getInstance().gettingoff);
@@ -80,7 +81,7 @@ public class activity_vision extends Activity {
         direction = DIRECTION.EMPTY;
 
         pref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
-        boolean done = pref.getBoolean("tutorial", false);
+        boolean done = pref.getBoolean("tutorial_vision", false);
 
         if (done == false)  {
             tutorial = new Tutorial();
@@ -90,20 +91,42 @@ public class activity_vision extends Activity {
         }
     }
 
+    private void fillEmergencyList(List<ItemStruct> node, DisableType emergency) {
+
+        /*// create image and text of this item
+        level.setImageID(emergency.getImage());
+        level.setVImageID(emergency.getImageV());
+        level.setText(LANG.ENGLISH, emergency.getTag());*/
+
+        // next level item
+        ItemStruct eItem;
+        eItem = new ItemStruct(R.drawable.emergency_v, "Emergency");
+
+        // next level list
+        List<ItemStruct> eInfo;
+        eInfo = emergency.getEmergency();
+
+        // set children
+        eItem.setChild(eInfo);
+
+        node.add(eItem);
+    }
+
 
     private void fillItemList(List<ItemStruct> node, DisableType type) {
         ItemStruct level = new ItemStruct();
 
         // create image and text of this item
         level.setImageID(type.getImage());
+        level.setVImageID(type.getImageV());
         level.setText(LANG.ENGLISH, type.getTag());
 
         // next level item
         ItemStruct gItem, tItem, sItem, cItem;
-        gItem = new ItemStruct(R.drawable.generalinfo, "General Information");
-        tItem = new ItemStruct(R.drawable.tripinfo, "Trip Information");
-        sItem = new ItemStruct(R.drawable.safety, "Safety");
-        cItem = new ItemStruct(R.drawable.comfort, "Comfort");
+        gItem = new ItemStruct(R.drawable.generalinfo_v, "General Information");
+        tItem = new ItemStruct(R.drawable.tripinfo_v, "Trip Information");
+        sItem = new ItemStruct(R.drawable.safety_v, "Safety");
+        cItem = new ItemStruct(R.drawable.comfort_v, "Comfort");
 
         // next level list
         List<ItemStruct> gInfo, tInfo, sInfo, cInfo;
@@ -180,7 +203,7 @@ public class activity_vision extends Activity {
 
                         detectLongPress3();
                         if (tutorial!= null && tutorial.checkNext(DIRECTION.HOLD_FINGER3)) {
-                            pref.edit().putBoolean("tutorial", true).apply();
+                            pref.edit().putBoolean("tutorial_vision", true).apply();
                         }
 
                     }
@@ -357,7 +380,10 @@ public class activity_vision extends Activity {
     // swipe down, enter next level
     private void detectDown() {
         if (curItem.getChild() == null) {
-            MyProperties.getInstance().speakout(curItem.getText());
+            String hint;
+            hint = getResources().getString(R.string.nodown);
+
+            MyProperties.getInstance().speakout(hint);
         } else {
             itemStack.push(curLevel);
             curLevel = curItem.getChild();
@@ -373,7 +399,10 @@ public class activity_vision extends Activity {
     // swipe up, go to higher level
     private void detectUP() {
         if (itemStack.isEmpty()) {
-            MyProperties.getInstance().speakout(curItem.getText());
+            String hint;
+            hint = getResources().getString(R.string.noup);
+
+            MyProperties.getInstance().speakout(hint);
         } else {
             curLevel = itemStack.pop();
             curIndex = 0;
@@ -394,7 +423,14 @@ public class activity_vision extends Activity {
     private void detectRight() {
 
         if (curIndex <= firstIndex) {
-            MyProperties.getInstance().speakout(curItem.getText());
+            String hint;
+            if (curItem.getChild() == null) {
+                hint = getResources().getString(R.string.norightq);
+            } else {
+                hint = getResources().getString(R.string.norightc);
+            }
+
+            MyProperties.getInstance().speakout(hint);
         }  else {
             curIndex--;
             curItem = curLevel.get(curIndex);
@@ -409,7 +445,14 @@ public class activity_vision extends Activity {
     private void detectLeft() {
 
         if (curIndex >= curLevel.size() - 1) {
-            MyProperties.getInstance().speakout(curItem.getText());
+            String hint;
+            if (curItem.getChild() == null) {
+                hint = getResources().getString(R.string.noleftq);
+            } else {
+                hint = getResources().getString(R.string.noleftc);
+            }
+
+            MyProperties.getInstance().speakout(hint);
         }  else {
             curIndex++;
             curItem = curLevel.get(curIndex);
@@ -423,13 +466,18 @@ public class activity_vision extends Activity {
     // long press the screen
     private void detectLongPress2() {
 
-        curLevel = root;
+
+        MyProperties.getInstance().shutup();
+        MyProperties.getInstance().popStacks();
+        finish();
+
+        /*curLevel = root;
         curIndex = 0;
         curItem = curLevel.get(curIndex);
         itemStack.clear();
 
         displayCurrent(curItem);
-        MyProperties.getInstance().speakout(curItem.getText());
+        MyProperties.getInstance().speakout(curItem.getText());*/
 
     }
 

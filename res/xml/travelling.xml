@@ -6,12 +6,14 @@
 		<Titulo>Destino</Titulo>
 		<Texto>Destino</Texto>
 		<Image>picture0</Image>
+		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>I am going home.</Title>
 			<Text>I am going home. </Text>
 			<Titulo>Voy a casa</Titulo>
 			<Texto>Voy a casa</Texto>
 			<Image>picture44</Image>
+			<ImageV>picture44_v</ImageV>
 		</Item>	
 		<Item> 
 			<Title>I am going to Work.</Title>
@@ -19,6 +21,7 @@
 			<Titulo>Voy al trabajo</Titulo>
 			<Texto>Voy al trabajo</Texto>
 			<Image>picture42</Image>
+			<ImageV>picture42_v</ImageV>
 		</Item>	
 		<Item> 
 			<Title>I need to go to the hospital.</Title>
@@ -26,21 +29,23 @@
 			<Titulo>Necesito ir al hospital</Titulo>
 			<Texto>Necesito ir al hospital</Texto>
 			<Image>picture43</Image>
+			<ImageV>picture43_v</ImageV>
 		</Item>	
 		<Item> 
 			<Title>I need to go to the mall.</Title>
 			<Text>I need to go to the mall. </Text>
 			<Titulo>Necesito ir al centro comercial</Titulo>
-			<Texto>Necesito ir al centro comercial</Texto>
-			
+			<Texto>Necesito ir al centro comercial</Texto>			
 			<Image>picture46</Image>
+			<ImageV>picture46_v</ImageV>
 		</Item>	
 		<Item> 
 			<Title>I need to go to the dialysis center. </Title>
 			<Text>I need to go to the dialysis center.  </Text>
 			<Titulo>Necesito ir al centro de diálisis</Titulo>
 			<Texto>Necesito ir al centro de diálisis</Texto>
-			<Image>picture0</Image>
+			<Image>picture93</Image>
+			<ImageV>picture93_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>I need to go to church. </Title>
@@ -48,6 +53,7 @@
 			<Titulo>Necesito ir al templo</Titulo>
 			<Texto>Necesito ir al templo</Texto>
 			<Image>picture47</Image>
+			<ImageV>picture47_v</ImageV>
 		</Item>	
 		<Item> 
 			<Title>I have a doctor's appointment. </Title>
@@ -55,6 +61,7 @@
 			<Titulo>Tengo cita con el doctor</Titulo>
 			<Texto>Tengo cita con el doctor</Texto>
 			<Image>picture45</Image>
+			<ImageV>picture45_v</ImageV>
 		</Item>	
 	</Item>
 	<Item>	
@@ -63,33 +70,38 @@
 		<Titulo>Otro pasajero</Titulo>
 		<Texto>Otro pasajero</Texto>
 		<Image>picture0</Image>
+		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>Can you get the driver for me? </Title>
 			<Text>Can you get the driver for me?</Text>
 			<Titulo>¿Puede llamar al conductor por mí?</Titulo>
 			<Texto>¿Puede llamar al conductor por mí?</Texto>
 			<Image>picture15</Image>
+			<ImageV>picture15_v</ImageV>
 		</Item>	
 		<Item> 
 			<Title>Could you please help me? </Title>
 			<Text>Could you please help me?</Text>
 			<Titulo>¿Me podría ayudar por favor?</Titulo>
 			<Texto>¿Me podría ayudar por favor?</Texto>
-			<Image>picture0</Image>
+			<Image>picture94</Image>
+			<ImageV>picture94_v</ImageV>
 		</Item>	
 		<Item> 
 			<Title>Please don't stand up till the bus stops? </Title>
 			<Text>Please don't stand up till the bus stops?</Text>
 			<Titulo>Por favor no se levante hasta que el transporte se detenga</Titulo>
 			<Texto>Por favor no se levante hasta que el transporte se detenga</Texto>
-			<Image>picture0</Image>
+			<Image>picture95</Image>
+			<ImageV>picture95_v</ImageV>
 		</Item>	
 		<Item> 
 			<Title>Don't unbuckle your seatbelt. </Title>
 			<Text>Don't unbuckle your seatbelt.</Text>
 			<Titulo>No se desabroche el cinturón de seguridad</Titulo>
 			<Texto>No se desabroche el cinturón de seguridad</Texto>
-			<Image>picture0</Image>
+			<Image>picture97</Image>
+			<ImageV>picture97_v</ImageV>
 		</Item>		
 	</Item>
 </General>
@@ -100,19 +112,22 @@
 		<Titulo>Ubicación</Titulo>
 		<Texto>Ubicación</Texto>
 		<Image>picture0</Image>
+		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>What is this place? </Title>
 			<Text>what is this place?</Text>
 			<Titulo>¿Cuál es este lugar?</Titulo>
 			<Texto>¿Cuál es este lugar?</Texto>
-			<Image>picture0</Image>
+			<Image>picture101</Image>
+			<ImageV>picture101_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>Where are we? </Title>
 			<Text>Where are we? </Text>
 			<Titulo>¿Dónde estamos?</Titulo>
 			<Texto>¿Dónde estamos?</Texto>
-			<Image>picture0</Image>
+			<Image>picture100</Image>
+			<ImageV>picture100_v</ImageV>
 		</Item>
 	</Item>
 	<Item> 
@@ -121,19 +136,22 @@
 		<Titulo>Rutas</Titulo>
 		<Texto>Rutas</Texto>
 		<Image>picture0</Image>
+		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>Where is this place?</Title>
 			<Text>Where is this place?</Text>
 			<Titulo>¿Dónde está este lugar?</Titulo>
 			<Texto>¿Dónde está este lugar?</Texto>
 			<Image>picture83</Image>
+			<ImageV>picture83_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>How do I get there?</Title>
 			<Text>How do I get there?</Text>
 			<Titulo>¿Cómo llego ahí?</Titulo>
 			<Texto>¿Cómo llego ahí?</Texto>
-			<Image>picture0</Image>
+			<Image>picture102</Image>
+			<ImageV>picture102_v</ImageV>
 		</Item>
 	</Item>
 </Trip>
@@ -144,12 +162,14 @@
 		<Titulo>Al conductor</Titulo>
 		<Texto>Al conductor</Texto>
 		<Image>picture0</Image>
+		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>Please do not use your cell phone while driving.</Title>
 			<Text>Please do not use your cell phone while driving.</Text>
 			<Titulo>Por favor no use su teléfono celular mientras conduce</Titulo>
 			<Texto>Por favor no use su teléfono celular mientras conduce</Texto>
 			<Image>picture57</Image>
+			<ImageV>picture57_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>Please go slower.</Title>
@@ -157,6 +177,7 @@
 			<Titulo>Por favor vaya mas despacio</Titulo>
 			<Texto>Por favor vaya mas despacio</Texto>
 			<Image>picture58</Image>
+			<ImageV>picture58_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>Please do not smoke and come into the bus, I have health issues.</Title>
@@ -164,6 +185,7 @@
 			<Titulo>Por favor no fume y regrese al transporte, tengo problemas de salud</Titulo>
 			<Texto>Por favor no fume y regrese al transporte, tengo problemas de salud</Texto>
 			<Image>picture60</Image>
+			<ImageV>picture60_v</ImageV>
 		</Item>		
 	</Item>
 </Safety>
@@ -174,19 +196,22 @@
 		<Titulo>Al conductor</Titulo>
 		<Texto>Al conductor</Texto>
 		<Image>picture0</Image>
+		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>I am afraid of dogs. Can you please tell the owner?  </Title>
 			<Text>I am afraid of dogs. Can you please tell the owner?</Text>
 			<Titulo>Tengo miedo a los perros, le puede decir a su dueño.</Titulo>
 			<Texto>Tengo miedo a los perros, le puede decir a su dueño</Texto>
-			<Image>picture0</Image>
+			<Image>picture89</Image>
+			<ImageV>picture89_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>I am allergic to scents.  </Title>
 			<Text>I am allergic to scents.</Text>
 			<Titulo>Soy alérgico a los aromas</Titulo>
 			<Texto>Soy alérgico a los aromas</Texto>
-			<Image>picture0</Image>
+			<Image>picture90</Image>
+			<ImageV>picture90_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>Its hot in here, please increase the AC.</Title>
@@ -194,6 +219,7 @@
 			<Titulo>Hace calor, por favor súbale al aire acondicionado</Titulo>
 			<Texto>Hace calor, por favor súbale al aire acondicionado</Texto>
 			<Image>picture1a</Image>
+			<ImageV>picture1a_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>It's hot in here, please decrease the heater.</Title>
@@ -201,13 +227,15 @@
 			<Titulo>Hace calor, por favor bájele al calentador</Titulo>
 			<Texto>Hace calor, por favor bájele al calentador</Texto>
 			<Image>picture1b</Image>
+			<ImageV>picture1b_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>It's hot in here, please turn off the heater.</Title>
 			<Text>It's hot in here, please turn off the heater.</Text>
 			<Titulo>Hace calor, por favor apage el calentador</Titulo>
 			<Texto>Hace calor, por favor apage el calentador</Texto>
-			<Image>picture0</Image>
+			<Image>picture92</Image>
+			<ImageV>picture92_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>It's cold in here, please increase the heater.</Title>
@@ -215,6 +243,7 @@
 			<Titulo>Hace frío, por favor súbale al calentador</Titulo>
 			<Texto>Hace frío, por favor súbale al calentador</Texto>
 			<Image>picture2a</Image>
+			<ImageV>picture2a_v</ImageV>
 		</Item>
 		
 		<Item> 
@@ -223,13 +252,15 @@
 			<Titulo>Hace frío, por favor bájele al aire acondicionado</Titulo>
 			<Texto>Hace frío, por favor bájele al aire acondicionado</Texto>
 			<Image>picture2b</Image>
+			<ImageV>picture2b_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>It's cold in here,  please turn off the Air Condition.</Title>
 			<Text>It's cold in here,  please turn off the Air Condition.</Text>
 			<Titulo>Hace frío, por favor apage el aire acondicionado</Titulo>
 			<Texto>Hace frío, por favor apage el aire acondicionado</Texto>
-			<Image>picture3</Image>
+			<Image>picture91</Image>
+			<ImageV>picture91_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>Please turn on the music.</Title>
@@ -237,6 +268,7 @@
 			<Titulo>Por favor prenda la música</Titulo>
 			<Texto>Por favor prenda la música</Texto>
 			<Image>picture3a</Image>
+			<ImageV>picture3a_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>Please turn off the music.</Title>
@@ -244,6 +276,7 @@
 			<Titulo>Por favor apague la música</Titulo>
 			<Texto>Por favor apague la música</Texto>
 			<Image>picture3b</Image>
+			<ImageV>picture3b_v</ImageV>
 		</Item>
 	</Item>
 </Comfort>

@@ -221,13 +221,13 @@ public class activity_response extends Activity {
     }
 
     // debug - reset tutorial to false
-    private boolean debugResetTutorial() {
+    private boolean debugResetTutorial(String type) {
         SharedPreferences pref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
 
         // switch on or off
-        boolean currentValue = pref.getBoolean("tutorial", false);
+        boolean currentValue = pref.getBoolean(type, false);
         currentValue = !currentValue;
-        pref.edit().putBoolean("tutorial", currentValue).apply();
+        pref.edit().putBoolean(type, currentValue).apply();
 
         // show the text. False means on, True means off
         String debugText = "[Debug] tutorial:"+ (currentValue ? "On --> Off" : " Off --> On");
@@ -251,8 +251,11 @@ public class activity_response extends Activity {
             // debug option
             String text = input.getText().toString();
             if (text.equalsIgnoreCase("debugVision")) {
-            boolean cValue = debugResetTutorial();
+                boolean cValue = debugResetTutorial("tutorial_vision");
                 MyProperties.getInstance().speakout("Tutorial for vision page is switched " +(cValue ? "Off" :"On"));
+            } else if (text.equalsIgnoreCase("debugCognitive")) {
+                boolean cValue = debugResetTutorial("tutorial_cognitive");
+                MyProperties.getInstance().speakout("Tutorial for cognitive is switched " + (cValue?"Off":"On"));
             } else {
                 MyProperties.getInstance().speakout(text);
             }

@@ -66,7 +66,7 @@ public class activity_visionMain extends Activity {
 
         start.setText(R.string.startTutorial);
         skip.setText(R.string.skipTutorial);
-        tutorial.setImageResource(R.drawable.tutorial);
+        tutorial.setImageResource(R.drawable.tutorialv);
 
         start.setBackgroundResource(R.drawable.starttutorial);
         skip.setBackgroundResource(R.drawable.skiptutorial);
@@ -174,7 +174,7 @@ public class activity_visionMain extends Activity {
 
         private void detectUP() {
             // swipe up to start the tutorial
-            pref.edit().putBoolean("tutorial", false).apply();
+            pref.edit().putBoolean("tutorial_vision", false).apply();
             gotoVisionPage();
 
         }
@@ -185,7 +185,7 @@ public class activity_visionMain extends Activity {
 
         private void detectDown() {
             // swipe down to skip the tutorial
-            pref.edit().putBoolean("tutorial", true).apply();
+            pref.edit().putBoolean("tutorial_vision", true).apply();
             gotoVisionPage();
 
         }

@@ -8,10 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
-import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -42,28 +40,29 @@ public class activity_main extends Activity implements OnInitListener {
         MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
 
         if (MyProperties.getInstance().boarding == null) {
-            MyProperties.getInstance().boarding = new DisableType("boarding", R.drawable.boarding);
+            MyProperties.getInstance().boarding = new DisableType("boarding", R.drawable.boarding, R.drawable.boarding_v);
+
             loadXMLResourceParser(MyProperties.getInstance().boarding, R.xml.boarding);
         }
 
         if (MyProperties.getInstance().traveling == null) {
-            MyProperties.getInstance().traveling = new DisableType("traveling", R.drawable.travelling);
+            MyProperties.getInstance().traveling = new DisableType("traveling", R.drawable.travelling, R.drawable.travelling_v);
             loadXMLResourceParser(MyProperties.getInstance().traveling, R.xml.travelling);
         }
 
         if (MyProperties.getInstance().gettingoff == null) {
-            MyProperties.getInstance().gettingoff = new DisableType("getting off", R.drawable.gettingoff);
+            MyProperties.getInstance().gettingoff = new DisableType("getting off", R.drawable.gettingoff, R.drawable.gettingoff_v);
             loadXMLResourceParser(MyProperties.getInstance().gettingoff, R.xml.gettingoff);
         }
 
         if (MyProperties.getInstance().emergency == null) {
-            MyProperties.getInstance().emergency = new DisableType("emergency", R.drawable.emergency);
+            MyProperties.getInstance().emergency = new DisableType("emergency", R.drawable.emergency, R.drawable.emergency_v);
             loadXMLResourceParser(MyProperties.getInstance().emergency, R.xml.emergency);
         }
 
 
         if (MyProperties.getInstance().response == null) {
-            MyProperties.getInstance().response = new DisableType("response", 0);
+            MyProperties.getInstance().response = new DisableType("response", 0, 0);
             loadXMLResourceParser(MyProperties.getInstance().response, R.xml.response);
         }
 
@@ -98,7 +97,7 @@ public class activity_main extends Activity implements OnInitListener {
                     MyProperties.getInstance().titleStack.push(cognitive_str);
 
                     Intent intent = new Intent();
-                    intent.setClass(activity_main.this, activity_cognitive.class);
+                    intent.setClass(activity_main.this, activity_cognMain.class);
                     startActivity(intent);
                 }
             }
