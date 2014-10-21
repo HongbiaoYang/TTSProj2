@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -99,7 +100,12 @@ public class activity_response extends Activity {
                         createNewItem();
                     } else if (item.getSpecialTag().equalsIgnoreCase("added")) {
                         MyProperties.getInstance().speakBoth(item);
+                    } else if (item.getSpecialTag().equalsIgnoreCase("debug_para")) {
+                        Intent intent = new Intent();
+                        intent.setClass(activity_response.this, debug_activity_click.class);
+                        startActivity(intent);
                     }
+
                 }
 
             }

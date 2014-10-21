@@ -379,7 +379,7 @@ public class activity_vision extends Activity {
 
     // swipe down, enter next level
     private void detectDown() {
-        if (curItem.getChild() == null) {
+        if (curItem.getChild() == null || curItem.hasChildren() == false) {
             String hint;
             hint = getResources().getString(R.string.nodown);
 

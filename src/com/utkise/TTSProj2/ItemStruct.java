@@ -92,4 +92,14 @@ public class ItemStruct {
     public String getTitle() {
         return getTitle(LANG.ENGLISH);
     }
+
+    public boolean hasChildren() {
+        if (child == null) {
+            return false;
+        } else if (child.size() == 0) {
+            return false;
+        }
+
+        return true;
+    }
 }
