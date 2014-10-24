@@ -98,6 +98,8 @@ public class DisableType {
         return newList;
     }
 
+    public List<ItemStruct> getResponseInfo() {return response;}
+
     public List<ItemStruct> getGeneralInfo() {
         return generalInfo;
     }

@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 /**
  * Created by Bill on 10/2/14.
+ * This class is obsolete, DO NOT USE. Inherit a subclass from SuperTutorial instead
  */
 public class Tutorial {
     /*private int swipeLeft;
@@ -23,14 +24,6 @@ public class Tutorial {
     private boolean complete;
 
     public void startTutorial() {
-        /* this.swipeLeft = 0;
-        this.swipteRight = 0;
-        this.swipeUp = 0;
-        this.swipeDown = 0;
-        this.holdTwo = 0;
-        this.doubleClick = 0;
-        this.tripleClick = 0;
-        this.fourClick = 0;*/
 
         checkBoard = new HashMap<DIRECTION, Integer>();
         gestureBoard = new HashMap<DIRECTION, String>();

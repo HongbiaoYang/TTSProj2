@@ -38,7 +38,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" android:background="#000000">
-            <Button android:layout_width="wrap_content"
+            <ImageView android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/left"/>
         </LinearLayout>
@@ -58,13 +58,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:id="@+id/screen"
-                android:background="#000000">
+                android:background="#ff000000">
         <ImageView
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_gravity="fill_vertical"
                 android:layout_weight="3"
-                android:layout_margin="1dp"
+                android:layout_margin="3dp"
                 android:padding="1dp"
                 android:id="@+id/OK"
                 android:textColor="#ff0018"/>
@@ -89,15 +89,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" android:background="#000000">
-            <Button android:layout_width="wrap_content"
+            <ImageView android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/right"/>
         </LinearLayout>
 
     </LinearLayout>
 
-    <com.utkise.TTSProj2.footer_view android:layout_width="fill_parent"
-                                     android:layout_height="0dp"
-                                     android:layout_weight="1.3"/>
+    <include layout="@layout/foot_banner" android:layout_weight="1.2" android:id="@+id/responseFoot"/>
 </LinearLayout>
 

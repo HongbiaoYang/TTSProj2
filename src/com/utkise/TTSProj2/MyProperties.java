@@ -52,6 +52,7 @@ public class MyProperties {
 
     public void speakAdd(String text) {
         gtts.speak(text, TextToSpeech.QUEUE_ADD, null);
+        playAnimation();
     }
 
     // speakBoth language if not english

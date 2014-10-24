@@ -16,6 +16,8 @@
     <string name="norightq">There are no more questions beyond  this point, please swipe left to access the next questions</string>
     <string name="nodown">There are no more questions beyond  this point, please swipe up to access questions</string>
     <string name="noup">There are no more categories beyond  this point, please swipe down to access categories</string>
+    <string name="welcomeTutorialCognitive">Welcome to cognitive tutorial</string>
+    <string name="startTutorialCognitive">Please double tap the button to begin or skip the tutorial</string>
 
 
 </resources>

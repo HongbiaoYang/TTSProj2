@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 /**
  * Created by Bill on 10/10/14.
@@ -25,15 +24,16 @@ public class activity_visionMain extends Activity {
 
     @Override
     public void onBackPressed() {
-        finish();
+
         MyProperties.getInstance().popStacks();
+        finish();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         loop = true;
-        speakRepeated();
+        speakRepeated(true);
     }
 
     @Override
@@ -75,6 +75,8 @@ public class activity_visionMain extends Activity {
         tutorialText += getResources().getString(R.string.startTutorial);
         tutorialText += getResources().getString(R.string.skipTutorial);
 
+
+
         pref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
 
         screen.setOnTouchListener(new visionTouchListener());
@@ -82,26 +84,27 @@ public class activity_visionMain extends Activity {
 
         // loop to control the repeated speaking. If app on pause, loop will become false, and the speak will not continue
         loop = true;
-        speakRepeated();
+        // for the first time, always speak
+        speakRepeated(true);
         Log.i("visionMain", "oncreat called");
 
     }
 
-    private void speakRepeated() {
+    private void speakRepeated(boolean delay) {
 
         // if is speaking, do not disturb and let the current one talk
-        if (MyProperties.getInstance().gtts.isSpeaking() == true || loop == false) {
+        if ((MyProperties.getInstance().gtts.isSpeaking() == true || loop == false) && (delay == false)){
             return;
         }
 
-        MyProperties.getInstance().speakout(tutorialText);
+        MyProperties.getInstance().speakAdd(tutorialText);
 
 
         Handler handler = new Handler();
         Runnable run = new Runnable() {
             @Override
             public void run() {
-                speakRepeated();
+                speakRepeated(false);
             }
         };
 

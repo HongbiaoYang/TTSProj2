@@ -29,7 +29,7 @@ public class activity_vision extends Activity {
     private int curIndex, firstIndex;
     private List<ItemStruct> curLevel;
     private Stack<List<ItemStruct>> itemStack;
-    private Tutorial tutorial;
+    private SuperTutorial tutorial;
     private SharedPreferences pref;
 
 
@@ -84,7 +84,7 @@ public class activity_vision extends Activity {
         boolean done = pref.getBoolean("tutorial_vision", false);
 
         if (done == false)  {
-            tutorial = new Tutorial();
+            tutorial = new VisionTutorial();
             tutorial.startTutorial();
         } else {
             tutorial = null;
@@ -196,13 +196,13 @@ public class activity_vision extends Activity {
 
                         detectLongPress2();
                         if (tutorial != null) {
-                            tutorial.checkNext(DIRECTION.HOLD_FINGER2);
+                            tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER2.ordinal());
                         }
                     } else if (onHold == 3) {
                         onHold = 0;
 
                         detectLongPress3();
-                        if (tutorial!= null && tutorial.checkNext(DIRECTION.HOLD_FINGER3)) {
+                        if (tutorial!= null && tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER3.ordinal())) {
                             pref.edit().putBoolean("tutorial_vision", true).apply();
                         }
 
@@ -217,13 +217,13 @@ public class activity_vision extends Activity {
 
                         detectDoubleClick();
                         if (tutorial!= null) {
-                            tutorial.checkNext(DIRECTION.DOUBLE_CLICK);
+                            tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.DOUBLE_CLICK.ordinal());
                         }
                     } else if (mTouchCount == 3) {
 
                         detectTripleClick();
                         if (tutorial!= null) {
-                            tutorial.checkNext(DIRECTION.TRIPLE_CLICK);
+                            tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.TRIPLE_CLICK.ordinal());
                         }
                     } else if (mTouchCount == 4) {
 
@@ -360,7 +360,8 @@ public class activity_vision extends Activity {
 
 
         if (tutorial != null && dir != DIRECTION.EMPTY) {
-            tutorial.checkNext(dir);
+            int direInt = tutorial.Dire2Int(dir);
+            tutorial.checkNext(direInt);
         }
 
 
@@ -470,15 +471,6 @@ public class activity_vision extends Activity {
         MyProperties.getInstance().shutup();
         MyProperties.getInstance().popStacks();
         finish();
-
-        /*curLevel = root;
-        curIndex = 0;
-        curItem = curLevel.get(curIndex);
-        itemStack.clear();
-
-        displayCurrent(curItem);
-        MyProperties.getInstance().speakout(curItem.getText());*/
-
     }
 
     // double click, say yes
