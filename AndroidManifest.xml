@@ -58,13 +58,25 @@
         <activity android:name=".activity_visionMain"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
-        <activity android:name=".activity_cognitive"
+        <activity android:name=".activity_cognitive0"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
-        <activity android:name=".activity_cognMain"
+        <activity android:name=".activity_cognMain0"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
         <activity android:name=".debug_activity_click"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name=".activity_hearingMain"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name=".activity_nonEnglishMain"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name=".activity_cognitive"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name=".activity_cognitiveMain"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
     </application>

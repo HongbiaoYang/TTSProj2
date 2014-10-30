@@ -97,7 +97,7 @@ public class activity_main extends Activity implements OnInitListener {
                     MyProperties.getInstance().titleStack.push(cognitive_str);
 
                     Intent intent = new Intent();
-                    intent.setClass(activity_main.this, activity_cognMain.class);
+                    intent.setClass(activity_main.this, activity_cognitiveMain.class);
                     startActivity(intent);
                 }
             }
@@ -120,25 +120,9 @@ public class activity_main extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
-                    // MyProperties.getInstance().doInit(LANG.SPANISH);
-                    // only change the global language setting , not change the tts engine
-                    MyProperties.getInstance().Language = LANG.SPANISH;
-
-                 /*   String filename = getApplicationContext().getFilesDir().getPath()+"/test.wav";
-
-                    storeVoiceFile("/storage/sdcard0/video/video.wav");
-                    storeVoiceFile(getApplicationContext().getFilesDir().getPath() + "newWavFile.wav");
-
-                    Log.d("activity_main", "path="+"/storage/sdcard0/video/video.wav");
-                    Log.d("activity_main", "path="+getApplicationContext().getFilesDir().getPath() + "newWavFile.wav");
-*/
-                    String non_english_str = MyProperties.getInstance().getTitleEither(TITLE.NON_ENGLISH);
-
-                    MyProperties.getInstance().speakBoth(TITLE.NON_ENGLISH);
-                    MyProperties.getInstance().titleStack.push(non_english_str);
-
                     Intent intent = new Intent();
-                    intent.setClass(activity_main.this, activity_hearing.class);
+                    intent.setClass(activity_main.this, activity_nonEnglishMain.class);
+
                     startActivity(intent);
                 }
             }
@@ -194,10 +178,10 @@ public class activity_main extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().speakBoth(TITLE.HEARING);
 
-                    String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
-                    MyProperties.getInstance().titleStack.push(hearing_str);
+                    // String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
+                    // MyProperties.getInstance().titleStack.push(hearing_str);
                     Intent intent = new Intent();
-                    intent.setClass(activity_main.this, activity_hearing.class);
+                    intent.setClass(activity_main.this, activity_hearingMain.class);
                     startActivity(intent);
                 }
             }
@@ -360,6 +344,7 @@ public class activity_main extends Activity implements OnInitListener {
                     case XmlPullParser.END_TAG:
                         name = xrp.getName();
                         if (name.equalsIgnoreCase("item")) {
+                            MyProperties.getInstance().feedItem(currentItem);
                             //currentLevel.add(currentItem);
                             if (itemStack.isEmpty()) {
                                 currentItem = null;

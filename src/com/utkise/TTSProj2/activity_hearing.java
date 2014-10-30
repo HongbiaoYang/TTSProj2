@@ -180,11 +180,7 @@ public class activity_hearing extends Activity implements OnInitListener {
             @Override
             public void onClick(View v) {
 
-                // change language back to english
-               MyProperties.getInstance().doInit(LANG.ENGLISH);
-               MyProperties.getInstance().popStacks();
-               finish();
-
+                goBackToMain();
             }
         });
 
@@ -198,8 +194,16 @@ public class activity_hearing extends Activity implements OnInitListener {
 
     @Override
     public void onBackPressed() {
+        goBackToMain();
+    }
+
+    private void goBackToMain() {
         MyProperties.getInstance().doInit(LANG.ENGLISH);
         MyProperties.getInstance().popStacks();
-        finish();
+
+        Intent intent = new Intent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setClass(activity_hearing.this, activity_main.class);
+        startActivity(intent);
     }
 }

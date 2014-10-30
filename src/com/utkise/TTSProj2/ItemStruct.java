@@ -102,4 +102,12 @@ public class ItemStruct {
 
         return true;
     }
+
+    public void setText(String text) {
+        setText(LANG.ENGLISH, text);
+    }
+
+    public void setTitle(String title) {
+        setTitle(LANG.ENGLISH, title);
+    }
 }

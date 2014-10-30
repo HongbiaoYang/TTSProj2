@@ -5,8 +5,8 @@
     <string name="welcomeTutorial">Welcome to Vision Tutorial</string>
     <string name="startTutorial">Swipe Up to Start the Tutorial</string>
     <string name="skipTutorial">Swipe Down to Skip the Tutorial</string>
-    <string name="tapStartTutorial">Double Tap to Start the Tutorial</string>
-    <string name="tapSkipTutorial">Double Tap to Skip the Tutorial</string>
+    <string name="tapStartTutorial">Hold this button to Start the Tutorial</string>
+    <string name="tapSkipTutorial">Hold this button to Skip the Tutorial</string>
 
     <string name="cogWel">Welcome To Tutorial</string>
     <string name="cogInstruct">This tutorial will guide you to Navigate and Access the Content of this Application, At any point of tutorial use skip button at buttom to skip through the tutorial. Double Tap on "Start Button" to begin the tutorial</string>

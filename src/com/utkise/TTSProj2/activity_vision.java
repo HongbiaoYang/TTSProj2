@@ -84,10 +84,10 @@ public class activity_vision extends Activity {
         boolean done = pref.getBoolean("tutorial_vision", false);
 
         if (done == false)  {
-            tutorial = new VisionTutorial();
+            tutorial = new VisionTutorial(true);
             tutorial.startTutorial();
         } else {
-            tutorial = null;
+            tutorial = new VisionTutorial(false);
         }
     }
 
@@ -195,14 +195,13 @@ public class activity_vision extends Activity {
                         onHold = 0;
 
                         detectLongPress2();
-                        if (tutorial != null) {
-                            tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER2.ordinal());
-                        }
+                        tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER2.ordinal());
+
                     } else if (onHold == 3) {
                         onHold = 0;
 
                         detectLongPress3();
-                        if (tutorial!= null && tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER3.ordinal())) {
+                        if (tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER3.ordinal())) {
                             pref.edit().putBoolean("tutorial_vision", true).apply();
                         }
 
@@ -216,15 +215,13 @@ public class activity_vision extends Activity {
                     if (mTouchCount == 2) {
 
                         detectDoubleClick();
-                        if (tutorial!= null) {
-                            tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.DOUBLE_CLICK.ordinal());
-                        }
+                        tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.DOUBLE_CLICK.ordinal());
+
                     } else if (mTouchCount == 3) {
 
                         detectTripleClick();
-                        if (tutorial!= null) {
-                            tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.TRIPLE_CLICK.ordinal());
-                        }
+                        tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.TRIPLE_CLICK.ordinal());
+
                     } else if (mTouchCount == 4) {
 
                         detectFourClick();
@@ -359,7 +356,7 @@ public class activity_vision extends Activity {
         }
 
 
-        if (tutorial != null && dir != DIRECTION.EMPTY) {
+        if (dir != DIRECTION.EMPTY) {
             int direInt = tutorial.Dire2Int(dir);
             tutorial.checkNext(direInt);
         }

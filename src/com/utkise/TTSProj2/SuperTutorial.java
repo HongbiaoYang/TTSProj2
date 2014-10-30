@@ -9,6 +9,7 @@ import java.util.HashMap;
  * Created by Bill on 10/22/14.
  */
 public abstract class SuperTutorial {
+    private final boolean active;
     HashMap<Integer, Integer> checkBoard;
     HashMap<Integer, String> gestureBoard;
     int curTask, lastTask;
@@ -17,12 +18,19 @@ public abstract class SuperTutorial {
 
     public abstract  void startTutorial();
 
+    public SuperTutorial(boolean active) {
+        this.active = active;
+    }
+
     public boolean checkNext(int now, AnimationDrawable anim) {
         this.curAnim = anim;
         return checkNext(now);
     }
 
     public boolean checkNext(int now) {
+        if (active == false) {
+            return false;
+        }
 
         // do nothing if already completed
         if (complete == true) {

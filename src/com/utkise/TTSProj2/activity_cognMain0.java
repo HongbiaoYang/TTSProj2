@@ -14,7 +14,7 @@ import android.widget.ImageView;
 /**
  * Created by Bill on 10/17/14.
  */
-public class activity_cognMain extends Activity {
+public class activity_cognMain0 extends Activity {
     private ImageView tutorial;
     private Button skip, start;
     private SharedPreferences pref;
@@ -24,7 +24,7 @@ public class activity_cognMain extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_cognmain);
+        setContentView(R.layout.layout_cognmain0);
 
         tutorial = (ImageView)findViewById(R.id.tutorial);
         skip = (Button)findViewById(R.id.skipTutorial);
@@ -53,22 +53,24 @@ public class activity_cognMain extends Activity {
         // for the first time, always speak
         speakRepeated(true);
 
-        skip.setOnClickListener(new View.OnClickListener() {
+        skip.setOnLongClickListener(new View.OnLongClickListener() {
+
             @Override
-            public void onClick(View v) {
-                // skip tutorial
+            public boolean onLongClick(View v) {
                 pref.edit().putBoolean("tutorial_cognitive", true).apply();
                 gotoCognitivePage();
+                return false;
             }
         });
 
 
-        start.setOnClickListener(new View.OnClickListener() {
+        start.setOnLongClickListener(new View.OnLongClickListener() {
+
             @Override
-            public void onClick(View v) {
-                // start tutorial
+            public boolean onLongClick(View v) {
                 pref.edit().putBoolean("tutorial_cognitive", false).apply();
                 gotoCognitivePage();
+                return false;
             }
         });
     }
@@ -127,7 +129,7 @@ public class activity_cognMain extends Activity {
             MyProperties.getInstance().titleStack.push(cog_str);
 
             Intent intent = new Intent();
-            intent.setClass(activity_cognMain.this, activity_cognitive.class);
+            intent.setClass(activity_cognMain0.this, activity_cognitive0.class);
             startActivity(intent);
     }
 }

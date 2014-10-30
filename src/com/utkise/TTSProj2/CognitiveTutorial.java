@@ -11,6 +11,10 @@ public class CognitiveTutorial extends SuperTutorial {
 
     private AnimationDrawable previousAnim;
 
+    public CognitiveTutorial(boolean active) {
+        super(active);
+    }
+
     @Override
     public void startTutorial() {
 
@@ -22,15 +26,15 @@ public class CognitiveTutorial extends SuperTutorial {
         checkBoard = new HashMap<Integer, Integer>();
 
 
-        gestureBoard.put(LOCAL_DIRECTION.LEFT.ordinal(), "please double tap left arrow to access previous item");
-        gestureBoard.put(LOCAL_DIRECTION.RIGHT.ordinal(),  "please double tap right arrow to access next item");
-        gestureBoard.put(LOCAL_DIRECTION.ENTER.ordinal(),  "please double tap the item to enter next level");
-        gestureBoard.put(LOCAL_DIRECTION.SPEAK.ordinal(),  "please double tap the item to speak it out");
-        gestureBoard.put(LOCAL_DIRECTION.BACK.ordinal(), "please double tap back to go back to previous level");
-        gestureBoard.put(LOCAL_DIRECTION.HOME.ordinal(),  "please double tap home to go back to home page");
-        gestureBoard.put(LOCAL_DIRECTION.YES.ordinal(), "please double tap the yes button to say yes");
-        gestureBoard.put(LOCAL_DIRECTION.NO.ordinal(),  "please double the tap no button to say no");
-        gestureBoard.put(LOCAL_DIRECTION.MORE.ordinal(),  "please double tap more to enter response page");
+        gestureBoard.put(LOCAL_DIRECTION.LEFT.ordinal(), "please hold the left button to access previous item");
+        gestureBoard.put(LOCAL_DIRECTION.RIGHT.ordinal(),  "please hold the right button to access next item");
+        gestureBoard.put(LOCAL_DIRECTION.ENTER.ordinal(),  "please hold the item to enter next level");
+        gestureBoard.put(LOCAL_DIRECTION.SPEAK.ordinal(),  "please hold the item to speak it out");
+        gestureBoard.put(LOCAL_DIRECTION.BACK.ordinal(), "please hold the back button to go back to previous level");
+        gestureBoard.put(LOCAL_DIRECTION.HOME.ordinal(),  "please hold the home button to go back to home page");
+        gestureBoard.put(LOCAL_DIRECTION.YES.ordinal(), "please hold the yes button to say yes");
+        gestureBoard.put(LOCAL_DIRECTION.NO.ordinal(),  "please hold the no button to say no");
+        gestureBoard.put(LOCAL_DIRECTION.MORE.ordinal(),  "please hold the more to enter response page");
 
 
         // initialize the hashmap to all 0s

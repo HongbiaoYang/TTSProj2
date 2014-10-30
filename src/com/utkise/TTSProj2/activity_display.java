@@ -82,6 +82,22 @@ public class activity_display extends Activity implements OnInitListener {
 
         list = (ListView)findViewById(R.id.list);
         list.setAdapter(adapter);
+        list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                ItemStruct item = thisLevel.get(position);
+                if (item.getChild() == null) {
+                    MyProperties.getInstance().speakBoth(item);
+                } else {
+                    MyProperties.getInstance().speakBoth(item);
+                    levelStack.push(thisLevel);
+                    thisLevel = item.getChild();
+                    updateList(thisLevel);
+                }
+                return false;
+            }
+        });
+
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -7,6 +7,10 @@ import java.util.HashMap;
  */
 public class VisionTutorial extends SuperTutorial {
 
+    public VisionTutorial(boolean active) {
+        super(active);
+    }
+
     @Override
     public void startTutorial() {
         initializeBoard();

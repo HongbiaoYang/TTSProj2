@@ -1,5 +1,7 @@
 package com.utkise.TTSProj2;
 
+import android.content.Context;
+import android.content.res.XmlResourceParser;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Vibrator;
@@ -7,11 +9,11 @@ import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.widget.ImageView;
 import org.w3c.dom.Text;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Stack;
+import java.io.IOException;
+import java.util.*;
 
 /**
  * Created by Bill on 8/28/14.
@@ -26,7 +28,9 @@ public class MyProperties {
     public Stack<String> titleStack;
     public List<String[]> TITLES;
     public Stack<AnimationDrawable> animStack;
-
+    public List<TutorialItem> tutorialListHearing, tutorialListCognitive, tutorialListNonEnglish;
+    public HashMap<String, List<TutorialItem>> tutorialLists;
+    private List<ItemStruct> flatList;
 
     // shut up
     public void shutup() {
@@ -123,6 +127,10 @@ public class MyProperties {
         emergency = null;
         response = null;
         currentType = null;
+        tutorialListHearing = null;
+        tutorialListCognitive = null;
+        tutorialListNonEnglish = null;
+        flatList = new ArrayList<ItemStruct>();
         titleStack = new Stack<String>();
         animStack = new Stack<AnimationDrawable>();
 
@@ -193,5 +201,113 @@ public class MyProperties {
                               MyProperties.getInstance().gettingoff};
 
         return temp;
+    }
+
+    public void LoadTutorialXml(Context context) {
+        tutorialLists = new HashMap<String, List<TutorialItem>>();
+
+        try {
+            XmlResourceParser xrp = context.getResources().getXml(R.xml.tutorials);
+            xrp.next();
+            int eventType = xrp.getEventType();
+            boolean done = false;
+
+            List<TutorialItem> currentLevel = new ArrayList<TutorialItem>();
+            TutorialItem currentItem = null;
+
+
+            while (eventType != XmlPullParser.END_DOCUMENT && !done) {
+                String name = null;
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        name = xrp.getName();
+
+                        if (name.equalsIgnoreCase("item")) {
+                            currentItem = new TutorialItem();
+                            currentLevel.add(currentItem);
+
+                        } else if (currentItem != null) {
+                            if (name.equalsIgnoreCase("Desc")) {
+                                currentItem.desc = xrp.nextText();
+                            } else if (name.equalsIgnoreCase("Voice")) {
+                                currentItem.voice = xrp.nextText();
+                            } else if (name.equalsIgnoreCase("image")) {
+                                int resID = context.getResources().getIdentifier(xrp.nextText(), "drawable", context.getPackageName());
+                                currentItem.image = resID;
+                            } else if (name.equalsIgnoreCase("progress")) {
+                                int resID = context.getResources().getIdentifier(xrp.nextText(), "drawable", context.getPackageName());
+                                currentItem.progress = resID;
+                            }else if (name.equalsIgnoreCase("Customize")) {
+                                currentItem.custom = xrp.nextText();
+                            }
+
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        name = xrp.getName();
+                        if (name.equalsIgnoreCase("item")) {
+                                currentItem = null;
+                        } else if (name.equalsIgnoreCase("Hearing") || name.equalsIgnoreCase("Cognitive") ||
+                                name.equalsIgnoreCase("NonEnglish")) {
+
+                            tutorialLists.put(name, currentLevel);
+                            currentLevel = new ArrayList<TutorialItem>();
+                        }
+
+                        break;
+                    case XmlPullParser.END_DOCUMENT:
+                        done = true;
+                        break;
+                }
+                eventType = xrp.next();
+            }
+
+        } catch (XmlPullParserException e1) {
+            e1.printStackTrace();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    public List<TutorialItem> getTutorial(String type) {
+        if (tutorialLists == null) {
+            return null;
+        }
+
+        return tutorialLists.get(type);
+    }
+
+/*    public List<ItemStruct> getCognitiveList() {
+        List<ItemStruct> flat = new ArrayList<ItemStruct>();
+        flat.addAll(flattenTreeToList(boarding));
+        flat.addAll(flattenTreeToList(traveling));
+        flat.addAll(flattenTreeToList(gettingoff));
+        flat.addAll(flattenTreeToList(emergency));
+
+        return flat;
+    }
+
+    private List<ItemStruct> flattenTreeToList(DisableType type) {
+
+        return null;
+    }*/
+
+    public void feedItem(ItemStruct currentItem) {
+        if (currentItem.getChild() != null) {
+            return;
+        }
+
+        ItemStruct tmp = new ItemStruct();
+        tmp.setText(currentItem.getText());
+        tmp.setTitle(currentItem.getTitle());
+        tmp.setImageID(currentItem.getImageID());
+
+        flatList.add(tmp);
+    }
+
+    public List<ItemStruct> getCognitiveList() {
+        return flatList;
     }
 }
