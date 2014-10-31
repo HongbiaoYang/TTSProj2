@@ -28,6 +28,7 @@ public class activity_main extends Activity implements OnInitListener {
     private ImageView emergency;
     private int count = CONSTANT.START;
     private int backTimer = 0;
+    private boolean accept = false;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,13 +92,13 @@ public class activity_main extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
-                    // MyProperties.getInstance().speakBoth(TITLE.VISION);
+                    MyProperties.getInstance().speakBoth(TITLE.VISION);
 
                     String cognitive_str = MyProperties.getInstance().getTitleName(TITLE.COGNITIVE);
                     MyProperties.getInstance().titleStack.push(cognitive_str);
 
                     Intent intent = new Intent();
-                    intent.setClass(activity_main.this, activity_cognitiveMain.class);
+                    intent.setClass(activity_main.this, activity_cognitive.class);
                     startActivity(intent);
                 }
             }
@@ -178,10 +179,10 @@ public class activity_main extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().speakBoth(TITLE.HEARING);
 
-                    // String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
-                    // MyProperties.getInstance().titleStack.push(hearing_str);
+                    String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
+                    MyProperties.getInstance().titleStack.push(hearing_str);
                     Intent intent = new Intent();
-                    intent.setClass(activity_main.this, activity_hearingMain.class);
+                    intent.setClass(activity_main.this, activity_hearing.class);
                     startActivity(intent);
                 }
             }
@@ -319,7 +320,10 @@ public class activity_main extends Activity implements OnInitListener {
                             }
                             currentItem = new ItemStruct();
                             currentLevel.add(currentItem);
-
+                       } else if (name.equalsIgnoreCase("general") || name.equalsIgnoreCase("trip") ||
+                               name.equalsIgnoreCase("safety") || name.equalsIgnoreCase("comfort")){
+                           accept = true;
+                           // accept those items in cognitive only for these above categories
                         } else if (currentItem != null) {
                             if (name.equalsIgnoreCase("title")) {
                                 currentItem.setTitle(LANG.ENGLISH, xrp.nextText());
@@ -344,7 +348,9 @@ public class activity_main extends Activity implements OnInitListener {
                     case XmlPullParser.END_TAG:
                         name = xrp.getName();
                         if (name.equalsIgnoreCase("item")) {
-                            MyProperties.getInstance().feedItem(currentItem);
+                            if (accept == true) {
+                                MyProperties.getInstance().feedItem(currentItem);
+                            }
                             //currentLevel.add(currentItem);
                             if (itemStack.isEmpty()) {
                                 currentItem = null;
@@ -358,6 +364,9 @@ public class activity_main extends Activity implements OnInitListener {
                             boarding.setInformation(name, root);
                             root = new ArrayList<ItemStruct>();
                             currentLevel = root;
+
+                            accept = false;
+                            // close the accept on whatever
                         }
 
                         break;

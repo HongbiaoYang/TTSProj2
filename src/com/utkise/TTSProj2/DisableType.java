@@ -151,4 +151,8 @@ public class DisableType {
     public void decreaseCustomCount() {
         this.customCount--;
     }
+
+    public List<ItemStruct> getSystemResponse() {
+        return response.subList(customCount, response.size());
+    }
 }
