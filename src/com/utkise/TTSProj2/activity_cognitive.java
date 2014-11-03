@@ -95,7 +95,6 @@ public class activity_cognitive extends Activity implements OnInitListener {
         }
 
         if (levelStack.isEmpty()) {
-            MyProperties.getInstance().popStacks();
             goBackToMain();
         } else {
             thisLevel = levelStack.pop();

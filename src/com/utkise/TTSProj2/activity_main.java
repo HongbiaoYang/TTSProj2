@@ -94,11 +94,11 @@ public class activity_main extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().speakBoth(TITLE.VISION);
 
-                    String cognitive_str = MyProperties.getInstance().getTitleName(TITLE.COGNITIVE);
-                    MyProperties.getInstance().titleStack.push(cognitive_str);
+                  /*  String cognitive_str = MyProperties.getInstance().getTitleName(TITLE.COGNITIVE);
+                    MyProperties.getInstance().titleStack.push(cognitive_str);*/
 
                     Intent intent = new Intent();
-                    intent.setClass(activity_main.this, activity_cognitive.class);
+                    intent.setClass(activity_main.this, activity_cognitiveMain.class);
                     startActivity(intent);
                 }
             }
@@ -179,10 +179,10 @@ public class activity_main extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().speakBoth(TITLE.HEARING);
 
-                    String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
-                    MyProperties.getInstance().titleStack.push(hearing_str);
+                    /*String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
+                    MyProperties.getInstance().titleStack.push(hearing_str);*/
                     Intent intent = new Intent();
-                    intent.setClass(activity_main.this, activity_hearing.class);
+                    intent.setClass(activity_main.this, activity_hearingMain.class);
                     startActivity(intent);
                 }
             }
