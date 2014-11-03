@@ -55,7 +55,7 @@ public class CustomList extends ArrayAdapter<String> {
         colorArray.add(Color.RED);
         colorArray.add(Color.YELLOW);
         colorArray.add(Color.GREEN);
-        colorArray.add(Color.CYAN);*/
+        colorArray.add(Color.CYAN);
         colorArray.add(Color.parseColor("#193564"));
         colorArray.add(Color.parseColor("#fdbd35"));
         colorArray.add(Color.parseColor("#4ea554"));
@@ -63,6 +63,7 @@ public class CustomList extends ArrayAdapter<String> {
         colorArray.add(Color.parseColor("#f68d32"));
         colorArray.add(Color.parseColor("#a2c03a"));
         colorArray.add(Color.parseColor("#f174ac"));
+        */
     }
 
 

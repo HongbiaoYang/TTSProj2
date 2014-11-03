@@ -21,7 +21,9 @@ public class activity_cognitive extends Activity implements OnInitListener {
     private int count = CONSTANT.START;
     private ImageView lastLevelBtn, emergency;
     private TextView title;
-    private Button yes, no, response;
+    private LinearLayout yes;
+    private LinearLayout no;
+    private LinearLayout response;
 
 
 
@@ -48,9 +50,9 @@ public class activity_cognitive extends Activity implements OnInitListener {
         title = (TextView) findViewById(R.id.header2);
         emergency = (ImageView)findViewById(R.id.header3);
         head_banner = (LinearLayout)findViewById(R.id.head_banner);
-        yes = (Button)findViewById(R.id.footer1);
-        no  = (Button)findViewById(R.id.footer2);
-        response = (Button)findViewById(R.id.footer3);
+        yes = (LinearLayout)findViewById(R.id.footer1);
+        no  = (LinearLayout)findViewById(R.id.footer2);
+        response = (LinearLayout)findViewById(R.id.footer3);
 
 
         title.setText(MyProperties.getInstance().getTitleStack());

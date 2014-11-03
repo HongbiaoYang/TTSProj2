@@ -33,29 +33,33 @@ public class footer_view extends LinearLayout {
         List<String> yes, no, more;
 
         yes = new ArrayList<String>();
-        yes.add("yes");
+        yes.add("Yes");
         yes.add("sí");
 
         no = new ArrayList<String>();
-        no.add("no");
+        no.add("No");
         no.add("no");
 
         more = new ArrayList<String>();
-        more.add("more");
+        more.add("More");
         more.add("más");
 
-        Button Yes, No, More;
+        TextView YesTxt, NoTxt, MoreTxt;
 
-        Yes = (Button) this.findViewById(R.id.footer1);
-        No = (Button) this.findViewById(R.id.footer2);
-        More = (Button) this.findViewById(R.id.footer3);
+        YesTxt = (TextView)findViewById(R.id.footer1_text);
+        NoTxt = (TextView)findViewById(R.id.footer2_text);
+        MoreTxt = (TextView)findViewById(R.id.footer3_text);
 
+        LinearLayout Yes = (LinearLayout) this.findViewById(R.id.footer1);
+        LinearLayout No = (LinearLayout) this.findViewById(R.id.footer2);
+        LinearLayout More = (LinearLayout) this.findViewById(R.id.footer3);
 
         //set text
         int lan = MyProperties.getInstance().Language.ordinal();
-        Yes.setText(yes.get(lan));
-        No.setText(no.get(lan));
-        More.setText(more.get(lan));
+
+        YesTxt.setText(yes.get(lan));
+        NoTxt.setText(no.get(lan));
+        MoreTxt.setText(more.get(lan));
 
         // set listener
         Yes.setOnClickListener(new doubleTapListener(yes));
