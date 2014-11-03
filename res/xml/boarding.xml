@@ -14,6 +14,7 @@
             <Texto>¿Cuál es su nombre?</Texto>
             <Image>picture13</Image>
 			<ImageV>picture13_v</ImageV>
+            <Color>#193564</Color>
 		</Item>
 		<Item>
 			<Title>Hello, How are you?</Title>
@@ -452,7 +453,7 @@
 		<Texto>Cinturón de seguridad</Texto>
 		<Image>picture0</Image>
 		<ImageV>picture0_v</ImageV>
-		<Item> 
+		<Item>
 			<Title>Can you buckle my seatbelt?</Title>
 			<Text>Can you buckle my seatbelt?</Text>
 			<Titulo>¿Me puede abrochar el cinturón?</Titulo>

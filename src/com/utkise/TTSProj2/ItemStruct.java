@@ -1,5 +1,7 @@
 package com.utkise.TTSProj2;
 
+import android.graphics.Color;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class ItemStruct {
     private Integer imageID;
     private List<ItemStruct> child;
     private int VImageID;
+    private int color;
 
     public String getSpecialTag() {
         return SpecialTag;
@@ -27,6 +30,7 @@ public class ItemStruct {
         title = new HashMap<LANG, String>();
         text = new HashMap<LANG, String>();
         SpecialTag = null;
+        color = Color.parseColor("#f174ac");
 
         child = null;
     }
@@ -109,5 +113,13 @@ public class ItemStruct {
 
     public void setTitle(String title) {
         setTitle(LANG.ENGLISH, title);
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public int getColorCode() {
+        return color;
     }
 }

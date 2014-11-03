@@ -35,6 +35,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
     private Stack<List<ItemStruct>> levelStack;
     private LinearLayout head_banner;
     private boolean EmergencyState;
+    private Integer[] colors;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,9 +108,10 @@ public class activity_cognitive extends Activity implements OnInitListener {
         CustomList adapter;
         web =  lf.produceTitleArray();
         imageId = lf.produceImageArray();
+        colors = lf.produceColorArray();
 
         adapter = new
-                CustomList(activity_cognitive.this, web, imageId, R.layout.fatlist);
+                CustomList(activity_cognitive.this, web, imageId, R.layout.fatlist, colors);
         adapter.setColors(true);
 
         list = (ListView)findViewById(R.id.list);

@@ -21,6 +21,7 @@ public class CustomList extends ArrayAdapter<String> {
     private final Activity context;
     private final String[] web;
     private final Integer[] imageId;
+    private final Integer[] colorList;
 
     private int textStyle, backgroundColor;
     private int xmlayout;
@@ -33,17 +34,18 @@ public class CustomList extends ArrayAdapter<String> {
         this.context = context;
         this.web = web;
         this.imageId = imageId;
-        xmlayout = R.layout.list_single;
+        this.xmlayout = R.layout.list_single;
+        this.colorList = new Integer[0];
     }
 
-    public CustomList(Activity context, String[] web, Integer[] imageId, int xml) {
+    public CustomList(Activity context, String[] web, Integer[] imageId, int xml, Integer[] colors) {
         super(context, R.layout.list_single, web);
 
         this.context = context;
         this.web = web;
         this.imageId = imageId;
-        xmlayout = xml;
-
+        this.xmlayout = xml;
+        this.colorList = colors;
     }
 
     public void setColors(boolean colorful) {
@@ -61,9 +63,6 @@ public class CustomList extends ArrayAdapter<String> {
         colorArray.add(Color.parseColor("#f68d32"));
         colorArray.add(Color.parseColor("#a2c03a"));
         colorArray.add(Color.parseColor("#f174ac"));
-
-
-
     }
 
 
@@ -77,21 +76,18 @@ public class CustomList extends ArrayAdapter<String> {
         txtTitle.setText(web[position]);
         imageView.setImageResource(imageId[position]);
 
-
-
-
         if (colorful == true) {
-
+/*
             final Random rand = new Random();
             int dice = rand.nextInt(colorArray.size());
             dice = position % colorArray.size();
 
-            // rowView.setBackgroundColor(colorArray.get(dice));
             txtTitle.setBackgroundColor(colorArray.get(dice));
             imageView.setBackgroundColor(colorArray.get(dice));
-          /*  txtTitle.setTextAppearance(context, textStyle);
-            txtTitle.setBackgroundResource(backgroundColor);
-            imageView.setBackgroundResource(backgroundColor);*/
+*/
+            txtTitle.setBackgroundColor(colorList[position]);
+            imageView.setBackgroundColor(colorList[position]);
+
         }
 
         return rowView;

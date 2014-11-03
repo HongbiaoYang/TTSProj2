@@ -31,6 +31,7 @@ public class MyProperties {
     public List<TutorialItem> tutorialListHearing, tutorialListCognitive, tutorialListNonEnglish;
     public HashMap<String, List<TutorialItem>> tutorialLists;
     private List<ItemStruct> flatList;
+    private boolean E_merged = false;
 
     // shut up
     public void shutup() {
@@ -303,11 +304,17 @@ public class MyProperties {
         tmp.setText(currentItem.getText());
         tmp.setTitle(currentItem.getTitle());
         tmp.setImageID(currentItem.getImageID());
+        tmp.setColor(currentItem.getColorCode());
 
         flatList.add(tmp);
     }
 
     public List<ItemStruct> getCognitiveList() {
+
+        if (E_merged == false) {
+            flatList.addAll(0, emergency.getEmergency());
+            E_merged = true;
+        }
         return flatList;
     }
 }

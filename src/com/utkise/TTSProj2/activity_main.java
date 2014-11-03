@@ -3,6 +3,7 @@ package com.utkise.TTSProj2;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.XmlResourceParser;
+import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -339,6 +340,8 @@ public class activity_main extends Activity implements OnInitListener {
                             } else if (name.equalsIgnoreCase("imageV")) {
                                 int resID = getResources().getIdentifier(xrp.nextText(), "drawable", getPackageName());
                                 currentItem.setVImageID(resID);
+                            } else if (name.equalsIgnoreCase("Color")) {
+                                currentItem.setColor(Color.parseColor(xrp.nextText()));
                             }else if (name.equalsIgnoreCase("Customize")) {
                                 currentItem.setSpecialTag(xrp.nextText());
                             }

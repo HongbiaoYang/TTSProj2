@@ -47,4 +47,16 @@ public class ListFactory {
 
         return imageList.toArray(new Integer[0]);
     }
+
+    public Integer[] produceColorArray() {
+        int i;
+
+        // color list
+        ArrayList<Integer> colorList = new ArrayList<Integer>();
+        for (i = 0; i < this.root.size(); i++) {
+            colorList.add(root.get(i).getColorCode());
+        }
+
+        return colorList.toArray(new Integer[0]);
+    }
 }
