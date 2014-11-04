@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -26,7 +27,7 @@ import java.util.*;
 public class activity_main extends Activity implements OnInitListener {
     private TextToSpeech tts;
     private Button vision, hearing, cognitive, nonenglish;
-    private ImageView emergency;
+    private LinearLayout emergency;
     private int count = CONSTANT.START;
     private int backTimer = 0;
     private boolean accept = false;
@@ -74,7 +75,7 @@ public class activity_main extends Activity implements OnInitListener {
         cognitive = (Button)findViewById(R.id.cognitive);
         nonenglish = (Button)findViewById(R.id.nonenglish);
 
-        emergency = (ImageView)findViewById(R.id.head_home3);
+        emergency = (LinearLayout)findViewById(R.id.head_home3);
 
         cognitive.setOnClickListener(new View.OnClickListener() {
             @Override

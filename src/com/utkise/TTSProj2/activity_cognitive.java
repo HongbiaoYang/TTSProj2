@@ -2,6 +2,7 @@ package com.utkise.TTSProj2;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.opengl.Visibility;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,7 +20,8 @@ import java.util.Stack;
 public class activity_cognitive extends Activity implements OnInitListener {
     private TextToSpeech tts;
     private int count = CONSTANT.START;
-    private ImageView lastLevelBtn, emergency;
+    private ImageView lastLevelBtn;
+    private LinearLayout emergency;
     private TextView title;
     private LinearLayout yes;
     private LinearLayout no;
@@ -41,40 +43,48 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_display);
+        setContentView(R.layout.layout_displaycog);
         MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
         tts = MyProperties.getInstance().gtts;
         levelStack = new Stack<List<ItemStruct>>();
 
-        lastLevelBtn = (ImageView) findViewById(R.id.header1);
-        title = (TextView) findViewById(R.id.header2);
-        emergency = (ImageView)findViewById(R.id.header3);
+        lastLevelBtn = (ImageView) findViewById(R.id.head_home1);
+        title = (TextView) findViewById(R.id.head_home2);
+        emergency = (LinearLayout)findViewById(R.id.head_home3);
         head_banner = (LinearLayout)findViewById(R.id.head_banner);
         yes = (LinearLayout)findViewById(R.id.footer1);
         no  = (LinearLayout)findViewById(R.id.footer2);
         response = (LinearLayout)findViewById(R.id.footer3);
 
+        // first animation in vision
+        ImageView image = (ImageView) findViewById(R.id.frame_home);
+        image.setBackgroundResource(R.drawable.frame);
+        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
+
 
         title.setText(MyProperties.getInstance().getTitleStack());
+        title.setTextAppearance(this, R.style.ButtonText_Black);
         MyProperties.getInstance().playAnimation();
 
-        lastLevelBtn.setOnClickListener(new View.OnClickListener() {
+        lastLevelBtn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View v) {
-
-               goUpOrBack();
+            public boolean onLongClick(View v) {
+                goUpOrBack();
+                return false;
             }
         });
+
         yes.setOnClickListener(new onHintListener("to say yes"));
         no.setOnClickListener(new onHintListener("to say no"));
         response.setOnClickListener(new onHintListener("to enter response page"));
         emergency.setOnClickListener(new onHintListener("to enter emergency page"));
+        lastLevelBtn.setOnClickListener(new onHintListener("to go back"));
 
         yes.setOnLongClickListener(new onHoldSpeakListener("yes"));
         no.setOnLongClickListener(new onHoldSpeakListener("no"));
 
-        emergency.setBackgroundResource(0);
-        emergency.setImageResource(R.drawable.emergency_icon);
+      /*  emergency.setBackgroundResource(0);
+        emergency.setImageResource(R.drawable.emergency_icon);*/
         emergency.setOnLongClickListener(new OnEmergencyListener());
         response.setOnLongClickListener(new OnResponseListener());
 

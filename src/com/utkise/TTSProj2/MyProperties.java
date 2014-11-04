@@ -317,4 +317,9 @@ public class MyProperties {
         }
         return flatList;
     }
+
+    public void clearStacks() {
+        animStack.clear();
+        titleStack.clear();
+    }
 }

@@ -199,7 +199,7 @@ public class activity_hearing extends Activity implements OnInitListener {
 
     private void goBackToMain() {
         MyProperties.getInstance().doInit(LANG.ENGLISH);
-        MyProperties.getInstance().popStacks();
+        MyProperties.getInstance().clearStacks();
 
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
