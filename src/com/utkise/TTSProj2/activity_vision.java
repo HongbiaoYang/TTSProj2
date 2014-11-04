@@ -89,13 +89,24 @@ public class activity_vision extends Activity {
         pref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
         boolean done = pref.getBoolean("tutorial_vision", false);
 
+        // handler and runnable
+        handler = new Handler();
+        run = new Runnable() {
+            @Override
+            public void run() {
+                boolean done = pref.getBoolean("tutorial_vision", true);
+                if (done == true) {
+                    return;
+                }
+                tutorial.speakAgainNow();
+                onUserInteraction();
+            }
+        };
+
         if (done == false)  {
             tutorial = new VisionTutorial(true);
             tutorial.startTutorial();
-
-            handler = new Handler();
-            run = null;
-            onUserInteraction();
+            resetTimer();
 
         } else {
             tutorial = new VisionTutorial(false);
@@ -126,28 +137,34 @@ public class activity_vision extends Activity {
     @Override
     public void onUserInteraction() {
 
+        resetTimer();
+    }
+
+    private void resetTimer() {
+
         boolean done = pref.getBoolean("tutorial_vision", true);
-        Log.i(TAG, "pref-tutorial="+done);
         if (done == true) {
             return;
         }
 
-        if (run != null) {
-            handler.removeCallbacks(run);
-        }
+        handler.removeCallbacks(run);
+        handler.postDelayed(run, 12000);
+    }
 
-        run = new Runnable() {
-            @Override
-            public void run() {
-                boolean done = pref.getBoolean("tutorial_vision", true);
-                if (done == true) {
-                    return;
-                }
-                tutorial.speakAgainNow();
-                onUserInteraction();
-            }
-        };
-        handler.postDelayed(run, 15000);
+    @Override
+    protected void onStop() {
+        stopTimer();
+        super.onStop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        resetTimer();
+    }
+
+    private void stopTimer() {
+        handler.removeCallbacks(run);
     }
 
     private void fillItemList(List<ItemStruct> node, DisableType type) {
