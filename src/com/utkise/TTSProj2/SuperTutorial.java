@@ -62,6 +62,10 @@ public abstract class SuperTutorial {
         MyProperties.getInstance().speakAdd(gestureBoard.get(now));
     }
 
+    public void speakAgainNow() {
+        speakPerform(curTask);
+    }
+
     protected abstract void performUserFunction(int now);
 
     private void speakSuccess(Integer now) {

@@ -2,6 +2,7 @@ package com.utkise.TTSProj2;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -31,6 +32,10 @@ public class activity_vision extends Activity {
     private Stack<List<ItemStruct>> itemStack;
     private SuperTutorial tutorial;
     private SharedPreferences pref;
+    private Intent remindService;
+    private Runnable run;
+    private Handler handler;
+    private final String TAG = "activity_vision";
 
 
     @Override
@@ -38,6 +43,7 @@ public class activity_vision extends Activity {
         if (itemStack.isEmpty()) {
             MyProperties.getInstance().shutup();
             MyProperties.getInstance().popStacks();
+            pref.edit().putBoolean("tutorial_vision", true).apply();
             finish();
         } else  {
             detectUP();
@@ -86,6 +92,11 @@ public class activity_vision extends Activity {
         if (done == false)  {
             tutorial = new VisionTutorial(true);
             tutorial.startTutorial();
+
+            handler = new Handler();
+            run = null;
+            onUserInteraction();
+
         } else {
             tutorial = new VisionTutorial(false);
         }
@@ -112,6 +123,32 @@ public class activity_vision extends Activity {
         node.add(eItem);
     }
 
+    @Override
+    public void onUserInteraction() {
+
+        boolean done = pref.getBoolean("tutorial_vision", true);
+        Log.i(TAG, "pref-tutorial="+done);
+        if (done == true) {
+            return;
+        }
+
+        if (run != null) {
+            handler.removeCallbacks(run);
+        }
+
+        run = new Runnable() {
+            @Override
+            public void run() {
+                boolean done = pref.getBoolean("tutorial_vision", true);
+                if (done == true) {
+                    return;
+                }
+                tutorial.speakAgainNow();
+                onUserInteraction();
+            }
+        };
+        handler.postDelayed(run, 15000);
+    }
 
     private void fillItemList(List<ItemStruct> node, DisableType type) {
         ItemStruct level = new ItemStruct();
@@ -195,15 +232,15 @@ public class activity_vision extends Activity {
                         onHold = 0;
 
                         detectLongPress2();
-                        tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER2.ordinal());
+                        if (tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER2.ordinal())) {
+                            pref.edit().putBoolean("tutorial_vision", true).apply();
+                        }
 
                     } else if (onHold == 3) {
                         onHold = 0;
 
                         detectLongPress3();
-                        if (tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER3.ordinal())) {
-                            pref.edit().putBoolean("tutorial_vision", true).apply();
-                        }
+                        tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER3.ordinal());
 
                     }
 
@@ -467,6 +504,7 @@ public class activity_vision extends Activity {
 
         MyProperties.getInstance().shutup();
         MyProperties.getInstance().popStacks();
+        pref.edit().putBoolean("tutorial_vision", true).apply();
         finish();
     }
 

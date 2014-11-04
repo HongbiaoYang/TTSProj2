@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
@@ -40,6 +41,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
     private LinearLayout head_banner;
     private boolean EmergencyState;
     private Integer[] colors;
+    private String TAG = "activity_cognitive";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

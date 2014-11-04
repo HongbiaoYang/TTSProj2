@@ -94,7 +94,7 @@ public class activity_main extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
-                    MyProperties.getInstance().speakBoth(TITLE.VISION);
+                    MyProperties.getInstance().speakBoth(TITLE.COGNITIVE);
 
                   /*  String cognitive_str = MyProperties.getInstance().getTitleName(TITLE.COGNITIVE);
                     MyProperties.getInstance().titleStack.push(cognitive_str);*/
