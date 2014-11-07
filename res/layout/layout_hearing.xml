@@ -44,7 +44,7 @@
                         android:layout_height="fill_parent"
                         android:id="@id/Hboarding"
                         android:layout_weight="1"
-                        android:background="@drawable/boarding"
+                        android:background="@drawable/gettingon"
                         android:layout_marginLeft="50dp"/>
                 <Button
                         android:layout_width="0dp"

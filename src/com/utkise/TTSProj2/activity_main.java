@@ -43,7 +43,7 @@ public class activity_main extends Activity implements OnInitListener {
         MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
 
         if (MyProperties.getInstance().boarding == null) {
-            MyProperties.getInstance().boarding = new DisableType("boarding", R.drawable.boarding, R.drawable.boarding_v);
+            MyProperties.getInstance().boarding = new DisableType("boarding", R.drawable.gettingon, R.drawable.boarding_v);
 
             loadXMLResourceParser(MyProperties.getInstance().boarding, R.xml.boarding);
         }

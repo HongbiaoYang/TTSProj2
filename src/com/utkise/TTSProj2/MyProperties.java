@@ -151,23 +151,23 @@ public class MyProperties {
         /* The sequence of adding the string matters */
 
         // vision, hearing, cognitive, non english
-        TITLES.add(new String[]{"vision","visión"});
-        TITLES.add(new String[]{"hearing","escuchar"});
-        TITLES.add(new String[]{"cognitive","cognitiva"});
-        TITLES.add(new String[]{"Spanish","español"});
+        TITLES.add(new String[]{"Vision","Visión"});
+        TITLES.add(new String[]{"Hearing","Escuchar"});
+        TITLES.add(new String[]{"Cognitive","Cognitiva"});
+        TITLES.add(new String[]{"Spanish","Español"});
 
         // boarding, getting off, travelling, emergency
-        TITLES.add(new String[]{"boarding","embarque"});
-        TITLES.add(new String[]{"getting off","bajar"});
-        TITLES.add(new String[]{"travelling","viajar"});
-        TITLES.add(new String[]{"emergency","emergencia"});
+        TITLES.add(new String[]{"Getting ON","Embarque"});
+        TITLES.add(new String[]{"Getting OFF","Bajar"});
+        TITLES.add(new String[]{"Travelling","Viajar"});
+        TITLES.add(new String[]{"Emergency","Emergencia"});
 
         // general information, trip information, safety, comfort
         // información general , información de viaje , la seguridad , la comodidad
-        TITLES.add(new String[]{"general information","información general"});
-        TITLES.add(new String[]{"trip information","información de viaje"});
-        TITLES.add(new String[]{"safety","la seguridad"});
-        TITLES.add(new String[]{"comfort","la comodidad"});
+        TITLES.add(new String[]{"General information","Información general"});
+        TITLES.add(new String[]{"Trip information","Información de viaje"});
+        TITLES.add(new String[]{"Safety","La seguridad"});
+        TITLES.add(new String[]{"Comfort","La comodidad"});
     }
 
 
