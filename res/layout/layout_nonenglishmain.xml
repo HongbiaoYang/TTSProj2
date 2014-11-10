@@ -56,10 +56,12 @@
                         android:layout_weight="4"
                         android:layout_height="fill_parent"
                         android:id="@+id/next"
+                        android:background="@drawable/btn_yellow"
                         android:text="NEXT"/>
                 <Button android:layout_width="0dp"
                         android:layout_weight="4"
                         android:layout_height="fill_parent"
+                        android:background="@drawable/btn_yellow"
                         android:id="@+id/skip"
                         android:text="SKIP"/>
 
