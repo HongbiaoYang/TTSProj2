@@ -46,8 +46,8 @@
 		<Image>picture0</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
-			<Title>Am I getting dropped off next?</Title>
-			<Text>Am I getting dropped off next?</Text>
+			<Title>Am I getting off the bus next?</Title>
+			<Text>Am I getting off the bus next?</Text>
 			<Titulo>¿Sigo yo de bajarme del transporte?</Titulo>
 			<Texto>¿Sigo yo de bajarme del transporte?</Texto>
 			<Image>picture0</Image>
@@ -64,8 +64,8 @@
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>How far are we from the stop?</Title>
-			<Text>How far are we from the stop?</Text>
+			<Title>When will we arrive at the next stop?</Title>
+			<Text>When will we arrive at the next stop?</Text>
 			<Titulo>¿Qué tan lejos estamos de la parada?</Titulo>
 			<Texto>¿Qué tan lejos estamos de la parada?</Texto>
 			<Image>picture99</Image>
@@ -82,17 +82,17 @@
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>You missed my house, please turn around.</Title>
-			<Text>You missed my house, please turn around.</Text>
-			<Titulo>Se pasó mi casa, por favor dé vuelta</Titulo>
-			<Texto>Se pasó mi casa, por favor dé vuelta</Texto>
+			<Title>You missed my house. Please turn around.</Title>
+			<Text>You missed my house. Please turn around.</Text>
+			<Titulo>Se pasó mi casa. Por favor dé vuelta</Titulo>
+			<Texto>Se pasó mi casa. Por favor dé vuelta</Texto>
 			<Image>picture103</Image>
 			<ImageV>picture103_v</ImageV>
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>I cannot recognize the road.</Title>
-			<Text>I cannot recognize the road.</Text>
+			<Title>I don't know this road</Title>
+			<Text>I don't know this road</Text>
 			<Titulo>No reconozco el camino</Titulo>
 			<Texto>No reconozco el camino</Texto>		
 			<Image>picture104</Image>

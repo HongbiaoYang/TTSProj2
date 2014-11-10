@@ -9,8 +9,8 @@
 			<ImageV>picture48_v</ImageV>
 		</Item>
 		<Item> 
-			<Title>Another passenger in the bus need help.</Title>
-			<Text>Another passenger in the bus need help.</Text>
+			<Title>Another passenger in the bus needs help.</Title>
+			<Text>Another passenger in the bus needs help.</Text>
 			<Titulo>Un pasajero necesita ayuda</Titulo>
 			<Texto>Un pasajero necesita ayuda</Texto>
 			<Image>picture52</Image>
@@ -27,18 +27,27 @@
 		<Item> 
 			<Title>There is an immediate danger on the bus.</Title>
 			<Text>There is an immediate danger on the bus.</Text>
-			<Titulo>Por favor llame al 911</Titulo>
-			<Texto>Por favor llame al 911</Texto>
+			<Titulo>Hay un peligro inmediato en el transporte.</Titulo>
+			<Texto>Hay un peligro inmediato en el transporte.</Texto>
 			<Image>picture149</Image>
 			<ImageV>picture0_v</ImageV>
 		</Item>
 		<Item> 
 			<Title>There has been a personal accident on the bus.</Title>
 			<Text>There has been a personal accident on the bus.</Text>
-			<Titulo>Por favor llame al 911</Titulo>
-			<Texto>Por favor llame al 911</Texto>
+			<Titulo>Hubo un accidente personal en el transporte.</Titulo>
+			<Texto>Hubo un accidente personal en el transporte.</Texto>
 			<Image>picture148</Image>
 			<ImageV>picture0_v</ImageV>
 		</Item>
+		<Item> 
+			<Title>Something is broken on the bus</Title>
+			<Text>Something is broken on the bus</Text>
+			<Titulo>Algo esta descompuesto en el transporte.</Titulo>
+			<Texto>Algo esta descompuesto en el transporte.</Texto>
+			<Image>picture148</Image>
+			<ImageV>picture0_v</ImageV>
+		</Item>
+		
 </Emergency>
 </xml>

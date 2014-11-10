@@ -32,21 +32,13 @@
 			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
-            <Title>I am not sure </Title>
-            <Text>I am not sure</Text>
-			<Titulo>No estoy seguro</Titulo>
-			<Texto>No estoy seguro</Texto>
-            <Image>picture112</Image>
-			<ImageV>picture0_v</ImageV>
-        </Item>
-        <Item>
             <Title>Could you repeat</Title>
             <Text>Could you repeat</Text>
 			<Titulo>Podría repetir</Titulo>
 			<Texto>Podría repetir</Texto>
             <Image>picture113</Image>
 			<ImageV>picture0_v</ImageV>
-            </Item>
+        </Item>
 		 <Item>
             <Title>Could you talk slower</Title>
             <Text>Could you talk slower</Text>
@@ -54,7 +46,55 @@
 			<Texto>Podría repetir</Texto>
             <Image>picture0</Image>
 			<ImageV>picture0_v</ImageV>
-            </Item>
+        </Item>
+		<Item>
+            <Title>I don't know</Title>
+            <Text>I don't know</Text>
+			<Titulo>No lo sé</Titulo>
+			<Texto>No lo sé</Texto>
+            <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
+        </Item>
+		<Item>
+            <Title>Could you talk louder</Title>
+            <Text>Could you talk louder</Text>
+			<Titulo>Podría hablar mas fuerte</Titulo>
+			<Texto>Podría hablar mas fuerte</Texto>
+            <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
+        </Item>
+		<Item>
+            <Title>Can you help me, please</Title>
+            <Text>Can you help me, please</Text>
+			<Titulo>Podría ayudarme, por favor</Titulo>
+			<Texto>Podría ayudarme, por favor</Texto>
+            <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
+        </Item>
+		<Item>
+            <Title>Will you please call, text or contact my parents?</Title>
+            <Text>Will you please call, text or contact my parents?</Text>
+			<Titulo>Podría llamar, enviar un mensaje de texto o contactar a mis padres?</Titulo>
+			<Texto>Podría llamar, enviar un mensaje de texto o contactar a mis padres?</Texto>
+            <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
+        </Item>
+		<Item>
+            <Title>Will you please call, text or contact my supervisor?</Title>
+            <Text>Will you please call, text or contact my supervisor?</Text>
+			<Titulo>Podría llamar, enviar un mensaje de texto o contactar a mi supervisor/tutor?</Titulo>
+			<Texto>Podría llamar, enviar un mensaje de texto o contactar a mi supervisor/tutor?</Texto>
+            <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
+        </Item>
+		<Item>
+            <Title>Will you please call, text or contact my spouse?</Title>
+            <Text>Will you please call, text or contact my spouse?</Text>
+			<Titulo>Podría llamar, enviar un mensaje de texto o contactar a mi esposo(a)?</Titulo>
+			<Texto>Podría llamar, enviar un mensaje de texto o contactar a mi esposo(a)?</Texto>
+            <Image>picture0</Image>
+			<ImageV>picture0_v</ImageV>
+        </Item>
         <Item>
             <Title>Debug: For test only</Title>
             <Text></Text>

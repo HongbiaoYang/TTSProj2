@@ -26,8 +26,8 @@
 			<Color>#4ea554</Color>
 		</Item>	
 		<Item> 
-			<Title>I need to go to the hospital.</Title>
-			<Text>I need to go to the hospital. </Text>
+			<Title>I am going to hospital.</Title>
+			<Text>I am going to hospital.</Text>
 			<Titulo>Necesito ir al hospital</Titulo>
 			<Texto>Necesito ir al hospital</Texto>
 			<Image>picture43</Image>
@@ -35,8 +35,8 @@
 			<Color>#4ea554</Color>
 		</Item>	
 		<Item> 
-			<Title>I need to go to the mall.</Title>
-			<Text>I need to go to the mall. </Text>
+			<Title>I want to go to the mall.</Title>
+			<Text>I want to go to the mall.</Text>
 			<Titulo>Necesito ir al centro comercial</Titulo>
 			<Texto>Necesito ir al centro comercial</Texto>			
 			<Image>picture46</Image>
@@ -44,8 +44,8 @@
 			<Color>#4ea554</Color>
 		</Item>	
 		<Item> 
-			<Title>I need to go to the dialysis center. </Title>
-			<Text>I need to go to the dialysis center.  </Text>
+			<Title>I going to the dialysis center.</Title>
+			<Text>I going to the dialysis center.</Text>
 			<Titulo>Necesito ir al centro de diálisis</Titulo>
 			<Texto>Necesito ir al centro de diálisis</Texto>
 			<Image>picture93</Image>
@@ -226,8 +226,8 @@
 			<Color>#4ea554</Color>
 		</Item>
 		<Item> 
-			<Title>I am allergic to scents.  </Title>
-			<Text>I am allergic to scents.</Text>
+			<Title>I am allergic to smells.</Title>
+			<Text>I am allergic to smells.</Text>
 			<Titulo>Soy alérgico a los aromas</Titulo>
 			<Texto>Soy alérgico a los aromas</Texto>
 			<Image>picture90</Image>
@@ -235,8 +235,8 @@
 			<Color>#4ea554</Color>
 		</Item>
 		<Item> 
-			<Title>Its hot in here, please increase the AC.</Title>
-			<Text>Its hot in here, please increase the AC.</Text>
+			<Title>Its hot in here, please increase the Air Condition.</Title>
+			<Text>Its hot in here, please increase the Air Condition.</Text>
 			<Titulo>Hace calor, por favor súbale al aire acondicionado</Titulo>
 			<Texto>Hace calor, por favor súbale al aire acondicionado</Texto>
 			<Image>picture1a</Image>
