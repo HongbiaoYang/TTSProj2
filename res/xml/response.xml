@@ -4,7 +4,7 @@
             <Title>Input Your Text...</Title>
             <Text></Text>
             <Customize>input</Customize>
-            <Image>picture0</Image>
+            <Image>picture108</Image>
 			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
@@ -12,7 +12,7 @@
             <Text>Thank you very much</Text>
             <Titulo>Muchas gracias</Titulo>
             <Texto>Muchas gracias</Texto>
-            <Image>picture0</Image>
+            <Image>picture109</Image>
 			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
@@ -20,7 +20,7 @@
             <Text>I don't understand</Text>
 			<Titulo>No entiendo</Titulo>
 			<Texto>No entiendo</Texto>
-            <Image>picture0</Image>
+            <Image>picture110</Image>
 			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
@@ -28,7 +28,7 @@
             <Text>Goodbye</Text>
 			<Titulo>Adiós</Titulo>
 			<Texto>Adiós</Texto>
-            <Image>picture0</Image>
+            <Image>picture146</Image>
 			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
@@ -36,7 +36,7 @@
             <Text>I am not sure</Text>
 			<Titulo>No estoy seguro</Titulo>
 			<Texto>No estoy seguro</Texto>
-            <Image>picture0</Image>
+            <Image>picture112</Image>
 			<ImageV>picture0_v</ImageV>
         </Item>
         <Item>
@@ -44,7 +44,7 @@
             <Text>Could you repeat</Text>
 			<Titulo>Podría repetir</Titulo>
 			<Texto>Podría repetir</Texto>
-            <Image>picture0</Image>
+            <Image>picture113</Image>
 			<ImageV>picture0_v</ImageV>
             </Item>
 		 <Item>

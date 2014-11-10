@@ -29,7 +29,7 @@
 			<Text>There is an immediate danger on the bus.</Text>
 			<Titulo>Por favor llame al 911</Titulo>
 			<Texto>Por favor llame al 911</Texto>
-			<Image>picture0</Image>
+			<Image>picture149</Image>
 			<ImageV>picture0_v</ImageV>
 		</Item>
 		<Item> 
@@ -37,7 +37,7 @@
 			<Text>There has been a personal accident on the bus.</Text>
 			<Titulo>Por favor llame al 911</Titulo>
 			<Texto>Por favor llame al 911</Texto>
-			<Image>picture0</Image>
+			<Image>picture148</Image>
 			<ImageV>picture0_v</ImageV>
 		</Item>
 </Emergency>

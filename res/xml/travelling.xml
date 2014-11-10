@@ -14,6 +14,7 @@
 			<Texto>Voy a casa</Texto>
 			<Image>picture44</Image>
 			<ImageV>picture44_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>	
 		<Item> 
 			<Title>I am going to Work.</Title>
@@ -22,6 +23,7 @@
 			<Texto>Voy al trabajo</Texto>
 			<Image>picture42</Image>
 			<ImageV>picture42_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>	
 		<Item> 
 			<Title>I need to go to the hospital.</Title>
@@ -30,6 +32,7 @@
 			<Texto>Necesito ir al hospital</Texto>
 			<Image>picture43</Image>
 			<ImageV>picture43_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>	
 		<Item> 
 			<Title>I need to go to the mall.</Title>
@@ -38,6 +41,7 @@
 			<Texto>Necesito ir al centro comercial</Texto>			
 			<Image>picture46</Image>
 			<ImageV>picture46_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>	
 		<Item> 
 			<Title>I need to go to the dialysis center. </Title>
@@ -46,6 +50,7 @@
 			<Texto>Necesito ir al centro de diálisis</Texto>
 			<Image>picture93</Image>
 			<ImageV>picture93_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>I need to go to church. </Title>
@@ -54,6 +59,7 @@
 			<Texto>Necesito ir al templo</Texto>
 			<Image>picture47</Image>
 			<ImageV>picture47_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>	
 		<Item> 
 			<Title>I have a doctor's appointment. </Title>
@@ -62,6 +68,7 @@
 			<Texto>Tengo cita con el doctor</Texto>
 			<Image>picture45</Image>
 			<ImageV>picture45_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>	
 	</Item>
 	<Item>	
@@ -71,6 +78,7 @@
 		<Texto>Otro pasajero</Texto>
 		<Image>picture0</Image>
 		<ImageV>picture0_v</ImageV>
+		<Color> #4ea554</Color>
 		<Item> 
 			<Title>Can you get the driver for me? </Title>
 			<Text>Can you get the driver for me?</Text>
@@ -78,6 +86,7 @@
 			<Texto>¿Puede llamar al conductor por mí?</Texto>
 			<Image>picture15</Image>
 			<ImageV>picture15_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>	
 		<Item> 
 			<Title>Could you please help me? </Title>
@@ -86,6 +95,7 @@
 			<Texto>¿Me podría ayudar por favor?</Texto>
 			<Image>picture94</Image>
 			<ImageV>picture94_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>	
 		<Item> 
 			<Title>Please don't stand up till the bus stops? </Title>
@@ -94,6 +104,7 @@
 			<Texto>Por favor no se levante hasta que el transporte se detenga</Texto>
 			<Image>picture95</Image>
 			<ImageV>picture95_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>	
 		<Item> 
 			<Title>Don't unbuckle your seatbelt. </Title>
@@ -102,6 +113,7 @@
 			<Texto>No se desabroche el cinturón de seguridad</Texto>
 			<Image>picture97</Image>
 			<ImageV>picture97_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>		
 	</Item>
 </General>
@@ -120,6 +132,7 @@
 			<Texto>¿Cuál es este lugar?</Texto>
 			<Image>picture101</Image>
 			<ImageV>picture101_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>Where are we? </Title>
@@ -128,6 +141,7 @@
 			<Texto>¿Dónde estamos?</Texto>
 			<Image>picture100</Image>
 			<ImageV>picture100_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 	</Item>
 	<Item> 
@@ -144,6 +158,7 @@
 			<Texto>¿Dónde está este lugar?</Texto>
 			<Image>picture83</Image>
 			<ImageV>picture83_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>How do I get there?</Title>
@@ -152,6 +167,7 @@
 			<Texto>¿Cómo llego ahí?</Texto>
 			<Image>picture102</Image>
 			<ImageV>picture102_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 	</Item>
 </Trip>
@@ -170,6 +186,7 @@
 			<Texto>Por favor no use su teléfono celular mientras conduce</Texto>
 			<Image>picture57</Image>
 			<ImageV>picture57_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>Please go slower.</Title>
@@ -178,6 +195,7 @@
 			<Texto>Por favor vaya mas despacio</Texto>
 			<Image>picture58</Image>
 			<ImageV>picture58_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>Please do not smoke and come into the bus, I have health issues.</Title>
@@ -186,6 +204,7 @@
 			<Texto>Por favor no fume y regrese al transporte, tengo problemas de salud</Texto>
 			<Image>picture60</Image>
 			<ImageV>picture60_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>		
 	</Item>
 </Safety>
@@ -204,6 +223,7 @@
 			<Texto>Tengo miedo a los perros, le puede decir a su dueño</Texto>
 			<Image>picture89</Image>
 			<ImageV>picture89_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>I am allergic to scents.  </Title>
@@ -212,6 +232,7 @@
 			<Texto>Soy alérgico a los aromas</Texto>
 			<Image>picture90</Image>
 			<ImageV>picture90_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>Its hot in here, please increase the AC.</Title>
@@ -220,6 +241,7 @@
 			<Texto>Hace calor, por favor súbale al aire acondicionado</Texto>
 			<Image>picture1a</Image>
 			<ImageV>picture1a_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>It's hot in here, please decrease the heater.</Title>
@@ -228,6 +250,7 @@
 			<Texto>Hace calor, por favor bájele al calentador</Texto>
 			<Image>picture1b</Image>
 			<ImageV>picture1b_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>It's hot in here, please turn off the heater.</Title>
@@ -236,6 +259,7 @@
 			<Texto>Hace calor, por favor apage el calentador</Texto>
 			<Image>picture92</Image>
 			<ImageV>picture92_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>It's cold in here, please increase the heater.</Title>
@@ -244,6 +268,7 @@
 			<Texto>Hace frío, por favor súbale al calentador</Texto>
 			<Image>picture2a</Image>
 			<ImageV>picture2a_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		
 		<Item> 
@@ -253,6 +278,7 @@
 			<Texto>Hace frío, por favor bájele al aire acondicionado</Texto>
 			<Image>picture2b</Image>
 			<ImageV>picture2b_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>It's cold in here,  please turn off the Air Condition.</Title>
@@ -261,6 +287,7 @@
 			<Texto>Hace frío, por favor apage el aire acondicionado</Texto>
 			<Image>picture91</Image>
 			<ImageV>picture91_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>Please turn on the music.</Title>
@@ -269,6 +296,7 @@
 			<Texto>Por favor prenda la música</Texto>
 			<Image>picture3a</Image>
 			<ImageV>picture3a_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>Please turn off the music.</Title>
@@ -277,6 +305,7 @@
 			<Texto>Por favor apague la música</Texto>
 			<Image>picture3b</Image>
 			<ImageV>picture3b_v</ImageV>
+			<Color> #4ea554</Color>
 		</Item>
 	</Item>
 </Comfort>
