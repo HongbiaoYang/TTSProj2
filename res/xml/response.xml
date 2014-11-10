@@ -95,12 +95,5 @@
             <Image>picture0</Image>
 			<ImageV>picture0_v</ImageV>
         </Item>
-        <Item>
-            <Title>Debug: For test only</Title>
-            <Text></Text>
-            <Customize>debug_para</Customize>
-            <Image>debugging</Image>
-            <ImageV>debugging</ImageV>
-        </Item>
     </Response>
 </xml>
