@@ -31,6 +31,7 @@ public class activity_main extends Activity implements OnInitListener {
     private int count = CONSTANT.START;
     private int backTimer = 0;
     private boolean accept = false;
+    private String TAG = "activity_main";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -342,7 +343,12 @@ public class activity_main extends Activity implements OnInitListener {
                                 int resID = getResources().getIdentifier(xrp.nextText(), "drawable", getPackageName());
                                 currentItem.setVImageID(resID);
                             } else if (name.equalsIgnoreCase("Color")) {
-                                currentItem.setColor(Color.parseColor(xrp.nextText()));
+                                try{
+                                    //Log.e(TAG, "c="+xrp.toString());
+                                    currentItem.setColor(Color.parseColor(xrp.nextText().trim()));
+                                } catch (Exception ex) {
+                                    Log.e(TAG, ex.toString()+" item="+currentItem.getTitle());
+                                }
                             }else if (name.equalsIgnoreCase("Customize")) {
                                 currentItem.setSpecialTag(xrp.nextText());
                             }
