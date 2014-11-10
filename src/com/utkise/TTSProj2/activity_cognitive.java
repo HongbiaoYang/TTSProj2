@@ -125,7 +125,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
         colors = lf.produceColorArray();
 
         adapter = new
-                CustomList(activity_cognitive.this, web, imageId, R.layout.fatlist, colors);
+                    CustomList(activity_cognitive.this, web, imageId, R.layout.fatlist, colors);
         adapter.setColors(true);
 
         list = (ListView)findViewById(R.id.list);

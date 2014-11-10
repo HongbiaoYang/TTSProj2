@@ -2,6 +2,7 @@ package com.utkise.TTSProj2;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,19 +52,7 @@ public class CustomList extends ArrayAdapter<String> {
     public void setColors(boolean colorful) {
         this.colorful = colorful;
         colorArray = new ArrayList<Integer>();
-     /*   colorArray.add(Color.BLUE);
-        colorArray.add(Color.RED);
-        colorArray.add(Color.YELLOW);
-        colorArray.add(Color.GREEN);
-        colorArray.add(Color.CYAN);
-        colorArray.add(Color.parseColor("#193564"));
-        colorArray.add(Color.parseColor("#fdbd35"));
-        colorArray.add(Color.parseColor("#4ea554"));
-        colorArray.add(Color.parseColor("#8661a6"));
-        colorArray.add(Color.parseColor("#f68d32"));
-        colorArray.add(Color.parseColor("#a2c03a"));
-        colorArray.add(Color.parseColor("#f174ac"));
-        */
+
     }
 
 
@@ -88,8 +77,15 @@ public class CustomList extends ArrayAdapter<String> {
 */
             txtTitle.setBackgroundColor(colorList[position]);
             imageView.setBackgroundColor(colorList[position]);
+        } else {
+            Drawable blue = context.getResources().getDrawable(R.drawable.back_blue);
+            Drawable blueTxt = context.getResources().getDrawable(R.drawable.btn_blue);
 
+            txtTitle.setBackground(blue);
+            imageView.setBackground(blue);
         }
+
+
 
         return rowView;
     }

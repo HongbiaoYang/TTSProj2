@@ -63,12 +63,12 @@ public class activity_response extends Activity {
 
     private void updateList(List<ItemStruct> level) {
         ListFactory lf = new ListFactory(level);
-        ResponseList adapter;
+        CustomList adapter;
         web =  lf.produceTitleArray();
         imageId = lf.produceImageArray();
 
         adapter = new
-                ResponseList(activity_response.this, web, imageId);
+                CustomList(activity_response.this, web, imageId);
         // adapter.setColors(R.style.ButtonText_Black_18, R.color.Yellow);
 
         list = (ListView)findViewById(R.id.rlist);

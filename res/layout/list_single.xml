@@ -8,9 +8,9 @@
         <ImageView
                 android:id="@+id/img"
                 android:layout_width="0dp"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:layout_height="75dp"
-                android:background="@drawable/btn_blue"
+
                 android:layout_margin="0dp"
                 />
         <TextView
@@ -18,7 +18,7 @@
                 android:layout_width="0dp"
                 android:layout_height="72dp"
                 android:layout_weight="8"
-                android:background="@drawable/btn_blue"
+
                 style="@style/ButtonText2"
                 android:gravity="center"
                 android:layout_gravity="center"
