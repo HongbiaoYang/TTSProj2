@@ -14,7 +14,7 @@
 			<Texto>¿Dónde se encuentra el cordón o botón para hacer la parada?</Texto>
 			<Image>picture80</Image>
 			<ImageV>picture80_v</ImageV>
-			<Color> #8661a6</Color>
+			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
 			<Title>This STOP pull chord or button is not working. </Title>
@@ -23,7 +23,7 @@
 			<Texto>El cordón o botón para hacer la parada no funciona.</Texto>
 			<Image>picture96</Image>
 			<ImageV>picture96_v</ImageV>
-			<Color> #8661a6</Color>
+			<Color>#8661a6</Color>
 		</Item> 
    		
 		<Item> 
@@ -33,7 +33,7 @@
 			<Texto>No alcanzo el cordón-botón para hacer la parada, ¿me podría ayudar?</Texto>
 			<Image>picture81</Image>
 			<ImageV>picture81_v</ImageV>
-			<Color> #8661a6</Color>
+			<Color>#8661a6</Color>
 		</Item>
 	</Item>
 </General>
@@ -52,7 +52,7 @@
 			<Texto>¿Sigo yo de bajarme del transporte?</Texto>
 			<Image>picture0</Image>
 			<ImageV>picture0_v</ImageV>
-			<Color> #8661a6</Color>
+			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
 			<Title>Are we approaching the stop?</Title>
@@ -61,7 +61,7 @@
 			<Texto>¿Estamos acercándonos a la parada?</Texto>
 			<Image>picture0</Image>
 			<ImageV>picture0_v</ImageV>
-			<Color> #8661a6</Color>
+			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
 			<Title>How far are we from the stop?</Title>
@@ -79,7 +79,7 @@
 			<Texto>Esta no es la parada en la que yo quiero bajar</Texto>
 			<Image>picture98</Image>
 			<ImageV>picture98_v</ImageV>
-			<Color> #8661a6</Color>
+			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
 			<Title>You missed my house, please turn around.</Title>
@@ -88,7 +88,7 @@
 			<Texto>Se pasó mi casa, por favor dé vuelta</Texto>
 			<Image>picture103</Image>
 			<ImageV>picture103_v</ImageV>
-			<Color> #8661a6</Color>
+			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
 			<Title>I cannot recognize the road.</Title>
@@ -97,7 +97,7 @@
 			<Texto>No reconozco el camino</Texto>		
 			<Image>picture104</Image>
 			<ImageV>picture104_v</ImageV>
-			<Color> #8661a6</Color>
+			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
 			<Title>I got dropped in a wrong location. </Title>
@@ -106,7 +106,7 @@
 			<Texto>Me bajé en la ubicación errónea</Texto>
 			<Image>picture105</Image>
 			<ImageV>picture105_v</ImageV>
-			<Color> #8661a6</Color>
+			<Color>#8661a6</Color>
 		</Item>
 	</Item>
 </Trip>
