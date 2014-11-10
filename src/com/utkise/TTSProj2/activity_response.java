@@ -64,8 +64,13 @@ public class activity_response extends Activity {
     private void updateList(List<ItemStruct> level) {
         ListFactory lf = new ListFactory(level);
         CustomList adapter;
-        web =  lf.produceTitleArray();
-        imageId = lf.produceImageArray();
+        int offset = 0;
+
+        if (MyProperties.getInstance().Language == LANG.SPANISH) {
+            offset = 1;
+        }
+        web =  lf.produceTitleArray(offset);
+        imageId = lf.produceImageArray(offset);
 
         adapter = new
                 CustomList(activity_response.this, web, imageId);
