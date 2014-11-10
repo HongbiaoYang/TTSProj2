@@ -7,6 +7,7 @@
 			<Texto>Necesito ayuda</Texto>
 			<Image>picture48</Image>
 			<ImageV>picture48_v</ImageV>
+			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
 			<Title>Another passenger in the bus needs help.</Title>
@@ -15,6 +16,7 @@
 			<Texto>Un pasajero necesita ayuda</Texto>
 			<Image>picture52</Image>
 			<ImageV>picture52_v</ImageV>
+			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
 			<Title>Please call 911.</Title>
@@ -23,6 +25,7 @@
 			<Texto>Por favor llame al 911</Texto>
 			<Image>picture51</Image>
 			<ImageV>picture51_v</ImageV>
+			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
 			<Title>There is an immediate danger on the bus.</Title>
@@ -31,6 +34,7 @@
 			<Texto>Hay un peligro inmediato en el transporte.</Texto>
 			<Image>picture149</Image>
 			<ImageV>picture0_v</ImageV>
+			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
 			<Title>There has been a personal accident on the bus.</Title>
@@ -39,6 +43,7 @@
 			<Texto>Hubo un accidente personal en el transporte.</Texto>
 			<Image>picture148</Image>
 			<ImageV>picture0_v</ImageV>
+			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
 			<Title>Something is broken on the bus</Title>
@@ -47,6 +52,7 @@
 			<Texto>Algo esta descompuesto en el transporte.</Texto>
 			<Image>picture148</Image>
 			<ImageV>picture0_v</ImageV>
+			<Color>#e7402e</Color>
 		</Item>
 		
 </Emergency>

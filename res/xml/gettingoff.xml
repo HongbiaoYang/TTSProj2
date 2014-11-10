@@ -5,7 +5,7 @@
 		<Text>STOP pull chord or button</Text>
 		<Titulo>Cordón o botón para hacer la parada</Titulo>
 		<Texto>Cordón o botón para hacer la parada</Texto>
-		<Image>picture49</Image>
+		<Image>picture150</Image>
 		<ImageV>picture49_v</ImageV>
 		<Item> 
 			<Title>Where is the STOP pull chord or button? </Title>
@@ -17,8 +17,8 @@
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>This STOP pull chord or button is not working. </Title>
-			<Text>This STOP pull chord or button is not working.</Text>
+			<Title>This STOP pull chord or button is broken. </Title>
+			<Text>This STOP pull chord or button is broken.</Text>
 			<Titulo>El cordón o botón para hacer la parada no funciona.</Titulo>
 			<Texto>El cordón o botón para hacer la parada no funciona.</Texto>
 			<Image>picture96</Image>
@@ -43,7 +43,7 @@
 		<Text>Destination</Text>
 		<Titulo>Destino</Titulo>
 		<Texto>Destino</Texto>
-		<Image>picture0</Image>
+		<Image>picture144</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>Am I getting off the bus next?</Title>

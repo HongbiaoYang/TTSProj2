@@ -5,7 +5,7 @@
 		<Text>To The Driver</Text>
         <Titulo>Al conductor</Titulo>
         <Texto>Al conductor</Texto>
-        <Image>picture0</Image>
+        <Image>picture133</Image>
         <ImageV>picture0_v</ImageV>
 		<Item>
 			<Title>What is your name ?</Title>
@@ -58,7 +58,7 @@
 		<Text>Feeling</Text>
 		<Titulo>Sentimientos </Titulo>
         <Texto>Sentimientos</Texto>
-		<Image>picture0</Image>
+		<Image>picture134</Image>
 		<ImageV>picture0_v</ImageV>
 		
 		<Item> 
@@ -131,7 +131,7 @@
 		<Text>Things</Text>
 		<Titulo>Cosas</Titulo>
         <Texto>Cosas</Texto>
-		<Image>picture0</Image>
+		<Image>picture135</Image>
 		<ImageV>picture0_v</ImageV>
 		
 		<Item> 
@@ -248,7 +248,7 @@
 		<Text>Asking Assistance</Text>
 		<Titulo>Pidiendo ayuda</Titulo>
 		<Texto>Pidiendo ayuda</Texto>
-		<Image>picture0</Image>
+		<Image>picture164</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>Can you lower the lift for me? </Title>
@@ -319,7 +319,7 @@
 		<Text>Safety Hazards</Text>
 		<Titulo>Clima</Titulo>
 		<Texto>Clima</Texto>
-		<Image>picture0</Image>
+		<Image>picture139</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>There is water in front of the bus.</Title>
@@ -374,7 +374,7 @@
 		<Text>Ticket</Text>
 		<Titulo>Boleto</Titulo>
 		<Texto>Boleto</Texto>
-		<Image>picture0</Image>
+		<Image>picture151</Image>
 		<ImageV>picture0</ImageV>
 		<Item> 
 			<Title>How do I buy the ticket?</Title>
@@ -445,7 +445,7 @@
 		<Text>Wrong bus</Text>
 		<Titulo>Transporte incorrecto</Titulo>
 		<Texto>Transporte incorrecto</Texto>
-		<Image>picture0</Image>
+		<Image>picture87</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>Where does this bus go? </Title>
@@ -482,7 +482,7 @@
 		<Text>Wheelchair </Text>
 		<Titulo>Silla de ruedas</Titulo>
 		<Texto>Silla de ruedas</Texto>
-		<Image>picture0</Image>
+		<Image>picture136</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>The tie-downs are not working.</Title>
@@ -508,7 +508,7 @@
 		<Text>Seabelt</Text>
 		<Titulo>Cinturón de seguridad</Titulo>
 		<Texto>Cinturón de seguridad</Texto>
-		<Image>picture</Image>
+		<Image>picture152</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item>
 			<Title>Can you buckle my seatbelt?</Title>
@@ -536,7 +536,7 @@
 		<Text>Seat</Text>
 		<Titulo>Asiento</Titulo>
 		<Texto>Asiento</Texto>
-		<Image>picture4</Image>
+		<Image>picture137</Image>
 		<ImageV>picture4_v</ImageV>
 		<Item> 
 			<Title>Please help me change the seats </Title>

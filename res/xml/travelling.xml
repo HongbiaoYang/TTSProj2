@@ -5,7 +5,7 @@
 		<Text>Destination</Text>
 		<Titulo>Destino</Titulo>
 		<Texto>Destino</Texto>
-		<Image>picture0</Image>
+		<Image>picture144</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>I am going home.</Title>
@@ -76,7 +76,7 @@
 		<Text>To Another Passenger.</Text>
 		<Titulo>Otro pasajero</Titulo>
 		<Texto>Otro pasajero</Texto>
-		<Image>picture0</Image>
+		<Image>picture145</Image>
 		<ImageV>picture0_v</ImageV>
 		<Color>#4ea554</Color>
 		<Item> 
@@ -119,11 +119,11 @@
 </General>
 <Trip>
 	<Item> 
-		<Title>Location</Title>
-		<Text>Location</Text>
+		<Title>Place</Title>
+		<Text>Place</Text>
 		<Titulo>Ubicación</Titulo>
 		<Texto>Ubicación</Texto>
-		<Image>picture0</Image>
+		<Image>picture141</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>What is this place? </Title>
@@ -149,7 +149,7 @@
 		<Text>Routes</Text>
 		<Titulo>Rutas</Titulo>
 		<Texto>Rutas</Texto>
-		<Image>picture0</Image>
+		<Image>picture143</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>Where is this place?</Title>
@@ -177,7 +177,7 @@
 		<Text> To the Driver</Text>
 		<Titulo>Al conductor</Titulo>
 		<Texto>Al conductor</Texto>
-		<Image>picture0</Image>
+		<Image>picture139</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>Please do not use your cell phone while driving.</Title>
@@ -214,7 +214,7 @@
 		<Text>To the Driver</Text>
 		<Titulo>Al conductor</Titulo>
 		<Texto>Al conductor</Texto>
-		<Image>picture0</Image>
+		<Image>picture140</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
 			<Title>I am afraid of dogs. Can you please tell the owner?  </Title>
