@@ -19,7 +19,7 @@
                 android:layout_height="120dp"
                 android:layout_weight="8"
 
-                style="@style/ButtonText_Black_18"
+                style="@style/ButtonText_White_18"
                 android:gravity="center"
                 android:layout_gravity="center"
                 />

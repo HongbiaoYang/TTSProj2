@@ -73,7 +73,6 @@ public class activity_response extends Activity {
 
         adapter = new
                 CustomList(activity_response.this, web, imageId);
-        // adapter.setColors(R.style.ButtonText_Black_18, R.color.Yellow);
 
         list = (ListView)findViewById(R.id.rlist);
         list.setAdapter(adapter);
