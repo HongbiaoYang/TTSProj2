@@ -35,7 +35,7 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item>
-			<Title> I do not speak English</Title>
+			<Title>I do not speak English</Title>
 			<Text>I do not speak English</Text>
 			<Titulo>No hablo inglés</Titulo>
             <Texto>No hablo inglés</Texto>
@@ -62,45 +62,45 @@
 		<ImageV>picture0_v</ImageV>
 		
 		<Item> 
-			<Title>I feel sick today.</Title>
-			<Text>I feel sick today.</Text>
-			<Titulo>Me siento enfermo hoy.</Titulo>
-            <Texto>Me siento enfermo hoy.</Texto>
+			<Title>I feel sick today</Title>
+			<Text>I feel sick today</Text>
+			<Titulo>Me siento enfermo hoy</Titulo>
+            <Texto>Me siento enfermo hoy</Texto>
 			<Image>picture22</Image>
 			<ImageV>picture22_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>I feel dizzy.</Title>
-			<Text>I feel dizzy. </Text>
-			<Titulo>Me siento mareado.</Titulo>
-            <Texto>Me siento mareado.</Texto>
+			<Title>I feel dizzy</Title>
+			<Text>I feel dizzy</Text>
+			<Titulo>Me siento mareado</Titulo>
+            <Texto>Me siento mareado</Texto>
 			<Image>picture23</Image>
 			<ImageV>picture23_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>I think I am going to have a seizure.</Title>
-			<Text>I think I am going to have a seizure. </Text>
-			<Titulo>Me siento mareado. </Titulo>
-            <Texto>Me siento mareado.</Texto>
+			<Title>I think I am going to have a seizure</Title>
+			<Text>I think I am going to have a seizure</Text>
+			<Titulo>Me siento mareado</Titulo>
+            <Texto>Me siento mareado</Texto>
 			<Image>picture146</Image>
 			<ImageV>picture0_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 
 		<Item> 
-			<Title>I feel nauseated.</Title>
-			<Text>I feel nauseated.</Text>
-			<Titulo>Me siento con náusea </Titulo>
+			<Title>I feel nauseated</Title>
+			<Text>I feel nauseated</Text>
+			<Titulo>Me siento con náusea</Titulo>
             <Texto>Me siento con náusea</Texto>
 			<Image>picture24</Image>
 			<ImageV>picture24_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>I feel scared.</Title>
-			<Text>I feel scared. </Text>
+			<Title>I feel scared</Title>
+			<Text>I feel scared</Text>
 			<Titulo>Me siento con miedo </Titulo>
             <Texto>Me siento con miedo</Texto>
 			<Image>picture25</Image>
@@ -108,17 +108,17 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>I feel uncomfortable.</Title>
-			<Text>I feel uncomfortable.</Text>
-			<Titulo>Me siento incómodo </Titulo>
+			<Title>I feel uncomfortable</Title>
+			<Text>I feel uncomfortable</Text>
+			<Titulo>Me siento incómodo</Titulo>
             <Texto>Me siento incómodo</Texto>
 			<Image>picture26</Image>
 			<ImageV>picture26_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>I need to go to bathroom. </Title>
-			<Text>I need to go to bathroom. </Text>
+			<Title>I need to go to bathroom</Title>
+			<Text>I need to go to bathroom</Text>
 			<Titulo>Necesito ir al baño</Titulo>
             <Texto>Necesito ir al baño</Texto>
 			<Image>picture54</Image>
@@ -153,8 +153,8 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>Where do I put the walker?  </Title>
-			<Text>Where do I put the walker? </Text>
+			<Title>Where do I put the walker?</Title>
+			<Text>Where do I put the walker?</Text>
 			<Titulo>¿Dónde puedo guardar Bastón? </Titulo>
 			<Texto>¿Dónde puedo guardar Bastón?</Texto>
 			<Image>picture61</Image>
@@ -162,9 +162,9 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>Where do I put the child stroller? </Title>
-			<Text>Where do I put the child stroller?  </Text>
-			<Titulo>¿Dónde puedo guardar Carriola? </Titulo>
+			<Title>Where do I put the child stroller?</Title>
+			<Text>Where do I put the child stroller?</Text>
+			<Titulo>¿Dónde puedo guardar Carriola?</Titulo>
 			<Texto>¿Dónde puedo guardar Carriola?</Texto>
 			<Image>picture29</Image>
 			<ImageV>picture29_v</ImageV>
@@ -180,8 +180,8 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>Where do I put my groceries bags?</Title>
-			<Text>Where do I put my groceries bags?</Text>
+			<Title>Where do I put my grocery bags?</Title>
+			<Text>Where do I put my grocery bags?</Text>
 			<Titulo>¿Dónde puedo guardar Mandado? </Titulo>
 			<Texto>¿Dónde puedo guardar Mandado?</Texto>
 			<Image>picture28</Image>
@@ -225,8 +225,8 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>Where do I throw the trash? </Title>
-			<Text>Where do I throw the trash? </Text>
+			<Title>Where do I throw the trash?</Title>
+			<Text>Where do I throw the trash?</Text>
 			<Titulo>¿Dónde puedo guardar Basura?</Titulo>
 			<Texto>¿Dónde puedo guardar Basura?</Texto>
 			<Image>picture31</Image>
@@ -251,8 +251,8 @@
 		<Image>picture164</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
-			<Title>Can you lower the lift for me? </Title>
-			<Text>Can you lower the lift for me? </Text>
+			<Title>Can you lower the lift for me?</Title>
+			<Text>Can you lower the lift for me?</Text>
 			<Titulo>¿Puede bajar el elevador por mí?</Titulo>
 			<Texto>¿Puede bajar el elevador por mí?</Texto>	
 			<Image>picture35</Image>
@@ -260,8 +260,8 @@
 			<Color>#fdbd35</Color>
 		</Item>	
 		<Item> 
-			<Title>Can you hold my arm or as I get on the steps? </Title>
-			<Text>Can you hold my arm or hand as I get on the steps? </Text>
+			<Title>Can you hold my arm or as I get on the steps?</Title>
+			<Text>Can you hold my arm or hand as I get on the steps?</Text>
 			<Titulo>¿Me puede tomar del brazo o de la mano para subir el escalón?</Titulo>
 			<Texto>¿Me puede tomar del brazo o de la mano para subir el escalón?</Texto>	
 			<Image>picture39</Image>
@@ -269,8 +269,8 @@
 			<Color>#fdbd35</Color>
 		</Item>	
 		<Item> 
-			<Title>Will you put out the footstool for me? </Title>
-			<Text>Will you put out the footstool for me? </Text>
+			<Title>Will you put out the footstool for me?</Title>
+			<Text>Will you put out the footstool for me?</Text>
 			<Titulo>¿Me podría poner el banquito por favor?</Titulo>
 			<Texto>¿Me podría poner el banquito por favor?</Texto>	
 			<Image>picture37</Image>
@@ -305,10 +305,10 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>I don't require any help while boarding the bus?</Title>
-			<Text>I don't require any help while boarding the bus?</Text>
-			<Titulo>No necesito ayuda para subir al transporte.</Titulo>
-			<Texto>No necesito ayuda para subir al transporte.</Texto>
+			<Title>I don't require any help while boarding the bus</Title>
+			<Text>I don't require any help while boarding the bus</Text>
+			<Titulo>No necesito ayuda para subir al transporte</Titulo>
+			<Texto>No necesito ayuda para subir al transporte</Texto>
 			<Image>picture155</Image>
 			<ImageV>picture0_v</ImageV>
 			<Color>#fdbd35</Color>
@@ -322,8 +322,8 @@
 		<Image>picture139</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
-			<Title>There is water in front of the bus.</Title>
-			<Text>There is water in front of the bus.</Text>
+			<Title>There is water in front of the bus</Title>
+			<Text>There is water in front of the bus</Text>
 			<Titulo>Hay un charco enfrente del transporte, ¿podría ayudarme?</Titulo>
 			<Texto>Hay un charco enfrente del transporte, ¿podría ayudarme?</Texto>
 			<Image>picture114</Image>
@@ -331,8 +331,8 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>These stairs are slippery. </Title>
-			<Text>These stairs are slippery. </Text>
+			<Title>These stairs are slippery</Title>
+			<Text>These stairs are slippery</Text>
 			<Titulo>Los escalones están resbalosos, ¿podría poner un trapo encima?</Titulo>
 			<Texto>Los escalones están resbalosos, ¿podría poner un trapo encima?</Texto>
 			<Image>picture130</Image>
@@ -340,8 +340,8 @@
 			<Color>#fdbd35</Color>
 		</Item>	
 		<Item> 
-			<Title>This seats is wet. </Title>
-			<Text>This seat is wet. </Text>
+			<Title>This seat is wet</Title>
+			<Text>This seat is wet</Text>
 			<Titulo>El asiento está mojado, necesito moverme</Titulo>
 			<Texto>El asiento está mojado, necesito moverme</Texto>
 			<Image>picture117</Image>
@@ -349,8 +349,8 @@
 			<Color>#fdbd35</Color>
 		</Item>	
 		<Item> 
-			<Title>The bus floors are wet and slippery. </Title>
-			<Text>The bus floors are wet and slippery. </Text>
+			<Title>The bus floors are wet and slippery</Title>
+			<Text>The bus floors are wet and slippery</Text>
 			<Titulo>Hay agua en el piso y alguien podría resbalarse</Titulo>
 			<Texto>Hay agua en el piso y alguien podría resbalarse</Texto>
 			<Image>picture41</Image>
@@ -358,8 +358,8 @@
 			<Color>#fdbd35</Color>
 		</Item>	
 		<Item> 
-			<Title>There is water dripping from the top of the bus.</Title>
-			<Text>There is water dripping from the top of the bus. </Text>
+			<Title>There is water dripping from the top of the bus</Title>
+			<Text>There is water dripping from the top of the bus</Text>
 			<Titulo>Hay agua goteando del techo del transporte</Titulo>
 			<Texto>Hay agua goteando del techo del transporte</Texto>
 			<Image>picture172</Image>
@@ -377,8 +377,8 @@
 		<Image>picture151</Image>
 		<ImageV>picture0</ImageV>
 		<Item> 
-			<Title>How do I buy the ticket?</Title>
-			<Text>How do I buy the ticket?</Text>
+			<Title>How do I buy a ticket?</Title>
+			<Text>How do I buy a ticket?</Text>
 			<Titulo>¿Cómo compro el boleto?</Titulo>
 			<Texto>¿Cómo compro el boleto?</Texto>
 			<Image>picture7</Image>
@@ -395,7 +395,7 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>Where do I put the money? </Title>
+			<Title>Where do I put the money?</Title>
 			<Text>Where do I put the money?</Text>
 			<Titulo>¿Dónde pongo el dinero?</Titulo>
 			<Texto>¿Dónde pongo el dinero?</Texto>
@@ -404,8 +404,8 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>The ticket box is broken.</Title>
-			<Text>The ticket box is broken.</Text>
+			<Title>The ticket box is broken</Title>
+			<Text>The ticket box is broken</Text>
 			<Titulo>El sistema no está funcionando</Titulo>
 			<Texto>El sistema no está funcionando</Texto>
 			<Image>picture84</Image>
@@ -413,17 +413,17 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>Can I use the change card again? </Title>
+			<Title>Can I use the change card again?</Title>
 			<Text>Can I use the change card again?</Text>
-			<Titulo>¿Puedo usar la tarjeta de cambio nuevamente? </Titulo>
+			<Titulo>¿Puedo usar la tarjeta de cambio nuevamente?</Titulo>
 			<Texto>¿Puedo usar la tarjeta de cambio nuevamente?</Texto>
 			<Image>picture86</Image>
 			<ImageV>picture86_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>I do not have change. </Title>
-			<Text>I do not have change.</Text>
+			<Title>I do not have change</Title>
+			<Text>I do not have change</Text>
 			<Titulo>No tengo cambio</Titulo>
 			<Texto>No tengo cambio</Texto>
 			<Image>picture85</Image>
@@ -431,8 +431,8 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>I do not have money. </Title>
-			<Text>I do not have money.</Text>
+			<Title>I do not have money</Title>
+			<Text>I do not have money</Text>
 			<Titulo>No tengo  dinero</Titulo>
 			<Texto>No tengo  dinero</Texto>
 			<Image>picture0</Image>
@@ -448,7 +448,7 @@
 		<Image>picture87</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
-			<Title>Where does this bus go? </Title>
+			<Title>Where does this bus go?</Title>
 			<Text>Where does this bus go?</Text>
 			<Titulo>¿Hacia dónde va este transporte?</Titulo>
 			<Texto>¿Hacia dónde va este transporte?</Texto>
@@ -457,7 +457,7 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>Is this the wrong bus? </Title>
+			<Title>Is this the wrong bus?</Title>
 			<Text>Is this the wrong bus?</Text>
 			<Titulo>Estoy en el transporte incorrecto</Titulo>
 			<Texto>Estoy en el transporte incorrecto</Texto>
@@ -466,7 +466,7 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>How do I go there? </Title>
+			<Title>How do I go there?</Title>
 			<Text>How do I go there?</Text>
 			<Titulo>¿Cómo llego ahí?</Titulo>
 			<Texto>¿Cómo llego ahí?</Texto>
@@ -478,15 +478,15 @@
 </Trip>
 <Safety>
 	<Item> 
-		<Title>Wheelchair </Title>
-		<Text>Wheelchair </Text>
+		<Title>Wheelchair</Title>
+		<Text>Wheelchair</Text>
 		<Titulo>Silla de ruedas</Titulo>
 		<Texto>Silla de ruedas</Texto>
 		<Image>picture136</Image>
 		<ImageV>picture0_v</ImageV>
 		<Item> 
-			<Title>The tie-downs are not working.</Title>
-			<Text>The tie-downs are not working.</Text>
+			<Title>The tie-downs are not working</Title>
+			<Text>The tie-downs are not working</Text>
 			<Titulo>El ajuste no está funcionando</Titulo>
 			<Texto>El ajuste no está funcionando</Texto>
 			<Image>picture116</Image>
@@ -494,8 +494,8 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>The tie-downs are not secured correctly.</Title>
-			<Text>The tie-downs are not secured correctly.</Text>
+			<Title>The tie-downs are not secured correctly</Title>
+			<Text>The tie-downs are not secured correctly</Text>
 			<Titulo>El ajuste no está colocado correctamente</Titulo>
 			<Texto>El ajuste no está colocado correctamente</Texto>
 			<Image>picture116</Image>
@@ -520,8 +520,8 @@
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
-			<Title>The seatbelt is not working.</Title>
-			<Text>The seatbelt is not working.</Text>
+			<Title>The seatbelt is not working</Title>
+			<Text>The seatbelt is not working</Text>
 			<Titulo>El cinturón no está funcionando</Titulo>
 			<Texto>El cinturón no está funcionando</Texto>
 			<Image>picture56</Image>
@@ -539,7 +539,7 @@
 		<Image>picture137</Image>
 		<ImageV>picture4_v</ImageV>
 		<Item> 
-			<Title>Please help me change the seats </Title>
+			<Title>Please help me change the seats</Title>
 			<Text>Please help me change the seats</Text>
 			<Titulo>Por favor ayúdeme a cambiar de asiento</Titulo>
 			<Texto>Por favor ayúdeme a cambiar de asiento</Texto>

@@ -8,7 +8,7 @@
 		<Image>picture150</Image>
 		<ImageV>picture49_v</ImageV>
 		<Item> 
-			<Title>Where is the STOP pull chord or button? </Title>
+			<Title>Where is the STOP pull chord or button?</Title>
 			<Text>Where is the STOP pull chord or button?</Text>
 			<Titulo>¿Dónde se encuentra el cordón o botón para hacer la parada?</Titulo>
 			<Texto>¿Dónde se encuentra el cordón o botón para hacer la parada?</Texto>
@@ -17,18 +17,18 @@
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>This STOP pull chord or button is broken. </Title>
+			<Title>This STOP pull chord or button is broken</Title>
 			<Text>This STOP pull chord or button is broken.</Text>
-			<Titulo>El cordón o botón para hacer la parada no funciona.</Titulo>
-			<Texto>El cordón o botón para hacer la parada no funciona.</Texto>
+			<Titulo>El cordón o botón para hacer la parada no funciona</Titulo>
+			<Texto>El cordón o botón para hacer la parada no funciona</Texto>
 			<Image>picture96</Image>
 			<ImageV>picture96_v</ImageV>
 			<Color>#8661a6</Color>
 		</Item> 
    		
 		<Item> 
-			<Title>I cannot reach the STOP pull chord or button, please help. </Title>
-			<Text>I cannot reach the STOP pull chord or button, please help.</Text>
+			<Title>I cannot reach the STOP pull chord or button, please help</Title>
+			<Text>I cannot reach the STOP pull chord or button, please help</Text>
 			<Titulo>No alcanzo el cordón-botón para hacer la parada, ¿me podría ayudar?</Titulo>
 			<Texto>No alcanzo el cordón-botón para hacer la parada, ¿me podría ayudar?</Texto>
 			<Image>picture81</Image>
@@ -73,8 +73,8 @@
 			<Color> #8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>This is not the stop where I want to get off.</Title>
-			<Text>This is not the stop where I want to get off.</Text>
+			<Title>This is not the stop where I want to get off</Title>
+			<Text>This is not the stop where I want to get off</Text>
 			<Titulo>Esta no es la parada en la que yo quiero bajar</Titulo>
 			<Texto>Esta no es la parada en la que yo quiero bajar</Texto>
 			<Image>picture98</Image>
@@ -82,8 +82,8 @@
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>You missed my house. Please turn around.</Title>
-			<Text>You missed my house. Please turn around.</Text>
+			<Title>You missed my house. Please turn around</Title>
+			<Text>You missed my house. Please turn around</Text>
 			<Titulo>Se pasó mi casa. Por favor dé vuelta</Titulo>
 			<Texto>Se pasó mi casa. Por favor dé vuelta</Texto>
 			<Image>picture103</Image>
@@ -100,8 +100,8 @@
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>I got dropped in a wrong location. </Title>
-			<Text>I got dropped in a wrong location.</Text>
+			<Title>I got dropped in a wrong location</Title>
+			<Text>I got dropped in a wrong location</Text>
 			<Titulo>Me bajé en la ubicación errónea</Titulo>
 			<Texto>Me bajé en la ubicación errónea</Texto>
 			<Image>picture105</Image>

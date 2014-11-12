@@ -1,8 +1,8 @@
 ﻿<xml>
 <Emergency>
 		<Item>
-			<Title>I need help.</Title>
-			<Text>I need help.</Text>
+			<Title>I need help</Title>
+			<Text>I need help</Text>
 			<Titulo>Necesito ayuda</Titulo>
 			<Texto>Necesito ayuda</Texto>
 			<Image>picture48</Image>
@@ -10,8 +10,8 @@
 			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
-			<Title>Another passenger in the bus needs help.</Title>
-			<Text>Another passenger in the bus needs help.</Text>
+			<Title>Another passenger in the bus needs help</Title>
+			<Text>Another passenger in the bus needs help</Text>
 			<Titulo>Un pasajero necesita ayuda</Titulo>
 			<Texto>Un pasajero necesita ayuda</Texto>
 			<Image>picture52</Image>
@@ -19,8 +19,8 @@
 			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
-			<Title>Please call 911.</Title>
-			<Text>Please call 911.</Text>
+			<Title>Please call 911</Title>
+			<Text>Please call 911</Text>
 			<Titulo>Por favor llame al 911</Titulo>
 			<Texto>Por favor llame al 911</Texto>
 			<Image>picture51</Image>
@@ -28,19 +28,19 @@
 			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
-			<Title>There is an immediate danger on the bus.</Title>
-			<Text>There is an immediate danger on the bus.</Text>
-			<Titulo>Hay un peligro inmediato en el transporte.</Titulo>
-			<Texto>Hay un peligro inmediato en el transporte.</Texto>
+			<Title>There is an immediate danger on the bus</Title>
+			<Text>There is an immediate danger on the bus</Text>
+			<Titulo>Hay un peligro inmediato en el transporte</Titulo>
+			<Texto>Hay un peligro inmediato en el transporte</Texto>
 			<Image>picture149</Image>
 			<ImageV>picture0_v</ImageV>
 			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
-			<Title>There has been a personal accident on the bus.</Title>
-			<Text>There has been a personal accident on the bus.</Text>
-			<Titulo>Hubo un accidente personal en el transporte.</Titulo>
-			<Texto>Hubo un accidente personal en el transporte.</Texto>
+			<Title>There has been a personal accident on the bus</Title>
+			<Text>There has been a personal accident on the bus</Text>
+			<Titulo>Hubo un accidente personal en el transporte</Titulo>
+			<Texto>Hubo un accidente personal en el transporte</Texto>
 			<Image>picture148</Image>
 			<ImageV>picture0_v</ImageV>
 			<Color>#e7402e</Color>
@@ -48,8 +48,8 @@
 		<Item> 
 			<Title>Something is broken on the bus</Title>
 			<Text>Something is broken on the bus</Text>
-			<Titulo>Algo esta descompuesto en el transporte.</Titulo>
-			<Texto>Algo esta descompuesto en el transporte.</Texto>
+			<Titulo>Algo esta descompuesto en el transporte</Titulo>
+			<Texto>Algo esta descompuesto en el transporte</Texto>
 			<Image>picture173</Image>
 			<ImageV>picture0_v</ImageV>
 			<Color>#e7402e</Color>

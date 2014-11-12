@@ -26,25 +26,25 @@
         </Item>
 		<Item>
             <Desc>Double Tap on Back Button to go to previous screen. </Desc>
-            <Voice>At any point of time Double Tap on Back Button to go to previous screen.</Voice>
+            <Voice>Double Tap on Back Button to go to previous screen.</Voice>
             <Image>tutorial5_e</Image>
             <Progress>progressbar5_e</Progress>
         </Item>
 		<Item>
             <Desc>Double Tap on Home Button to go to Home screen.</Desc>
-            <Voice>At any point of time Double Tap on Home Button to go to Home screen.</Voice>
+            <Voice>Double Tap on Home Button to go to Home screen.</Voice>
             <Image>tutorial6_e</Image>
              <Progress>progressbar6_e</Progress>
         </Item>
 		<Item>
             <Desc>Double Tap on Yes or No Button to respond.</Desc>
-            <Voice>At any point of time Double Tap on Yes or No Button to respond.</Voice>
+            <Voice>Double Tap on Yes or No Button to respond.</Voice>
             <Image>tutorial7_e</Image>
             <Progress>progressbar7_e</Progress>
         </Item>
 		<Item>
             <Desc>Double Tap on More Button to go to Response screen.</Desc>
-            <Voice>At any point of time Double Tap on More Button to go to Response screen.</Voice>
+            <Voice>Double Tap on More Button to go to Response screen.</Voice>
             <Image>tutorial8_e</Image>
              <Progress>progressbar8_e</Progress>
         </Item>
