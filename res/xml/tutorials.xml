@@ -55,8 +55,8 @@
             <Progress>tutorial9_e</Progress>
         </Item>
 		<Item>
-            <Desc>In the Response screen Double Tap on ‘Input your Text’ to open Text to Voice Box.</Desc>
-            <Voice>In the Response screen Double Tap on ‘Input your Text’ to open Text to Voice Box.</Voice>
+            <Desc>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Desc>
+            <Voice>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Voice>
             <Image>tutorial10_e</Image>
             <Progress>tutorial10_e</Progress>
         </Item>
@@ -67,15 +67,13 @@
             <Progress>tutorial11_e</Progress>
         </Item>
 		<Item>
-            <Desc>Press ‘Done’ on the On screen keyboard when you are finished typing.</Desc>
-            <Voice>Press ‘Done’ on the On screen keyboard when you are finished typing.</Voice>
+            <Desc>Press 'Done' on the On screen keyboard when you are finished typing.</Desc>
+            <Voice>Press 'Done' on the On screen keyboard when you are finished typing.</Voice>
             <Image>tutorial12_e</Image>
             <Progress>tutorial12_e</Progress>
         </Item>
 		<Item>
-            <Desc>Use ‘Speak’ Button to speak your text
-			      Use ‘Save’ Button to save your text
-				  Use ‘Cancel’ Button to cancel the box when your are done</Desc>
+            <Desc>Use 'Speak' Button to speak your text.\n\n Use 'Save' Button to save your text\n\n Use 'Cancel' Button to cancel the box when your are done</Desc>
             <Voice>Use Speak Button to speak your text
 			      Use Save Button to save your text
 				  Use Cancel Button to cancel the box when your are done</Voice>
@@ -146,8 +144,8 @@
             <Progress>tutorial9_e</Progress>
         </Item>
 		<Item>
-            <Desc>In the Response screen Double Tap on ‘Input your Text’ to open Text to Voice Box.</Desc>
-            <Voice>In the Response screen Double Tap on ‘Input your Text’ to open Text to Voice Box.</Voice>
+            <Desc>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Desc>
+            <Voice>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Voice>
             <Image>tutorial10_e</Image>
             <Progress>tutorial10_e</Progress>
         </Item>
@@ -158,15 +156,15 @@
             <Progress>tutorial11_e</Progress>
         </Item>
 		<Item>
-            <Desc>Press ‘Done’ on the On screen keyboard when you are finished typing.</Desc>
-            <Voice>Press ‘Done’ on the On screen keyboard when you are finished typing.</Voice>
+            <Desc>Press 'Done' on the On screen keyboard when you are finished typing.</Desc>
+            <Voice>Press 'Done' on the On screen keyboard when you are finished typing.</Voice>
             <Image>tutorial12_e</Image>
             <Progress>tutorial12_e</Progress>
         </Item>
 		<Item>
-            <Desc>Use ‘Speak’ Button to speak your text
-			      Use ‘Save’ Button to save your text
-				  Use ‘Cancel’ Button to cancel the box when your are done</Desc>
+            <Desc>Use 'Speak' Button to speak your text
+                Use 'Save' Button to save your text
+                Use 'Cancel' Button to cancel the box when your are done</Desc>
             <Voice>Use Speak Button to speak your text
 			      Use Save Button to save your text
 				  Use Cancel Button to cancel the box when your are done</Voice>

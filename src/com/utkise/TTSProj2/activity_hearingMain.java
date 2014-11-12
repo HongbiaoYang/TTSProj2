@@ -21,7 +21,7 @@ import java.util.Stack;
  */
 public class activity_hearingMain extends Activity {
 
-    private Button next, skip;
+    private Button next, skip, prev;
     private ImageView screen, progress;
     private TextView desc;
     private int curPageIndex;
@@ -32,11 +32,13 @@ public class activity_hearingMain extends Activity {
         setContentView(R.layout.layout_hearingmain);
 
         desc = (TextView)findViewById(R.id.description);
+        prev = (Button)findViewById(R.id.prev);
         next = (Button)findViewById(R.id.next);
         skip = (Button)findViewById(R.id.skip);
         screen = (ImageView)findViewById(R.id.screenshot);
         progress = (ImageView)findViewById(R.id.progress);
 
+        prev.setOnClickListener(new prevTutorialListener());
         next.setOnClickListener(new nextTutorialListener());
         skip.setOnClickListener(new skipTutorialListener());
 
@@ -55,7 +57,7 @@ public class activity_hearingMain extends Activity {
     private void setTutorialPage(TutorialItem tutorialItem) {
         screen.setImageResource(tutorialItem.image);
         progress.setImageResource(tutorialItem.progress);
-        desc.setText(tutorialItem.desc);
+        desc.setText(tutorialItem.desc.replace("\\n", "\n"));
         MyProperties.getInstance().speakout(tutorialItem.voice);
     }
 
@@ -99,4 +101,20 @@ public class activity_hearingMain extends Activity {
     }
 
 
+
+    private class prevTutorialListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            curPageIndex--;
+            if (curPageIndex >= 0) {
+                setTutorialPage(itemList.get(curPageIndex));
+                next.setText("Next");
+            } else {
+                curPageIndex = 0;
+
+            }
+
+
+        }
+    }
 }
