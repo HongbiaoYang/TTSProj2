@@ -10,7 +10,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputType;
-import android.text.Layout;
 import android.view.View;
 import android.widget.*;
 
@@ -224,7 +223,7 @@ public class activity_response extends Activity {
         // appearance of the title text
         int textViewId = dialog.getContext().getResources().getIdentifier("android:id/alertTitle", null, null);
         TextView tv = (TextView) dialog.findViewById(textViewId);
-        tv.setTextAppearance(this, R.style.ButtonText_yellow);
+        tv.setTextAppearance(this, R.style.ButtonText_yellow_16);
 
         // appearance of the input text
         input.setTextAppearance(this, R.style.ButtonText_Blue_20);

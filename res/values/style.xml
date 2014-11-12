@@ -42,7 +42,7 @@
 
 
 
-    <style name="ButtonText_yellow">
+    <style name="ButtonText_yellow_16">
     <item name="android:layout_width">fill_parent</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:textColor">#fcd00d</item>
@@ -69,6 +69,7 @@
         <item name="android:shadowDy">1</item>
         <item name="android:shadowRadius">2</item>
     </style>
+
 
     <style name="ButtonText_yellow_24">
         <item name="android:layout_width">fill_parent</item>

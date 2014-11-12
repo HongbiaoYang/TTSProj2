@@ -2,16 +2,11 @@ package com.utkise.TTSProj2;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.InputType;
-import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
@@ -367,7 +362,7 @@ public class activity_cognitive0 extends Activity {
 
         int textViewId = dialog.getContext().getResources().getIdentifier("android:id/alertTitle", null, null);
         TextView tv = (TextView) dialog.findViewById(textViewId);
-        tv.setTextAppearance(this, R.style.ButtonText_yellow);
+        tv.setTextAppearance(this, R.style.ButtonText_yellow_16);
     }
 
     private void goBackOrUp(){
