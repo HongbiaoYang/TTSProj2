@@ -6,7 +6,7 @@
         <Titulo>Al conductor</Titulo>
         <Texto>Al conductor</Texto>
         <Image>picture133</Image>
-        <ImageV>picture0_v</ImageV>
+        <ImageV>picture133_v</ImageV>
 		<Item>
 			<Title>What is your name ?</Title>
 			<Text>What is your name ?</Text>
@@ -40,7 +40,7 @@
 			<Titulo>No hablo inglés</Titulo>
             <Texto>No hablo inglés</Texto>
 			<Image>picture175</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture175_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item>
@@ -49,7 +49,7 @@
 			<Titulo>¿El transporte va a esta dirección? </Titulo>
             <Texto>¿El transporte va a esta dirección?</Texto>
 			<Image>picture153</Image>
-			<ImageV>picture14_v</ImageV>
+			<ImageV>picture153_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 	</Item>
@@ -59,7 +59,7 @@
 		<Titulo>Sentimientos </Titulo>
         <Texto>Sentimientos</Texto>
 		<Image>picture134</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture134_v</ImageV>
 		
 		<Item> 
 			<Title>I feel sick today</Title>
@@ -85,7 +85,7 @@
 			<Titulo>Me siento mareado</Titulo>
             <Texto>Me siento mareado</Texto>
 			<Image>picture146</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture146_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 
@@ -132,7 +132,7 @@
 		<Titulo>Cosas</Titulo>
         <Texto>Cosas</Texto>
 		<Image>picture135</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture135_v</ImageV>
 		
 		<Item> 
 			<Title>Where do I put the bags?</Title>
@@ -249,7 +249,7 @@
 		<Titulo>Pidiendo ayuda</Titulo>
 		<Texto>Pidiendo ayuda</Texto>
 		<Image>picture164</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture164_v</ImageV>
 		<Item> 
 			<Title>Can you lower the lift for me?</Title>
 			<Text>Can you lower the lift for me?</Text>
@@ -283,7 +283,7 @@
 			<Titulo>¿Me puede ayudar a mover mis pertenencias de la silla de ruedas?</Titulo>
 			<Texto>¿Me puede ayudar a mover mis pertenencias de la silla de ruedas?</Texto>	
 			<Image>picture156</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture156_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>	
 		<Item> 
@@ -310,7 +310,7 @@
 			<Titulo>No necesito ayuda para subir al transporte</Titulo>
 			<Texto>No necesito ayuda para subir al transporte</Texto>
 			<Image>picture155</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture155_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>			
 	</Item>
@@ -320,14 +320,14 @@
 		<Titulo>Clima</Titulo>
 		<Texto>Clima</Texto>
 		<Image>picture139</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture139_v</ImageV>
 		<Item> 
 			<Title>There is water in front of the bus</Title>
 			<Text>There is water in front of the bus</Text>
 			<Titulo>Hay un charco enfrente del transporte, ¿podría ayudarme?</Titulo>
 			<Texto>Hay un charco enfrente del transporte, ¿podría ayudarme?</Texto>
 			<Image>picture114</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture114_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
@@ -336,7 +336,7 @@
 			<Titulo>Los escalones están resbalosos, ¿podría poner un trapo encima?</Titulo>
 			<Texto>Los escalones están resbalosos, ¿podría poner un trapo encima?</Texto>
 			<Image>picture130</Image>
-			<ImageV>picture40_v</ImageV>
+			<ImageV>picture130_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>	
 		<Item> 
@@ -345,7 +345,7 @@
 			<Titulo>El asiento está mojado, necesito moverme</Titulo>
 			<Texto>El asiento está mojado, necesito moverme</Texto>
 			<Image>picture117</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture117_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>	
 		<Item> 
@@ -363,7 +363,7 @@
 			<Titulo>Hay agua goteando del techo del transporte</Titulo>
 			<Texto>Hay agua goteando del techo del transporte</Texto>
 			<Image>picture172</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture172_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>	
 	</Item>
@@ -375,7 +375,7 @@
 		<Titulo>Boleto</Titulo>
 		<Texto>Boleto</Texto>
 		<Image>picture151</Image>
-		<ImageV>picture0</ImageV>
+		<ImageV>picture151</ImageV>
 		<Item> 
 			<Title>How do I buy a ticket?</Title>
 			<Text>How do I buy a ticket?</Text>
@@ -446,14 +446,14 @@
 		<Titulo>Transporte incorrecto</Titulo>
 		<Texto>Transporte incorrecto</Texto>
 		<Image>picture87</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture87_v</ImageV>
 		<Item> 
 			<Title>Where does this bus go?</Title>
 			<Text>Where does this bus go?</Text>
 			<Titulo>¿Hacia dónde va este transporte?</Titulo>
 			<Texto>¿Hacia dónde va este transporte?</Texto>
 			<Image>picture158</Image>
-			<ImageV>picture12_v</ImageV>
+			<ImageV>picture158_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
@@ -483,14 +483,14 @@
 		<Titulo>Silla de ruedas</Titulo>
 		<Texto>Silla de ruedas</Texto>
 		<Image>picture136</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture136_v</ImageV>
 		<Item> 
 			<Title>The tie-downs are not working</Title>
 			<Text>The tie-downs are not working</Text>
 			<Titulo>El ajuste no está funcionando</Titulo>
 			<Texto>El ajuste no está funcionando</Texto>
 			<Image>picture116</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture116_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
@@ -499,7 +499,7 @@
 			<Titulo>El ajuste no está colocado correctamente</Titulo>
 			<Texto>El ajuste no está colocado correctamente</Texto>
 			<Image>picture116</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture116_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 	</Item>
@@ -509,14 +509,14 @@
 		<Titulo>Cinturón de seguridad</Titulo>
 		<Texto>Cinturón de seguridad</Texto>
 		<Image>picture152</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture152_v</ImageV>
 		<Item>
 			<Title>Can you buckle my seatbelt?</Title>
 			<Text>Can you buckle my seatbelt?</Text>
 			<Titulo>¿Me puede abrochar el cinturón?</Titulo>
 			<Texto>¿Me puede abrochar el cinturón?</Texto>
 			<Image>picture55</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture55_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
@@ -537,14 +537,14 @@
 		<Titulo>Asiento</Titulo>
 		<Texto>Asiento</Texto>
 		<Image>picture137</Image>
-		<ImageV>picture4_v</ImageV>
+		<ImageV>picture137_v</ImageV>
 		<Item> 
 			<Title>Please help me change the seats</Title>
 			<Text>Please help me change the seats</Text>
 			<Titulo>Por favor ayúdeme a cambiar de asiento</Titulo>
 			<Texto>Por favor ayúdeme a cambiar de asiento</Texto>
 			<Image>picture115</Image>
-			<ImageV>picture5_v</ImageV>
+			<ImageV>picture115_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 	</Item>

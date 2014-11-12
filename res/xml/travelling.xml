@@ -6,7 +6,7 @@
 		<Titulo>Destino</Titulo>
 		<Texto>Destino</Texto>
 		<Image>picture144</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture144_v</ImageV>
 		<Item> 
 			<Title>I am going home.</Title>
 			<Text>I am going home. </Text>
@@ -77,7 +77,7 @@
 		<Titulo>Otro pasajero</Titulo>
 		<Texto>Otro pasajero</Texto>
 		<Image>picture145</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture145_v</ImageV>
 		<Color>#4ea554</Color>
 		<Item> 
 			<Title>Can you get the driver for me? </Title>
@@ -124,7 +124,7 @@
 		<Titulo>Ubicación</Titulo>
 		<Texto>Ubicación</Texto>
 		<Image>picture141</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture141_v</ImageV>
 		<Item> 
 			<Title>What is this place? </Title>
 			<Text>what is this place?</Text>
@@ -150,7 +150,7 @@
 		<Titulo>Rutas</Titulo>
 		<Texto>Rutas</Texto>
 		<Image>picture143</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture143_v</ImageV>
 		<Item> 
 			<Title>Where is this place?</Title>
 			<Text>Where is this place?</Text>
@@ -178,7 +178,7 @@
 		<Titulo>Al conductor</Titulo>
 		<Texto>Al conductor</Texto>
 		<Image>picture139</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture139_v</ImageV>
 		<Item> 
 			<Title>Please do not use your cell phone while driving.</Title>
 			<Text>Please do not use your cell phone while driving.</Text>
@@ -215,7 +215,7 @@
 		<Titulo>Al conductor</Titulo>
 		<Texto>Al conductor</Texto>
 		<Image>picture140</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture140_v</ImageV>
 		<Item> 
 			<Title>I am afraid of dogs. Can you please tell the owner?  </Title>
 			<Text>I am afraid of dogs. Can you please tell the owner?</Text>

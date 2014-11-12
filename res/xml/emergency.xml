@@ -33,7 +33,7 @@
 			<Titulo>Hay un peligro inmediato en el transporte</Titulo>
 			<Texto>Hay un peligro inmediato en el transporte</Texto>
 			<Image>picture149</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture149_v</ImageV>
 			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
@@ -42,7 +42,7 @@
 			<Titulo>Hubo un accidente personal en el transporte</Titulo>
 			<Texto>Hubo un accidente personal en el transporte</Texto>
 			<Image>picture148</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture148_v</ImageV>
 			<Color>#e7402e</Color>
 		</Item>
 		<Item> 
@@ -51,7 +51,7 @@
 			<Titulo>Algo esta descompuesto en el transporte</Titulo>
 			<Texto>Algo esta descompuesto en el transporte</Texto>
 			<Image>picture173</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture173_v</ImageV>
 			<Color>#e7402e</Color>
 		</Item>
 		

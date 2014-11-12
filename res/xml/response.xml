@@ -5,7 +5,7 @@
             <Text></Text>
             <Customize>input</Customize>
             <Image>picture108</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture108_v</ImageV>
         </Item>
         <Item>
             <Title>Thank you very much</Title>
@@ -13,7 +13,7 @@
             <Titulo>Muchas gracias</Titulo>
             <Texto>Muchas gracias</Texto>
             <Image>picture109</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture109_v</ImageV>
         </Item>
         <Item>
             <Title>I don't understand</Title>
@@ -21,7 +21,7 @@
 			<Titulo>No entiendo</Titulo>
 			<Texto>No entiendo</Texto>
             <Image>picture110</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture110_v</ImageV>
         </Item>
         <Item>
             <Title>Goodbye</Title>
@@ -29,7 +29,7 @@
 			<Titulo>Adiós</Titulo>
 			<Texto>Adiós</Texto>
             <Image>picture146</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture146_v</ImageV>
         </Item>
         <Item>
             <Title>Could you repeat</Title>
@@ -37,7 +37,7 @@
 			<Titulo>Podría repetir</Titulo>
 			<Texto>Podría repetir</Texto>
             <Image>picture113</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture113_v</ImageV>
         </Item>
 		 <Item>
             <Title>Could you talk slower</Title>
@@ -45,7 +45,7 @@
 			<Titulo>Podría repetir</Titulo>
 			<Texto>Podría repetir</Texto>
             <Image>picture174</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture174_v</ImageV>
         </Item>
 		<Item>
             <Title>I don't know</Title>
@@ -53,7 +53,7 @@
 			<Titulo>No lo sé</Titulo>
 			<Texto>No lo sé</Texto>
             <Image>picture112</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture112_v</ImageV>
         </Item>
 		<Item>
             <Title>Could you talk louder</Title>
@@ -61,7 +61,7 @@
 			<Titulo>Podría hablar mas fuerte</Titulo>
 			<Texto>Podría hablar mas fuerte</Texto>
             <Image>picture166</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture166_v</ImageV>
         </Item>
 		<Item>
             <Title>Can you help me, please</Title>
@@ -69,7 +69,7 @@
 			<Titulo>Podría ayudarme, por favor</Titulo>
 			<Texto>Podría ayudarme, por favor</Texto>
             <Image>picture165</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture165_v</ImageV>
         </Item>
 		<Item>
             <Title>Will you please call, text or contact my parents?</Title>
@@ -77,7 +77,7 @@
 			<Titulo>Podría llamar, enviar un mensaje de texto o contactar a mis padres?</Titulo>
 			<Texto>Podría llamar, enviar un mensaje de texto o contactar a mis padres?</Texto>
             <Image>picture167</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture167_v</ImageV>
         </Item>
 		<Item>
             <Title>Will you please call, text or contact my supervisor?</Title>
@@ -85,7 +85,7 @@
 			<Titulo>Podría llamar, enviar un mensaje de texto o contactar a mi supervisor/tutor?</Titulo>
 			<Texto>Podría llamar, enviar un mensaje de texto o contactar a mi supervisor/tutor?</Texto>
             <Image>picture168</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture168_v</ImageV>
         </Item>
 		<Item>
             <Title>Will you please call, text or contact my spouse?</Title>
@@ -93,7 +93,7 @@
 			<Titulo>Podría llamar, enviar un mensaje de texto o contactar a mi esposo(a)?</Titulo>
 			<Texto>Podría llamar, enviar un mensaje de texto o contactar a mi esposo(a)?</Texto>
             <Image>picture169</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture169_v</ImageV>
         </Item>
     </Response>
 </xml>

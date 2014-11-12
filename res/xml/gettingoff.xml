@@ -6,7 +6,7 @@
 		<Titulo>Cordón o botón para hacer la parada</Titulo>
 		<Texto>Cordón o botón para hacer la parada</Texto>
 		<Image>picture150</Image>
-		<ImageV>picture49_v</ImageV>
+		<ImageV>picture150_v</ImageV>
 		<Item> 
 			<Title>Where is the STOP pull chord or button?</Title>
 			<Text>Where is the STOP pull chord or button?</Text>
@@ -44,14 +44,14 @@
 		<Titulo>Destino</Titulo>
 		<Texto>Destino</Texto>
 		<Image>picture144</Image>
-		<ImageV>picture0_v</ImageV>
+		<ImageV>picture144_v</ImageV>
 		<Item> 
 			<Title>Am I getting off the bus next?</Title>
 			<Text>Am I getting off the bus next?</Text>
 			<Titulo>¿Sigo yo de bajarme del transporte?</Titulo>
 			<Texto>¿Sigo yo de bajarme del transporte?</Texto>
 			<Image>picture170</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture170_v</ImageV>
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
@@ -60,7 +60,7 @@
 			<Titulo>¿Estamos acercándonos a la parada?</Titulo>
 			<Texto>¿Estamos acercándonos a la parada?</Texto>
 			<Image>picture171</Image>
-			<ImageV>picture0_v</ImageV>
+			<ImageV>picture171_v</ImageV>
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
