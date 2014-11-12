@@ -53,17 +53,26 @@
                            android:id="@+id/progress"
                            android:layout_height="fill_parent"/>
                 <Button android:layout_width="0dp"
-                        android:layout_weight="4"
+                        android:layout_weight="4.5"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/prev"
+                        android:background="@drawable/btn_yellow"
+                        style="@style/ButtonText_Black_14"
+                        android:text="ANTERIOR"/>
+                <Button android:layout_width="0dp"
+                        android:layout_weight="4.5"
                         android:layout_height="fill_parent"
                         android:id="@+id/next"
                         android:background="@drawable/btn_yellow"
-                        android:text="NEXT"/>
+                        style="@style/ButtonText_Black_14"
+                        android:text="SIGUIENTE"/>
                 <Button android:layout_width="0dp"
-                        android:layout_weight="4"
+                        android:layout_weight="3"
                         android:layout_height="fill_parent"
-                        android:background="@drawable/btn_yellow"
+                        android:background="@drawable/btn_gray"
+                        style="@style/ButtonText_Black_14"
                         android:id="@+id/skip"
-                        android:text="SKIP"/>
+                        android:text="SALTAR"/>
 
 
             </LinearLayout>

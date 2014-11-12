@@ -73,7 +73,7 @@
             <Progress>tutorial12_e</Progress>
         </Item>
 		<Item>
-            <Desc>Use 'Speak' Button to speak your text.\n\n Use 'Save' Button to save your text\n\n Use 'Cancel' Button to cancel the box when your are done</Desc>
+            <Desc>Use 'Speak' Button to speak your text.\n\nUse 'Save' Button to save your text\n\nUse 'Cancel' Button to cancel the box when your are done</Desc>
             <Voice>Use Speak Button to speak your text
 			      Use Save Button to save your text
 				  Use Cancel Button to cancel the box when your are done</Voice>

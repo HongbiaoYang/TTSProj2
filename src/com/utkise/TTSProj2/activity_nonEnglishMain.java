@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class activity_nonEnglishMain extends Activity {
 
-    private Button next, skip;
+    private Button next, skip, prev;
     private ImageView screen, progress;
     private TextView desc;
     private int curPageIndex;
@@ -26,11 +26,13 @@ public class activity_nonEnglishMain extends Activity {
         setContentView(R.layout.layout_nonenglishmain);
 
         desc = (TextView)findViewById(R.id.description);
+        prev = (Button)findViewById(R.id.prev);
         next = (Button)findViewById(R.id.next);
         skip = (Button)findViewById(R.id.skip);
         screen = (ImageView)findViewById(R.id.screenshot);
         progress = (ImageView)findViewById(R.id.progress);
 
+        prev.setOnClickListener(new prevTutorialListener());
         next.setOnClickListener(new nextTutorialListener());
         skip.setOnClickListener(new skipTutorialListener());
 
@@ -61,7 +63,7 @@ public class activity_nonEnglishMain extends Activity {
             if (curPageIndex < itemList.size()) {
                 setTutorialPage(itemList.get(curPageIndex));
                 if (curPageIndex == itemList.size() - 1) {
-                    next.setText("Done");
+                    next.setText("HECHO");
                 }
 
             } else {
@@ -76,8 +78,6 @@ public class activity_nonEnglishMain extends Activity {
         public void onClick(View v) {
             goToNewPage();
         }
-
-
     }
 
     private void goToNewPage() {
@@ -93,4 +93,19 @@ public class activity_nonEnglishMain extends Activity {
     }
 
 
+    private class prevTutorialListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            curPageIndex--;
+            if (curPageIndex >= 0) {
+                setTutorialPage(itemList.get(curPageIndex));
+                next.setText("SIGUIENTE");
+            } else {
+                curPageIndex = 0;
+
+            }
+
+
+        }
+    }
 }

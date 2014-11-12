@@ -65,7 +65,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
 
         title.setText(MyProperties.getInstance().getTitleStack());
-        title.setTextAppearance(this, R.style.ButtonText_Black);
+        title.setTextAppearance(this, R.style.ButtonText_Black_16);
         MyProperties.getInstance().playAnimation();
 
         lastLevelBtn.setBackgroundResource(R.drawable.gobacklong);

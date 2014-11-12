@@ -24,7 +24,7 @@
                 android:layout_weight="6"
                 android:text="@string/yes"
                 android:id="@+id/footer1_text"
-                style="@style/ButtonText_Black"
+                style="@style/ButtonText_Black_16"
                 android:layout_height="fill_parent"/>
         <ImageView android:layout_width="0dp"
                    android:layout_weight="2"
@@ -45,7 +45,7 @@
                   android:layout_weight="6"
                   android:text="@string/no"
                   android:id="@+id/footer2_text"
-                  style="@style/ButtonText_Black"
+                  style="@style/ButtonText_Black_16"
                   android:layout_height="fill_parent"/>
         <ImageView android:layout_width="0dp"
                    android:layout_weight="2"
@@ -67,7 +67,7 @@
                   android:layout_weight="6"
                   android:text="@string/more"
                   android:id="@+id/footer3_text"
-                  style="@style/ButtonText_Black"
+                  style="@style/ButtonText_Black_16"
                   android:layout_height="fill_parent"/>
         <ImageView android:layout_width="0dp"
                    android:layout_weight="2"

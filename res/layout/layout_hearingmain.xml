@@ -57,6 +57,7 @@
                     android:layout_height="fill_parent"
                     android:id="@+id/prev"
                     android:background="@drawable/btn_yellow"
+                    style="@style/ButtonText_Black_14"
                     android:text="PREVIOUS"/>
 
             <Button android:layout_width="0dp"
@@ -64,12 +65,14 @@
                     android:layout_height="fill_parent"
                     android:id="@+id/next"
                     android:background="@drawable/btn_yellow"
+                    style="@style/ButtonText_Black_14"
                     android:text="NEXT"/>
             <Button android:layout_width="0dp"
                     android:layout_weight="4"
                     android:layout_height="fill_parent"
                     android:id="@+id/skip"
-                    android:background="@drawable/btn_yellow"
+                    android:background="@drawable/btn_gray"
+                    style="@style/ButtonText_Black_14"
                     android:text="SKIP"/>
 
 

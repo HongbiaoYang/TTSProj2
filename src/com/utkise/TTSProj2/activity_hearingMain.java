@@ -108,7 +108,7 @@ public class activity_hearingMain extends Activity {
             curPageIndex--;
             if (curPageIndex >= 0) {
                 setTutorialPage(itemList.get(curPageIndex));
-                next.setText("Next");
+                next.setText("NEXT");
             } else {
                 curPageIndex = 0;
 
