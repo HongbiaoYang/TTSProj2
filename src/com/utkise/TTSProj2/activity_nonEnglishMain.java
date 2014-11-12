@@ -2,6 +2,7 @@ package com.utkise.TTSProj2;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -26,6 +27,8 @@ public class activity_nonEnglishMain extends Activity {
     private List<TutorialItem> itemList;
     private DIRECTION direction;
     private String TAG = "activity_nonEnglishMain";
+    private ImageView backImage;
+    private AnimationDrawable swipe;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,10 +51,18 @@ public class activity_nonEnglishMain extends Activity {
             MyProperties.getInstance().LoadTutorialXml(this); // load the xml file only when it's null
         }
 
+        backImage = (ImageView) findViewById(R.id.swipe);
+        backImage.setBackgroundResource(R.drawable.swipe_anim);
+        swipe = (AnimationDrawable) backImage.getBackground();
+        swipe.setExitFadeDuration(1500);
+        swipe.setEnterFadeDuration(1500);
+
         itemList = MyProperties.getInstance().getTutorial("NonEnglish");
 
         curPageIndex = 0;
         setTutorialPage(itemList.get(curPageIndex));
+        backImage.setVisibility(View.VISIBLE);
+        swipe.start();
 
     }
 
@@ -165,6 +176,9 @@ public class activity_nonEnglishMain extends Activity {
         curPageIndex++;
         if (curPageIndex < itemList.size()) {
             setTutorialPage(itemList.get(curPageIndex));
+            swipe.stop();
+            backImage.setVisibility(View.INVISIBLE);
+
             if (curPageIndex == itemList.size() - 1) {
                 next.setText("HECHO");
             }

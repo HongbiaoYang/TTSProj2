@@ -53,8 +53,6 @@
                   style="@style/ButtonText_Red_14"
                   android:layout_height="fill_parent"/>
 
-
-
         </LinearLayout>
 
 </LinearLayout>

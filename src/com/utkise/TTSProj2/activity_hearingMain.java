@@ -3,6 +3,8 @@ package com.utkise.TTSProj2;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.XmlResourceParser;
+import android.graphics.drawable.AnimationDrawable;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -32,6 +34,8 @@ public class activity_hearingMain extends Activity {
     private List<TutorialItem> itemList;
     private DIRECTION direction;
     private String TAG = "activity_hearingMain";
+    private AnimationDrawable swipe;
+    private ImageView backImage;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,11 @@ public class activity_hearingMain extends Activity {
         skip.setOnClickListener(new skipTutorialListener());
         hearingTutorial.setOnTouchListener(new onSwipeListener());
 
+        backImage = (ImageView) findViewById(R.id.swipe);
+        backImage.setBackgroundResource(R.drawable.swipe_anim);
+        swipe = (AnimationDrawable) backImage.getBackground();
+        swipe.setExitFadeDuration(1500);
+        swipe.setEnterFadeDuration(1500);
 
         if (MyProperties.getInstance().tutorialLists == null) {
             MyProperties.getInstance().LoadTutorialXml(this); // load the xml file only when it's null
@@ -59,7 +68,8 @@ public class activity_hearingMain extends Activity {
 
         curPageIndex = 0;
         setTutorialPage(itemList.get(curPageIndex));
-
+        backImage.setVisibility(View.VISIBLE);
+        swipe.start();
     }
 
 
@@ -168,6 +178,10 @@ public class activity_hearingMain extends Activity {
         curPageIndex++;
         if (curPageIndex < itemList.size()) {
             setTutorialPage(itemList.get(curPageIndex));
+
+            swipe.stop();
+            backImage.setVisibility(View.INVISIBLE);
+
             if (curPageIndex == itemList.size() - 1) {
                 next.setText("Done");
             }

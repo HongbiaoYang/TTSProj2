@@ -325,4 +325,5 @@ public class MyProperties {
         animStack.clear();
         titleStack.clear();
     }
+
 }
