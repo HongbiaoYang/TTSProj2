@@ -39,7 +39,7 @@
 			<Text>I do not speak English</Text>
 			<Titulo>No hablo inglés</Titulo>
             <Texto>No hablo inglés</Texto>
-			<Image>picture0</Image>
+			<Image>picture175</Image>
 			<ImageV>picture0_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
@@ -362,7 +362,7 @@
 			<Text>There is water dripping from the top of the bus. </Text>
 			<Titulo>Hay agua goteando del techo del transporte</Titulo>
 			<Texto>Hay agua goteando del techo del transporte</Texto>
-			<Image>picture0</Image>
+			<Image>picture172</Image>
 			<ImageV>picture0_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>	
