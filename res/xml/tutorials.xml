@@ -37,54 +37,48 @@
             <Progress>tutorial6_e</Progress>
         </Item>
 		<Item>
-            <Desc>At any point of time Double Tap on Home Button to go to Home screen.</Desc>
-            <Voice>At any point of time Double Tap on Home Button to go to Home screen.</Voice>
+            <Desc>At any point of time Double Tap on Yes or No Button to respond.</Desc>
+            <Voice>At any point of time Double Tap on Yes or No Button to respond.</Voice>
             <Image>tutorial7_e</Image>
             <Progress>tutorial7_e</Progress>
         </Item>
 		<Item>
-            <Desc>At any point of time Double Tap on Yes or No Button to respond.</Desc>
-            <Voice>At any point of time Double Tap on Yes or No Button to respond.</Voice>
+            <Desc>At any point of time Double Tap on More Button to go to Response screen.</Desc>
+            <Voice>At any point of time Double Tap on More Button to go to Response screen.</Voice>
             <Image>tutorial8_e</Image>
             <Progress>tutorial8_e</Progress>
         </Item>
 		<Item>
-            <Desc>At any point of time Double Tap on More Button to go to Response screen.</Desc>
-            <Voice>At any point of time Double Tap on More Button to go to Response screen.</Voice>
+            <Desc>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Desc>
+            <Voice>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Voice>
             <Image>tutorial9_e</Image>
             <Progress>tutorial9_e</Progress>
         </Item>
 		<Item>
-            <Desc>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Desc>
-            <Voice>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Voice>
+            <Desc>Use the on screen keyboard to type in your text.</Desc>
+            <Voice>Use the on screen keyboard to type in your text.</Voice>
             <Image>tutorial10_e</Image>
             <Progress>tutorial10_e</Progress>
         </Item>
 		<Item>
-            <Desc>Use the on screen keyboard to type in your text.</Desc>
-            <Voice>Use the on screen keyboard to type in your text.</Voice>
-            <Image>tutorial11_e</Image>
-            <Progress>tutorial11_e</Progress>
-        </Item>
-		<Item>
             <Desc>Press 'Done' on the On screen keyboard when you are finished typing.</Desc>
             <Voice>Press 'Done' on the On screen keyboard when you are finished typing.</Voice>
-            <Image>tutorial12_e</Image>
-            <Progress>tutorial12_e</Progress>
+            <Image>tutorial11_e</Image>
+            <Progress>tutorial11_e</Progress>
         </Item>
 		<Item>
             <Desc>Use 'Speak' Button to speak your text.\n\nUse 'Save' Button to save your text\n\nUse 'Cancel' Button to cancel the box when your are done</Desc>
             <Voice>Use Speak Button to speak your text
 			      Use Save Button to save your text
 				  Use Cancel Button to cancel the box when your are done</Voice>
-            <Image>tutorial13_e</Image>
-            <Progress>tutorial13_e</Progress>
+            <Image>tutorial2_e</Image>
+            <Progress>tutorial12_e</Progress>
         </Item>
 		<Item>
              <Desc>Scroll up and down and make your selection by Double Tapping. </Desc>
             <Voice>Scroll up and down and make your selection by Double Tapping.</Voice>
-            <Image>tutorial14_e</Image>
-            <Progress>tutorial14_e</Progress>
+            <Image>tutorial13_e</Image>
+            <Progress>tutorial13_e</Progress>
         </Item>
     </Hearing>
 
