@@ -50,7 +50,7 @@
 			<Text>Am I getting off the bus next?</Text>
 			<Titulo>¿Sigo yo de bajarme del transporte?</Titulo>
 			<Texto>¿Sigo yo de bajarme del transporte?</Texto>
-			<Image>picture0</Image>
+			<Image>picture170</Image>
 			<ImageV>picture0_v</ImageV>
 			<Color>#8661a6</Color>
 		</Item>
@@ -59,7 +59,7 @@
 			<Text>Are we approaching the stop?</Text>
 			<Titulo>¿Estamos acercándonos a la parada?</Titulo>
 			<Texto>¿Estamos acercándonos a la parada?</Texto>
-			<Image>picture0</Image>
+			<Image>picture171</Image>
 			<ImageV>picture0_v</ImageV>
 			<Color>#8661a6</Color>
 		</Item>
