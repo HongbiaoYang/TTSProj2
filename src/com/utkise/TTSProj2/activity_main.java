@@ -95,13 +95,19 @@ public class activity_main extends Activity implements OnInitListener {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
-                    MyProperties.getInstance().speakBoth(TITLE.COGNITIVE);
-
-                  /*  String cognitive_str = MyProperties.getInstance().getTitleName(TITLE.COGNITIVE);
-                    MyProperties.getInstance().titleStack.push(cognitive_str);*/
+                    /*MyProperties.getInstance().speakBoth(TITLE.COGNITIVE);
 
                     Intent intent = new Intent();
                     intent.setClass(activity_main.this, activity_cognitiveMain.class);
+                    startActivity(intent);*/
+
+                    // MyProperties.getInstance().speakBoth(TITLE.COGNITIVE);
+                    MyProperties.getInstance().speakout(getResources().getString(R.string.cogHint));
+
+                    String cognitive_str = MyProperties.getInstance().getTitleName(TITLE.COGNITIVE);
+                    MyProperties.getInstance().titleStack.push(cognitive_str);
+                    Intent intent = new Intent();
+                    intent.setClass(activity_main.this, activity_cognitive.class);
                     startActivity(intent);
                 }
             }
@@ -265,7 +271,7 @@ public class activity_main extends Activity implements OnInitListener {
         if (status == TextToSpeech.SUCCESS) {
             LANG lan = MyProperties.getInstance().Language;
             MyProperties.getInstance().doInit(lan);
-            MyProperties.getInstance().speakout("main Menu");
+            MyProperties.getInstance().speakout("Welcome to project Eric, double tap to make a selection");
         } else {
             Log.e("TTS", "Initilization Failed!");
         }
@@ -285,6 +291,12 @@ public class activity_main extends Activity implements OnInitListener {
             Log.d("activity_main", "TTS Destroyed");
         }
         super.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        MyProperties.getInstance().speakout("Welcome to project Eric, double tap to make a selection");
+        super.onResume();
     }
 
     private void loadXMLResourceParser(DisableType boarding, int xmlFile) {

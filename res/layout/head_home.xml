@@ -48,7 +48,7 @@
                    android:background="@drawable/emergency_icon"
                    android:layout_height="fill_parent"/>
         <TextView android:layout_width="0dp"
-                  android:layout_weight="5"
+                  android:layout_weight="6"
                   android:text="EMERGENCY"
                   style="@style/ButtonText_Red_14"
                   android:layout_height="fill_parent"/>

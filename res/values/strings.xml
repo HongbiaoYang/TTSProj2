@@ -10,6 +10,7 @@
 
     <string name="cogWel">Welcome To Tutorial</string>
     <string name="cogInstruct">This tutorial will guide you to Navigate and Access the Content of this Application, At any point of tutorial use skip button at buttom to skip through the tutorial. Double Tap on "Start Button" to begin the tutorial</string>
+    <string name="cogHint">Welcome to cognitive mode, scroll up and down for more selection. Make your selections by pressing and holding on the button</string>
     <string name="noleftc">There are no more categories beyond  this point, please swipe right to access the previous category</string>
     <string name="norightc">There are no more categories beyond  this point, please swipe left to access the next category</string>
     <string name="noleftq">There are no more questions beyond  this point, please swipe right to access the previous questions</string>

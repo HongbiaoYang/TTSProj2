@@ -68,6 +68,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
         title.setTextAppearance(this, R.style.ButtonText_Black);
         MyProperties.getInstance().playAnimation();
 
+        lastLevelBtn.setBackgroundResource(R.drawable.gobacklong);
         lastLevelBtn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -81,6 +82,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
         response.setOnClickListener(new onHintListener("to enter response page"));
         emergency.setOnClickListener(new onHintListener("to enter emergency page"));
         lastLevelBtn.setOnClickListener(new onHintListener("to go back"));
+
 
         yes.setOnLongClickListener(new onHoldSpeakListener("yes"));
         no.setOnLongClickListener(new onHoldSpeakListener("no"));
@@ -130,6 +132,8 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
         list = (ListView)findViewById(R.id.list);
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new onHintListener("to make the selection"));
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -142,7 +146,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
                     thisLevel = item.getChild();
                     updateList(thisLevel);
                 }
-                return false;
+                return true;
             }
         });
     }
@@ -189,7 +193,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
     }
 
-    private class onHintListener implements View.OnClickListener {
+    private class onHintListener implements View.OnClickListener, AdapterView.OnItemClickListener{
         private final String hint;
 
         public onHintListener(String s) {
@@ -198,6 +202,11 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
         @Override
         public void onClick(View v) {
+            MyProperties.getInstance().speakout("Please hold this button " + hint);
+        }
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             MyProperties.getInstance().speakout("Please hold this button " + hint);
         }
     }

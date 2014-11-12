@@ -183,10 +183,13 @@ public class MyProperties {
             result = gtts.setLanguage(locSpanish);
         }
 
+        gtts.setSpeechRate(0.85f);
+
         if (result == TextToSpeech.LANG_MISSING_DATA
                 || result == TextToSpeech.LANG_NOT_SUPPORTED) {
             Log.e("TTS", "This Language is not supported");
         }
+
 
     }
 
