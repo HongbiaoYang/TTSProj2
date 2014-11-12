@@ -3,7 +3,7 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:orientation="vertical"
-              android:id="@+id/cognitiveTutorial">
+              android:id="@+id/nonenglishTutorial">
 
     <LinearLayout
             android:orientation="horizontal"
@@ -24,6 +24,8 @@
             <TextView android:layout_width="fill_parent"
                       android:layout_height="fill_parent"
                       android:id="@+id/description"
+                      style="@style/ButtonText_yellow_16"
+                      android:gravity="center_vertical|left"
                       android:text="description text"      />
 
 
