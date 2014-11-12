@@ -1,4 +1,4 @@
-<xml>
+﻿<xml>
     <Hearing>
         <Item>
             <Desc>Welcome to Hearing Tutorial. Please double tap on your selected point of transit.</Desc>
@@ -93,89 +93,61 @@
             <Desc>Bienvenido al Tutorial Auditivo. Por favor presione dos veces en su punto de transporte seleccionado.</Desc>
             <Voice>Welcome to Hearing Tutorial. Please Double Tap on your selected point of transit.</Voice>
             <Image>tutorial1_e</Image>
-            <Progress>tutorial1_e</Progress>
+            <Progress>tutorial1_s</Progress>
         </Item>
         <Item>
-            <Desc>Choose the type of information you need to ask driver by Double Tapping</Desc>
+            <Desc>Seleccione el tipo de información que necesita preguntar al conductor presionando dos veces.</Desc>
             <Voice>Choose the type of information you need to ask driver by Double Tapping.</Voice>
             <Image>tutorial2_e</Image>
-            <Progress>tutorial2_e</Progress>
+            <Progress>tutorial2_s</Progress>
         </Item>
         <Item>
-            <Desc>Choose the category of information you need to ask driver by Double Tapping. </Desc>
+            <Desc>Seleccione la categoría de información que necesita preguntar al conductor presionando dos veces.</Desc>
             <Voice>Choose the category of information you need to ask driver by Double Tapping. </Voice>
             <Image>tutorial3_e</Image>
-            <Progress>tutorial3_e</Progress>
+            <Progress>tutorial3_s</Progress>
         </Item>
         <Item>
-            <Desc>Scroll up and down and make your selection by Double Tapping. </Desc>
+            <Desc>Desplace la pantalla hacia abajo y seleccione sus preguntas presionando dos veces.</Desc>
             <Voice>Scroll up and down and make your selection by Double Tapping.</Voice>
             <Image>tutorial4_e</Image>
-            <Progress>tutorial4_e</Progress>
+            <Progress>tutorial4_s</Progress>
         </Item>
 		<Item>
-            <Desc>At any point of time Double Tap on Back Button to go to previous screen. </Desc>
+            <Desc>En cualquier momento, presione dos veces en el botón de la flecha apuntando hacia la izquierda para regresar a la pantalla anterior.</Desc>
             <Voice>At any point of time Double Tap on Back Button to go to previous screen.</Voice>
             <Image>tutorial5_e</Image>
-            <Progress>tutorial5_e</Progress>
+            <Progress>tutorial5_s</Progress>
         </Item>
 		<Item>
-            <Desc>At any point of time Double Tap on Home Button to go to Home screen.</Desc>
+            <Desc>En cualquier momento, presione dos veces en el botón de la casa para ir a la pantalla principal. </Desc>
             <Voice>At any point of time Double Tap on Home Button to go to Home screen.</Voice>
             <Image>tutorial6_e</Image>
-            <Progress>tutorial6_e</Progress>
+            <Progress>tutorial6_s</Progress>
         </Item>
 		<Item>
-            <Desc>At any point of time Double Tap on Home Button to go to Home screen.</Desc>
+            <Desc>En cualquier momento, presione dos veces en el botón de “Sí” o “No” para responder.</Desc>
             <Voice>At any point of time Double Tap on Home Button to go to Home screen.</Voice>
             <Image>tutorial7_e</Image>
-            <Progress>tutorial7_e</Progress>
+            <Progress>tutorial7_s</Progress>
         </Item>
 		<Item>
             <Desc>At any point of time Double Tap on Yes or No Button to respond.</Desc>
             <Voice>At any point of time Double Tap on Yes or No Button to respond.</Voice>
             <Image>tutorial8_e</Image>
-            <Progress>tutorial8_e</Progress>
+            <Progress>tutorial8_s</Progress>
         </Item>
 		<Item>
-            <Desc>At any point of time Double Tap on More Button to go to Response screen.</Desc>
+            <Desc>En cualquier momento, presione dos veces en el botón de “Más” para ir a la pantalla de respuestas.</Desc>
             <Voice>At any point of time Double Tap on More Button to go to Response screen.</Voice>
             <Image>tutorial9_e</Image>
-            <Progress>tutorial9_e</Progress>
+            <Progress>tutorial9_s</Progress>
         </Item>
 		<Item>
-            <Desc>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Desc>
-            <Voice>In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.</Voice>
-            <Image>tutorial10_e</Image>
-            <Progress>tutorial10_e</Progress>
-        </Item>
-		<Item>
-            <Desc>Use the on screen keyboard to type in your text.</Desc>
-            <Voice>Use the on screen keyboard to type in your text.</Voice>
-            <Image>tutorial11_e</Image>
-            <Progress>tutorial11_e</Progress>
-        </Item>
-		<Item>
-            <Desc>Press 'Done' on the On screen keyboard when you are finished typing.</Desc>
-            <Voice>Press 'Done' on the On screen keyboard when you are finished typing.</Voice>
-            <Image>tutorial12_e</Image>
-            <Progress>tutorial12_e</Progress>
-        </Item>
-		<Item>
-            <Desc>Use 'Speak' Button to speak your text
-                Use 'Save' Button to save your text
-                Use 'Cancel' Button to cancel the box when your are done</Desc>
-            <Voice>Use Speak Button to speak your text
-			      Use Save Button to save your text
-				  Use Cancel Button to cancel the box when your are done</Voice>
-            <Image>tutorial13_e</Image>
-            <Progress>tutorial13_e</Progress>
-        </Item>
-		<Item>
-             <Desc>Scroll up and down and make your selection by Double Tapping. </Desc>
+             <Desc>Desplace la pantalla y presione dos veces cualquier botón para responder.</Desc>
             <Voice>Scroll up and down and make your selection by Double Tapping.</Voice>
             <Image>tutorial14_e</Image>
-            <Progress>tutorial14_e</Progress>
+            <Progress>tutorial110_s</Progress>
         </Item>
     </NonEnglish>
 
