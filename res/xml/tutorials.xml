@@ -1,8 +1,8 @@
 ﻿<xml>
     <Hearing>
         <Item>
-            <Desc>Welcome to Hearing Tutorial. Please double tap on your selected point of transit.</Desc>
-            <Voice>Welcome to Hearing Tutorial. Please Double Tap on your selected point of transit.</Voice>
+            <Desc>Welcome to Hearing Tutorial. Please double tap on your selected point of transit.\nSwipe to continue.</Desc>
+            <Voice>Welcome to Hearing Tutorial. Please Double Tap on your selected point of transit. Swipe to continue. </Voice>
             <Image>tutorial1_e</Image>
             <Progress>progressbar1_e</Progress>
         </Item>
@@ -84,8 +84,8 @@
 
     <NonEnglish>
         <Item>
-            <Desc>Bienvenido al Tutorial Auditivo. Por favor presione dos veces en su punto de transporte seleccionado.</Desc>
-            <Voice>Welcome to Hearing Tutorial. Please Double Tap on your selected point of transit.</Voice>
+            <Desc>Bienvenido al Tutorial Auditivo. Por favor presione dos veces en su punto de transporte seleccionado.\nDeslizar para continuar</Desc>
+            <Voice>Welcome to Hearing Tutorial. Please Double Tap on your selected point of transit. Swipe to continue.</Voice>
             <Image>tutorial1_s</Image>
             <Progress>progressbar1_s</Progress>
         </Item>
