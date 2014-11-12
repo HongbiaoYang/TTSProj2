@@ -127,27 +127,21 @@
         </Item>
 		<Item>
             <Desc>En cualquier momento, presione dos veces en el botón de “Sí” o “No” para responder.</Desc>
-            <Voice>At any point of time Double Tap on Home Button to go to Home screen.</Voice>
+            <Voice>At any point of time Double Tap on Yes or No Button to respond</Voice>
             <Image>tutorial7_s</Image>
             <Progress>tutorial7_s</Progress>
         </Item>
 		<Item>
-            <Desc>At any point of time Double Tap on Yes or No Button to respond.</Desc>
-            <Voice>At any point of time Double Tap on Yes or No Button to respond.</Voice>
+            <Desc>En cualquier momento, presione dos veces en el botón de “Más” para ir a la pantalla de respuestas.</Desc>
+            <Voice>At any point of time Double Tap on More Button to go to Response screen.</Voice>
             <Image>tutorial8_s</Image>
             <Progress>tutorial8_s</Progress>
         </Item>
 		<Item>
-            <Desc>En cualquier momento, presione dos veces en el botón de “Más” para ir a la pantalla de respuestas.</Desc>
-            <Voice>At any point of time Double Tap on More Button to go to Response screen.</Voice>
-            <Image>tutorial9_s</Image>
-            <Progress>tutorial9_s</Progress>
-        </Item>
-		<Item>
              <Desc>Desplace la pantalla y presione dos veces cualquier botón para responder.</Desc>
             <Voice>Scroll up and down and make your selection by Double Tapping.</Voice>
-            <Image>tutorial110_s</Image>
-            <Progress>tutorial110_s</Progress>
+            <Image>tutorial9_s</Image>
+            <Progress>tutorial9_s</Progress>
         </Item>
     </NonEnglish>
 
