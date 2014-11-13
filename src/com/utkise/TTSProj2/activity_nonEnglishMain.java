@@ -70,7 +70,7 @@ public class activity_nonEnglishMain extends Activity {
     private void setTutorialPage(TutorialItem tutorialItem) {
         screen.setImageResource(tutorialItem.image);
         progress.setImageResource(tutorialItem.progress);
-        desc.setText(tutorialItem.desc);
+        desc.setText(tutorialItem.desc.replace("\\n", "\n"));
         MyProperties.getInstance().speakout(tutorialItem.voice);
     }
 
