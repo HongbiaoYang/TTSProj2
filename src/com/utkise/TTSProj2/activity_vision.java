@@ -64,9 +64,9 @@ public class activity_vision extends Activity {
 
         root = new ArrayList<ItemStruct>();
         fillEmergencyList(root, MyProperties.getInstance().emergency);
-        fillItemList(root, MyProperties.getInstance().boarding);
-        fillItemList(root, MyProperties.getInstance().traveling);
-        fillItemList(root, MyProperties.getInstance().gettingoff);
+        fillItemList(root, MyProperties.getInstance().gettingonoff);
+        fillItemList(root, MyProperties.getInstance().ridingbus);
+        fillItemList(root, MyProperties.getInstance().safety);
 
         // first animation in vision
         ImageView image = (ImageView) findViewById(R.id.frame_home);
@@ -185,15 +185,9 @@ public class activity_vision extends Activity {
         // next level list
         List<ItemStruct> gInfo, tInfo, sInfo, cInfo;
         gInfo = type.getGeneralInfo();
-        tInfo = type.getTripInfo();
-        sInfo = type.getSafety();
-        cInfo = type.getComfort();
 
         // set children
         gItem.setChild(gInfo);
-        tItem.setChild(tInfo);
-        sItem.setChild(sInfo);
-        cItem.setChild(cInfo);
 
         // add item (general info, trip info, safety, comfort)
         List<ItemStruct> infoList = new ArrayList<ItemStruct>();

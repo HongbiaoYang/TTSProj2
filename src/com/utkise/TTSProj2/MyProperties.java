@@ -24,7 +24,7 @@ public class MyProperties {
     public LANG Language;
     public TextToSpeech gtts;
     public Vibrator vb;
-    public DisableType boarding, traveling, gettingoff, emergency, response, currentType;
+    public DisableType gettingonoff, ridingbus, safety, emergency, response, currentType;
     public Stack<String> titleStack;
     public List<String[]> TITLES;
     public Stack<AnimationDrawable> animStack;
@@ -122,9 +122,9 @@ public class MyProperties {
 
     private MyProperties() {
         Language = LANG.ENGLISH;
-        boarding = null;
-        traveling = null;
-        gettingoff = null;
+        gettingonoff = null;
+        ridingbus = null;
+        safety = null;
         emergency = null;
         response = null;
         currentType = null;
@@ -200,9 +200,9 @@ public class MyProperties {
 
     // the disable type list
     public DisableType[] DisableList() {
-        DisableType[] temp = {MyProperties.getInstance().boarding,
-                              MyProperties.getInstance().traveling,
-                              MyProperties.getInstance().gettingoff};
+        DisableType[] temp = {MyProperties.getInstance().gettingonoff,
+                              MyProperties.getInstance().ridingbus,
+                              MyProperties.getInstance().safety};
 
         return temp;
     }

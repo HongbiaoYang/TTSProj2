@@ -43,20 +43,20 @@ public class activity_main extends Activity implements OnInitListener {
         image.setBackgroundResource(R.drawable.frame);
         MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
 
-        if (MyProperties.getInstance().boarding == null) {
-            MyProperties.getInstance().boarding = new DisableType("boarding", R.drawable.gettingon, R.drawable.boarding_v);
+        if (MyProperties.getInstance().gettingonoff == null) {
+            MyProperties.getInstance().gettingonoff = new DisableType("boarding", R.drawable.gettingon, R.drawable.boarding_v);
 
-            loadXMLResourceParser(MyProperties.getInstance().boarding, R.xml.boarding);
+            loadXMLResourceParser(MyProperties.getInstance().gettingonoff, R.xml.gettingonoff);
         }
 
-        if (MyProperties.getInstance().traveling == null) {
-            MyProperties.getInstance().traveling = new DisableType("traveling", R.drawable.travelling, R.drawable.travelling_v);
-            loadXMLResourceParser(MyProperties.getInstance().traveling, R.xml.travelling);
+        if (MyProperties.getInstance().ridingbus == null) {
+            MyProperties.getInstance().ridingbus = new DisableType("traveling", R.drawable.travelling, R.drawable.travelling_v);
+            loadXMLResourceParser(MyProperties.getInstance().ridingbus, R.xml.ridingbus);
         }
 
-        if (MyProperties.getInstance().gettingoff == null) {
-            MyProperties.getInstance().gettingoff = new DisableType("getting off", R.drawable.gettingoff, R.drawable.gettingoff_v);
-            loadXMLResourceParser(MyProperties.getInstance().gettingoff, R.xml.gettingoff);
+        if (MyProperties.getInstance().safety == null) {
+            MyProperties.getInstance().safety = new DisableType("getting off", R.drawable.gettingoff, R.drawable.gettingoff_v);
+            loadXMLResourceParser(MyProperties.getInstance().safety, R.xml.safety);
         }
 
         if (MyProperties.getInstance().emergency == null) {
@@ -335,8 +335,7 @@ public class activity_main extends Activity implements OnInitListener {
                             }
                             currentItem = new ItemStruct();
                             currentLevel.add(currentItem);
-                       } else if (name.equalsIgnoreCase("general") || name.equalsIgnoreCase("trip") ||
-                               name.equalsIgnoreCase("safety") || name.equalsIgnoreCase("comfort")){
+                       } else if (name.equalsIgnoreCase("general") ){
                            accept = true;
                            // accept those items in cognitive only for these above categories
                         } else if (currentItem != null) {
@@ -380,8 +379,7 @@ public class activity_main extends Activity implements OnInitListener {
                             } else {
                                 currentItem = itemStack.pop();
                             }
-                        } else if (name.equalsIgnoreCase("general") || name.equalsIgnoreCase("trip") ||
-                                    name.equalsIgnoreCase("safety") || name.equalsIgnoreCase("comfort") ||
+                        } else if (name.equalsIgnoreCase("general") ||
                                     name.equalsIgnoreCase("emergency") || name.equalsIgnoreCase("response")) {
                             boarding.setInformation(name, root);
                             root = new ArrayList<ItemStruct>();

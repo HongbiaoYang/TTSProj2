@@ -16,7 +16,7 @@ import android.widget.TextView;
  */
 public class activity_hearing extends Activity implements OnInitListener {
     private TextToSpeech tts;
-    private Button boarding, gettingoff, traveling, emergency;
+    private Button safety, gettingonoff, ridingbus, emergency;
     private ImageView goBack;
     private TextView title;
     private int count = CONSTANT.START;
@@ -27,23 +27,23 @@ public class activity_hearing extends Activity implements OnInitListener {
 
         // MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
 
-        boarding = (Button)findViewById(R.id.Hboarding);
-        gettingoff = (Button)findViewById(R.id.Hgettingoff);
-        traveling = (Button)findViewById(R.id.Htraveling);
+        gettingonoff = (Button)findViewById(R.id.Hboarding);
+        safety = (Button)findViewById(R.id.Hgettingoff);
+        ridingbus = (Button)findViewById(R.id.Htraveling);
         emergency = (Button)findViewById(R.id.Hemergency);
         goBack = (ImageView)findViewById(R.id.header1);
 
 
 
         if (MyProperties.getInstance().Language == LANG.SPANISH) {
-            boarding.setBackgroundResource(R.drawable.gettingon_s);
-            gettingoff.setBackgroundResource(R.drawable.gettingoff_s);
-            traveling.setBackgroundResource(R.drawable.travelling_s);
+            gettingonoff.setBackgroundResource(R.drawable.gettingon_s);
+            safety.setBackgroundResource(R.drawable.gettingoff_s);
+            ridingbus.setBackgroundResource(R.drawable.travelling_s);
             emergency.setBackgroundResource(R.drawable.emergency_s);
         } else {
-            boarding.setBackgroundResource(R.drawable.gettingon);
-            gettingoff.setBackgroundResource(R.drawable.gettingoff);
-            traveling.setBackgroundResource(R.drawable.travelling);
+            gettingonoff.setBackgroundResource(R.drawable.gettingon);
+            safety.setBackgroundResource(R.drawable.gettingoff);
+            ridingbus.setBackgroundResource(R.drawable.travelling);
             emergency.setBackgroundResource(R.drawable.emergency);
         }
 
@@ -82,7 +82,7 @@ public class activity_hearing extends Activity implements OnInitListener {
             }
         });
 
-        boarding.setOnClickListener(new View.OnClickListener() {
+        gettingonoff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 count++;
@@ -104,16 +104,22 @@ public class activity_hearing extends Activity implements OnInitListener {
                     String board_str = MyProperties.getInstance().getTitleEither(TITLE.BOARDING);
                     MyProperties.getInstance().titleStack.push(board_str);
 
-                    Intent intent = new Intent();
-                    MyProperties.getInstance().currentType = MyProperties.getInstance().boarding;
+                   /* Intent intent = new Intent();
+                    MyProperties.getInstance().currentType = MyProperties.getInstance().gettingonoff;
                     intent.setClass(activity_hearing.this, activity_boarding.class);
+                    startActivity(intent);*/
+
+                    MyProperties.getInstance().currentType = MyProperties.getInstance().gettingonoff;
+                    Intent intent = new Intent();
+                    intent.putExtra("Type", "general");
+                    intent.setClass(activity_hearing.this, activity_display.class);
                     startActivity(intent);
                 }
 
             }
         });
 
-        traveling.setOnClickListener(new View.OnClickListener() {
+        ridingbus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 count++;
@@ -134,16 +140,17 @@ public class activity_hearing extends Activity implements OnInitListener {
                     String travel_str = MyProperties.getInstance().getTitleName(TITLE.TRAVELLING);
                     MyProperties.getInstance().titleStack.push(travel_str);
 
+                    MyProperties.getInstance().currentType = MyProperties.getInstance().ridingbus;
                     Intent intent = new Intent();
-                    intent.setClass(activity_hearing.this, activity_boarding.class);
-                    MyProperties.getInstance().currentType = MyProperties.getInstance().traveling;
+                    intent.putExtra("Type", "general");
+                    intent.setClass(activity_hearing.this, activity_display.class);
                     startActivity(intent);
                 }
 
             }
         });
 
-        gettingoff.setOnClickListener(new View.OnClickListener() {
+        safety.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 count++;
@@ -167,9 +174,10 @@ public class activity_hearing extends Activity implements OnInitListener {
                     MyProperties.getInstance().titleStack.push(getoff_str);
 
 
+                    MyProperties.getInstance().currentType = MyProperties.getInstance().safety;
                     Intent intent = new Intent();
-                    intent.setClass(activity_hearing.this, activity_boarding.class);
-                    MyProperties.getInstance().currentType = MyProperties.getInstance().gettingoff;
+                    intent.putExtra("Type", "general");
+                    intent.setClass(activity_hearing.this, activity_display.class);
                     startActivity(intent);
                 }
 

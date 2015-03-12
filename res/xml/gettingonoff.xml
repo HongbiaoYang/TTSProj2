@@ -1,5 +1,5 @@
 ﻿<xml>
-    <GettingOnOff>
+    <General>
     <Item>
 			<Title>What is your name ?</Title>
 			<Text>What is your name ?</Text>
@@ -18,5 +18,5 @@
 			<ImageV>picture107_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
-    </GettingOnOff>
+    </General>
 </xml>

@@ -8,9 +8,6 @@ import java.util.List;
  */
 public class DisableType {
     private List<ItemStruct> generalInfo;
-    private List<ItemStruct> tripInfo;
-    private List<ItemStruct> safety;
-    private List<ItemStruct> comfort;
     private List<ItemStruct> emergency;
     private List<ItemStruct> response;
 
@@ -21,9 +18,6 @@ public class DisableType {
 
     public DisableType(String name, Integer img, Integer imgV) {
         generalInfo = null;
-        tripInfo = null;
-        safety = null;
-        comfort = null;
         emergency = null;
         this.response = null;
         this.tag = name;
@@ -32,20 +26,8 @@ public class DisableType {
         this.customCount = 1;
     }
 
-    public void setTripInfo(List<ItemStruct> tripInfo) {
-        this.tripInfo = tripInfo;
-    }
-
-    public void setSafety(List<ItemStruct> safety) {
-        this.safety = safety;
-    }
-
     public void setEmergency(List<ItemStruct> emergency) {
         this.emergency = emergency;
-    }
-
-    public void setComfort(List<ItemStruct> comfort) {
-        this.comfort = comfort;
     }
 
     public void setGeneralInfo(List<ItemStruct> generalInfo) {
@@ -55,12 +37,6 @@ public class DisableType {
     public void setInformation(String type, List<ItemStruct> info) {
         if (type.equalsIgnoreCase("general")) {
             this.generalInfo = info;
-        } else if (type.equalsIgnoreCase("trip")) {
-            this.tripInfo = info;
-        } else if (type.equalsIgnoreCase("safety")) {
-            this.safety = info;
-        } else if (type.equalsIgnoreCase("comfort")) {
-            this.comfort = info;
         } else if (type.equalsIgnoreCase("emergency")) {
             this.emergency = info;
         } else if (type.equalsIgnoreCase("response"))  {
@@ -72,12 +48,6 @@ public class DisableType {
     public List<ItemStruct> getInformation(String type) {
         if (type.equalsIgnoreCase("general")) {
             return generalInfo;
-        } else if (type.equalsIgnoreCase("trip")) {
-            return tripInfo;
-        } else if (type.equalsIgnoreCase("safety")) {
-            return safety;
-        } else if (type.equalsIgnoreCase("comfort")) {
-            return comfort;
         } else if (type.equalsIgnoreCase("emergency")) {
             return emergency;
         } else if (type.equalsIgnoreCase("response")){
@@ -91,9 +61,6 @@ public class DisableType {
     public List<ItemStruct> getAllInfo() {
         List<ItemStruct> newList = new ArrayList<ItemStruct>();
         newList.addAll(getGeneralInfo());
-        newList.addAll(getTripInfo());
-        newList.addAll(getSafety());
-        newList.addAll(getComfort());
 
         return newList;
     }
@@ -102,18 +69,6 @@ public class DisableType {
 
     public List<ItemStruct> getGeneralInfo() {
         return generalInfo;
-    }
-
-    public List<ItemStruct> getTripInfo() {
-        return tripInfo;
-    }
-
-    public List<ItemStruct> getSafety() {
-        return safety;
-    }
-
-    public List<ItemStruct> getComfort() {
-        return comfort;
     }
 
     public List<ItemStruct> getEmergency() {
