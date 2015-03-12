@@ -1,0 +1,22 @@
+﻿<xml>
+<RidingBus>
+    <Item>
+			<Title>What is your name ?</Title>
+			<Text>What is your name ?</Text>
+            <Titulo>¿Cuál es su nombre?</Titulo>
+            <Texto>¿Cuál es su nombre?</Texto>
+            <Image>picture13</Image>
+			<ImageV>picture13_v</ImageV>
+            <Color>#fdbd35</Color>
+		</Item>
+		<Item>
+			<Title>Hello, How are you?</Title>
+			<Text>Hello, How are you?</Text>
+			<Titulo>¡Hola! ¿Cómo está?</Titulo>
+            <Texto>¡Hola! ¿Cómo está?</Texto>
+			<Image>picture107</Image>
+			<ImageV>picture107_v</ImageV>
+			<Color>#fdbd35</Color>
+		</Item>
+    </RidingBus>
+</xml>
