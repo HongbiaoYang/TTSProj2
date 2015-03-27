@@ -175,29 +175,7 @@ public class activity_vision extends Activity {
         level.setVImageID(type.getImageV());
         level.setText(LANG.ENGLISH, type.getTag());
 
-        // next level item
-        ItemStruct gItem, tItem, sItem, cItem;
-        gItem = new ItemStruct(R.drawable.generalinfo_v, "General Information");
-        tItem = new ItemStruct(R.drawable.tripinfo_v, "Trip Information");
-        sItem = new ItemStruct(R.drawable.safety_v, "Safety");
-        cItem = new ItemStruct(R.drawable.comfort_v, "Comfort");
-
-        // next level list
-        List<ItemStruct> gInfo, tInfo, sInfo, cInfo;
-        gInfo = type.getGeneralInfo();
-
-        // set children
-        gItem.setChild(gInfo);
-
-        // add item (general info, trip info, safety, comfort)
-        List<ItemStruct> infoList = new ArrayList<ItemStruct>();
-        infoList.add(gItem);
-        infoList.add(tItem);
-        infoList.add(sItem);
-        infoList.add(cItem);
-
-        // set top children (boarding, )
-        level.setChild(infoList);
+        level.setChild(type.getGeneralInfo());
 
         node.add(level);
     }
