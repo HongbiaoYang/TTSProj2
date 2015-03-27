@@ -54,6 +54,24 @@
 			<ImageV>picture173_v</ImageV>
 			<Color>#e7402e</Color>
 		</Item>
+		<Item> 
+			<Title>I feel scared</Title>
+			<Text>I feel scared</Text>
+			<Titulo>Algo esta descompuesto en el transporte</Titulo>
+			<Texto>Algo esta descompuesto en el transporte</Texto>
+			<Image>picture173</Image>
+			<ImageV>picture173_v</ImageV>
+			<Color>#e7402e</Color>
+		</Item>
+		<Item> 
+			<Title>I feel scared</Title>
+			<Text>I feel scared</Text>
+			<Titulo>Me siento con miedo </Titulo>
+            <Texto>Me siento con miedo</Texto>
+			<Image>picture25</Image>
+			<ImageV>picture25_v</ImageV>
+			<Color>#fdbd35</Color>
+		</Item>
 		
 </Emergency>
 </xml>

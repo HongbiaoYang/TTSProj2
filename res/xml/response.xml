@@ -79,21 +79,5 @@
             <Image>picture167</Image>
 			<ImageV>picture167_v</ImageV>
         </Item>
-		<Item>
-            <Title>Will you please call, text or contact my supervisor?</Title>
-            <Text>Will you please call, text or contact my supervisor?</Text>
-			<Titulo>Podría llamar, enviar un mensaje de texto o contactar a mi supervisor/tutor?</Titulo>
-			<Texto>Podría llamar, enviar un mensaje de texto o contactar a mi supervisor/tutor?</Texto>
-            <Image>picture168</Image>
-			<ImageV>picture168_v</ImageV>
-        </Item>
-		<Item>
-            <Title>Will you please call, text or contact my spouse?</Title>
-            <Text>Will you please call, text or contact my spouse?</Text>
-			<Titulo>Podría llamar, enviar un mensaje de texto o contactar a mi esposo(a)?</Titulo>
-			<Texto>Podría llamar, enviar un mensaje de texto o contactar a mi esposo(a)?</Texto>
-            <Image>picture169</Image>
-			<ImageV>picture169_v</ImageV>
-        </Item>
     </Response>
 </xml>

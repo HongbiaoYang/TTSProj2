@@ -1,22 +1,77 @@
 ﻿<xml>
 <General>
-    <Item>
-			<Title>What is your name ?</Title>
-			<Text>What is your name ?</Text>
-            <Titulo>¿Cuál es su nombre?</Titulo>
-            <Texto>¿Cuál es su nombre?</Texto>
-            <Image>picture13</Image>
-			<ImageV>picture13_v</ImageV>
-            <Color>#fdbd35</Color>
+        <Item> 
+			<Title>I am going home.</Title>
+			<Text>I am going home. </Text>
+			<Titulo>Voy a casa</Titulo>
+			<Texto>Voy a casa</Texto>
+			<Image>picture44</Image>
+			<ImageV>picture44_v</ImageV>
+			<Color>#4ea554</Color>
+		</Item>	
+		<Item> 
+			<Title>I am going to Work.</Title>
+			<Text>I am going to Work. </Text>
+			<Titulo>Voy al trabajo</Titulo>
+			<Texto>Voy al trabajo</Texto>
+			<Image>picture42</Image>
+			<ImageV>picture42_v</ImageV>
+			<Color>#4ea554</Color>
+		</Item>	
+		<Item> 
+			<Title>Can you get the driver for me? </Title>
+			<Text>Can you get the driver for me?</Text>
+			<Titulo>¿Puede llamar al conductor por mí?</Titulo>
+			<Texto>¿Puede llamar al conductor por mí?</Texto>
+			<Image>picture15</Image>
+			<ImageV>picture15_v</ImageV>
+			<Color>#4ea554</Color>
+		</Item>	
+		<Item> 
+			<Title>Could you please help me? </Title>
+			<Text>Could you please help me?</Text>
+			<Titulo>¿Me podría ayudar por favor?</Titulo>
+			<Texto>¿Me podría ayudar por favor?</Texto>
+			<Image>picture94</Image>
+			<ImageV>picture94_v</ImageV>
+			<Color>#4ea554</Color>
+		</Item>	
+		<Item> 
+			<Title>I am afraid of dogs. Can you please tell the owner?  </Title>
+			<Text>I am afraid of dogs. Can you please tell the owner?</Text>
+			<Titulo>Tengo miedo a los perros, le puede decir a su dueño.</Titulo>
+			<Texto>Tengo miedo a los perros, le puede decir a su dueño</Texto>
+			<Image>picture89</Image>
+			<ImageV>picture89_v</ImageV>
+			<Color>#4ea554</Color>
 		</Item>
-		<Item>
-			<Title>Hello, How are you?</Title>
-			<Text>Hello, How are you?</Text>
-			<Titulo>¡Hola! ¿Cómo está?</Titulo>
-            <Texto>¡Hola! ¿Cómo está?</Texto>
-			<Image>picture107</Image>
-			<ImageV>picture107_v</ImageV>
+		<Item> 
+			<Title>I am allergic to smells.</Title>
+			<Text>I am allergic to smells.</Text>
+			<Titulo>Soy alérgico a los aromas</Titulo>
+			<Texto>Soy alérgico a los aromas</Texto>
+			<Image>picture90</Image>
+			<ImageV>picture90_v</ImageV>
+			<Color>#4ea554</Color>
+		</Item>
+		<Item> 
+			<Title>I cannot reach the STOP pull chord or button, please help</Title>
+			<Text>I cannot reach the STOP pull chord or button, please help</Text>
+			<Titulo>No alcanzo el cordón-botón para hacer la parada, ¿me podría ayudar?</Titulo>
+			<Texto>No alcanzo el cordón-botón para hacer la parada, ¿me podría ayudar?</Texto>
+			<Image>picture81</Image>
+			<ImageV>picture81_v</ImageV>
+			<Color>#8661a6</Color>
+		</Item>
+		<Item> 
+			<Title>I need to go to bathroom</Title>
+			<Text>I need to go to bathroom</Text>
+			<Titulo>Necesito ir al baño</Titulo>
+            <Texto>Necesito ir al baño</Texto>
+			<Image>picture54</Image>
+			<ImageV>picture54_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
+		
     </General>
 </xml>

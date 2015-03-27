@@ -1,21 +1,84 @@
 ﻿<xml>
 <General>
-    <Item>
-			<Title>What is your name ?</Title>
-			<Text>What is your name ?</Text>
-            <Titulo>¿Cuál es su nombre?</Titulo>
-            <Texto>¿Cuál es su nombre?</Texto>
-            <Image>picture13</Image>
-			<ImageV>picture13_v</ImageV>
-            <Color>#fdbd35</Color>
+   <Item> 
+			<Title>Please do not use your cell phone while driving.</Title>
+			<Text>Please do not use your cell phone while driving.</Text>
+			<Titulo>Por favor no use su teléfono celular mientras conduce</Titulo>
+			<Texto>Por favor no use su teléfono celular mientras conduce</Texto>
+			<Image>picture57</Image>
+			<ImageV>picture57_v</ImageV>
+			<Color>#4ea554</Color>
 		</Item>
-		<Item>
-			<Title>Hello, How are you?</Title>
-			<Text>Hello, How are you?</Text>
-			<Titulo>¡Hola! ¿Cómo está?</Titulo>
-            <Texto>¡Hola! ¿Cómo está?</Texto>
-			<Image>picture107</Image>
-			<ImageV>picture107_v</ImageV>
+		<Item> 
+			<Title>Please go slower.</Title>
+			<Text>Please go slower.</Text>
+			<Titulo>Por favor vaya mas despacio</Titulo>
+			<Texto>Por favor vaya mas despacio</Texto>
+			<Image>picture58</Image>
+			<ImageV>picture58_v</ImageV>
+			<Color>#4ea554</Color>
+		</Item>
+		<Item> 
+			<Title>Please do not smoke and come into the bus, I have health issues.</Title>
+			<Text>Please do not smoke and come into the bus, I have health issues.</Text>
+			<Titulo>Por favor no fume y regrese al transporte, tengo problemas de salud</Titulo>
+			<Texto>Por favor no fume y regrese al transporte, tengo problemas de salud</Texto>
+			<Image>picture60</Image>
+			<ImageV>picture60_v</ImageV>
+			<Color>#4ea554</Color>
+		</Item>		
+		<Item> 
+			<Title>These stairs are slippery</Title>
+			<Text>These stairs are slippery</Text>
+			<Titulo>Los escalones están resbalosos, ¿podría poner un trapo encima?</Titulo>
+			<Texto>Los escalones están resbalosos, ¿podría poner un trapo encima?</Texto>
+			<Image>picture130</Image>
+			<ImageV>picture130_v</ImageV>
+			<Color>#fdbd35</Color>
+		</Item>	
+		<Item> 
+			<Title>This seat is wet</Title>
+			<Text>This seat is wet</Text>
+			<Titulo>El asiento está mojado, necesito moverme</Titulo>
+			<Texto>El asiento está mojado, necesito moverme</Texto>
+			<Image>picture117</Image>
+			<ImageV>picture117_v</ImageV>
+			<Color>#fdbd35</Color>
+		</Item>	
+		<Item> 
+			<Title>The bus floors are wet and slippery</Title>
+			<Text>The bus floors are wet and slippery</Text>
+			<Titulo>Hay agua en el piso y alguien podría resbalarse</Titulo>
+			<Texto>Hay agua en el piso y alguien podría resbalarse</Texto>
+			<Image>picture41</Image>
+			<ImageV>picture41_v</ImageV>
+			<Color>#fdbd35</Color>
+		</Item>	
+		<Item> 
+			<Title>This STOP pull chord or button is broken</Title>
+			<Text>This STOP pull chord or button is broken.</Text>
+			<Titulo>El cordón o botón para hacer la parada no funciona</Titulo>
+			<Texto>El cordón o botón para hacer la parada no funciona</Texto>
+			<Image>picture96</Image>
+			<ImageV>picture96_v</ImageV>
+			<Color>#8661a6</Color>
+		</Item> 
+		<Item> 
+			<Title>The seatbelt is not working</Title>
+			<Text>The seatbelt is not working</Text>
+			<Titulo>El cinturón no está funcionando</Titulo>
+			<Texto>El cinturón no está funcionando</Texto>
+			<Image>picture56</Image>
+			<ImageV>picture56_v</ImageV>
+			<Color>#fdbd35</Color>
+		</Item>
+		<Item> 
+			<Title>The tie-downs are not working</Title>
+			<Text>The tie-downs are not working</Text>
+			<Titulo>El ajuste no está funcionando</Titulo>
+			<Texto>El ajuste no está funcionando</Texto>
+			<Image>picture116</Image>
+			<ImageV>picture116_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
     </General>
