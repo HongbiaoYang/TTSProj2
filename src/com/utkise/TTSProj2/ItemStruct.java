@@ -89,7 +89,7 @@ public class ItemStruct {
         this.VImageID = VImageID;
     }
 
-    public int getVImageID() {
+    public Integer getVImageID() {
         return VImageID;
     }
 

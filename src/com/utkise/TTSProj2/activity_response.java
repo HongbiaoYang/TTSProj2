@@ -8,12 +8,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.text.InputType;
+import android.util.Log;
+import android.util.Xml;
 import android.view.View;
 import android.widget.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -23,13 +28,6 @@ public class activity_response extends Activity {
     private String[] web;
     private TextView title;
     private ImageView goback;
-
-    @Override
-    public void onBackPressed() {
-        MyProperties.getInstance().popStacks();
-        finish();
-    }
-
     private Integer[] imageId;
     private ListView list;
     private int count = CONSTANT.START;
@@ -55,6 +53,12 @@ public class activity_response extends Activity {
         });
 
         thisLevel = MyProperties.getInstance().response.getInformation("response");
+
+        // add customized item only when first time running this activity
+        if (MyProperties.getInstance().firstTime) {
+            addCustomizedItems(thisLevel);
+            MyProperties.getInstance().firstTime = false;
+        }
         updateList(thisLevel);
     }
 
@@ -152,13 +156,17 @@ public class activity_response extends Activity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int whichButton) {
+                        String deletedItem = thisLevel.get(position).getText();
                         thisLevel.remove(position);
                         MyProperties.getInstance().response.decreaseCustomCount();
                         updateList(thisLevel);
 
+                        saveDeletedItems(deletedItem);
                     }})
                 .setNegativeButton(android.R.string.no, null).show();
     }
+
+
 
 
     // add new customzied item
@@ -176,8 +184,9 @@ public class activity_response extends Activity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                MyProperties.getInstance().speakout(input.getText().toString());
-                ItemStruct item = new ItemStruct(R.drawable.customize, input.getText().toString());
+                String addedItem = input.getText().toString();
+                MyProperties.getInstance().speakout(addedItem);
+                ItemStruct item = new ItemStruct(R.drawable.customize, addedItem);
                 item.setSpecialTag("added");
                 thisLevel.add(1, item);
 
@@ -185,6 +194,9 @@ public class activity_response extends Activity {
                 MyProperties.getInstance().response.incrementCustomCount();
 
                 updateList(thisLevel);
+
+                saveAddedItems(addedItem);
+
             }
         });
 
@@ -227,6 +239,53 @@ public class activity_response extends Activity {
         // appearance of the input text
         input.setTextAppearance(this, R.style.ButtonText_Blue_20);
 
+    }
+
+
+    private void addCustomizedItems(List<ItemStruct> thisLevel) {
+        SharedPreferences responsePref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
+        Set<String> response = responsePref.getStringSet("Added", new HashSet<String>());
+
+        int index = 1;
+        for (String text : response){
+            ItemStruct item = new ItemStruct(R.drawable.customize, text);
+            item.setSpecialTag("added");
+            thisLevel.add(index++, item);
+        }
+
+    }
+
+    private void saveAddedItems(String item) {
+        SharedPreferences responsePref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
+        Set<String> response = responsePref.getStringSet("Added", new HashSet<String>());
+
+        Set<String> copy = new HashSet<String>();
+        cloneSet(response, copy);
+        copy.add(item);
+        response.clear();
+
+        responsePref.edit().putStringSet("Added", copy).apply();
+
+
+    }
+
+    private void saveDeletedItems(String item) {
+        SharedPreferences responsePref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
+        Set<String> response = responsePref.getStringSet("Added", null);
+
+        Set<String> copy = new HashSet<String>();
+        cloneSet(response, copy);
+        copy.remove(item);
+        response.clear();
+
+        responsePref.edit().putStringSet("Added", copy).apply();
+
+    }
+
+    private void cloneSet(Set<String> set1, Set<String> set2) {
+        for (String item : set1) {
+            set2.add(item);
+        }
     }
 
     // debug - reset tutorial to false
@@ -273,5 +332,20 @@ public class activity_response extends Activity {
             input.setText("");
 
         }
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        MyProperties.getInstance().popStacks();
+        finish();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("activity_response", "save customized items, if any");
+
     }
 }

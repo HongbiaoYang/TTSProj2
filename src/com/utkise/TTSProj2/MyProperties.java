@@ -32,6 +32,7 @@ public class MyProperties {
     public HashMap<String, List<TutorialItem>> tutorialLists;
     private List<ItemStruct> flatList;
     private boolean E_merged = false;
+    public boolean firstTime = true;
 
     // shut up
     public void shutup() {
