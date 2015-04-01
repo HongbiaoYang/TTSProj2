@@ -55,7 +55,7 @@ public class activity_main extends Activity implements OnInitListener {
         }
 
         if (MyProperties.getInstance().safety == null) {
-            MyProperties.getInstance().safety = new DisableType("getting off", R.drawable.gettingoff, R.drawable.gettingoff_v);
+            MyProperties.getInstance().safety = new DisableType("Safety", R.drawable.safety, R.drawable.safety_v);
             loadXMLResourceParser(MyProperties.getInstance().safety, R.xml.safety);
         }
 

@@ -158,9 +158,9 @@ public class MyProperties {
         TITLES.add(new String[]{"Spanish","Español"});
 
         // boarding, getting off, travelling, emergency
-        TITLES.add(new String[]{"Getting ON","Embarque"});
-        TITLES.add(new String[]{"Getting OFF","Bajar"});
-        TITLES.add(new String[]{"Travelling","Viajar"});
+        TITLES.add(new String[]{"Getting ON and Off the bus","Embarque"});
+        TITLES.add(new String[]{"Safety","Bajar"});
+        TITLES.add(new String[]{"Riding the Bus","Viajar"});
         TITLES.add(new String[]{"Emergency","Emergencia"});
 
         // general information, trip information, safety, comfort

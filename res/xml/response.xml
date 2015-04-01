@@ -72,12 +72,12 @@
 			<ImageV>picture165_v</ImageV>
         </Item>
 		<Item>
-            <Title>Will you please call, text or contact my parents?</Title>
-            <Text>Will you please call, text or contact my parents?</Text>
-			<Titulo>Podría llamar, enviar un mensaje de texto o contactar a mis padres?</Titulo>
-			<Texto>Podría llamar, enviar un mensaje de texto o contactar a mis padres?</Texto>
-            <Image>picture167</Image>
-			<ImageV>picture167_v</ImageV>
+            <Title>Will you please get in touch with my emergency contact?</Title>
+            <Text>Will you please get in touch with my emergency contact?</Text>
+			<Titulo>¿Podría por favor llamar a mi contacto de emergencia?</Titulo>
+			<Texto>¿Podría por favor llamar a mi contacto de emergencia?</Texto>
+            <Image>picture198</Image>
+			<ImageV>picture198_v</ImageV>
         </Item>
     </Response>
 </xml>
