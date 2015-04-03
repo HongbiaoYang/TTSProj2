@@ -107,10 +107,6 @@ public class activity_response extends Activity {
                         createNewItem();
                     } else if (item.getSpecialTag().equalsIgnoreCase("added")) {
                         MyProperties.getInstance().speakBoth(item);
-                    } else if (item.getSpecialTag().equalsIgnoreCase("debug_para")) {
-                        Intent intent = new Intent();
-                        intent.setClass(activity_response.this, debug_activity_click.class);
-                        startActivity(intent);
                     }
 
                 }

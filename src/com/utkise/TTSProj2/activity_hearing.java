@@ -36,10 +36,10 @@ public class activity_hearing extends Activity implements OnInitListener {
 
 
         if (MyProperties.getInstance().Language == LANG.SPANISH) {
-            gettingonoff.setBackgroundResource(MyProperties.getInstance().gettingonoff.getImageV());
-            safety.setBackgroundResource(MyProperties.getInstance().safety.getImageV());
-            ridingbus.setBackgroundResource(MyProperties.getInstance().ridingbus.getImageV());
-            emergency.setBackgroundResource(MyProperties.getInstance().emergency.getImageV());
+            gettingonoff.setBackgroundResource(MyProperties.getInstance().gettingonoff.getImageS());
+            safety.setBackgroundResource(MyProperties.getInstance().safety.getImageS());
+            ridingbus.setBackgroundResource(MyProperties.getInstance().ridingbus.getImageS());
+            emergency.setBackgroundResource(MyProperties.getInstance().emergency.getImageS());
         } else {
             gettingonoff.setBackgroundResource(MyProperties.getInstance().gettingonoff.getImage());
             safety.setBackgroundResource(MyProperties.getInstance().safety.getImage());

@@ -173,6 +173,7 @@ public class activity_vision extends Activity {
         // create image and text of this item
         level.setImageID(type.getImage());
         level.setVImageID(type.getImageV());
+
         level.setText(LANG.ENGLISH, type.getTag());
 
         level.setChild(type.getGeneralInfo());

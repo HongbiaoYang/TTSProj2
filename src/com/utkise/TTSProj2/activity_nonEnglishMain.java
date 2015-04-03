@@ -131,7 +131,7 @@ public class activity_nonEnglishMain extends Activity {
                     captureSwipe(dx, dy);
                     break;
                 case MotionEvent.ACTION_UP:
-                    if (direction != DIRECTION.EMPTY) {
+                    if (direction != null && direction != DIRECTION.EMPTY) {
                         // MyProperties.getInstance().speakout(direction);
                         detectSwipe(direction);
                         mIsDown = 0;

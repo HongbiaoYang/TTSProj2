@@ -7,6 +7,7 @@ import java.util.List;
  * Created by Bill on 9/9/14.
  */
 public class DisableType {
+
     private List<ItemStruct> generalInfo;
     private List<ItemStruct> emergency;
     private List<ItemStruct> response;
@@ -14,15 +15,17 @@ public class DisableType {
     private String tag;
     private Integer image;
     private Integer imageV;
+    private Integer imageS;
     private Integer customCount;
 
-    public DisableType(String name, Integer img, Integer imgV) {
+    public DisableType(String name, Integer img, Integer imgV, Integer imgS) {
         generalInfo = null;
         emergency = null;
         this.response = null;
         this.tag = name;
         this.image = img;
         this.imageV = imgV;
+        this.imageS = imgS;
         this.customCount = 1;
     }
 
@@ -87,8 +90,8 @@ public class DisableType {
         return imageV;
     }
 
-    public void setImageV(Integer imgV) {
-        this.imageV = imgV;
+    public Integer getImageS() {
+        return imageS;
     }
 
     public Integer getCustomCount() {

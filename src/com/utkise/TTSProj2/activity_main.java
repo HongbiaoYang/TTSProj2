@@ -44,29 +44,37 @@ public class activity_main extends Activity implements OnInitListener {
         MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
 
         if (MyProperties.getInstance().gettingonoff == null) {
-            MyProperties.getInstance().gettingonoff = new DisableType("boarding", R.drawable.gettingon, R.drawable.boarding_v);
+            MyProperties.getInstance().gettingonoff = new DisableType("Getting on and off the bus", R.drawable.gettingonandoffthebus,
+                                                                                     R.drawable.gettingonandoffthebus_v,
+                                                                                     R.drawable.gettingonandoffthebus_s);
 
             loadXMLResourceParser(MyProperties.getInstance().gettingonoff, R.xml.gettingonoff);
         }
 
         if (MyProperties.getInstance().ridingbus == null) {
-            MyProperties.getInstance().ridingbus = new DisableType("traveling", R.drawable.travelling, R.drawable.travelling_v);
+            MyProperties.getInstance().ridingbus = new DisableType("Riding the bus", R.drawable.ridingthebus,
+                                                                                   R.drawable.ridingthebus_v,
+                                                                                   R.drawable.ridingthebus_s);
             loadXMLResourceParser(MyProperties.getInstance().ridingbus, R.xml.ridingbus);
         }
 
         if (MyProperties.getInstance().safety == null) {
-            MyProperties.getInstance().safety = new DisableType("Safety", R.drawable.safety, R.drawable.safety_v);
+            MyProperties.getInstance().safety = new DisableType("Safety", R.drawable.safety,
+                                                                             R.drawable.safety_v,
+                                                                             R.drawable.safety_s);
             loadXMLResourceParser(MyProperties.getInstance().safety, R.xml.safety);
         }
 
         if (MyProperties.getInstance().emergency == null) {
-            MyProperties.getInstance().emergency = new DisableType("emergency", R.drawable.emergency, R.drawable.emergency_v);
+            MyProperties.getInstance().emergency = new DisableType("Emergency", R.drawable.emergency,
+                                                                                    R.drawable.emergency_v,
+                                                                                    R.drawable.emergency_s);
             loadXMLResourceParser(MyProperties.getInstance().emergency, R.xml.emergency);
         }
 
 
         if (MyProperties.getInstance().response == null) {
-            MyProperties.getInstance().response = new DisableType("response", 0, 0);
+            MyProperties.getInstance().response = new DisableType("Response", 0, 0,0);
             loadXMLResourceParser(MyProperties.getInstance().response, R.xml.response);
         }
 
