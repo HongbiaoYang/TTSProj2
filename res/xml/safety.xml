@@ -59,8 +59,8 @@
 			<Text>These seats are wet</Text>
 			<Titulo>El asiento está mojado</Titulo>
 			<Texto>El asiento está mojado</Texto>
-			<Image>picture177</Image>
-			<ImageV>picture177_v</ImageV>
+			<Image>picture117</Image>
+			<ImageV>picture117_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>	
 		<Item> 
@@ -86,8 +86,8 @@
 			<Text>The seatbelt is not working</Text>
 			<Titulo>El cinturón no está funcionando</Titulo>
 			<Texto>El cinturón no está funcionando</Texto>
-			<Image>picture56</Image>
-			<ImageV>picture56_v</ImageV>
+			<Image>picture97</Image>
+			<ImageV>picture97_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
 		<Item> 
