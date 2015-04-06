@@ -235,8 +235,8 @@ public class activity_main extends Activity implements OnInitListener {
             }
         });
 
-
     }
+
 
 
     private void storeVoiceFile(String destFileName) {
@@ -279,7 +279,19 @@ public class activity_main extends Activity implements OnInitListener {
         if (status == TextToSpeech.SUCCESS) {
             LANG lan = MyProperties.getInstance().Language;
             MyProperties.getInstance().doInit(lan);
-            MyProperties.getInstance().speakout("Welcome to project Eric, double tap to make a selection");
+
+
+            Log.i(TAG, "onInit TTS, firstOpen="+MyProperties.getInstance().firstTimeOpenApp);
+            if (MyProperties.getInstance().firstTimeOpenApp) {
+                MyProperties.getInstance().speakout("Welcome to project Eric, double tap to make a selection");
+                Log.i(TAG, "onInit inside long, firstOpen="+MyProperties.getInstance().firstTimeOpenApp);
+                MyProperties.getInstance().firstTimeOpenApp = false;
+
+            } else {
+                MyProperties.getInstance().speakout("Project Eric");
+            }
+
+            Log.i("activity_main", "onInit of TTS");
         } else {
             Log.e("TTS", "Initilization Failed!");
         }
@@ -303,7 +315,9 @@ public class activity_main extends Activity implements OnInitListener {
 
     @Override
     protected void onResume() {
-        MyProperties.getInstance().speakout("Welcome to project Eric, double tap to make a selection");
+
+            MyProperties.getInstance().speakout("Project Eric");
+
         super.onResume();
     }
 

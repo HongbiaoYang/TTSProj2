@@ -55,9 +55,9 @@ public class activity_response extends Activity {
         thisLevel = MyProperties.getInstance().response.getInformation("response");
 
         // add customized item only when first time running this activity
-        if (MyProperties.getInstance().firstTime) {
+        if (MyProperties.getInstance().firstTimeResponsePage) {
             addCustomizedItems(thisLevel);
-            MyProperties.getInstance().firstTime = false;
+            MyProperties.getInstance().firstTimeResponsePage = false;
         }
         updateList(thisLevel);
     }

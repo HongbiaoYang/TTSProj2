@@ -44,14 +44,14 @@
                         android:layout_height="fill_parent"
                         android:id="@id/Hboarding"
                         android:layout_weight="1"
-                        android:background="@drawable/gettingon"
+                        android:background="@drawable/gettingonandoffthebus"
                         android:layout_marginLeft="50dp"/>
                 <Button
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
-                        android:id="@id/Hgettingoff"
+                        android:id="@id/Hsafety"
                         android:layout_weight="1"
-                        android:background="@drawable/gettingoff"
+                        android:background="@drawable/safety"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="50dp"
                         />

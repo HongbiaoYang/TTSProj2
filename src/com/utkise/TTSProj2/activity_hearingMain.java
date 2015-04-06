@@ -77,7 +77,7 @@ public class activity_hearingMain extends Activity {
         screen.setImageResource(tutorialItem.image);
         progress.setImageResource(tutorialItem.progress);
         desc.setText(tutorialItem.desc.replace("\\n", "\n"));
-        MyProperties.getInstance().speakout(tutorialItem.voice);
+        // MyProperties.getInstance().speakout(tutorialItem.voice);     ////---- Mute the tutorial voice for now 04.06.2015
     }
 
 

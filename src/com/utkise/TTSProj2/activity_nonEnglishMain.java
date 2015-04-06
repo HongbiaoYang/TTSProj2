@@ -71,7 +71,7 @@ public class activity_nonEnglishMain extends Activity {
         screen.setImageResource(tutorialItem.image);
         progress.setImageResource(tutorialItem.progress);
         desc.setText(tutorialItem.desc.replace("\\n", "\n"));
-        MyProperties.getInstance().speakout(tutorialItem.voice);
+        // MyProperties.getInstance().speakout(tutorialItem.voice); ////---- mute the tutorial for now 04.06.2015
     }
 
 

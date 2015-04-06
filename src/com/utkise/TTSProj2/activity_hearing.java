@@ -28,7 +28,7 @@ public class activity_hearing extends Activity implements OnInitListener {
         // MyProperties.getInstance().gtts = new TextToSpeech(getApplicationContext(), this);
 
         gettingonoff = (Button)findViewById(R.id.Hboarding);
-        safety = (Button)findViewById(R.id.Hgettingoff);
+        safety = (Button)findViewById(R.id.Hsafety);
         ridingbus = (Button)findViewById(R.id.Htraveling);
         emergency = (Button)findViewById(R.id.Hemergency);
         goBack = (ImageView)findViewById(R.id.header1);
