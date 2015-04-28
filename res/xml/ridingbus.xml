@@ -97,7 +97,7 @@
 			<Texto>No alcanzo el cordón-botón para hacer la parada</Texto>
 			<Image>picture192</Image>
 			<ImageV>picture192_v</ImageV>
-			<Color>#8661a6</Color>
+			<Color>#4ea554</Color>
 		</Item>
 		<Item> 
 			<Title>I need to go to bathroom</Title>
@@ -106,7 +106,7 @@
             <Texto>Necesito ir al baño</Texto>
 			<Image>picture54</Image>
 			<ImageV>picture54_v</ImageV>
-			<Color>#fdbd35</Color>
+			<Color>#4ea554</Color>
 		</Item>
 		
     </General>

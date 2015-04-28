@@ -140,7 +140,12 @@ public class activity_hearingMain extends Activity {
                         detectSwipe(direction);
                         mIsDown = 0;
                         direction = DIRECTION.EMPTY;
+                    } else if (direction == DIRECTION.EMPTY) {
+                        // Log.i("activity_hearingMain", "touchedddd");
+                        MyProperties.getInstance().speakout("the pictures are only for display and do not have touch functionality");
                     }
+
+
                     break;
             }
 

@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-            android:icon="@drawable/icon_name" android:label="Bus Helper">
+            android:icon="@drawable/icon_name" android:label="Project Eric">
         <activity android:name=".activity_vision"
                          android:label="@string/app_name"
                          android:screenOrientation="landscape"
