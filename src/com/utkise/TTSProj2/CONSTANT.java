@@ -9,5 +9,7 @@ public class CONSTANT {
     public final static int END = 2;
 
 
-
+    public static final String DATABASE_NAME = "itemDatabase.sql";
+    public static final int HOURS_48 = 48 * 60 * 60;
+    public static final int HOURS_24 = 24 * 60 * 60;
 }

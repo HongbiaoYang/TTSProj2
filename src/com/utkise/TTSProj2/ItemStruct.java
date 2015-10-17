@@ -18,6 +18,34 @@ public class ItemStruct {
     private int VImageID;
     private int color;
 
+
+    private String imageString;
+    private String vImageString;
+
+    public int getFreq() {
+        return freq;
+    }
+
+    private int freq;
+
+    public void setImageString(String imageString) {
+        this.imageString = imageString;
+    }
+
+    public void setvImageString(String vImageString) {
+        this.vImageString = vImageString;
+    }
+
+    public String getImageString() {
+        return imageString;
+    }
+
+    public String getvImageString() {
+        return vImageString;
+    }
+
+
+
     public String getSpecialTag() {
         return SpecialTag;
     }
@@ -121,5 +149,9 @@ public class ItemStruct {
 
     public int getColorCode() {
         return color;
+    }
+
+    public void setFreq(int freq) {
+        this.freq = freq;
     }
 }

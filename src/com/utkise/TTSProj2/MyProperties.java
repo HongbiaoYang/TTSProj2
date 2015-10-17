@@ -24,7 +24,7 @@ public class MyProperties {
     public LANG Language;
     public TextToSpeech gtts;
     public Vibrator vb;
-    public DisableType gettingonoff, ridingbus, safety, emergency, response, currentType;
+    public DisableType gettingonoff, ridingbus, safety, emergency, response,    currentType;
     public Stack<String> titleStack;
     public List<String[]> TITLES;
     public Stack<AnimationDrawable> animStack;
@@ -34,6 +34,7 @@ public class MyProperties {
     private boolean E_merged = false;
     public boolean firstTimeResponsePage = true;
     public boolean firstTimeOpenApp = true;
+    public DatabaseHandler database;
 
     // shut up
     public void shutup() {
@@ -133,7 +134,8 @@ public class MyProperties {
         tutorialListHearing = null;
         tutorialListCognitive = null;
         tutorialListNonEnglish = null;
-        flatList = new ArrayList<ItemStruct>();
+//        flatList = new ArrayList<ItemStruct>();
+        flatList = null;
         titleStack = new Stack<String>();
         animStack = new Stack<AnimationDrawable>();
 
@@ -300,27 +302,39 @@ public class MyProperties {
         return null;
     }*/
 
-    public void feedItem(ItemStruct currentItem) {
-        if (currentItem.getChild() != null) {
-            return;
-        }
-
-        ItemStruct tmp = new ItemStruct();
-        tmp.setText(currentItem.getText());
-        tmp.setTitle(currentItem.getTitle());
-        tmp.setImageID(currentItem.getImageID());
-        tmp.setColor(currentItem.getColorCode());
-
-        flatList.add(tmp);
-    }
+//    public void feedItem(ItemStruct currentItem) {
+//        if (currentItem.getChild() != null) {
+//            return;
+//        }
+//
+//        ItemStruct tmp = new ItemStruct();
+//        tmp.setText(currentItem.getText());
+//        tmp.setTitle(currentItem.getTitle());
+//        tmp.setImageID(currentItem.getImageID());
+//        tmp.setColor(currentItem.getColorCode());
+//
+//        flatList.add(tmp);
+//    }
 
     public List<ItemStruct> getCognitiveList() {
 
-        if (E_merged == false) {
-            flatList.addAll(0, emergency.getEmergency());
-            E_merged = true;
+        // input "" to get all data
+        if (flatList == null) {
+            flatList = new ArrayList<ItemStruct>();
+            flatList.addAll(getInstance().emergency.getInformation("emergency"));
+            flatList.addAll(getInstance().gettingonoff.getInformation("general"));
+            flatList.addAll(getInstance().ridingbus.getInformation("general"));
+            flatList.addAll(getInstance().safety.getInformation("general"));
         }
+
         return flatList;
+//        return MyProperties.getInstance().database.getAllItems("");
+
+//        if (E_merged == false) {
+//            flatList.addAll(0, emergency.getEmergency());
+//            E_merged = true;
+//        }
+//        return flatList;
     }
 
     public void clearStacks() {

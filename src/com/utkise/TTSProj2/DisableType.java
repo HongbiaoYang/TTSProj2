@@ -38,6 +38,7 @@ public class DisableType {
     }
 
     public void setInformation(String type, List<ItemStruct> info) {
+
         if (type.equalsIgnoreCase("general")) {
             this.generalInfo = info;
         } else if (type.equalsIgnoreCase("emergency")) {

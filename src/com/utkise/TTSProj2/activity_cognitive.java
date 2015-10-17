@@ -12,6 +12,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Stack;
 
@@ -95,6 +98,12 @@ public class activity_cognitive extends Activity implements OnInitListener {
         String type = getIntent().getStringExtra("Type");
 
         thisLevel = MyProperties.getInstance().getCognitiveList();
+        Collections.sort(thisLevel, new Comparator<ItemStruct>() {
+            @Override
+            public int compare(ItemStruct lhs, ItemStruct rhs) {
+                return (rhs.getFreq() - lhs.getFreq());
+            }
+        });
 
         updateList(thisLevel);
     }
@@ -140,6 +149,11 @@ public class activity_cognitive extends Activity implements OnInitListener {
                 ItemStruct item = thisLevel.get(position);
                 if (item.getChild() == null) {
                     MyProperties.getInstance().speakBoth(item);
+
+                    item.setFreq(item.getFreq() + 1);
+                    MyProperties.getInstance().database.updateItem(item);
+                    Log.d(TAG, "count="+item.getFreq());
+
                 } else {
                     MyProperties.getInstance().speakBoth(item);
                     levelStack.push(thisLevel);
