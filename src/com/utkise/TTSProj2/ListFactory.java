@@ -35,7 +35,10 @@ public class ListFactory {
 
         ArrayList<String> titleList = new ArrayList<String>();
         for (i = offset; i < this.root.size(); i++) {
-            titleList.add(root.get(i).getTitle(MyProperties.getInstance().Language));
+            // language for display. If spanish, need to display both, input LANG.EN_SP
+            LANG lang = MyProperties.getInstance().Language == LANG.ENGLISH? LANG.ENGLISH : LANG.EN_SP;
+
+            titleList.add(root.get(i).getTitle(lang));
         }
         return titleList.toArray(new String[0]);
 

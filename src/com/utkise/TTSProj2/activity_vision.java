@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.FloatMath;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -516,7 +515,7 @@ public class activity_vision extends Activity {
 
     private void displayResponsePage() {
         itemStack.push(curLevel);
-        curLevel = MyProperties.getInstance().response.getInformation("response");
+        curLevel = MyProperties.getInstance().response.getInformation("response", MyProperties.getInstance().hearing_updated);
 
         // get the first item place, ignore the previous items added by the user
         firstIndex = MyProperties.getInstance().response.getCustomCount();

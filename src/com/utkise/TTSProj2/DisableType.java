@@ -49,12 +49,18 @@ public class DisableType {
 
     }
 
-    public List<ItemStruct> getInformation(String type) {
+    public List<ItemStruct> getInformation(String type, boolean updated) {
         if (type.equalsIgnoreCase("general")) {
+             if (updated)
+                 MyProperties.getInstance().sortByCategory(generalInfo, MyProperties.getInstance().Language == LANG.ENGLISH ?  "hearing" : "nonenglish");
             return generalInfo;
         } else if (type.equalsIgnoreCase("emergency")) {
+            if (updated)
+                MyProperties.getInstance().sortByCategory(emergency, MyProperties.getInstance().Language == LANG.ENGLISH ?  "hearing" : "nonenglish");
             return emergency;
         } else if (type.equalsIgnoreCase("response")){
+            if (updated)
+                MyProperties.getInstance().sortByCategory(response, MyProperties.getInstance().Language == LANG.ENGLISH ?  "hearing" : "nonenglish");
             return response;
         } else {
             return null;

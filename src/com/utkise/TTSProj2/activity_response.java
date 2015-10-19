@@ -5,14 +5,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.text.InputType;
 import android.util.Log;
-import android.util.Xml;
 import android.view.View;
 import android.widget.*;
 
@@ -52,7 +49,7 @@ public class activity_response extends Activity {
             }
         });
 
-        thisLevel = MyProperties.getInstance().response.getInformation("response");
+        thisLevel = MyProperties.getInstance().response.getInformation("response", MyProperties.getInstance().hearing_updated);
 
         // add customized item only when first time running this activity
         if (MyProperties.getInstance().firstTimeResponsePage) {
@@ -101,9 +98,9 @@ public class activity_response extends Activity {
                     ItemStruct item = thisLevel.get(position);
 
                     // if tagged special tag
-                    if (item.getSpecialTag() ==  null) {
+                    if (item.getSpecialTag() == null) {
                         MyProperties.getInstance().speakBoth(item);
-                    } else if (item.getSpecialTag().equalsIgnoreCase("input"))  {
+                    } else if (item.getSpecialTag().equalsIgnoreCase("input")) {
                         createNewItem();
                     } else if (item.getSpecialTag().equalsIgnoreCase("added")) {
                         MyProperties.getInstance().speakBoth(item);

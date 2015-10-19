@@ -3,12 +3,9 @@ package com.utkise.TTSProj2;
 import android.content.Context;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
-import android.widget.ImageView;
-import org.w3c.dom.Text;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -35,6 +32,9 @@ public class MyProperties {
     public boolean firstTimeResponsePage = true;
     public boolean firstTimeOpenApp = true;
     public DatabaseHandler database;
+    public boolean cognitive_updated = false;
+    public boolean hearing_updated = false;
+    public boolean nonenglish_updated = false;
 
     // shut up
     public void shutup() {
@@ -316,15 +316,37 @@ public class MyProperties {
 //        flatList.add(tmp);
 //    }
 
-    public List<ItemStruct> getCognitiveList() {
+    public List<ItemStruct> getCognitiveList(boolean updated) {
 
+        Log.d("MyProperties", "cognitive_updated="+updated);
         // input "" to get all data
-        if (flatList == null) {
-            flatList = new ArrayList<ItemStruct>();
-            flatList.addAll(getInstance().emergency.getInformation("emergency"));
-            flatList.addAll(getInstance().gettingonoff.getInformation("general"));
-            flatList.addAll(getInstance().ridingbus.getInformation("general"));
-            flatList.addAll(getInstance().safety.getInformation("general"));
+        if (flatList == null || updated) {
+            if (flatList == null) {
+                flatList = new ArrayList<ItemStruct>();
+            } else {
+                flatList.clear();
+            }
+
+            List<ItemStruct> tempList = getInstance().emergency.getInformation("emergency", MyProperties.getInstance().hearing_updated);
+            sortByCategory(tempList, "Cognitive");
+            flatList.addAll(tempList);
+
+            tempList = getInstance().gettingonoff.getInformation("general", MyProperties.getInstance().hearing_updated);
+            sortByCategory(tempList, "Cognitive");
+            flatList.addAll(tempList);
+
+            tempList = getInstance().ridingbus.getInformation("general", MyProperties.getInstance().hearing_updated);
+            sortByCategory(tempList, "Cognitive");
+            flatList.addAll(tempList);
+
+            tempList = getInstance().safety.getInformation("general", MyProperties.getInstance().hearing_updated);
+            sortByCategory(tempList, "Cognitive");
+            flatList.addAll(tempList);
+
+//            flatList.addAll(getInstance().emergency.getInformation("emergency"));
+//            flatList.addAll(getInstance().gettingonoff.getInformation("general"));
+//            flatList.addAll(getInstance().ridingbus.getInformation("general"));
+//            flatList.addAll(getInstance().safety.getInformation("general"));
         }
 
         return flatList;
@@ -335,6 +357,15 @@ public class MyProperties {
 //            E_merged = true;
 //        }
 //        return flatList;
+    }
+
+    public void sortByCategory(List<ItemStruct> tempList, final String subMenu) {
+        Collections.sort(tempList, new Comparator<ItemStruct>() {
+            @Override
+            public int compare(ItemStruct lhs, ItemStruct rhs) {
+                return (rhs.getFreq(subMenu) - lhs.getFreq(subMenu));
+            }
+        });
     }
 
     public void clearStacks() {

@@ -1,7 +1,6 @@
 package com.utkise.TTSProj2;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -60,7 +59,7 @@ public class activity_emergency extends Activity implements OnInitListener {
 
         String type = getIntent().getStringExtra("Type");
 
-        thisLevel = MyProperties.getInstance().emergency.getInformation(type);
+        thisLevel = MyProperties.getInstance().emergency.getInformation(type, MyProperties.getInstance().hearing_updated);
 
         updateList(thisLevel);
     }
@@ -99,12 +98,17 @@ public class activity_emergency extends Activity implements OnInitListener {
                     if (item.getChild() == null) {
 
                         MyProperties.getInstance().speakBoth(item);
-                    } else {
+                        item.setFreq("hearing", item.getFreq("hearing") + 1);
+                        MyProperties.getInstance().database.updateItem("Freq_Hearing", item);
+                        MyProperties.getInstance().hearing_updated = true;
+
+                    }
+                    /*else {
                         MyProperties.getInstance().speakBoth(item);
                         levelStack.push(thisLevel);
                         thisLevel = item.getChild();
                         updateList(thisLevel);
-                    }
+                    }*/
                 }
 
             }

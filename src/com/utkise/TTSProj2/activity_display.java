@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
@@ -56,7 +57,10 @@ public class activity_display extends Activity implements OnInitListener {
 
         String type = getIntent().getStringExtra("Type");
 
-        thisLevel = MyProperties.getInstance().currentType.getInformation(type);
+
+        boolean updated = MyProperties.getInstance().Language == LANG.ENGLISH ?
+                MyProperties.getInstance().hearing_updated : MyProperties.getInstance().nonenglish_updated;
+        thisLevel = MyProperties.getInstance().currentType.getInformation(type, true);
 
         updateList(thisLevel);
     }
@@ -88,12 +92,27 @@ public class activity_display extends Activity implements OnInitListener {
                 ItemStruct item = thisLevel.get(position);
                 if (item.getChild() == null) {
                     MyProperties.getInstance().speakBoth(item);
-                } else {
-                    MyProperties.getInstance().speakBoth(item);
-                    levelStack.push(thisLevel);
-                    thisLevel = item.getChild();
-                    updateList(thisLevel);
+
+                    String subMenu;
+                    if (MyProperties.getInstance().Language == LANG.ENGLISH) {
+                        subMenu = "hearing";
+                        MyProperties.getInstance().hearing_updated = true;
+                    } else {
+                        subMenu = "nonenglish";
+                        MyProperties.getInstance().nonenglish_updated = true;
+                    }
+
+                    item.setFreq(subMenu, item.getFreq(subMenu) + 1);
+                    MyProperties.getInstance().database.updateItem(subMenu, item);
+
+                    Log.d("activity_display", "submenu="+subMenu +" count="+item.getFreq(subMenu));
                 }
+//                else {
+//                    MyProperties.getInstance().speakBoth(item);
+//                    levelStack.push(thisLevel);
+//                    thisLevel = item.getChild();
+//                    updateList(thisLevel);
+//                }
                 return false;
             }
         });
@@ -118,12 +137,27 @@ public class activity_display extends Activity implements OnInitListener {
                     ItemStruct item = thisLevel.get(position);
                     if (item.getChild() == null) {
                         MyProperties.getInstance().speakBoth(item);
-                    } else {
-                        MyProperties.getInstance().speakBoth(item);
-                        levelStack.push(thisLevel);
-                        thisLevel = item.getChild();
-                        updateList(thisLevel);
+
+                        String subMenu;
+                        if (MyProperties.getInstance().Language == LANG.ENGLISH) {
+                            subMenu = "hearing";
+                            MyProperties.getInstance().hearing_updated = true;
+                        } else {
+                            subMenu = "nonenglish";
+                            MyProperties.getInstance().nonenglish_updated = true;
+                        }
+
+                        item.setFreq(subMenu, item.getFreq(subMenu) + 1);
+                        MyProperties.getInstance().database.updateItem(subMenu, item);
+
+                        Log.d("activity_display", "submenu="+subMenu +" count="+item.getFreq(subMenu));
                     }
+//                    else {
+//                        MyProperties.getInstance().speakBoth(item);
+//                        levelStack.push(thisLevel);
+//                        thisLevel = item.getChild();
+//                        updateList(thisLevel);
+//                    }
                 }
 
             }

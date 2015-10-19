@@ -5,8 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Color;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +35,12 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     private static final String KEY_IMAGEV = "ImageV";
     private static final String KEY_COLOR = "Color";
     private static final String KEY_FREQ = "Freq";
+
+    private static final String KEY_FREQ_HEARING = "hearing";
+    private static final String KEY_FREQ_COGNITIVE = "cognitive";
+    private static final String KEY_FREQ_NONENGLISH = "nonEnglish";
+    private static final String KEY_FREQ_VISION = "vision";
+
     private static final String KEY_MENU = "Menu";
 
     private static final String KEY_NAME = "Prop_Name";
@@ -71,7 +75,8 @@ public class DatabaseHandler extends SQLiteOpenHelper{
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_TITLE + " TEXT,"
                 + KEY_TEXT + " TEXT," + KEY_TITULO + " TEXT," + KEY_TEXTO + " TEXT,"
                 + KEY_IMAGE + " TEXT," + KEY_IMAGEV + " TEXT," + KEY_COLOR + " TEXT,"
-                + KEY_FREQ + " INTEGER," + KEY_MENU + " TEXT " + ")";
+                + KEY_FREQ_HEARING + " INTEGER,"+ KEY_FREQ_COGNITIVE + " INTEGER,"+ KEY_FREQ_NONENGLISH + " INTEGER,"+ KEY_FREQ_VISION + " INTEGER,"
+                + KEY_MENU + " TEXT " + ")";
         db.execSQL(CREATE_ITEMS_TABLE);
 
         this.firstTime = true;
@@ -136,7 +141,11 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         values.put(KEY_IMAGE, itemStruct.getImageString());
         values.put(KEY_IMAGEV, itemStruct.getvImageString());
         values.put(KEY_COLOR, itemStruct.getColorCode());
-        values.put(KEY_FREQ, 0);    // 0 frequency at first
+        values.put(KEY_FREQ_HEARING, 0);    // 0 frequency at first for hearing
+        values.put(KEY_FREQ_COGNITIVE, 0);    // 0 frequency at first for cognitive
+        values.put(KEY_FREQ_NONENGLISH, 0);    // 0 frequency at first for non English
+        values.put(KEY_FREQ_VISION, 0);    // 0 frequency at first for vision
+
         values.put(KEY_MENU, menu);
 
         // Inserting Row
@@ -173,7 +182,10 @@ public class DatabaseHandler extends SQLiteOpenHelper{
                 aItem.setImageString(cursor.getString(5));
                 aItem.setvImageString(cursor.getString(6));
                 aItem.setColor(Integer.parseInt(cursor.getString(7)));
-                aItem.setFreq(Integer.parseInt(cursor.getString(8)));
+                aItem.setFreq("hearing", Integer.parseInt(cursor.getString(8)));
+                aItem.setFreq("cognitive", Integer.parseInt(cursor.getString(9)));
+                aItem.setFreq("nonenglish", Integer.parseInt(cursor.getString(10)));
+                aItem.setFreq("vision", Integer.parseInt(cursor.getString(11)));
 
                 // Adding contact to list
                 itemList.add(aItem);
@@ -187,11 +199,11 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
 
     // Updating single item
-    public int updateItem(ItemStruct item) {
+    public int updateItem(String subMenu, ItemStruct item) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_FREQ, item.getFreq());
+        values.put(subMenu, item.getFreq(subMenu));
 
         // updating row
         return db.update(TABLE_ITEMS, values, KEY_TITLE + " = ?",

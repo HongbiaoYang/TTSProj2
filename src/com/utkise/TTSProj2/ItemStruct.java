@@ -1,6 +1,7 @@
 package com.utkise.TTSProj2;
 
 import android.graphics.Color;
+import android.util.Log;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,11 +23,40 @@ public class ItemStruct {
     private String imageString;
     private String vImageString;
 
-    public int getFreq() {
-        return freq;
+    public int getFreq(String subMenu) {
+
+        if (subMenu.equalsIgnoreCase("hearing"))
+            return freq_hearing;
+        else if (subMenu.equalsIgnoreCase("cognitive")) {
+            Log.d("ItemStruct", "submenu="+subMenu + " freq="+freq_cognitive);
+
+            return freq_cognitive;
+        }
+        else if (subMenu.equalsIgnoreCase("nonenglish"))
+            return freq_nonenglish;
+        else if (subMenu.equalsIgnoreCase("vision"))
+            return freq_vision;
+        else
+            return 0;
+    }
+
+
+    public void setFreq(String subMenu, int freq) {
+        if (subMenu.equalsIgnoreCase("hearing"))
+            freq_hearing = freq;
+        else if (subMenu.equalsIgnoreCase("cognitive"))
+            freq_cognitive = freq;
+        else if (subMenu.equalsIgnoreCase("nonenglish"))
+            freq_nonenglish = freq;
+        else if (subMenu.equalsIgnoreCase("vision"))
+            freq_vision = freq;
     }
 
     private int freq;
+    private int freq_hearing;
+    private int freq_cognitive;
+    private int freq_nonenglish;
+    private int freq_vision;
 
     public void setImageString(String imageString) {
         this.imageString = imageString;
@@ -76,12 +106,16 @@ public class ItemStruct {
     }
 
     public String getTitle(LANG lan) {
+        String tmp;
         if (lan == LANG.SPANISH) {
-            String tmp = title.get(LANG.SPANISH) + "/"+title.get(LANG.ENGLISH);
-            return tmp;
+            tmp = title.get(LANG.SPANISH);
+        } else if (lan == LANG.EN_SP) {
+            tmp = title.get(LANG.SPANISH) + "/"+title.get(LANG.ENGLISH);
         } else {
-            return title.get(lan);
+            tmp =  title.get(lan);
         }
+
+        return tmp;
     }
 
     public void setText(LANG lan, String content) {
@@ -151,7 +185,5 @@ public class ItemStruct {
         return color;
     }
 
-    public void setFreq(int freq) {
-        this.freq = freq;
-    }
+
 }

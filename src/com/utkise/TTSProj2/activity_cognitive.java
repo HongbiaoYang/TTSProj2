@@ -3,18 +3,13 @@ package com.utkise.TTSProj2;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
-import android.opengl.Visibility;
 import android.os.Bundle;
-import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Stack;
 
@@ -97,13 +92,8 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
         String type = getIntent().getStringExtra("Type");
 
-        thisLevel = MyProperties.getInstance().getCognitiveList();
-        Collections.sort(thisLevel, new Comparator<ItemStruct>() {
-            @Override
-            public int compare(ItemStruct lhs, ItemStruct rhs) {
-                return (rhs.getFreq() - lhs.getFreq());
-            }
-        });
+        thisLevel = MyProperties.getInstance().getCognitiveList(true);  // set to always true
+        MyProperties.getInstance().cognitive_updated = false;
 
         updateList(thisLevel);
     }
@@ -114,7 +104,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
             EmergencyState = false;
             emergency.setVisibility(View.VISIBLE);
             response.setVisibility(View.VISIBLE);
-            thisLevel = MyProperties.getInstance().getCognitiveList();
+            thisLevel = MyProperties.getInstance().getCognitiveList(MyProperties.getInstance().cognitive_updated);
             updateList(thisLevel);
             title.setText(MyProperties.getInstance().getTitleStack());
             return;
@@ -150,9 +140,10 @@ public class activity_cognitive extends Activity implements OnInitListener {
                 if (item.getChild() == null) {
                     MyProperties.getInstance().speakBoth(item);
 
-                    item.setFreq(item.getFreq() + 1);
-                    MyProperties.getInstance().database.updateItem(item);
-                    Log.d(TAG, "count="+item.getFreq());
+                    item.setFreq("cognitive", item.getFreq("cognitive") + 1);
+                    MyProperties.getInstance().database.updateItem("cognitive", item);
+                    MyProperties.getInstance().cognitive_updated = true;
+                    Log.d(TAG, "count=" + item.getFreq("cognitive"));
 
                 } else {
                     MyProperties.getInstance().speakBoth(item);
