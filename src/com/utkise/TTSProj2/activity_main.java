@@ -80,6 +80,7 @@ public class activity_main extends Activity implements OnInitListener {
 
                 new AlertDialog.Builder(this)
                         .setTitle("Trial Version")
+                        .setCancelable(false)
                         .setMessage("Your trial has " + timeLeft + " remaining")
                         .setIcon(R.drawable.time_left)
                         .setPositiveButton(android.R.string.yes, null).show();
@@ -91,6 +92,7 @@ public class activity_main extends Activity implements OnInitListener {
                     .setTitle("Time over!")
                     .setMessage("Your trial has expired! Please purchase a premium version!")
                     .setIcon(R.drawable.app_expire)
+                    .setCancelable(false)
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -98,6 +100,8 @@ public class activity_main extends Activity implements OnInitListener {
                             startActivity(browserIntent);
                             finish();
                         }
+
+
                     }).show();
         }
 
@@ -459,6 +463,7 @@ public class activity_main extends Activity implements OnInitListener {
     public void onBackPressed() {
         int curTime = Calendar.getInstance().get(Calendar.SECOND);
 
+        Log.d(TAG,"back is pressed in main");
 
         if (curTime - backTimer < 3) {
             TextToSpeech mTts = MyProperties.getInstance().gtts;
