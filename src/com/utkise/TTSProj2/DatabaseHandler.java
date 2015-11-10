@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,8 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
     // Contacts table name
     private static final String TABLE_ITEMS = "ItemTable";
+    private static final String TABLE_PARA = "ParaTable";
+    private static final String TABLE_FIXED = "FixedTable";
     private static final String TABLE_PROPS = "PropTable";
 
     // Contacts Table Columns names
@@ -49,6 +52,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
     public boolean firstTime = false;
     private SQLiteDatabase db;
+    private String TAG = "DatabaseHandler";
 
 
     public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -71,13 +75,22 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         db.execSQL(CREATE_PROPS_TABLE);
 
         // create table items
-        String CREATE_ITEMS_TABLE = "CREATE TABLE " + TABLE_ITEMS + "("
+        String CREATE_PARA_TABLE = "CREATE TABLE " + TABLE_PARA + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_TITLE + " TEXT,"
                 + KEY_TEXT + " TEXT," + KEY_TITULO + " TEXT," + KEY_TEXTO + " TEXT,"
                 + KEY_IMAGE + " TEXT," + KEY_IMAGEV + " TEXT," + KEY_COLOR + " TEXT,"
                 + KEY_FREQ_HEARING + " INTEGER,"+ KEY_FREQ_COGNITIVE + " INTEGER,"+ KEY_FREQ_NONENGLISH + " INTEGER,"+ KEY_FREQ_VISION + " INTEGER,"
                 + KEY_MENU + " TEXT " + ")";
-        db.execSQL(CREATE_ITEMS_TABLE);
+        db.execSQL(CREATE_PARA_TABLE);
+
+        // create table items
+        String CREATE_FIXED_TABLE = "CREATE TABLE " + TABLE_FIXED + "("
+                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_TITLE + " TEXT,"
+                + KEY_TEXT + " TEXT," + KEY_TITULO + " TEXT," + KEY_TEXTO + " TEXT,"
+                + KEY_IMAGE + " TEXT," + KEY_IMAGEV + " TEXT," + KEY_COLOR + " TEXT,"
+                + KEY_FREQ_HEARING + " INTEGER,"+ KEY_FREQ_COGNITIVE + " INTEGER,"+ KEY_FREQ_NONENGLISH + " INTEGER,"+ KEY_FREQ_VISION + " INTEGER,"
+                + KEY_MENU + " TEXT " + ")";
+        db.execSQL(CREATE_FIXED_TABLE);
 
         this.firstTime = true;
     }
@@ -86,7 +99,9 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ITEMS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PARA);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FIXED);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PROPS);
 
         // Create tables again
         onCreate(db);
@@ -130,7 +145,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     }
 
     // Adding new item
-    void addItem(ItemStruct itemStruct, String menu) {
+    void addItem(ItemStruct itemStruct, String menu, int transitType) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -148,24 +163,32 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
         values.put(KEY_MENU, menu);
 
+
+        // choose table based on transit type
+        String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
+
         // Inserting Row
-        db.insert(TABLE_ITEMS, null, values);
+        db.insert(table, null, values);
+
         db.close(); // Closing database connection
     }
 
     // Getting All Contacts
-    public List<ItemStruct> getAllItems(String menu) {
+    public List<ItemStruct> getAllItems(String menu, int transitType) {
         List<ItemStruct> itemList = new ArrayList<ItemStruct>();
 
         Cursor cursor;
 
+        // choose table based on transit type
+        String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
+
         // Select All Query
         if (menu == "") {
-            String selectQuery = "SELECT  * FROM " + TABLE_ITEMS ;
+            String selectQuery = "SELECT  * FROM " + table ;
             SQLiteDatabase db = this.getWritableDatabase();
             cursor = db.rawQuery(selectQuery, null);
         } else {
-            String selectQuery = "SELECT  * FROM " + TABLE_ITEMS + " where " + KEY_MENU + " = ?";
+            String selectQuery = "SELECT  * FROM " + table + " where " + KEY_MENU + " = ?";
             SQLiteDatabase db = this.getWritableDatabase();
             cursor = db.rawQuery(selectQuery, new String[]{menu});
         }
@@ -199,26 +222,33 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
 
     // Updating single item
-    public int updateItem(String subMenu, ItemStruct item) {
+    public int updateItem(String subMenu, ItemStruct item, int transitType) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(subMenu, item.getFreq(subMenu));
 
+        // choose table based on transit type
+        String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
+
         // updating row
-        return db.update(TABLE_ITEMS, values, KEY_TITLE + " = ?",
+        return db.update(table, values, KEY_TITLE + " = ?",
                 new String[] { String.valueOf(item.getTitle())});
     }
 
     // Deleting single item
-    public void deleteContact(ItemStruct item) {
+    public void deleteContact(ItemStruct item, int transitType) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_ITEMS, KEY_TITLE + " = ?",
+
+        // choose table based on transit type
+        String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
+
+        db.delete(table, KEY_TITLE + " = ?",
                 new String[] { String.valueOf(item.getTitle()) });
         db.close();
     }
 
-
+/*
     // Getting contacts Count
     public int getContactsCount() {
         String countQuery = "SELECT  * FROM " + TABLE_ITEMS;
@@ -228,6 +258,6 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
         // return count
         return cursor.getCount();
-    }
+    }*/
 
 }

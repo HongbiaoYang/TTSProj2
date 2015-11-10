@@ -61,6 +61,8 @@ public class activity_vision extends Activity {
         ok    = (ImageView)findViewById(R.id.Ok);
         vText = (TextView)findViewById(R.id.visionText);
 
+        MyProperties.getInstance().updateTransitType();
+
         root = new ArrayList<ItemStruct>();
         fillEmergencyList(root, MyProperties.getInstance().emergency);
         fillItemList(root, MyProperties.getInstance().gettingonoff);
@@ -70,7 +72,8 @@ public class activity_vision extends Activity {
         // first animation in vision
         ImageView image = (ImageView) findViewById(R.id.frame_home);
         image.setBackgroundResource(R.drawable.frame);
-        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
+//        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
+        MyProperties.getInstance().currentAnim = (AnimationDrawable) image.getBackground();
 
         // first display
         curIndex = 0;
@@ -494,7 +497,9 @@ public class activity_vision extends Activity {
         MyProperties.getInstance().shutup();
         MyProperties.getInstance().popStacks();
         pref.edit().putBoolean("tutorial_vision", true).apply();
-        finish();
+
+
+
     }
 
     // double click, say yes

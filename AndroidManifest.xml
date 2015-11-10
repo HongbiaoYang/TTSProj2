@@ -34,14 +34,21 @@
         </activity>
 
         <activity android:name=".activity_main"
-         android:screenOrientation="landscape"
-         android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+             android:screenOrientation="landscape"
+             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+         </activity>
+
+        <activity android:name=".activity_home"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
 
-         </activity>
+
+
         <activity android:name=".activity_emergency"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
@@ -56,12 +63,6 @@
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
         <activity android:name=".activity_visionMain"
-                  android:screenOrientation="landscape"
-                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
-        <activity android:name=".activity_cognitive0"
-                  android:screenOrientation="landscape"
-                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
-        <activity android:name=".activity_cognMain0"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
         <activity android:name=".debug_activity_click"
@@ -79,5 +80,9 @@
         <activity android:name=".activity_cognitiveMain"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name=".activity_tutorials"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+
     </application>
 </manifest>

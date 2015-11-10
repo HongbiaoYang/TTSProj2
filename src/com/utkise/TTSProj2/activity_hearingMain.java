@@ -91,8 +91,10 @@ public class activity_hearingMain extends Activity {
     private class skipTutorialListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            goToNewPage();
+//            goToNewPage();
+            finish();
         }
+
     }
 
     private void goToNewPage() {

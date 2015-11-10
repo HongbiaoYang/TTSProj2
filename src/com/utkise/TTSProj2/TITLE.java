@@ -12,8 +12,11 @@ public enum TITLE {
     GETTING_OFF,                       //  5
     TRAVELLING,                        //  6
     EMERGENCY,                         //  7
-    GENERAL_INFORMATION,              //  8
-    TRIP_INFORMATION,                 //  9
-    SAFETY,                            //  10
-    COMFORT,                           //  11
+    PARA,
+    FIXED,
+    TUTORIAL,
+    GENERAL_INFORMATION,
+    TRIP_INFORMATION,
+    SAFETY,
+    COMFORT,
 }

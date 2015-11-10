@@ -108,15 +108,6 @@
 			<ImageV>picture186_v</ImageV>
 			<Color>#fdbd35</Color>
 		</Item>
-		<Item> 
-			<Title>I am not sure which bus I need.Can you please help me?</Title>
-			<Text>I am not sure which bus I need.Can you please help me?</Text>
-			<Titulo>No estoy seguro cuál ruta necesito, ¿me podría ayudar?</Titulo>
-			<Texto>No estoy seguro cuál ruta necesito, ¿me podría ayudar?</Texto>
-			<Image>picture187</Image>
-			<ImageV>picture187_v</ImageV>
-			<Color>#fdbd35</Color>
-		</Item>
 		<Item>
 			<Title>Can you buckle my seatbelt?</Title>
 			<Text>Can you buckle my seatbelt?</Text>
@@ -125,15 +116,6 @@
 			<Image>picture55</Image>
 			<ImageV>picture55_v</ImageV>
 			<Color>#fdbd35</Color>
-		</Item>
-		<Item> 
-			<Title>Where is the STOP pull chord or button?</Title>
-			<Text>Where is the STOP pull chord or button?</Text>
-			<Titulo>¿Dónde se encuentra el cordón o botón para hacer la parada?</Titulo>
-			<Texto>¿Dónde se encuentra el cordón o botón para hacer la parada?</Texto>
-			<Image>picture80</Image>
-			<ImageV>picture80_v</ImageV>
-			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
 			<Title>Am I getting off the bus next?</Title>
@@ -145,7 +127,7 @@
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>Are we close to my house/stop?</Title>
+			<Title>Are we close to my house or stop?</Title>
 			<Text>Are we close to my house/stop?</Text>
 			<Titulo>¿Estamos cerca de mi casa/bajada?</Titulo>
 			<Texto>¿Estamos cerca de mi casa/bajada?</Texto>
@@ -154,8 +136,8 @@
 			<Color>#8661a6</Color>
 		</Item>
 		<Item> 
-			<Title>This is not the stop where I want to get off</Title>
-			<Text>This is not the stop where I want to get off</Text>
+			<Title>This is not the stop where I want to get off at</Title>
+			<Text>This is not the stop where I want to get off at</Text>
 			<Titulo>Esta no es la parada en la que yo quiero bajar</Titulo>
 			<Texto>Esta no es la parada en la que yo quiero bajar</Texto>
 			<Image>picture98</Image>

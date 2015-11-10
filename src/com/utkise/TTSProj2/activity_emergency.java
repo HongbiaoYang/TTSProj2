@@ -56,6 +56,9 @@ public class activity_emergency extends Activity implements OnInitListener {
             }
         });
 
+       MyProperties.getInstance().updateTransitType();
+
+
 
         String type = getIntent().getStringExtra("Type");
 
@@ -99,7 +102,7 @@ public class activity_emergency extends Activity implements OnInitListener {
 
                         MyProperties.getInstance().speakBoth(item);
                         item.setFreq("hearing", item.getFreq("hearing") + 1);
-                        MyProperties.getInstance().database.updateItem("Freq_Hearing", item);
+                        MyProperties.getInstance().database.updateItem("Freq_Hearing", item, MyProperties.getInstance().transitType);
                         MyProperties.getInstance().hearing_updated = true;
 
                     }

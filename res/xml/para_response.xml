@@ -32,8 +32,8 @@
 			<ImageV>picture177_v</ImageV>
         </Item>
         <Item>
-            <Title>Could you repeat</Title>
-            <Text>Could you repeat</Text>
+            <Title>Could you repeat that</Title>
+            <Text>Could you repeat that</Text>
 			<Titulo>Podría repetir</Titulo>
 			<Texto>Podría repetir</Texto>
             <Image>picture113</Image>
@@ -64,8 +64,8 @@
 			<ImageV>picture166_v</ImageV>
         </Item>
 		<Item>
-            <Title>Can you help me, please</Title>
-            <Text>Can you help me, please</Text>
+            <Title>Can you help me ?</Title>
+            <Text>Can you help me ?</Text>
 			<Titulo>Podría ayudarme, por favor</Titulo>
 			<Texto>Podría ayudarme, por favor</Texto>
             <Image>picture165</Image>

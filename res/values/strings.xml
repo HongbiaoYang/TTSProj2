@@ -9,7 +9,7 @@
     <string name="selectText">Select the DISABILITY need</string><string name="yes">Yes</string><string name="no">No</string><string name="more">More...</string><string name="goback">Go Back</string><string name="more1">Could you repeat</string><string name="more2">I am not sure</string><string name="more3">I don\'t understand</string><string name="more4">Thank you very much</string><string name="more5">I don\'t care</string>
     <string name="welcomeTutorial">Welcome to Vision Tutorial</string>
     <string name="startTutorial">Swipe Up to Start the Tutorial</string>
-    <string name="skipTutorial">Swipe Down to Skip the Tutorial</string>
+    <string name="skipTutorial">Swipe Down to Quit the Tutorial</string>
     <string name="tapStartTutorial">Hold this button to Start the Tutorial</string>
     <string name="tapSkipTutorial">Hold this button to Skip the Tutorial</string>
 
@@ -24,6 +24,7 @@
     <string name="noup">There are no more categories beyond  this point, please swipe down to access categories</string>
     <string name="welcomeTutorialCognitive">Welcome to cognitive tutorial</string>
     <string name="startTutorialCognitive">Please double tap the button to begin or skip the tutorial</string>
+    <string name="para">Para Transit</string>
 
 
 </resources>

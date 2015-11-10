@@ -1,41 +1,5 @@
 ﻿<xml>
-<General>
-        <Item> 
-			<Title>I am going home</Title>
-			<Text>I am going home</Text>
-			<Titulo>Voy a casa</Titulo>
-			<Texto>Voy a casa</Texto>
-			<Image>picture44</Image>
-			<ImageV>picture44_v</ImageV>
-			<Color>#4ea554</Color>
-		</Item>	
-		<Item> 
-			<Title>I am going to Work</Title>
-			<Text>I am going to Work</Text>
-			<Titulo>Voy al trabajo</Titulo>
-			<Texto>Voy al trabajo</Texto>
-			<Image>picture42</Image>
-			<ImageV>picture42_v</ImageV>
-			<Color>#4ea554</Color>
-		</Item>	
-		<Item> 
-			<Title>I am going to a medical appointment</Title>
-			<Text>I am going to a medical appointment</Text>
-			<Titulo>Voy a una cita médica</Titulo>
-			<Texto>Voy a una cita médica</Texto>
-			<Image>picture188</Image>
-			<ImageV>picture188_v</ImageV>
-			<Color>#4ea554</Color>
-		</Item>	
-		<Item> 
-			<Title>I am going shopping</Title>
-			<Text>I am going shopping</Text>
-			<Titulo>Voy de compras</Titulo>
-			<Texto>Voy de compras</Texto>
-			<Image>picture189</Image>
-			<ImageV>picture189_v</ImageV>
-			<Color>#4ea554</Color>
-		</Item>		
+<General>		
 		<Item> 
 			<Title>Can you get the driver for me?</Title>
 			<Text>Can you get the driver for me?</Text>
@@ -73,8 +37,8 @@
 			<Color>#4ea554</Color>
 		</Item>
 		<Item> 
-			<Title>Please adjust the heater/airconditioner</Title>
-			<Text>Please adjust the heater/airconditioner</Text>
+			<Title>Please adjust the heater or airconditioner</Title>
+			<Text>Please adjust the heater or airconditioner</Text>
 			<Titulo>¿Por favor podría ajustar el aire acondicionado</Titulo>
 			<Texto>¿Por favor podría ajustar el aire acondicionado</Texto>
 			<Image>picture190</Image>
@@ -99,15 +63,5 @@
 			<ImageV>picture192_v</ImageV>
 			<Color>#4ea554</Color>
 		</Item>
-		<Item> 
-			<Title>I need to go to bathroom</Title>
-			<Text>I need to go to bathroom</Text>
-			<Titulo>Necesito ir al baño</Titulo>
-            <Texto>Necesito ir al baño</Texto>
-			<Image>picture54</Image>
-			<ImageV>picture54_v</ImageV>
-			<Color>#4ea554</Color>
-		</Item>
-		
     </General>
 </xml>

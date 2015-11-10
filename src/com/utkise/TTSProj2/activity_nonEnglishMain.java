@@ -83,9 +83,11 @@ public class activity_nonEnglishMain extends Activity {
     }
 
     private class skipTutorialListener implements View.OnClickListener {
+
         @Override
         public void onClick(View v) {
-            goToNewPage();
+//            goToNewPage();
+            finish();
         }
     }
 

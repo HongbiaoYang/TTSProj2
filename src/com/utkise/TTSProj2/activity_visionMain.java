@@ -25,7 +25,7 @@ public class activity_visionMain extends Activity {
     @Override
     public void onBackPressed() {
 
-        MyProperties.getInstance().popStacks();
+//        MyProperties.getInstance().popStacks();
         finish();
     }
 
@@ -57,7 +57,8 @@ public class activity_visionMain extends Activity {
         // animation in vision_main
         ImageView image = (ImageView) findViewById(R.id.frame_home);
         image.setBackgroundResource(R.drawable.frame);
-        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
+//        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
+        MyProperties.getInstance().currentAnim = (AnimationDrawable) image.getBackground();
 
         start = (Button)findViewById(R.id.startTutorial);
         skip = (Button)findViewById(R.id.skipTutorial);
@@ -189,7 +190,7 @@ public class activity_visionMain extends Activity {
         private void detectDown() {
             // swipe down to skip the tutorial
             pref.edit().putBoolean("tutorial_vision", true).apply();
-            gotoVisionPage();
+            finish();
 
         }
 

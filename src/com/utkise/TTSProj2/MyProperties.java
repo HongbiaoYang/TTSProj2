@@ -22,6 +22,8 @@ public class MyProperties {
     public TextToSpeech gtts;
     public Vibrator vb;
     public DisableType gettingonoff, ridingbus, safety, emergency, response,    currentType;
+    public DisableType gettingonoff_para, ridingbus_para, safety_para, emergency_para, response_para;
+    public DisableType gettingonoff_fixed, ridingbus_fixed, safety_fixed, emergency_fixed, response_fixed;
     public Stack<String> titleStack;
     public List<String[]> TITLES;
     public Stack<AnimationDrawable> animStack;
@@ -35,6 +37,8 @@ public class MyProperties {
     public boolean cognitive_updated = false;
     public boolean hearing_updated = false;
     public boolean nonenglish_updated = false;
+    public int transitType = CONSTANT.PARA;
+    public AnimationDrawable currentAnim;
 
     // shut up
     public void shutup() {
@@ -49,9 +53,13 @@ public class MyProperties {
     }
 
     public void playAnimation() {
-        AnimationDrawable anim = animStack.peek();
 
-        Log.i("footer_view","anim="+anim);
+        AnimationDrawable anim = currentAnim;
+
+        if (currentAnim == null) {
+            return;
+        }
+
         if (anim.isRunning()) {
             anim.stop();
         }
@@ -125,11 +133,29 @@ public class MyProperties {
 
     private MyProperties() {
         Language = LANG.ENGLISH;
+
+
+
         gettingonoff = null;
         ridingbus = null;
         safety = null;
         emergency = null;
         response = null;
+
+        gettingonoff_para = null;
+        ridingbus_para = null;
+        safety_para = null;
+        emergency_para = null;
+        response_para = null;
+
+        gettingonoff_fixed = null;
+        ridingbus_fixed = null;
+        safety_fixed = null;
+        emergency_fixed = null;
+        response_fixed = null;
+
+
+
         currentType = null;
         tutorialListHearing = null;
         tutorialListCognitive = null;
@@ -137,7 +163,8 @@ public class MyProperties {
 //        flatList = new ArrayList<ItemStruct>();
         flatList = null;
         titleStack = new Stack<String>();
-        animStack = new Stack<AnimationDrawable>();
+//        animStack = new Stack<AnimationDrawable>();
+        currentAnim = null;
 
         initTITLES();
     }
@@ -165,6 +192,11 @@ public class MyProperties {
         TITLES.add(new String[]{"Safety","Bajar"});
         TITLES.add(new String[]{"Riding the Bus","Viajar"});
         TITLES.add(new String[]{"Emergency","Emergencia"});
+
+        // para, fixed, tutorial
+        TITLES.add(new String[]{"Para Transit",""});
+        TITLES.add(new String[]{"Fixed Transit",""});
+        TITLES.add(new String[]{"Tutorial",""});
 
         // general information, trip information, safety, comfort
         // información general , información de viaje , la seguridad , la comodidad
@@ -199,16 +231,7 @@ public class MyProperties {
 
     public void popStacks() {
             titleStack.pop();
-            animStack.pop();
-    }
-
-    // the disable type list
-    public DisableType[] DisableList() {
-        DisableType[] temp = {MyProperties.getInstance().gettingonoff,
-                              MyProperties.getInstance().ridingbus,
-                              MyProperties.getInstance().safety};
-
-        return temp;
+//            animStack.pop();
     }
 
     public void LoadTutorialXml(Context context) {
@@ -316,7 +339,7 @@ public class MyProperties {
 //        flatList.add(tmp);
 //    }
 
-    public List<ItemStruct> getCognitiveList(boolean updated) {
+    public List<ItemStruct> getCognitiveList(boolean updated, int transitType) {
 
         Log.d("MyProperties", "cognitive_updated="+updated);
         // input "" to get all data
@@ -327,21 +350,39 @@ public class MyProperties {
                 flatList.clear();
             }
 
-            List<ItemStruct> tempList = getInstance().emergency.getInformation("emergency", MyProperties.getInstance().hearing_updated);
-            sortByCategory(tempList, "Cognitive");
-            flatList.addAll(tempList);
+            if (transitType == CONSTANT.PARA) {
+                List<ItemStruct> tempList = getInstance().emergency_para.getInformation("emergency", MyProperties.getInstance().hearing_updated);
+                sortByCategory(tempList, "Cognitive");
+                flatList.addAll(tempList);
 
-            tempList = getInstance().gettingonoff.getInformation("general", MyProperties.getInstance().hearing_updated);
-            sortByCategory(tempList, "Cognitive");
-            flatList.addAll(tempList);
+                tempList = getInstance().gettingonoff_para.getInformation("general", MyProperties.getInstance().hearing_updated);
+                sortByCategory(tempList, "Cognitive");
+                flatList.addAll(tempList);
 
-            tempList = getInstance().ridingbus.getInformation("general", MyProperties.getInstance().hearing_updated);
-            sortByCategory(tempList, "Cognitive");
-            flatList.addAll(tempList);
+                tempList = getInstance().ridingbus_para.getInformation("general", MyProperties.getInstance().hearing_updated);
+                sortByCategory(tempList, "Cognitive");
+                flatList.addAll(tempList);
 
-            tempList = getInstance().safety.getInformation("general", MyProperties.getInstance().hearing_updated);
-            sortByCategory(tempList, "Cognitive");
-            flatList.addAll(tempList);
+                tempList = getInstance().safety_para.getInformation("general", MyProperties.getInstance().hearing_updated);
+                sortByCategory(tempList, "Cognitive");
+                flatList.addAll(tempList);
+            } else {
+                List<ItemStruct> tempList = getInstance().emergency_fixed.getInformation("emergency", MyProperties.getInstance().hearing_updated);
+                sortByCategory(tempList, "Cognitive");
+                flatList.addAll(tempList);
+
+                tempList = getInstance().gettingonoff_fixed.getInformation("general", MyProperties.getInstance().hearing_updated);
+                sortByCategory(tempList, "Cognitive");
+                flatList.addAll(tempList);
+
+                tempList = getInstance().ridingbus_fixed.getInformation("general", MyProperties.getInstance().hearing_updated);
+                sortByCategory(tempList, "Cognitive");
+                flatList.addAll(tempList);
+
+                tempList = getInstance().safety_fixed.getInformation("general", MyProperties.getInstance().hearing_updated);
+                sortByCategory(tempList, "Cognitive");
+                flatList.addAll(tempList);
+            }
 
 //            flatList.addAll(getInstance().emergency.getInformation("emergency"));
 //            flatList.addAll(getInstance().gettingonoff.getInformation("general"));
@@ -369,8 +410,25 @@ public class MyProperties {
     }
 
     public void clearStacks() {
-        animStack.clear();
+//        animStack.clear();
         titleStack.clear();
     }
 
+    public void updateTransitType() {
+        if (transitType == CONSTANT.PARA) {
+            gettingonoff = gettingonoff_para;
+            ridingbus = ridingbus_para;
+            safety = safety_para;
+            emergency = emergency_para;
+            response = response_para;
+        } else {
+                gettingonoff = gettingonoff_fixed;
+                ridingbus = ridingbus_fixed;
+                safety = safety_fixed;
+                emergency = emergency_fixed;
+                response = response_fixed;
+
+        }
+
+    }
 }

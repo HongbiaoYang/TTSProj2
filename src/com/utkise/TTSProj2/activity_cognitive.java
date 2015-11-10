@@ -59,7 +59,8 @@ public class activity_cognitive extends Activity implements OnInitListener {
         // first animation in vision
         ImageView image = (ImageView) findViewById(R.id.frame_home);
         image.setBackgroundResource(R.drawable.frame);
-        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
+        MyProperties.getInstance().currentAnim = (AnimationDrawable) image.getBackground();
+        //MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
 
 
         title.setText(MyProperties.getInstance().getTitleStack());
@@ -92,7 +93,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
         String type = getIntent().getStringExtra("Type");
 
-        thisLevel = MyProperties.getInstance().getCognitiveList(true);  // set to always true
+        thisLevel = MyProperties.getInstance().getCognitiveList(true, MyProperties.getInstance().transitType);  // set to always true
         MyProperties.getInstance().cognitive_updated = false;
 
         updateList(thisLevel);
@@ -104,7 +105,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
             EmergencyState = false;
             emergency.setVisibility(View.VISIBLE);
             response.setVisibility(View.VISIBLE);
-            thisLevel = MyProperties.getInstance().getCognitiveList(MyProperties.getInstance().cognitive_updated);
+            thisLevel = MyProperties.getInstance().getCognitiveList(MyProperties.getInstance().cognitive_updated, MyProperties.getInstance().transitType);
             updateList(thisLevel);
             title.setText(MyProperties.getInstance().getTitleStack());
             return;
@@ -141,7 +142,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
                     MyProperties.getInstance().speakBoth(item);
 
                     item.setFreq("cognitive", item.getFreq("cognitive") + 1);
-                    MyProperties.getInstance().database.updateItem("cognitive", item);
+                    MyProperties.getInstance().database.updateItem("cognitive", item, MyProperties.getInstance().transitType);
                     MyProperties.getInstance().cognitive_updated = true;
                     Log.d(TAG, "count=" + item.getFreq("cognitive"));
 
@@ -183,7 +184,11 @@ public class activity_cognitive extends Activity implements OnInitListener {
     private class OnEmergencyListener implements View.OnLongClickListener {
         @Override
         public boolean onLongClick(View v) {
-            thisLevel = MyProperties.getInstance().emergency.getEmergency();
+            if (MyProperties.getInstance().transitType == CONSTANT.PARA) {
+                thisLevel = MyProperties.getInstance().emergency_para.getEmergency();
+            } else {
+                thisLevel = MyProperties.getInstance().emergency_fixed.getEmergency();
+            }
             updateList(thisLevel);
 
             title.setText("Emergency!!!");
@@ -235,7 +240,12 @@ public class activity_cognitive extends Activity implements OnInitListener {
         @Override
         public boolean onLongClick(View v) {
 
-            thisLevel = MyProperties.getInstance().response.getSystemResponse();
+            if (MyProperties.getInstance().transitType == CONSTANT.PARA) {
+                thisLevel = MyProperties.getInstance().response_para.getSystemResponse();
+            } else
+            {
+                thisLevel = MyProperties.getInstance().response_fixed.getSystemResponse();
+            }
             updateList(thisLevel);
 
             title.setText("Response!!!");

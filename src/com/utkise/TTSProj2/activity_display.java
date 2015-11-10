@@ -103,7 +103,7 @@ public class activity_display extends Activity implements OnInitListener {
                     }
 
                     item.setFreq(subMenu, item.getFreq(subMenu) + 1);
-                    MyProperties.getInstance().database.updateItem(subMenu, item);
+                    MyProperties.getInstance().database.updateItem(subMenu, item, MyProperties.getInstance().transitType);
 
                     Log.d("activity_display", "submenu="+subMenu +" count="+item.getFreq(subMenu));
                 }
@@ -148,7 +148,7 @@ public class activity_display extends Activity implements OnInitListener {
                         }
 
                         item.setFreq(subMenu, item.getFreq(subMenu) + 1);
-                        MyProperties.getInstance().database.updateItem(subMenu, item);
+                        MyProperties.getInstance().database.updateItem(subMenu, item, MyProperties.getInstance().transitType);
 
                         Log.d("activity_display", "submenu="+subMenu +" count="+item.getFreq(subMenu));
                     }

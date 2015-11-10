@@ -33,7 +33,7 @@ public class activity_hearing extends Activity implements OnInitListener {
         emergency = (Button)findViewById(R.id.Hemergency);
         goBack = (ImageView)findViewById(R.id.header1);
 
-
+        MyProperties.getInstance().updateTransitType();
 
         if (MyProperties.getInstance().Language == LANG.SPANISH) {
             gettingonoff.setBackgroundResource(MyProperties.getInstance().gettingonoff.getImageS());

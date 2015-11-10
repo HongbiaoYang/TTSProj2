@@ -30,7 +30,8 @@ public class header_view extends LinearLayout {
         // create a new animation and push it into stack
         ImageView image = (ImageView) findViewById(R.id.frame_image);
         image.setBackgroundResource(R.drawable.frame);
-        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
+//        MyProperties.getInstance().animStack.push((AnimationDrawable) image.getBackground());
+        MyProperties.getInstance().currentAnim = (AnimationDrawable) image.getBackground();
 
         this.findViewById(R.id.header3).setOnClickListener(new homeOnClickListener());
 
@@ -59,9 +60,10 @@ public class header_view extends LinearLayout {
                 MyProperties.getInstance().titleStack.clear();
 
                 // restore the root animation object
-                AnimationDrawable rootAnim = MyProperties.getInstance().animStack.firstElement();
+                /*AnimationDrawable rootAnim = MyProperties.getInstance().animStack.firstElement();
                 MyProperties.getInstance().animStack.clear();
                 MyProperties.getInstance().animStack.push(rootAnim);
+                */
 
                 // go to the sub-root level (activity_hearing). If directly come from the root level, go back there
                 Intent intent;
