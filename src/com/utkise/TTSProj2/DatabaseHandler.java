@@ -2,6 +2,7 @@ package com.utkise.TTSProj2;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -38,6 +39,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     private static final String KEY_IMAGEV = "ImageV";
     private static final String KEY_COLOR = "Color";
     private static final String KEY_FREQ = "Freq";
+    private static final String KEY_CUSTOMIZE = "Customize";
 
     private static final String KEY_FREQ_HEARING = "hearing";
     private static final String KEY_FREQ_COGNITIVE = "cognitive";
@@ -78,18 +80,18 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         String CREATE_PARA_TABLE = "CREATE TABLE " + TABLE_PARA + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_TITLE + " TEXT,"
                 + KEY_TEXT + " TEXT," + KEY_TITULO + " TEXT," + KEY_TEXTO + " TEXT,"
-                + KEY_IMAGE + " TEXT," + KEY_IMAGEV + " TEXT," + KEY_COLOR + " TEXT,"
+                + KEY_IMAGE + " TEXT," + KEY_IMAGEV + " TEXT," + KEY_COLOR + " TEXT, " + KEY_CUSTOMIZE + " TEXT,"
                 + KEY_FREQ_HEARING + " INTEGER,"+ KEY_FREQ_COGNITIVE + " INTEGER,"+ KEY_FREQ_NONENGLISH + " INTEGER,"+ KEY_FREQ_VISION + " INTEGER,"
-                + KEY_MENU + " TEXT " + ")";
+                + KEY_MENU + " TEXT" +  ")";
         db.execSQL(CREATE_PARA_TABLE);
 
         // create table items
         String CREATE_FIXED_TABLE = "CREATE TABLE " + TABLE_FIXED + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_TITLE + " TEXT,"
                 + KEY_TEXT + " TEXT," + KEY_TITULO + " TEXT," + KEY_TEXTO + " TEXT,"
-                + KEY_IMAGE + " TEXT," + KEY_IMAGEV + " TEXT," + KEY_COLOR + " TEXT,"
+                + KEY_IMAGE + " TEXT," + KEY_IMAGEV + " TEXT," + KEY_COLOR + " TEXT, " + KEY_CUSTOMIZE + " TEXT,"
                 + KEY_FREQ_HEARING + " INTEGER,"+ KEY_FREQ_COGNITIVE + " INTEGER,"+ KEY_FREQ_NONENGLISH + " INTEGER,"+ KEY_FREQ_VISION + " INTEGER,"
-                + KEY_MENU + " TEXT " + ")";
+                + KEY_MENU +  " TEXT" + ")";
         db.execSQL(CREATE_FIXED_TABLE);
 
         this.firstTime = true;
@@ -153,13 +155,14 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         values.put(KEY_TEXT, itemStruct.getText(LANG.ENGLISH)); // English Text
         values.put(KEY_TITULO, itemStruct.getTitle(LANG.SPANISH)); // Spanish title
         values.put(KEY_TEXTO, itemStruct.getText(LANG.SPANISH));    // Spanish Text
-        values.put(KEY_IMAGE, itemStruct.getImageString());
-        values.put(KEY_IMAGEV, itemStruct.getvImageString());
+        values.put(KEY_IMAGE, itemStruct.getImageID());
+        values.put(KEY_IMAGEV, itemStruct.getVImageID());
         values.put(KEY_COLOR, itemStruct.getColorCode());
-        values.put(KEY_FREQ_HEARING, 0);    // 0 frequency at first for hearing
-        values.put(KEY_FREQ_COGNITIVE, 0);    // 0 frequency at first for cognitive
-        values.put(KEY_FREQ_NONENGLISH, 0);    // 0 frequency at first for non English
-        values.put(KEY_FREQ_VISION, 0);    // 0 frequency at first for vision
+        values.put(KEY_CUSTOMIZE, itemStruct.getSpecialTag());
+        values.put(KEY_FREQ_HEARING, itemStruct.getFreq("hearing"));    // 0 frequency at first for hearing
+        values.put(KEY_FREQ_COGNITIVE, itemStruct.getFreq("cognitive"));    // 0 frequency at first for cognitive
+        values.put(KEY_FREQ_NONENGLISH, itemStruct.getFreq("nonenglish"));    // 0 frequency at first for non English
+        values.put(KEY_FREQ_VISION, itemStruct.getFreq("vision"));    // 0 frequency at first for vision
 
         values.put(KEY_MENU, menu);
 
@@ -174,7 +177,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     }
 
     // Getting All Contacts
-    public List<ItemStruct> getAllItems(String menu, int transitType) {
+    public List<ItemStruct> getAllItems(int transitType, String... otherArgs) {
         List<ItemStruct> itemList = new ArrayList<ItemStruct>();
 
         Cursor cursor;
@@ -183,7 +186,28 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
 
         // Select All Query
-        if (menu == "") {
+
+        if (otherArgs.length == 0) {
+            String selectQuery = "SELECT  * FROM " + table ;
+            SQLiteDatabase db = this.getWritableDatabase();
+            cursor = db.rawQuery(selectQuery, null);
+        } else {
+            String selectQuery = "SELECT  * FROM " + table + " where ";
+            List<String> valueList = new ArrayList<String>();
+
+            for (int i = 0; i < otherArgs.length; i+= 2) {
+                selectQuery += otherArgs[i] + "=? AND ";
+                valueList.add(otherArgs[i+1]);
+            }
+            selectQuery += " 1";
+            String[] values = new String[valueList.size()];
+            valueList.toArray(values);
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            cursor = db.rawQuery(selectQuery, values);
+        }
+
+     /*   if (menu == "") {
             String selectQuery = "SELECT  * FROM " + table ;
             SQLiteDatabase db = this.getWritableDatabase();
             cursor = db.rawQuery(selectQuery, null);
@@ -191,7 +215,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
             String selectQuery = "SELECT  * FROM " + table + " where " + KEY_MENU + " = ?";
             SQLiteDatabase db = this.getWritableDatabase();
             cursor = db.rawQuery(selectQuery, new String[]{menu});
-        }
+        }*/
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
@@ -202,13 +226,16 @@ public class DatabaseHandler extends SQLiteOpenHelper{
                 aItem.setText(LANG.ENGLISH, cursor.getString(2));
                 aItem.setTitle(LANG.SPANISH, cursor.getString(3));
                 aItem.setText(LANG.SPANISH, cursor.getString(4));
-                aItem.setImageString(cursor.getString(5));
-                aItem.setvImageString(cursor.getString(6));
+//                aItem.setImageString(cursor.getString(5));
+//                aItem.setvImageString(cursor.getString(6));
+                aItem.setImageID(Integer.parseInt(cursor.getString(5)));
+                aItem.setVImageID(Integer.parseInt(cursor.getString(6)));
                 aItem.setColor(Integer.parseInt(cursor.getString(7)));
-                aItem.setFreq("hearing", Integer.parseInt(cursor.getString(8)));
-                aItem.setFreq("cognitive", Integer.parseInt(cursor.getString(9)));
-                aItem.setFreq("nonenglish", Integer.parseInt(cursor.getString(10)));
-                aItem.setFreq("vision", Integer.parseInt(cursor.getString(11)));
+                aItem.setSpecialTag(cursor.getString(8));
+                aItem.setFreq("hearing", Integer.parseInt(cursor.getString(9)));
+                aItem.setFreq("cognitive", Integer.parseInt(cursor.getString(10)));
+                aItem.setFreq("nonenglish", Integer.parseInt(cursor.getString(11)));
+                aItem.setFreq("vision", Integer.parseInt(cursor.getString(12)));
 
                 // Adding contact to list
                 itemList.add(aItem);
@@ -246,6 +273,24 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         db.delete(table, KEY_TITLE + " = ?",
                 new String[] { String.valueOf(item.getTitle()) });
         db.close();
+    }
+
+    public int getMaxFreq(String menu, int transitType) {
+
+        Cursor cursor;
+        int count = 0;
+
+        // choose table based on transit type
+        String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
+
+        String selectQuery = "SELECT MAX("+KEY_FREQ_HEARING+") FROM " + table + " where " + KEY_MENU + " = ?";
+        SQLiteDatabase db = this.getWritableDatabase();
+        cursor = db.rawQuery(selectQuery, new String[]{menu});
+        if (cursor.moveToFirst()) {
+            count = Integer.parseInt(cursor.getString(0));
+        }
+
+        return count;
     }
 
 /*

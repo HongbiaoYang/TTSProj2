@@ -31,6 +31,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
     private String TAG = "activity_home";
     private int backTimer = 0;
     private boolean accept = false;
+    private LinearLayout emergency;
 
 
     @Override
@@ -49,6 +50,9 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
         para = (Button)findViewById(R.id.para);
         fixed = (Button)findViewById(R.id.fixed);
         tut = (Button)findViewById(R.id.tut);
+
+        emergency = (LinearLayout)findViewById(R.id.head_home3);
+
 
         para.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +131,35 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
             }
         });
 
+        emergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count++;
+                Handler handler = new Handler();
+                Runnable run = new Runnable() {
+                    @Override
+                    public void run() {
+                        count = CONSTANT.START;
+                    }
+                };
+
+                if (count == CONSTANT.MIDDLE) {
+                    handler.postDelayed(run, 250);
+                } else if (count == CONSTANT.END) {
+                    count = CONSTANT.START;
+
+                    MyProperties.getInstance().speakBoth(TITLE.EMERGENCY);
+
+                    String emergency_str = MyProperties.getInstance().getTitleName(TITLE.EMERGENCY);
+                    MyProperties.getInstance().titleStack.push(emergency_str);
+
+                    Intent intent = new Intent();
+                    intent.putExtra("Type", "emergency");
+                    intent.setClass(activity_home.this, activity_emergency.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
 
 
@@ -142,6 +175,12 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
             addTimeStamp();
         }
 
+        // *****************************************************************************************
+        // *****************************************************************************************
+        // *****************************************************************************************
+        // Premium - Trial version code. Comment this section out to get premium version
+
+        
         Long start = Long.parseLong(MyProperties.getInstance().database.getProp("startTime"));
         Long now = System.currentTimeMillis();
         int elapsed = (int) (now - start)/1000; // time in seconds
@@ -181,13 +220,16 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
 
                     }).show();
         }
+        // *****************************************************************************************
+        // *****************************************************************************************
+        // *****************************************************************************************
 
         if (MyProperties.getInstance().gettingonoff_para == null) {
             MyProperties.getInstance().gettingonoff_para = new DisableType("Getting on and off the bus", R.drawable.gettingonandoffthebus,
                     R.drawable.gettingonandoffthebus_v,
                     R.drawable.gettingonandoffthebus_s);
 
-            List<ItemStruct> completeItems = database.getAllItems("gettingonoff", CONSTANT.PARA);
+            List<ItemStruct> completeItems = database.getAllItems(CONSTANT.PARA, "Menu", "gettingonoff");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().gettingonoff_para.setInformation("general", completeItems);
         }
@@ -197,7 +239,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
                     R.drawable.ridingthebus_v,
                     R.drawable.ridingthebus_s);
             // loadXMLResourceParser(MyProperties.getInstance().ridingbus, R.xml.ridingbus);
-            List<ItemStruct> completeItems = database.getAllItems("ridingbus", CONSTANT.PARA);
+            List<ItemStruct> completeItems = database.getAllItems( CONSTANT.PARA, "Menu", "ridingbus");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().ridingbus_para.setInformation("general", completeItems);
 
@@ -208,7 +250,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
                     R.drawable.safety_v,
                     R.drawable.safety_s);
             // loadXMLResourceParser(MyProperties.getInstance().safety, R.xml.safety);
-            List<ItemStruct> completeItems = database.getAllItems("safety", CONSTANT.PARA);
+            List<ItemStruct> completeItems = database.getAllItems(CONSTANT.PARA,"Menu", "safety");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().safety_para.setInformation("general", completeItems);
         }
@@ -218,7 +260,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
                     R.drawable.emergency_v,
                     R.drawable.emergency_s);
 //            loadXMLResourceParser(MyProperties.getInstance().emergency, R.xml.emergency);
-            List<ItemStruct> completeItems = database.getAllItems("emergency", CONSTANT.PARA);
+            List<ItemStruct> completeItems = database.getAllItems(CONSTANT.PARA, "Menu", "emergency");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().emergency_para.setInformation("emergency", completeItems);
         }
@@ -228,7 +270,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
             MyProperties.getInstance().response_para = new DisableType("Response", 0, 0,0);
             // loadXMLResourceParser(MyProperties.getInstance().response, R.xml.response);
 
-            List<ItemStruct> completeItems = database.getAllItems("response",CONSTANT.PARA);
+            List<ItemStruct> completeItems = database.getAllItems(CONSTANT.PARA,"Menu", "response");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().response_para.setInformation("response", completeItems);
         }
@@ -238,7 +280,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
                     R.drawable.gettingonandoffthebus_v,
                     R.drawable.gettingonandoffthebus_s);
 
-            List<ItemStruct> completeItems = database.getAllItems("gettingonoff", CONSTANT.FIXED);
+            List<ItemStruct> completeItems = database.getAllItems(CONSTANT.FIXED, "Menu", "gettingonoff");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().gettingonoff_fixed.setInformation("general", completeItems);
         }
@@ -248,7 +290,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
                     R.drawable.ridingthebus_v,
                     R.drawable.ridingthebus_s);
             // loadXMLResourceParser(MyProperties.getInstance().ridingbus, R.xml.ridingbus);
-            List<ItemStruct> completeItems = database.getAllItems("ridingbus", CONSTANT.FIXED);
+            List<ItemStruct> completeItems = database.getAllItems(CONSTANT.FIXED, "Menu", "ridingbus");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().ridingbus_fixed.setInformation("general", completeItems);
 
@@ -259,7 +301,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
                     R.drawable.safety_v,
                     R.drawable.safety_s);
             // loadXMLResourceParser(MyProperties.getInstance().safety, R.xml.safety);
-            List<ItemStruct> completeItems = database.getAllItems("safety", CONSTANT.FIXED);
+            List<ItemStruct> completeItems = database.getAllItems(CONSTANT.FIXED, "Menu", "safety");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().safety_fixed.setInformation("general", completeItems);
         }
@@ -269,7 +311,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
                     R.drawable.emergency_v,
                     R.drawable.emergency_s);
 //            loadXMLResourceParser(MyProperties.getInstance().emergency, R.xml.emergency);
-            List<ItemStruct> completeItems = database.getAllItems("emergency", CONSTANT.FIXED);
+            List<ItemStruct> completeItems = database.getAllItems(CONSTANT.FIXED, "Menu", "emergency");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().emergency_fixed.setInformation("emergency", completeItems);
         }
@@ -279,7 +321,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
             MyProperties.getInstance().response_fixed = new DisableType("Response", 0, 0,0);
             // loadXMLResourceParser(MyProperties.getInstance().response, R.xml.response);
 
-            List<ItemStruct> completeItems = database.getAllItems("response",CONSTANT.FIXED);
+            List<ItemStruct> completeItems = database.getAllItems(CONSTANT.FIXED, "Menu", "response");
             fillMissingInformation(completeItems);
             MyProperties.getInstance().response_fixed.setInformation("response", completeItems);
         }
@@ -304,6 +346,7 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
         }
 
     }
+
 
 
     private void loadDatabaseFromXmls() {
@@ -358,13 +401,13 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
                             } else if (name.equalsIgnoreCase("image")) {
                                 String imageString = xrp.nextText();
                                 currentItem.setImageString(imageString);
-//                                int resID = getResources().getIdentifier(imageString, "drawable", getPackageName());
-//                                currentItem.setImageID(resID);
+                                int resID = getResources().getIdentifier(imageString, "drawable", getPackageName());
+                                currentItem.setImageID(resID);
                             } else if (name.equalsIgnoreCase("imageV")) {
                                 String vImageString = xrp.nextText();
                                 currentItem.setvImageString(vImageString);
-//                                int resID = getResources().getIdentifier(vImageString, "drawable", getPackageName());
-//                                currentItem.setVImageID(resID);
+                                int resID = getResources().getIdentifier(vImageString, "drawable", getPackageName());
+                                currentItem.setVImageID(resID);
                             } else if (name.equalsIgnoreCase("Color")) {
                                 try{
                                     //Log.e(TAG, "c="+xrp.toString());
@@ -383,6 +426,9 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
                         if (name.equalsIgnoreCase("item")) {
                             if (accept == true) {
 //                                 MyProperties.getInstance().feedItem(currentItem);
+                                if (currentItem.getSpecialTag() == null) {
+                                    currentItem.setSpecialTag("normal");
+                                }
                                 MyProperties.getInstance().database.addItem(currentItem, type, transitType);
 
                             }
@@ -419,7 +465,10 @@ public class activity_home extends Activity implements TextToSpeech.OnInitListen
 
     private void fillMissingInformation(List<ItemStruct> itemsFromDatabase) {
         for (ItemStruct is: itemsFromDatabase) {
-            is.setImageID(getResources().getIdentifier(is.getImageString(), "drawable", getPackageName()));
+
+            if (is.getImageString() != null) {
+                is.setImageID(getResources().getIdentifier(is.getImageString(), "drawable", getPackageName()));
+            }
 
         }
     }

@@ -22,6 +22,7 @@ import java.util.Stack;
  * Created by Bill on 9/11/14.
  */
 public class activity_response extends Activity {
+    private static final String TAG = "activity_response";
     private String[] web;
     private TextView title;
     private ImageView goback;
@@ -41,6 +42,8 @@ public class activity_response extends Activity {
         title.setText(MyProperties.getInstance().titleStack.lastElement());
         MyProperties.getInstance().playAnimation();
 
+        MyProperties.getInstance().updateTransitType();
+
         goback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,13 +52,13 @@ public class activity_response extends Activity {
             }
         });
 
-        thisLevel = MyProperties.getInstance().response.getInformation("response", MyProperties.getInstance().hearing_updated);
+        thisLevel = MyProperties.getInstance().response.getInformation("response", true);
 
-        // add customized item only when first time running this activity
-        if (MyProperties.getInstance().firstTimeResponsePage) {
+        // add customized item only when first time running this activity, and the response page is opened in English setting
+       /* if (MyProperties.getInstance().firstTimeResponsePage && MyProperties.getInstance().Language == LANG.ENGLISH) {
             addCustomizedItems(thisLevel);
             MyProperties.getInstance().firstTimeResponsePage = false;
-        }
+        }*/
         updateList(thisLevel);
     }
 
@@ -66,9 +69,6 @@ public class activity_response extends Activity {
         CustomList adapter;
         int offset = 0;
 
-        if (MyProperties.getInstance().Language == LANG.SPANISH) {
-            offset = 1;
-        }
         web =  lf.produceTitleArray(offset);
         imageId = lf.produceImageArray(offset);
 
@@ -95,15 +95,17 @@ public class activity_response extends Activity {
                 } else if (count == CONSTANT.END) {
                     count = CONSTANT.START;
 
+
                     ItemStruct item = thisLevel.get(position);
 
                     // if tagged special tag
-                    if (item.getSpecialTag() == null) {
+                    if (item.getSpecialTag() == null || item.getSpecialTag().equalsIgnoreCase("added") || item.getSpecialTag().equalsIgnoreCase("normal")) {
                         MyProperties.getInstance().speakBoth(item);
+
+                        updateClickedItem(item);
+
                     } else if (item.getSpecialTag().equalsIgnoreCase("input")) {
                         createNewItem();
-                    } else if (item.getSpecialTag().equalsIgnoreCase("added")) {
-                        MyProperties.getInstance().speakBoth(item);
                     }
 
                 }
@@ -128,6 +130,19 @@ public class activity_response extends Activity {
             }
 
         });
+    }
+
+    private void updateClickedItem(ItemStruct item) {
+
+        item.setFreq("hearing", item.getFreq("hearing") + 10);
+        MyProperties.getInstance().database.updateItem("hearing", item, MyProperties.getInstance().transitType);
+
+        // update item of 'input' to be biggest value of freq
+        int max = MyProperties.getInstance().database.getMaxFreq("response", MyProperties.getInstance().transitType);
+        ItemStruct inputItem = thisLevel.get(0);
+        inputItem.setFreq("hearing", max);
+        MyProperties.getInstance().database.updateItem("hearing", inputItem, MyProperties.getInstance().transitType);
+
     }
 
     // warn user that system item is not for delete
@@ -177,10 +192,39 @@ public class activity_response extends Activity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
+                // get the text and speak out the new item
                 String addedItem = input.getText().toString();
                 MyProperties.getInstance().speakout(addedItem);
+
+                // add the new item into database
                 ItemStruct item = new ItemStruct(R.drawable.customize, addedItem);
                 item.setSpecialTag("added");
+                item.setImageString("customize");
+                int max = MyProperties.getInstance().database.getMaxFreq("response", MyProperties.getInstance().transitType);
+                item.setFreq("hearing", max+1);
+                MyProperties.getInstance().database.addItem(item, "response", MyProperties.getInstance().transitType);
+
+                // update item of 'input' to be biggest value of freq
+                ItemStruct inputItem = thisLevel.get(0);
+                inputItem.setFreq("hearing", max + 2);
+                MyProperties.getInstance().database.updateItem("hearing", inputItem, MyProperties.getInstance().transitType);
+
+                // update the value in memory as well as in 'thisLevel' variable
+                List<ItemStruct> completeItems = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,"Menu", "response");
+
+                if (MyProperties.getInstance().transitType == CONSTANT.PARA) {
+                    MyProperties.getInstance().response_para.setInformation("response", completeItems);
+                } else {
+                    MyProperties.getInstance().response_fixed.setInformation("response", completeItems);
+                }
+
+                // update the response list, now
+                MyProperties.getInstance().updateTransitType();
+                thisLevel = MyProperties.getInstance().response.getInformation("response", true);
+                updateList(thisLevel);
+
+                /*
+
                 thisLevel.add(1, item);
 
                 MyProperties.getInstance().response.setInformation("response", thisLevel);
@@ -189,7 +233,7 @@ public class activity_response extends Activity {
                 updateList(thisLevel);
 
                 saveAddedItems(addedItem);
-
+                */
             }
         });
 
@@ -234,6 +278,15 @@ public class activity_response extends Activity {
 
     }
 
+    private void fillMissingInformation(List<ItemStruct> itemsFromDatabase) {
+        for (ItemStruct is: itemsFromDatabase) {
+            Log.d(TAG, "is name="+is.getText());
+            if (is.getImageString() != null) {
+                is.setImageID(getResources().getIdentifier(is.getImageString(), "drawable", getPackageName()));
+            }
+
+        }
+    }
 
     private void addCustomizedItems(List<ItemStruct> thisLevel) {
         SharedPreferences responsePref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
@@ -263,7 +316,10 @@ public class activity_response extends Activity {
     }
 
     private void saveDeletedItems(String item) {
-        SharedPreferences responsePref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
+
+
+
+       /* SharedPreferences responsePref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
         Set<String> response = responsePref.getStringSet("Added", null);
 
         Set<String> copy = new HashSet<String>();
@@ -271,7 +327,7 @@ public class activity_response extends Activity {
         copy.remove(item);
         response.clear();
 
-        responsePref.edit().putStringSet("Added", copy).apply();
+        responsePref.edit().putStringSet("Added", copy).apply();*/
 
     }
 

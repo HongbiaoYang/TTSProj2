@@ -82,6 +82,11 @@ public class ItemStruct {
 
     public void setSpecialTag(String specialTag) {
         SpecialTag = specialTag;
+
+        // for input item, add initial freq to 1
+        if (specialTag != null && specialTag.equalsIgnoreCase("input")) {
+            setFreq("hearing", 1);
+        }
     }
 
     public ItemStruct () {
@@ -91,9 +96,15 @@ public class ItemStruct {
         color = Color.parseColor("#f174ac");
 
         child = null;
+
+        this.setFreq("hearing", 0);
+        this.setFreq("nonenglish", 0);
+        this.setFreq("cognitive", 0);
+        this.setFreq("vision", 0);
     }
 
     public ItemStruct(Integer image, String content) {
+        this();
         this.imageID = image;
         this.title = new HashMap<LANG, String>();
         this.setTitle(LANG.ENGLISH, content);

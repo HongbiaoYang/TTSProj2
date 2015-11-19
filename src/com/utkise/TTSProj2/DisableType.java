@@ -59,6 +59,12 @@ public class DisableType {
                 MyProperties.getInstance().sortByCategory(emergency, MyProperties.getInstance().Language == LANG.ENGLISH ?  "hearing" : "nonenglish");
             return emergency;
         } else if (type.equalsIgnoreCase("response")){
+            if (MyProperties.getInstance().Language == LANG.SPANISH) {
+                response = MyProperties.getInstance().database.getAllItems( MyProperties.getInstance().transitType, "Menu", "response", "Customize", "normal");
+            } else {
+                response = MyProperties.getInstance().database.getAllItems( MyProperties.getInstance().transitType, "Menu", "response");
+            }
+
             if (updated)
                 MyProperties.getInstance().sortByCategory(response, MyProperties.getInstance().Language == LANG.ENGLISH ?  "hearing" : "nonenglish");
             return response;

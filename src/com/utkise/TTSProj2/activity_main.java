@@ -236,21 +236,6 @@ public class activity_main extends Activity implements OnInitListener {
 
 
     @Override
-    protected void onDestroy() {
-
-
-        TextToSpeech mTts = MyProperties.getInstance().gtts;
-        //Close the Text to Speech Library
-        if( mTts!= null) {
-
-            mTts.stop();
-            mTts.shutdown();
-            Log.d("activity_main", "TTS Destroyed");
-        }
-        super.onDestroy();
-    }
-
-    @Override
     protected void onResume() {
 
             MyProperties.getInstance().speakout("Project Eric");
