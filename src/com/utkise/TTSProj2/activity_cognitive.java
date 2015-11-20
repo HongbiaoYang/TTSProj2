@@ -241,14 +241,16 @@ public class activity_cognitive extends Activity implements OnInitListener {
         public boolean onLongClick(View v) {
 
             if (MyProperties.getInstance().transitType == CONSTANT.PARA) {
-                thisLevel = MyProperties.getInstance().response_para.getSystemResponse();
+                thisLevel = MyProperties.getInstance().response_para.getInformation( "normalResponse", true);
             } else
             {
-                thisLevel = MyProperties.getInstance().response_fixed.getSystemResponse();
+                thisLevel = MyProperties.getInstance().response_fixed.getInformation( "normalResponse", true);
             }
+
+
             updateList(thisLevel);
 
-            title.setText("Response!!!");
+            title.setText("Response");
             MyProperties.getInstance().speakout("Response");
             emergency.setVisibility(View.INVISIBLE);
             response.setVisibility(View.INVISIBLE);
