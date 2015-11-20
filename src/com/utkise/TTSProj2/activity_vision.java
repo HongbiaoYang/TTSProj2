@@ -494,11 +494,14 @@ public class activity_vision extends Activity {
     private void detectLongPress2() {
 
 
-        MyProperties.getInstance().shutup();
-        MyProperties.getInstance().popStacks();
-        pref.edit().putBoolean("tutorial_vision", true).apply();
-
-
+        if (itemStack.isEmpty()) {
+            MyProperties.getInstance().shutup();
+            MyProperties.getInstance().popStacks();
+            pref.edit().putBoolean("tutorial_vision", true).apply();
+            finish();
+        } else {
+            finish();
+        }
 
     }
 

@@ -94,7 +94,9 @@ public class activity_visionMain extends Activity {
     private void speakRepeated(boolean delay) {
 
         // if is speaking, do not disturb and let the current one talk
-        if ((MyProperties.getInstance().gtts.isSpeaking() == true || loop == false) && (delay == false)){
+        if (MyProperties.getInstance().gtts == null ||
+                (MyProperties.getInstance().gtts.isSpeaking() == true || loop == false) && (delay == false)){
+
             return;
         }
 

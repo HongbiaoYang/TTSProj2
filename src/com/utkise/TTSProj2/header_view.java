@@ -66,13 +66,17 @@ public class header_view extends LinearLayout {
                 */
 
                 // go to the sub-root level (activity_hearing). If directly come from the root level, go back there
-                Intent intent;
-                if (rootItem.equalsIgnoreCase("Response")) {
+               Intent intent;
+
+                /*   if (rootItem.equalsIgnoreCase("Response")) {
                     intent = new Intent(getContext(), activity_main.class);
                 }  else {
                     MyProperties.getInstance().titleStack.push(rootItem);
-                    intent = new Intent(getContext(), activity_hearing.class);
-                }
+                    intent = new Intent(getContext(), activity_main.class);
+                }*/
+
+                intent = new Intent(getContext(), activity_home.class);
+                MyProperties.getInstance().titleStack.clear();
 
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 getContext().startActivity(intent);

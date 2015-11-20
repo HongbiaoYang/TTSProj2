@@ -58,15 +58,19 @@ public class DisableType {
             if (updated)
                 MyProperties.getInstance().sortByCategory(emergency, MyProperties.getInstance().Language == LANG.ENGLISH ?  "hearing" : "nonenglish");
             return emergency;
-        } else if (type.equalsIgnoreCase("response")){
+        } else if (type.equalsIgnoreCase("response")) {
             if (MyProperties.getInstance().Language == LANG.SPANISH) {
-                response = MyProperties.getInstance().database.getAllItems( MyProperties.getInstance().transitType, "Menu", "response", "Customize", "normal");
+                response = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType, "Menu", "response", "Customize", "normal");
             } else {
-                response = MyProperties.getInstance().database.getAllItems( MyProperties.getInstance().transitType, "Menu", "response");
+                response = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType, "Menu", "response");
             }
 
             if (updated)
-                MyProperties.getInstance().sortByCategory(response, MyProperties.getInstance().Language == LANG.ENGLISH ?  "hearing" : "nonenglish");
+                MyProperties.getInstance().sortByCategory(response, MyProperties.getInstance().Language == LANG.ENGLISH ? "hearing" : "nonenglish");
+            return response;
+        }else if (type.equalsIgnoreCase("normalResponse")) {
+            response = MyProperties.getInstance().database.getAllItems( MyProperties.getInstance().transitType, "Menu", "response", "Customize", "normal");
+            MyProperties.getInstance().sortByCategory(response, "cognitive");
             return response;
         } else {
             return null;
@@ -123,7 +127,7 @@ public class DisableType {
         this.customCount--;
     }
 
-    public List<ItemStruct> getSystemResponse() {
+ /*   public List<ItemStruct> getSystemResponse() {
         return response.subList(customCount, response.size());
-    }
+    }*/
 }

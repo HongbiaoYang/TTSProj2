@@ -64,6 +64,7 @@ public class activity_nonEnglishMain extends Activity {
         backImage.setVisibility(View.VISIBLE);
         swipe.start();
 
+        Log.d(TAG, "create of nonEnglish main");
     }
 
 
@@ -91,17 +92,6 @@ public class activity_nonEnglishMain extends Activity {
         }
     }
 
-    private void goToNewPage() {
-        MyProperties.getInstance().speakBoth(TITLE.NON_ENGLISH);
-        MyProperties.getInstance().Language = LANG.SPANISH;
-        String non_english_str = MyProperties.getInstance().getTitleEither(TITLE.NON_ENGLISH);
-        MyProperties.getInstance().titleStack.push(non_english_str);
-
-        Intent intent = new Intent();
-        intent.setClass(activity_nonEnglishMain.this, activity_hearing.class);
-        startActivity(intent);
-
-    }
 
 
     private class prevTutorialListener implements View.OnClickListener {
@@ -185,7 +175,7 @@ public class activity_nonEnglishMain extends Activity {
                 next.setText("HECHO");
             }
         } else {
-            goToNewPage();
+            finish();
         }
     }
 

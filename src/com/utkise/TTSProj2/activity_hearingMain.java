@@ -91,21 +91,12 @@ public class activity_hearingMain extends Activity {
     private class skipTutorialListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-//            goToNewPage();
+
             finish();
         }
 
     }
 
-    private void goToNewPage() {
-        MyProperties.getInstance().speakBoth(TITLE.HEARING);
-
-        String hearing_str = MyProperties.getInstance().getTitleName(TITLE.HEARING);
-        MyProperties.getInstance().titleStack.push(hearing_str);
-        Intent intent = new Intent();
-        intent.setClass(activity_hearingMain.this, activity_hearing.class);
-        startActivity(intent);
-    }
 
     private class prevTutorialListener implements View.OnClickListener {
         @Override
@@ -184,9 +175,9 @@ public class activity_hearingMain extends Activity {
 
     private void detectLeft() {
         curPageIndex++;
+
         if (curPageIndex < itemList.size()) {
             setTutorialPage(itemList.get(curPageIndex));
-
             swipe.stop();
             backImage.setVisibility(View.INVISIBLE);
 
@@ -194,7 +185,7 @@ public class activity_hearingMain extends Activity {
                 next.setText("Done");
             }
         } else {
-            goToNewPage();
+            finish();
         }
 
     }
