@@ -202,7 +202,7 @@ public class activity_visionMain extends Activity {
             MyProperties.getInstance().titleStack.push(vision_str);
 
             Intent intent = new Intent();
-            intent.setClass(activity_visionMain.this, activity_vision.class);
+            intent.setClass(activity_visionMain.this, activity_visiontutorial.class);
             startActivity(intent);
         }
 

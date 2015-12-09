@@ -2,136 +2,71 @@ package com.utkise.TTSProj2;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Color;
 import android.util.Log;
+import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by hongbiaoyang on 10/10/15.
  */
-public class DatabaseHandler extends SQLiteOpenHelper{
+public class DatabaseHandler extends SQLiteAssetHelper {
 
     // All Static variables
     // Database Version
+    private static final String DATABASE_NAME = "projEric.db";
     private static final int DATABASE_VERSION = 1;
 
-    // Database Name
-    private static final String DATABASE_NAME = "ItemsManager";
-
     // Contacts table name
-    private static final String TABLE_ITEMS = "ItemTable";
     private static final String TABLE_PARA = "ParaTable";
     private static final String TABLE_FIXED = "FixedTable";
-    private static final String TABLE_PROPS = "PropTable";
+    private static final String TABLE_APPINFO = "appInfo";
 
     // Contacts Table Columns names
-    private static final String KEY_ID = "id";
-    private static final String KEY_TITLE = "Title";
-    private static final String KEY_TEXT = "Text";
-    private static final String KEY_TITULO = "Titulo";
-    private static final String KEY_TEXTO = "Texto";
-    private static final String KEY_IMAGE = "Image";
-    private static final String KEY_IMAGEV = "ImageV";
-    private static final String KEY_COLOR = "Color";
-    private static final String KEY_FREQ = "Freq";
-    private static final String KEY_CUSTOMIZE = "Customize";
+    private static final String KEY_TITLE = "title";
+    private static final String KEY_TEXT = "text";
+    private static final String KEY_TITULO = "titulo";
+    private static final String KEY_TEXTO = "texto";
+    private static final String KEY_IMAGE = "image";
+    private static final String KEY_IMAGEV = "imageV";
+    private static final String KEY_COLOR = "color";
+    private static final String KEY_MENU = "menu";
+    private static final String KEY_CUSTOMIZE = "customize";
 
     private static final String KEY_FREQ_HEARING = "hearing";
-    private static final String KEY_FREQ_COGNITIVE = "cognitive";
     private static final String KEY_FREQ_NONENGLISH = "nonEnglish";
-    private static final String KEY_FREQ_VISION = "vision";
+    private static final String KEY_FREQ_COGNITIVE = "cognitive";
 
-    private static final String KEY_MENU = "Menu";
-
-    private static final String KEY_NAME = "Prop_Name";
-    private static final String KEY_VALUE = "Prop_Value";
+    private static final String KEY_NAME = "fieldKey";
+    private static final String KEY_VALUE = "fieldValue";
 
 
     public boolean firstTime = false;
-    private SQLiteDatabase db;
     private String TAG = "DatabaseHandler";
 
-
-    public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }
-
     public DatabaseHandler(Context context) {
-        super(context, CONSTANT.DATABASE_NAME, null, DATABASE_VERSION);
-        db = getWritableDatabase();
-    }
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
-    // Creating Tables
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-
-        // CREATE table properties
-        String CREATE_PROPS_TABLE = "CREATE TABLE " + TABLE_PROPS + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_VALUE + " TEXT"  + ")";
-        db.execSQL(CREATE_PROPS_TABLE);
-
-        // create table items
-        String CREATE_PARA_TABLE = "CREATE TABLE " + TABLE_PARA + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_TITLE + " TEXT,"
-                + KEY_TEXT + " TEXT," + KEY_TITULO + " TEXT," + KEY_TEXTO + " TEXT,"
-                + KEY_IMAGE + " TEXT," + KEY_IMAGEV + " TEXT," + KEY_COLOR + " TEXT, " + KEY_CUSTOMIZE + " TEXT,"
-                + KEY_FREQ_HEARING + " INTEGER,"+ KEY_FREQ_COGNITIVE + " INTEGER,"+ KEY_FREQ_NONENGLISH + " INTEGER,"+ KEY_FREQ_VISION + " INTEGER,"
-                + KEY_MENU + " TEXT" +  ")";
-        db.execSQL(CREATE_PARA_TABLE);
-
-        // create table items
-        String CREATE_FIXED_TABLE = "CREATE TABLE " + TABLE_FIXED + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_TITLE + " TEXT,"
-                + KEY_TEXT + " TEXT," + KEY_TITULO + " TEXT," + KEY_TEXTO + " TEXT,"
-                + KEY_IMAGE + " TEXT," + KEY_IMAGEV + " TEXT," + KEY_COLOR + " TEXT, " + KEY_CUSTOMIZE + " TEXT,"
-                + KEY_FREQ_HEARING + " INTEGER,"+ KEY_FREQ_COGNITIVE + " INTEGER,"+ KEY_FREQ_NONENGLISH + " INTEGER,"+ KEY_FREQ_VISION + " INTEGER,"
-                + KEY_MENU +  " TEXT" + ")";
-        db.execSQL(CREATE_FIXED_TABLE);
-
-        this.firstTime = true;
-    }
-
-    // Upgrading database
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PARA);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FIXED);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PROPS);
-
-        // Create tables again
-        onCreate(db);
-    }
-
-    public boolean databaseExist() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        if (db == null) {
-            return false;
-        } else {
-            return true;
-        }
     }
 
     void addProp(String name, String value) {
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, name);
         values.put(KEY_VALUE, value);
 
-        db.insert(TABLE_PROPS, null, values);
+        db.insert(TABLE_APPINFO, null, values);
         db.close();
-
     }
 
     String getProp(String name) {
-        String selectQuery = "SELECT  * FROM " + TABLE_PROPS + " where " + KEY_NAME + " = ?";
-        SQLiteDatabase db = this.getWritableDatabase();
+        String selectQuery = "SELECT  * FROM " + TABLE_APPINFO + " where " + KEY_NAME + " = ?";
+        SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, new String[]{name});
 
         String value = null;
@@ -148,7 +83,8 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
     // Adding new item
     void addItem(ItemStruct itemStruct, String menu, int transitType) {
-        SQLiteDatabase db = this.getWritableDatabase();
+
+        SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(KEY_TITLE, itemStruct.getTitle(LANG.ENGLISH)); // English title
@@ -157,15 +93,12 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         values.put(KEY_TEXTO, itemStruct.getText(LANG.SPANISH));    // Spanish Text
         values.put(KEY_IMAGE, itemStruct.getImageID());
         values.put(KEY_IMAGEV, itemStruct.getVImageID());
-        values.put(KEY_COLOR, itemStruct.getColorCode());
+        values.put(KEY_COLOR, itemStruct.getColorString());
         values.put(KEY_CUSTOMIZE, itemStruct.getSpecialTag());
         values.put(KEY_FREQ_HEARING, itemStruct.getFreq("hearing"));    // 0 frequency at first for hearing
         values.put(KEY_FREQ_COGNITIVE, itemStruct.getFreq("cognitive"));    // 0 frequency at first for cognitive
         values.put(KEY_FREQ_NONENGLISH, itemStruct.getFreq("nonenglish"));    // 0 frequency at first for non English
-        values.put(KEY_FREQ_VISION, itemStruct.getFreq("vision"));    // 0 frequency at first for vision
-
         values.put(KEY_MENU, menu);
-
 
         // choose table based on transit type
         String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
@@ -177,7 +110,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     }
 
     // Getting All Contacts
-    public List<ItemStruct> getAllItems(int transitType, String... otherArgs) {
+    public List<ItemStruct> getAllItems(int transitType, String orderby, String... otherArgs) {
         List<ItemStruct> itemList = new ArrayList<ItemStruct>();
 
         Cursor cursor;
@@ -189,7 +122,9 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
         if (otherArgs.length == 0) {
             String selectQuery = "SELECT  * FROM " + table ;
-            SQLiteDatabase db = this.getWritableDatabase();
+            selectQuery += orderby;
+
+            SQLiteDatabase db = getReadableDatabase();
             cursor = db.rawQuery(selectQuery, null);
         } else {
             String selectQuery = "SELECT  * FROM " + table + " where ";
@@ -199,23 +134,15 @@ public class DatabaseHandler extends SQLiteOpenHelper{
                 selectQuery += otherArgs[i] + "=? AND ";
                 valueList.add(otherArgs[i+1]);
             }
-            selectQuery += " 1";
+            selectQuery += " 1 " + orderby;
             String[] values = new String[valueList.size()];
             valueList.toArray(values);
 
-            SQLiteDatabase db = this.getWritableDatabase();
+            SQLiteDatabase db = getReadableDatabase();
             cursor = db.rawQuery(selectQuery, values);
         }
 
-     /*   if (menu == "") {
-            String selectQuery = "SELECT  * FROM " + table ;
-            SQLiteDatabase db = this.getWritableDatabase();
-            cursor = db.rawQuery(selectQuery, null);
-        } else {
-            String selectQuery = "SELECT  * FROM " + table + " where " + KEY_MENU + " = ?";
-            SQLiteDatabase db = this.getWritableDatabase();
-            cursor = db.rawQuery(selectQuery, new String[]{menu});
-        }*/
+
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
@@ -226,16 +153,16 @@ public class DatabaseHandler extends SQLiteOpenHelper{
                 aItem.setText(LANG.ENGLISH, cursor.getString(2));
                 aItem.setTitle(LANG.SPANISH, cursor.getString(3));
                 aItem.setText(LANG.SPANISH, cursor.getString(4));
-//                aItem.setImageString(cursor.getString(5));
-//                aItem.setvImageString(cursor.getString(6));
-                aItem.setImageID(Integer.parseInt(cursor.getString(5)));
-                aItem.setVImageID(Integer.parseInt(cursor.getString(6)));
-                aItem.setColor(Integer.parseInt(cursor.getString(7)));
-                aItem.setSpecialTag(cursor.getString(8));
-                aItem.setFreq("hearing", Integer.parseInt(cursor.getString(9)));
-                aItem.setFreq("cognitive", Integer.parseInt(cursor.getString(10)));
-                aItem.setFreq("nonenglish", Integer.parseInt(cursor.getString(11)));
-                aItem.setFreq("vision", Integer.parseInt(cursor.getString(12)));
+                aItem.setImageString(cursor.getString(5));
+                aItem.setvImageString(cursor.getString(6));
+//                aItem.setImageID(Integer.parseInt(cursor.getString(5)));
+//                aItem.setVImageID(Integer.parseInt(cursor.getString(6)));
+                aItem.setColor(Color.parseColor(cursor.getString(7)));
+                // number 8 is the menu, not need here
+                aItem.setSpecialTag(cursor.getString(9));
+                aItem.setFreq("hearing", Integer.parseInt(cursor.getString(10)));
+                aItem.setFreq("cognitive", Integer.parseInt(cursor.getString(11)));
+                aItem.setFreq("nonenglish", Integer.parseInt(cursor.getString(12)));
 
                 // Adding contact to list
                 itemList.add(aItem);
@@ -247,10 +174,18 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     }
 
 
+    public int deleteItem(int transitType, String title) {
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
+
+        return db.delete(table, KEY_TITLE + "= '" + title.replace("'", "''") + "'", null);
+    }
 
     // Updating single item
-    public int updateItem(String subMenu, ItemStruct item, int transitType) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    public int updateItem(int transitType, String subMenu, ItemStruct item) {
+        SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(subMenu, item.getFreq(subMenu));
@@ -263,17 +198,6 @@ public class DatabaseHandler extends SQLiteOpenHelper{
                 new String[] { String.valueOf(item.getTitle())});
     }
 
-    // Deleting single item
-    public void deleteContact(ItemStruct item, int transitType) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        // choose table based on transit type
-        String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
-
-        db.delete(table, KEY_TITLE + " = ?",
-                new String[] { String.valueOf(item.getTitle()) });
-        db.close();
-    }
 
     public int getMaxFreq(String menu, int transitType) {
 
@@ -284,7 +208,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         String table = transitType == CONSTANT.PARA ? TABLE_PARA : TABLE_FIXED;
 
         String selectQuery = "SELECT MAX("+KEY_FREQ_HEARING+") FROM " + table + " where " + KEY_MENU + " = ?";
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         cursor = db.rawQuery(selectQuery, new String[]{menu});
         if (cursor.moveToFirst()) {
             count = Integer.parseInt(cursor.getString(0));
@@ -293,16 +217,16 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         return count;
     }
 
-/*
-    // Getting contacts Count
-    public int getContactsCount() {
-        String countQuery = "SELECT  * FROM " + TABLE_ITEMS;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-        cursor.close();
 
-        // return count
-        return cursor.getCount();
-    }*/
+    public int updateProp(String propKey, String propValue) {
 
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_VALUE,propValue);
+
+        // updating row
+        return db.update(TABLE_APPINFO, values, KEY_NAME + " = ?",
+                new String[] { String.valueOf(propKey)});
+    }
 }

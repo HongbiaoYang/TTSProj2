@@ -58,9 +58,11 @@ public class activity_emergency extends Activity implements OnInitListener {
 
        MyProperties.getInstance().updateTransitType();
 
-        String type = getIntent().getStringExtra("Type");
+        String type = MyProperties.getInstance().Language == LANG.ENGLISH ? "hearing" : "nonenglish";
 
-        thisLevel = MyProperties.getInstance().emergency.getInformation(type, MyProperties.getInstance().hearing_updated);
+//        thisLevel = MyProperties.getInstance().emergency.getInformation(type, MyProperties.getInstance().hearing_updated);
+        thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                "order by " + type + " desc", "menu", "emergency");
 
         updateList(thisLevel);
     }
@@ -69,7 +71,7 @@ public class activity_emergency extends Activity implements OnInitListener {
         ListFactory lf = new ListFactory(level);
         CustomList adapter;
         web =  lf.produceTitleArray();
-        imageId = lf.produceImageArray();
+        imageId = lf.produceImageArray(this.getApplicationContext());
 
         adapter = new
                 CustomList(activity_emergency.this, web, imageId);
@@ -100,7 +102,7 @@ public class activity_emergency extends Activity implements OnInitListener {
 
                         MyProperties.getInstance().speakBoth(item);
                         item.setFreq("hearing", item.getFreq("hearing") + 1);
-                        MyProperties.getInstance().database.updateItem("hearing", item, MyProperties.getInstance().transitType);
+                        MyProperties.getInstance().database.updateItem(MyProperties.getInstance().transitType, "hearing", item);
                         MyProperties.getInstance().hearing_updated = true;
 
                     }

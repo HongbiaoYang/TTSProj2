@@ -93,8 +93,11 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
         String type = getIntent().getStringExtra("Type");
 
-        thisLevel = MyProperties.getInstance().getCognitiveList(true, MyProperties.getInstance().transitType);  // set to always true
-        MyProperties.getInstance().cognitive_updated = false;
+//        thisLevel = MyProperties.getInstance().getCognitiveList(true, MyProperties.getInstance().transitType);  // set to always true
+
+        thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType, "order by cognitive", "menu !", "response");
+
+//        MyProperties.getInstance().cognitive_updated = false;
 
         updateList(thisLevel);
     }
@@ -105,7 +108,10 @@ public class activity_cognitive extends Activity implements OnInitListener {
             EmergencyState = false;
             emergency.setVisibility(View.VISIBLE);
             response.setVisibility(View.VISIBLE);
-            thisLevel = MyProperties.getInstance().getCognitiveList(MyProperties.getInstance().cognitive_updated, MyProperties.getInstance().transitType);
+//            thisLevel = MyProperties.getInstance().getCognitiveList(MyProperties.getInstance().cognitive_updated, MyProperties.getInstance().transitTypetType);
+            thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                    "order by cognitive", "menu !", "response");
+
             updateList(thisLevel);
             title.setText(MyProperties.getInstance().getTitleStack());
             return;
@@ -123,7 +129,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
         ListFactory lf = new ListFactory(level);
         CustomList adapter;
         web =  lf.produceTitleArray();
-        imageId = lf.produceImageArray();
+        imageId = lf.produceImageArray(this.getApplicationContext());
         colors = lf.produceColorArray();
 
         adapter = new
@@ -142,7 +148,7 @@ public class activity_cognitive extends Activity implements OnInitListener {
                     MyProperties.getInstance().speakBoth(item);
 
                     item.setFreq("cognitive", item.getFreq("cognitive") + 1);
-                    MyProperties.getInstance().database.updateItem("cognitive", item, MyProperties.getInstance().transitType);
+                    MyProperties.getInstance().database.updateItem(MyProperties.getInstance().transitType, "cognitive", item);
                     MyProperties.getInstance().cognitive_updated = true;
                     Log.d(TAG, "count=" + item.getFreq("cognitive"));
 
@@ -184,11 +190,9 @@ public class activity_cognitive extends Activity implements OnInitListener {
     private class OnEmergencyListener implements View.OnLongClickListener {
         @Override
         public boolean onLongClick(View v) {
-            if (MyProperties.getInstance().transitType == CONSTANT.PARA) {
-                thisLevel = MyProperties.getInstance().emergency_para.getEmergency();
-            } else {
-                thisLevel = MyProperties.getInstance().emergency_fixed.getEmergency();
-            }
+
+            thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                    "order by cognitive", "menu", "emergency");
             updateList(thisLevel);
 
             title.setText("Emergency!!!");
@@ -240,13 +244,8 @@ public class activity_cognitive extends Activity implements OnInitListener {
         @Override
         public boolean onLongClick(View v) {
 
-            if (MyProperties.getInstance().transitType == CONSTANT.PARA) {
-                thisLevel = MyProperties.getInstance().response_para.getInformation( "normalResponse", true);
-            } else
-            {
-                thisLevel = MyProperties.getInstance().response_fixed.getInformation( "normalResponse", true);
-            }
-
+            thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                "order by cognitive", "menu", "response", "customize", "normal");
 
             updateList(thisLevel);
 

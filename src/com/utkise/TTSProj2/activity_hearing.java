@@ -111,7 +111,7 @@ public class activity_hearing extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().currentType = MyProperties.getInstance().gettingonoff;
                     Intent intent = new Intent();
-                    intent.putExtra("Type", "general");
+                    intent.putExtra("Type", "gettingonoff");
                     intent.setClass(activity_hearing.this, activity_display.class);
                     startActivity(intent);
                 }
@@ -142,7 +142,7 @@ public class activity_hearing extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().currentType = MyProperties.getInstance().ridingbus;
                     Intent intent = new Intent();
-                    intent.putExtra("Type", "general");
+                    intent.putExtra("Type", "ridingthebus");
                     intent.setClass(activity_hearing.this, activity_display.class);
                     startActivity(intent);
                 }
@@ -176,7 +176,7 @@ public class activity_hearing extends Activity implements OnInitListener {
 
                     MyProperties.getInstance().currentType = MyProperties.getInstance().safety;
                     Intent intent = new Intent();
-                    intent.putExtra("Type", "general");
+                    intent.putExtra("Type", "safety");
                     intent.setClass(activity_hearing.this, activity_display.class);
                     startActivity(intent);
                 }

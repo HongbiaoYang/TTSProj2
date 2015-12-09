@@ -62,6 +62,10 @@ public class activity_display extends Activity implements OnInitListener {
                 MyProperties.getInstance().hearing_updated : MyProperties.getInstance().nonenglish_updated;
         thisLevel = MyProperties.getInstance().currentType.getInformation(type, true);
 
+        // order standard
+        String  order = MyProperties.getInstance().Language == LANG.ENGLISH ? "hearing" : "nonenglish";
+        thisLevel = MyProperties.getInstance().database.getAllItems(CONSTANT.FIXED, "order by " + order, "menu", type);
+
         updateList(thisLevel);
     }
 
@@ -79,7 +83,7 @@ public class activity_display extends Activity implements OnInitListener {
         ListFactory lf = new ListFactory(level);
         CustomList adapter;
         web =  lf.produceTitleArray();
-        imageId = lf.produceImageArray();
+        imageId = lf.produceImageArray(this.getApplicationContext());
 
         adapter = new
                 CustomList(activity_display.this, web, imageId);
@@ -103,7 +107,7 @@ public class activity_display extends Activity implements OnInitListener {
                     }
 
                     item.setFreq(subMenu, item.getFreq(subMenu) + 1);
-                    MyProperties.getInstance().database.updateItem(subMenu, item, MyProperties.getInstance().transitType);
+                    MyProperties.getInstance().database.updateItem(MyProperties.getInstance().transitType, subMenu, item);
 
                     Log.d("activity_display", "submenu="+subMenu +" count="+item.getFreq(subMenu));
                 }
@@ -148,7 +152,7 @@ public class activity_display extends Activity implements OnInitListener {
                         }
 
                         item.setFreq(subMenu, item.getFreq(subMenu) + 1);
-                        MyProperties.getInstance().database.updateItem(subMenu, item, MyProperties.getInstance().transitType);
+                        MyProperties.getInstance().database.updateItem( MyProperties.getInstance().transitType, subMenu, item);
 
                         Log.d("activity_display", "submenu="+subMenu +" count="+item.getFreq(subMenu));
                     }

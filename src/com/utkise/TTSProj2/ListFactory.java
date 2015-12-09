@@ -1,6 +1,7 @@
 package com.utkise.TTSProj2;
 
-import java.lang.reflect.Array;
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +21,6 @@ public class ListFactory {
 
     public String[] produceTextArray() {
        return produceTextArray(0);
-    }
-
-    public Integer[] produceImageArray() {
-        return produceImageArray(0);
     }
 
     public Integer[] produceColorArray() {
@@ -56,12 +53,16 @@ public class ListFactory {
         return textList.toArray(new String[0]);
     }
 
-    public Integer[] produceImageArray(int offset) {
+    public Integer[] produceImageArray( Context applicationContext) {
         int i;
 
         ArrayList<Integer> imageList = new ArrayList<Integer>();
-        for (i = offset; i < this.root.size(); i++) {
-            imageList.add(root.get(i).getImageID());
+        for (i = 0; i < this.root.size(); i++) {
+
+            int tImageId = applicationContext.getResources().getIdentifier(root.get(i).getImageString(),
+                    "drawable", applicationContext.getPackageName());
+
+            imageList.add(tImageId);
         }
 
         return imageList.toArray(new Integer[0]);

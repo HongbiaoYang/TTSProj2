@@ -22,6 +22,15 @@ public class ItemStruct {
 
     private String imageString;
     private String vImageString;
+    private String colorString;
+
+    public ItemStruct(String vImageString, String content) {
+        setvImageString(vImageString);
+        this.title = new HashMap<LANG, String>();
+        this.setTitle(LANG.ENGLISH, content);
+        this.text = new HashMap<LANG, String>();
+        this.setText(LANG.ENGLISH, content);
+    }
 
     public int getFreq(String subMenu) {
 
@@ -196,5 +205,15 @@ public class ItemStruct {
         return color;
     }
 
+    public void setColorCode() {
 
+    }
+
+    public void setColorString(String colorStr) {
+        this.colorString = colorStr;
+    }
+
+    public String getColorString() {
+        return colorString;
+    }
 }

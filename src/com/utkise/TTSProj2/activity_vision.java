@@ -22,16 +22,10 @@ public class activity_vision extends Activity {
     private DIRECTION direction;
     private LinearLayout screen;
     private float oldDist;
-    private int onHold, onThird;
+    private int onHold;
     private int mTouchCount = 0;
-    private List<ItemStruct> root;
-    private ItemStruct curItem;
-    private int curIndex, firstIndex;
-    private List<ItemStruct> curLevel;
-    private Stack<List<ItemStruct>> itemStack;
-    private SuperTutorial tutorial;
-    private SharedPreferences pref;
-    private Intent remindService;
+    private List<ItemStruct> categories, itemsEmergency, itemsGetting, itemsRiding, itemsSafety, itemsResponse;
+    private int index1, index2, level;
     private Runnable run;
     private Handler handler;
     private final String TAG = "activity_vision";
@@ -39,14 +33,7 @@ public class activity_vision extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (itemStack.isEmpty()) {
-            MyProperties.getInstance().shutup();
-            MyProperties.getInstance().popStacks();
-            pref.edit().putBoolean("tutorial_vision", true).apply();
-            finish();
-        } else  {
             detectUP();
-        }
     }
 
     /**
@@ -63,11 +50,28 @@ public class activity_vision extends Activity {
 
         MyProperties.getInstance().updateTransitType();
 
-        root = new ArrayList<ItemStruct>();
-        fillEmergencyList(root, MyProperties.getInstance().emergency);
-        fillItemList(root, MyProperties.getInstance().gettingonoff);
-        fillItemList(root, MyProperties.getInstance().ridingbus);
-        fillItemList(root, MyProperties.getInstance().safety);
+        categories = new ArrayList<ItemStruct>();
+        ItemStruct emergency = new ItemStruct("emergency_v", "Emergency");
+        ItemStruct gettingonoff = new ItemStruct("gettingonandoffthebus_v","getting on and off the bus");
+        ItemStruct ridingthebus = new ItemStruct("ridingthebus_v", "riding the bus");
+        ItemStruct safety = new ItemStruct("safety_v", "safety");
+
+        // add first level items
+        categories.add(emergency);
+        categories.add(gettingonoff);
+        categories.add(ridingthebus);
+        categories.add(safety);
+
+        itemsEmergency = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                "", "menu", "emergency");
+        itemsGetting = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                "", "menu", "gettingonoff");
+        itemsRiding = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                "", "menu", "ridingthebus");
+        itemsSafety = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                "", "menu", "safety");
+        itemsResponse = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                "", "menu", "response", "customize","normal");
 
         // first animation in vision
         ImageView image = (ImageView) findViewById(R.id.frame_home);
@@ -76,111 +80,20 @@ public class activity_vision extends Activity {
         MyProperties.getInstance().currentAnim = (AnimationDrawable) image.getBackground();
 
         // first display
-        curIndex = 0;
-        firstIndex = 0;
-        curItem = root.get(curIndex);
-        curLevel = root;
-        itemStack = new Stack<List<ItemStruct>>();
+        index1 = 0;
+        index2 = 0;
+        level = 0;
 
-        displayCurrent(curItem);
-        MyProperties.getInstance().speakout(curItem.getText());
+        displayCurrent(level, index1, index2);
 
         screen.setOnTouchListener(new visionTouchListener());
         direction = DIRECTION.EMPTY;
 
-        pref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
-        boolean done = pref.getBoolean("tutorial_vision", false);
-
-        // handler and runnable
-        handler = new Handler();
-        run = new Runnable() {
-            @Override
-            public void run() {
-                boolean done = pref.getBoolean("tutorial_vision", true);
-                if (done == true) {
-                    return;
-                }
-                tutorial.speakAgainNow();
-                onUserInteraction();
-            }
-        };
-
-        if (done == false)  {
-            tutorial = new VisionTutorial(true);
-            tutorial.startTutorial();
-            resetTimer();
-
-        } else {
-            tutorial = new VisionTutorial(false);
-        }
-    }
-
-    private void fillEmergencyList(List<ItemStruct> node, DisableType emergency) {
-
-        /*// create image and text of this item
-        level.setImageID(emergency.getImage());
-        level.setVImageID(emergency.getImageV());
-        level.setText(LANG.ENGLISH, emergency.getTag());*/
-
-        // next level item
-        ItemStruct eItem;
-        eItem = new ItemStruct(R.drawable.emergency_v, "Emergency");
-
-        // next level list
-        List<ItemStruct> eInfo;
-        eInfo = emergency.getEmergency();
-
-        // set children
-        eItem.setChild(eInfo);
-
-        node.add(eItem);
-    }
-
-    @Override
-    public void onUserInteraction() {
-
-        resetTimer();
-    }
-
-    private void resetTimer() {
-
-        boolean done = pref.getBoolean("tutorial_vision", true);
-        if (done == true) {
-            return;
-        }
-
-        handler.removeCallbacks(run);
-        handler.postDelayed(run, 12000);
     }
 
     @Override
     protected void onStop() {
-        stopTimer();
         super.onStop();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        resetTimer();
-    }
-
-    private void stopTimer() {
-        handler.removeCallbacks(run);
-    }
-
-    private void fillItemList(List<ItemStruct> node, DisableType type) {
-        ItemStruct level = new ItemStruct();
-
-        // create image and text of this item
-        level.setImageID(type.getImage());
-        level.setVImageID(type.getImageV());
-
-        level.setText(LANG.ENGLISH, type.getTag());
-
-        level.setChild(type.getGeneralInfo());
-
-        node.add(level);
     }
 
     private void captureSwipe(float dx, float dy) {
@@ -224,16 +137,11 @@ public class activity_vision extends Activity {
                         onHold = 0;
 
                         detectLongPress2();
-                        if (tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER2.ordinal())) {
-                            pref.edit().putBoolean("tutorial_vision", true).apply();
-                        }
 
                     } else if (onHold == 3) {
                         onHold = 0;
 
                         detectLongPress3();
-                        tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.HOLD_FINGER3.ordinal());
-
                     }
 
                 }
@@ -244,12 +152,10 @@ public class activity_vision extends Activity {
                     if (mTouchCount == 2) {
 
                         detectDoubleClick();
-                        tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.DOUBLE_CLICK.ordinal());
 
                     } else if (mTouchCount == 3) {
 
                         detectTripleClick();
-                        tutorial.checkNext(VisionTutorial.LOCAL_DIRECTION.TRIPLE_CLICK.ordinal());
 
                     } else if (mTouchCount == 4) {
 
@@ -384,125 +290,134 @@ public class activity_vision extends Activity {
                 break;
         }
 
+    }
 
-        if (dir != DIRECTION.EMPTY) {
-            int direInt = tutorial.Dire2Int(dir);
-            tutorial.checkNext(direInt);
+    private void displayCurrent(int level, int index1, int index2) {
+
+        ItemStruct item;
+        List<ItemStruct> currentArray;
+
+        if (level == 0) {
+            currentArray = categories;
+            item = currentArray.get(index1);
+        } else {
+            currentArray = getArrayOfIndex1(index1);
+            item = currentArray.get(index2);
         }
 
+
+        int imageV = getResources().getIdentifier(item.getvImageString(), "drawable", getPackageName());
+        ok.setBackgroundResource(imageV);
+
+        vText.setText(item.getTitle());
+        MyProperties.getInstance().speakout(item.getText());
 
     }
 
-    private void displayCurrent(ItemStruct item) {
-
-        if (item.getVImageID() == 0) {
-            ok.setBackgroundResource(item.getImageID());
-        } else {
-            ok.setBackgroundResource(item.getVImageID());
+    private List<ItemStruct> getArrayOfIndex1(int index) {
+        if (index == 0) {
+            return itemsEmergency;
+        } else if (index == 1) {
+            return itemsGetting;
+        } else  if (index == 2) {
+            return itemsRiding;
+        } else if (index == 3) {
+            return itemsSafety;
+        } else if (index == 4) {
+            return itemsResponse;
         }
-        vText.setText(item.getText());
 
+        return null;
     }
 
     // swipe down, enter next level
     private void detectDown() {
-        if (curItem.getChild() == null || curItem.hasChildren() == false) {
-            String hint;
-            hint = getResources().getString(R.string.nodown);
 
-            MyProperties.getInstance().speakout(hint);
+        if (level == 0) {
+
+            level += 1;
+            index2 = 0;
+            displayCurrent(level, index1, index2);
         } else {
-            itemStack.push(curLevel);
-            curLevel = curItem.getChild();
-            curIndex = 0;
-            curItem = curLevel.get(curIndex);
-            displayCurrent(curItem);
-            
-            MyProperties.getInstance().speakout(curItem.getText());
+            MyProperties.getInstance().speakout("There are no more questions beyond this point, " +
+                    "please swipe up to access questions");
         }
 
     }
 
     // swipe up, go to higher level
     private void detectUP() {
-        if (itemStack.isEmpty()) {
-            String hint;
-            hint = getResources().getString(R.string.noup);
+        if (level == 1) {
 
-            MyProperties.getInstance().speakout(hint);
+            level -= 1;
+            index1 = 0;
+            index2 = 0;
+            displayCurrent(level, index1, index2);
         } else {
-            curLevel = itemStack.pop();
-            curIndex = 0;
-            // when go to higher level, restore firstIndex to 0. In response page this firstIndex might be changed
-            firstIndex = 0;
-            curItem = curLevel.get(curIndex);
-            displayCurrent(curItem);
-
-            Log.i("activity_vision","swipe up detected");
-            
-            MyProperties.getInstance().speakout(curItem.getText());
+            MyProperties.getInstance().speakout("There are no more categories beyond this point, " +
+                    "please swipe down to access categories");
         }
-
-
     }
 
     // swipe right, next item
     private void detectRight() {
 
-        if (curIndex <= firstIndex) {
-            String hint;
-            if (curItem.getChild() == null) {
-                hint = getResources().getString(R.string.norightq);
-            } else {
-                hint = getResources().getString(R.string.norightc);
-            }
+      if (level == 0) {
+          if (index1 > 0) {
+              index1 -= 1;
+          } else {
+              MyProperties.getInstance().speakout("There are no more categories beyond this point, " +
+                      "please swipe left to access the next categories");
+              return;
+          }
+      } else if (level == 1) {
+          if (index2 > 0) {
+              index2 -= 1;
+          } else {
+              MyProperties.getInstance().speakout("There are no more questions beyond this point, " +
+                      "please swipe left to access the next question");
+              return;
+          }
+      }
 
-            MyProperties.getInstance().speakout(hint);
-        }  else {
-            curIndex--;
-            curItem = curLevel.get(curIndex);
-            displayCurrent(curItem);
-
-            MyProperties.getInstance().speakout(curItem.getText());
-        }
-
+        displayCurrent(level, index1, index2);
     }
 
     // swipe left, last item
     private void detectLeft() {
 
-        if (curIndex >= curLevel.size() - 1) {
-            String hint;
-            if (curItem.getChild() == null) {
-                hint = getResources().getString(R.string.noleftq);
+        if (level == 0) {
+            if (index1 < 3) {
+                index1 += 1;
             } else {
-                hint = getResources().getString(R.string.noleftc);
+                MyProperties.getInstance().speakout("There are no more categories beyond this point, " +
+                        "please swipe right to access the previous categories");
+                return;
             }
-
-            MyProperties.getInstance().speakout(hint);
-        }  else {
-            curIndex++;
-            curItem = curLevel.get(curIndex);
-            displayCurrent(curItem);
-
-            MyProperties.getInstance().speakout(curItem.getText());
+        } else if (level == 1) {
+            if (index2 < getArraySizeofIndex1(index1) - 1) {
+                index2 += 1;
+            } else {
+                MyProperties.getInstance().speakout("There are no more questions beyond this point, " +
+                        "please swipe right to access the previous question");
+                return;
+            }
         }
 
+        displayCurrent(level, index1, index2);
+
+    }
+
+    private int getArraySizeofIndex1(int index) {
+        List array = getArrayOfIndex1(index);
+
+        return array.size();
     }
 
     // long press the screen
     private void detectLongPress2() {
 
-
-        if (itemStack.isEmpty()) {
-            MyProperties.getInstance().shutup();
-            MyProperties.getInstance().popStacks();
-            pref.edit().putBoolean("tutorial_vision", true).apply();
-            finish();
-        } else {
-            finish();
-        }
-
+        finish();
     }
 
     // double click, say yes
@@ -522,17 +437,12 @@ public class activity_vision extends Activity {
     }
 
     private void displayResponsePage() {
-        itemStack.push(curLevel);
-        curLevel = MyProperties.getInstance().response.getInformation("response", MyProperties.getInstance().hearing_updated);
 
-        // get the first item place, ignore the previous items added by the user
-        firstIndex = MyProperties.getInstance().response.getCustomCount();
-        curIndex = firstIndex;
+        level = 1;
+        index1 = 4;
+        index2 = 0;
 
-        curItem = curLevel.get(curIndex);
-        displayCurrent(curItem);
-
-        MyProperties.getInstance().speakout(curItem.getText());
+        displayCurrent(level, index1, index2);
     }
 
 
