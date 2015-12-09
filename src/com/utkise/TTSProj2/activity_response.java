@@ -52,16 +52,27 @@ public class activity_response extends Activity {
             }
         });
 
-        thisLevel = MyProperties.getInstance().response.getInformation("response", true);
+//        thisLevel = MyProperties.getInstance().response.getInformation("response", true);
 
-        // add customized item only when first time running this activity, and the response page is opened in English setting
-       /* if (MyProperties.getInstance().firstTimeResponsePage && MyProperties.getInstance().Language == LANG.ENGLISH) {
-            addCustomizedItems(thisLevel);
-            MyProperties.getInstance().firstTimeResponsePage = false;
-        }*/
+        String type = MyProperties.getInstance().Language == LANG.ENGLISH ? "hearing" : "nonenglish";
+        thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
+                "order by " + type + " desc", "menu", "response");
+
+        // add customized item only if the response page is opened in English setting
+        if (MyProperties.getInstance().Language == LANG.ENGLISH) {
+            addInputItemInFront();
+
+        }
+
         updateList(thisLevel);
     }
 
+    private void addInputItemInFront() {
+        ItemStruct item = new ItemStruct(R.drawable.customize, "Input your text...");
+        item.setImageString("customize");
+        item.setSpecialTag("input");
+        thisLevel.add(0, item);
+    }
 
 
     private void updateList(List<ItemStruct> level) {
@@ -70,8 +81,7 @@ public class activity_response extends Activity {
         int offset = 0;
 
         web =  lf.produceTitleArray(offset);
-        imageId = lf.produceImageArray(offset);
-
+        imageId = lf.produceImageArray(this.getApplicationContext());
         adapter = new
                 CustomList(activity_response.this, web, imageId);
 
@@ -120,7 +130,7 @@ public class activity_response extends Activity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 ItemStruct item = thisLevel.get(position);
 
-                if (item.getSpecialTag() == null || item.getSpecialTag() != "added") {
+                if (item.getSpecialTag() == null || (item.getSpecialTag().equalsIgnoreCase("normal"))) {
                     cannotDeleteWarning();
                     return false;
                 } else {
@@ -135,13 +145,13 @@ public class activity_response extends Activity {
     private void updateClickedItem(ItemStruct item) {
 
         item.setFreq("hearing", item.getFreq("hearing") + 10);
-        MyProperties.getInstance().database.updateItem("hearing", item, MyProperties.getInstance().transitType);
+        MyProperties.getInstance().database.updateItem(MyProperties.getInstance().transitType, "hearing", item);
 
         // update item of 'input' to be biggest value of freq
         int max = MyProperties.getInstance().database.getMaxFreq("response", MyProperties.getInstance().transitType);
         ItemStruct inputItem = thisLevel.get(0);
         inputItem.setFreq("hearing", max);
-        MyProperties.getInstance().database.updateItem("hearing", inputItem, MyProperties.getInstance().transitType);
+        MyProperties.getInstance().database.updateItem(MyProperties.getInstance().transitType, "hearing", inputItem);
 
     }
 
@@ -200,40 +210,20 @@ public class activity_response extends Activity {
                 ItemStruct item = new ItemStruct(R.drawable.customize, addedItem);
                 item.setSpecialTag("added");
                 item.setImageString("customize");
+                item.setColorString("#fdbd35");
                 int max = MyProperties.getInstance().database.getMaxFreq("response", MyProperties.getInstance().transitType);
                 item.setFreq("hearing", max+1);
                 MyProperties.getInstance().database.addItem(item, "response", MyProperties.getInstance().transitType);
 
-                // update item of 'input' to be biggest value of freq
-                ItemStruct inputItem = thisLevel.get(0);
-                inputItem.setFreq("hearing", max + 2);
-                MyProperties.getInstance().database.updateItem("hearing", inputItem, MyProperties.getInstance().transitType);
-
                 // update the value in memory as well as in 'thisLevel' variable
-                List<ItemStruct> completeItems = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,"Menu", "response");
+                String type = MyProperties.getInstance().Language == LANG.ENGLISH ? "hearing" : "nonenglish";
+                thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType, "order by " + type + " desc", "menu", "response");
 
-                if (MyProperties.getInstance().transitType == CONSTANT.PARA) {
-                    MyProperties.getInstance().response_para.setInformation("response", completeItems);
-                } else {
-                    MyProperties.getInstance().response_fixed.setInformation("response", completeItems);
-                }
+                // add the first item, aleays
+                addInputItemInFront();
 
-                // update the response list, now
-                MyProperties.getInstance().updateTransitType();
-                thisLevel = MyProperties.getInstance().response.getInformation("response", true);
-                updateList(thisLevel);
-
-                /*
-
-                thisLevel.add(1, item);
-
-                MyProperties.getInstance().response.setInformation("response", thisLevel);
-                MyProperties.getInstance().response.incrementCustomCount();
 
                 updateList(thisLevel);
-
-                saveAddedItems(addedItem);
-                */
             }
         });
 
@@ -288,19 +278,6 @@ public class activity_response extends Activity {
         }
     }
 
-    private void addCustomizedItems(List<ItemStruct> thisLevel) {
-        SharedPreferences responsePref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
-        Set<String> response = responsePref.getStringSet("Added", new HashSet<String>());
-
-        int index = 1;
-        for (String text : response){
-            ItemStruct item = new ItemStruct(R.drawable.customize, text);
-            item.setSpecialTag("added");
-            thisLevel.add(index++, item);
-        }
-
-    }
-
     private void saveAddedItems(String item) {
         SharedPreferences responsePref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
         Set<String> response = responsePref.getStringSet("Added", new HashSet<String>());
@@ -318,16 +295,7 @@ public class activity_response extends Activity {
     private void saveDeletedItems(String item) {
 
 
-
-       /* SharedPreferences responsePref = this.getSharedPreferences("com.utkise.TTSProj2", Context.MODE_PRIVATE);
-        Set<String> response = responsePref.getStringSet("Added", null);
-
-        Set<String> copy = new HashSet<String>();
-        cloneSet(response, copy);
-        copy.remove(item);
-        response.clear();
-
-        responsePref.edit().putStringSet("Added", copy).apply();*/
+        MyProperties.getInstance().database.deleteItem(MyProperties.getInstance().transitType, item);
 
     }
 
