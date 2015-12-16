@@ -95,9 +95,15 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
 //        thisLevel = MyProperties.getInstance().getCognitiveList(true, MyProperties.getInstance().transitType);  // set to always true
 
-        thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType, "order by cognitive", "menu !", "response");
-
-//        MyProperties.getInstance().cognitive_updated = false;
+        thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType, "order by" +
+                "   CASE menu" +
+                        "   When 'emergency' THEN 0" +
+                        "   When 'gettingonoff' THEN 1 " +
+                        "   When 'ridingthebus' THEN 2 " +
+                        "   When 'safety' THEN 3 " +
+                        "   END" +
+                        "   asc, cognitive desc",
+                "menu !", "response");
 
         updateList(thisLevel);
     }
@@ -108,9 +114,9 @@ public class activity_cognitive extends Activity implements OnInitListener {
             EmergencyState = false;
             emergency.setVisibility(View.VISIBLE);
             response.setVisibility(View.VISIBLE);
-//            thisLevel = MyProperties.getInstance().getCognitiveList(MyProperties.getInstance().cognitive_updated, MyProperties.getInstance().transitTypetType);
             thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType,
-                    "order by cognitive", "menu !", "response");
+                    "order by cognitive desc",
+                    "menu !", "response");
 
             updateList(thisLevel);
             title.setText(MyProperties.getInstance().getTitleStack());
@@ -149,7 +155,6 @@ public class activity_cognitive extends Activity implements OnInitListener {
 
                     item.setFreq("cognitive", item.getFreq("cognitive") + 1);
                     MyProperties.getInstance().database.updateItem(MyProperties.getInstance().transitType, "cognitive", item);
-                    MyProperties.getInstance().cognitive_updated = true;
                     Log.d(TAG, "count=" + item.getFreq("cognitive"));
 
                 } else {

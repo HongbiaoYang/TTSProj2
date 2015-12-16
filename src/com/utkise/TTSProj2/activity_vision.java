@@ -33,7 +33,11 @@ public class activity_vision extends Activity {
 
     @Override
     public void onBackPressed() {
+        if (level == 0) {
+            finish();
+        } else {
             detectUP();
+        }
     }
 
     /**

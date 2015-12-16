@@ -34,7 +34,6 @@ public class MyProperties {
     public boolean firstTimeResponsePage = true;
     public boolean firstTimeOpenApp = true;
     public DatabaseHandler database;
-    public boolean cognitive_updated = false;
     public boolean hearing_updated = false;
     public boolean nonenglish_updated = false;
     public int transitType = CONSTANT.PARA;

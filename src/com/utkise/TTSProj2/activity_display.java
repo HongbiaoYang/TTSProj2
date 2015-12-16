@@ -64,7 +64,7 @@ public class activity_display extends Activity implements OnInitListener {
 
         // order standard
         String  order = MyProperties.getInstance().Language == LANG.ENGLISH ? "hearing" : "nonenglish";
-        thisLevel = MyProperties.getInstance().database.getAllItems(CONSTANT.FIXED, "order by " + order, "menu", type);
+        thisLevel = MyProperties.getInstance().database.getAllItems(MyProperties.getInstance().transitType, " order by " + order +" desc", "menu", type);
 
         updateList(thisLevel);
     }
